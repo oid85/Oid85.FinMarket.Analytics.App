@@ -9,3 +9,35 @@
     display: flex;
     flex-direction: column;    
 }
+
+.border {
+    border: 1px solid #C0C0C0;
+     
+    margin: 1px;  
+}
+
+.cell {
+    text-align: left;    
+    height: 55px;
+    width: 50px;
+    font-size: 14px;    
+}
+
+.ticker-cell {
+    text-align: left;    
+    height: 55px;
+    width: 150px;
+    font-size: 14px;    
+}
+
+.trend-cell {  
+    height: 35px;
+    width: 50px;  
+}
+
+.delta-cell {  
+    height: 15px;
+    width: 50px;
+    font-size: 10px;
+    text-align: center;   
+}
