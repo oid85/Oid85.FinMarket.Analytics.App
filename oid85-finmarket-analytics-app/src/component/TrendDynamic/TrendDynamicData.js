@@ -2,6 +2,24 @@ import React from 'react'
 import './styles.css'
 import {CONSTANTS} from '../../constants'
 
+const GetColorTrend = (trend) => {
+    if (!trend) { return CONSTANTS.COLOR_WHITE }
+    if (trend == 1) { return CONSTANTS.COLOR_GREEN }
+    return CONSTANTS.COLOR_RED
+}
+
+const GetColorDelta = (delta) => {
+    if (!delta) { return CONSTANTS.COLOR_WHITE }
+    if (delta > 0) { return CONSTANTS.COLOR_GREEN }
+    if (delta < 0) { return CONSTANTS.COLOR_RED }
+    return CONSTANTS.COLOR_WHITE
+}
+
+const GetValueDelta = (delta) => {
+    if (!delta) { return "" }
+    return delta + " %"
+}
+
 export const TrendDynamicData = ({data}) => {
 
     return (
@@ -15,17 +33,17 @@ export const TrendDynamicData = ({data}) => {
                                     <div className='vertical-container border'>
                                         <div className='horizontal-container'>
                                         {
-                                            item.trend.map((trendValue, index) => (                                                
-                                                <div className='trend-cell border' style={{backgroundColor: trendValue == 1 ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_RED }}>
+                                            item.items.map((item, index) => (                                                
+                                                <div className='trend-cell border' style={{backgroundColor: GetColorTrend(item.trend)}}>
                                                 </div>
                                             ))
                                         }     
                                         </div>
                                         <div className='horizontal-container'>
                                         {
-                                            item.delta.map((deltaValue, index) => (
-                                                <div className='delta-cell border' style={{color: deltaValue > 0 ? CONSTANTS.COLOR_DARKGREEN : CONSTANTS.COLOR_DARKRED }}>
-                                                    {deltaValue} %
+                                            item.items.map((item, index) => (
+                                                <div className='delta-cell border' style={{color: GetColorDelta(item.delta) }}>
+                                                    {GetValueDelta(item.delta)}
                                                 </div>
                                             ))
                                         }     
