@@ -28,13 +28,13 @@ export const TrendDynamicData = ({data}) => {
                 <div>
                     {
                         data.map((item, index) => (
-                            <div className='horizontal-container border'>
-                                <div className='ticker-cell border' key = {index}>{item.ticker}</div>
-                                    <div className='vertical-container border'>
+                            <div className='horizontal-container'>
+                                <div className='ticker-cell border-style' key = {index}>{item.ticker}</div>
+                                    <div className='vertical-container'>
                                         <div className='horizontal-container'>
                                         {
                                             item.items.map((item, index) => (                                                
-                                                <div className='trend-cell border' style={{backgroundColor: GetColorTrend(item.trend)}}>
+                                                <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
                                                 </div>
                                             ))
                                         }     
@@ -42,7 +42,7 @@ export const TrendDynamicData = ({data}) => {
                                         <div className='horizontal-container'>
                                         {
                                             item.items.map((item, index) => (
-                                                <div className='delta-cell border' style={{color: GetColorDelta(item.delta) }}>
+                                                <div className='delta-cell border-style' style={{color: GetColorDelta(item.delta) }}>
                                                     {GetValueDelta(item.delta)}
                                                 </div>
                                             ))

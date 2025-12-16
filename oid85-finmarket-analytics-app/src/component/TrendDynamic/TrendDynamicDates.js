@@ -6,11 +6,11 @@ export const TrendDynamicDates = ({dates}) => {
 
     return (
         <React.Fragment>          
-            <div className='horizontal-container border'>
-                <div className='ticker-cell border'></div>
+            <div className='horizontal-container'>
+                <div className='ticker-cell border-style'></div>
                 {
                     dates.map((date, index) => (
-                        <div className='cell border'>
+                        <div className='calendar-cell border-style'>
                             <Calendar key = {index} date = {date} />
                         </div>
                     ))

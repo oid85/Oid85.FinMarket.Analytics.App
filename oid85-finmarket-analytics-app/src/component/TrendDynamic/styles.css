@@ -10,22 +10,21 @@
     flex-direction: column;    
 }
 
-.border {
-    border: 1px solid #C0C0C0;
-     
+.border-style {
+    border: 1px solid #000;     
     margin: 1px;  
 }
 
-.cell {
+.calendar-cell {
     text-align: left;    
-    height: 55px;
+    height: 52px;
     width: 50px;
     font-size: 14px;    
 }
 
 .ticker-cell {
     text-align: left;    
-    height: 55px;
+    height: 52px;
     width: 150px;
     font-size: 14px;    
 }
