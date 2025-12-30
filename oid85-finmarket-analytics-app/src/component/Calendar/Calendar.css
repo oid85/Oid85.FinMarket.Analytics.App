@@ -1,13 +1,13 @@
 ﻿.calendar {
     line-height: 1;
     text-align: center;
-    background-color: #DCDCDC;
+    background-color: #fff;
     border-radius: .25rem;
 }
 
 .calendar-header {
     padding: .25rem .25rem;
-    color: #DCDCDC;
+    color: #fff;
     font-weight: normal;
     font-size: .5rem;
     background-color: #f57c00;

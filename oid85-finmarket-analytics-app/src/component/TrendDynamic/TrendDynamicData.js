@@ -3,16 +3,16 @@ import './styles.css'
 import {CONSTANTS} from '../../constants'
 
 const GetColorTrend = (trend) => {
-    if (!trend) { return CONSTANTS.COLOR_BACKGROUND }
+    if (!trend) { return CONSTANTS.COLOR_WHITE }
     if (trend == 1) { return CONSTANTS.COLOR_GREEN }
     return CONSTANTS.COLOR_RED
 }
 
 const GetColorDelta = (delta) => {
-    if (!delta) { return CONSTANTS.COLOR_BACKGROUND }
+    if (!delta) { return CONSTANTS.COLOR_WHITE }
     if (delta > 0) { return CONSTANTS.COLOR_GREEN }
     if (delta < 0) { return CONSTANTS.COLOR_RED }
-    return CONSTANTS.COLOR_BACKGROUND
+    return CONSTANTS.COLOR_WHITE
 }
 
 const GetValueDelta = (delta) => {

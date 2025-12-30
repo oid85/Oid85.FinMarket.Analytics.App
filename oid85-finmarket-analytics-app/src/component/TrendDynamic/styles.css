@@ -24,13 +24,13 @@
 
 .ticker-cell {
     text-align: left;    
-    height: 52px;
+    height: 38px;
     width: 150px;
     font-size: 18px;    
 }
 
 .trend-cell {  
-    height: 35px;
+    height: 20px;
     width: 50px;  
 }
 
