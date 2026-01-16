@@ -35,6 +35,7 @@ export const TrendDynamicData = ({data}) => {
                                         {
                                             item.items.map((item, index) => (                                                
                                                 <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
+                                                    {item.price}
                                                 </div>
                                             ))
                                         }     
