@@ -10,8 +10,8 @@ const GetColorTrend = (trend) => {
 
 const GetColorDelta = (delta) => {
     if (!delta) { return CONSTANTS.COLOR_WHITE }
-    if (delta > 0) { return CONSTANTS.COLOR_GREEN }
-    if (delta < 0) { return CONSTANTS.COLOR_RED }
+    if (delta > 0) { return CONSTANTS.COLOR_DARKGREEN }
+    if (delta < 0) { return CONSTANTS.COLOR_DARKRED }
     return CONSTANTS.COLOR_WHITE
 }
 
