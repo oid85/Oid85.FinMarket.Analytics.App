@@ -52,7 +52,7 @@ export const TrendDynamicData = ({data}) => {
                                     }     
                                     </div>      
                                 </div>                                    
-                                </div>
+                            </div>
                         ))
                     }
                 </div>           
