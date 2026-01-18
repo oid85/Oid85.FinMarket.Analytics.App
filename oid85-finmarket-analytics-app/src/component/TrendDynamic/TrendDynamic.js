@@ -22,17 +22,22 @@ export const TrendDynamic = () => {
             !trendDynamicData.result || loading
             ? <Loader/>
             :
-            <div className='vertical-container'>
-                <TrendDynamicDates dates = {trendDynamicData.result.dates} />
-                <h6>Индексы</h6>
-                <TrendDynamicData data = {trendDynamicData.result.indexes} />
-                <h6>Акции</h6>
-                <TrendDynamicData data = {trendDynamicData.result.shares} />
-                <h6>Фьючерсы</h6>
-                <TrendDynamicData data = {trendDynamicData.result.futures} />
-                <h6>Облигации</h6>
-                <TrendDynamicData data = {trendDynamicData.result.bonds} />                                                
-            </div>          
+            <div className='horizontal-container'>
+                <div className='ticker-list-container border-style'>
+
+                </div>                
+                <div className='trend-dynamic-container vertical-container border-style'>
+                    <TrendDynamicDates dates = {trendDynamicData.result.dates} />
+                    <h6>Индексы</h6>
+                    <TrendDynamicData data = {trendDynamicData.result.indexes} />
+                    <h6>Акции</h6>
+                    <TrendDynamicData data = {trendDynamicData.result.shares} />
+                    <h6>Фьючерсы</h6>
+                    <TrendDynamicData data = {trendDynamicData.result.futures} />
+                    <h6>Облигации</h6>
+                    <TrendDynamicData data = {trendDynamicData.result.bonds} />
+                </div> 
+            </div>         
         }
         </React.Fragment>                
     )

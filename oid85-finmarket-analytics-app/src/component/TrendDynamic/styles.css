@@ -15,6 +15,14 @@
     margin: .5px;  
 }
 
+.ticker-list-container {     
+    width: 100px;
+}
+
+.trend-dynamic-container {     
+    padding: 1px; 
+}
+
 .calendar-cell {
     text-align: left;    
     height: 52px;
