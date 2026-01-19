@@ -23,9 +23,13 @@ export const InstrumentList = () => {
             <div>
                 {
                     instrumentListData.result.instruments.map((instrument) => (                                                
-                        <div>
-                            {instrument.ticker}
-                        </div>
+                        <button className='btn btn-outline-primary btn-sm select-instrument-button'
+                            onClick={() => {
+                            }                
+                            }>{instrument.isSelected 
+                                ? <div>{instrument.ticker}</div> 
+                                : <del><div>{instrument.ticker}</div></del>}
+                        </button> 
                     ))
                 }
             </div>         
