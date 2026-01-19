@@ -1,7 +1,8 @@
 import {
     SAGA_INSTRUMENT_LIST,
     SAGA_INSTRUMENT_SELECT,
-    FETCH_INSTRUMENT_LIST
+    FETCH_INSTRUMENT_LIST,
+    FETCH_CURRENT_INSTRUMENT
 } from '../types/instrumentTypes'
 
 
@@ -20,6 +21,13 @@ export const sagaInstrumentSelect = () => {
 export const fetchInstrumentList = (data) => {
     return {
         type: FETCH_INSTRUMENT_LIST,
+        payload: data
+    }
+}
+
+export const fetchCurrentInstrument = (data) => {
+    return {
+        type: FETCH_CURRENT_INSTRUMENT,
         payload: data
     }
 }

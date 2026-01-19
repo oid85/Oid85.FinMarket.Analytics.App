@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { sagaTrendDynamic } from '../../redux/actions/trendDynamicActions'
+import { InstrumentList } from '../Instrument/InstrumentList'
 import Loader from '../Loader/Loader'
 import './styles.css'
 import { TrendDynamicData } from './TrendDynamicData'
@@ -23,8 +24,8 @@ export const TrendDynamic = () => {
             ? <Loader/>
             :
             <div className='horizontal-container'>
-                <div className='ticker-list-container border-style'>
-
+                <div className='instrument-list-container border-style'>
+                    <InstrumentList />
                 </div>                
                 <div className='trend-dynamic-container vertical-container border-style'>
                     <TrendDynamicDates dates = {trendDynamicData.result.dates} />

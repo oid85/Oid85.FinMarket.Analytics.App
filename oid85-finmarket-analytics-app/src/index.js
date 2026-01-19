@@ -8,6 +8,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { rootReducer } from './redux/reducers/rootReducer'
 import { sagaWatcherTrendDynamic } from './redux/sagas/sagaTrendDynamic'
+import { sagaWatcherInstrument } from './redux/sagas/sagaInstrument'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const saga = createSagaMiddleware()
@@ -18,6 +19,7 @@ const composedEnhancers = compose(middlewareEnhancer)
 const store = createStore(rootReducer, undefined, composedEnhancers)
 
 saga.run(sagaWatcherTrendDynamic)
+saga.run(sagaWatcherInstrument)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
