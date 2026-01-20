@@ -31,6 +31,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='horizontal-container'>
                                 <div className='vertical-container ticker-cell border-style' key = {index}>
                                     <div>{item.ticker}</div>
+                                    <div>{item.name}</div>
                                 </div>                                
                                 <div className='vertical-container'>
                                     <div className='horizontal-container'>

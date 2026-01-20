@@ -22,8 +22,8 @@ function* sagaWorkerInstrumentList() {
 }
 
 function* sagaWorkerInstrumentSelect() {
-    let instrument = yield select(currentInstrument)
-    yield call(selectInstrumentFromApi, instrument.id)    
+    let instrument = yield select(currentInstrument)    
+    yield call(selectInstrumentFromApi, instrument.id)  
     let sagaWorkerInstrumentList = yield call(getInstrumentListFromApi)    
-    yield put(fetchInstrumentList(sagaWorkerInstrumentList))
+    yield put(fetchInstrumentList(sagaWorkerInstrumentList))      
 }

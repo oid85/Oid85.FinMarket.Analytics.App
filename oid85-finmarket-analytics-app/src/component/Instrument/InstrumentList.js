@@ -1,38 +1,26 @@
-import React, { useEffect } from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import { sagaInstrumentList } from '../../redux/actions/instrumentActions'
-import Loader from '../Loader/Loader'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchCurrentInstrument, sagaInstrumentSelect } from '../../redux/actions/instrumentActions'
 import './styles.css'
 
-export const InstrumentList = () => {
+export const InstrumentList = ({instruments}) => {
     
     const dispatch = useDispatch()
-    const loading = useSelector(state => state.app.loading)
-    const instrumentListData = useSelector(state => state.instrument.instrumentListData)
-
-    useEffect(() => {
-        dispatch(sagaInstrumentList())
-    }, [])
-
+    
     return (
         <React.Fragment>
         {
-            !instrumentListData.result || loading
-            ? <Loader/>
-            :
-            <div>
-                {
-                    instrumentListData.result.instruments.map((instrument) => (                                                
-                        <button className='btn btn-outline-primary btn-sm select-instrument-button'
-                            onClick={() => {
-                            }                
-                            }>{instrument.isSelected 
-                                ? <div>{instrument.ticker}</div> 
-                                : <del><div>{instrument.ticker}</div></del>}
-                        </button> 
-                    ))
-                }
-            </div>         
+            instruments.map((instrument) => (                                                
+                <button className='btn btn-outline-primary btn-sm select-instrument-button'
+                    onClick={() => {                        
+                        dispatch(fetchCurrentInstrument({...instrument}))
+                        dispatch(sagaInstrumentSelect())
+                    }                
+                    }>{instrument.isSelected 
+                        ? <div>{instrument.ticker}</div> 
+                        : <del><div>{instrument.ticker}</div></del>}
+                </button> 
+            ))
         }
         </React.Fragment>                
     )

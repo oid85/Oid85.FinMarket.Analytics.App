@@ -6,6 +6,6 @@ export const getInstrumentListFromApi = async () => {
     return sendPostRequest(`${controller}/list`, {})
 }
 
-export const selectInstrumentFromApi = async () => {
-    return sendPostRequest(`${controller}/select`, {})
+export const selectInstrumentFromApi = async (id) => {
+    return sendPostRequest(`${controller}/select`, {id})
 }
