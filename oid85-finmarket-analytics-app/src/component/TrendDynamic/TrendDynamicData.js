@@ -30,13 +30,13 @@ export const TrendDynamicData = ({data}) => {
                         data.map((item, index) => (
                             <div className='horizontal-container'>
                                 <div className='vertical-container ticker-cell border-style' key = {index}>
-                                    <div>{item.ticker}</div>
-                                    <div>{item.name}</div>
+                                    <div className='ticker-cell-ticker'>{item.ticker}</div>
+                                    <div className='ticker-cell-name'>{item.name}</div>
                                 </div>                                
                                 <div className='vertical-container'>
                                     <div className='horizontal-container'>
                                     {
-                                        item.items.map((item, index) => (                                                
+                                        item.items.map((item) => (                                                
                                             <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
                                                 {item.price}
                                             </div>
@@ -45,7 +45,7 @@ export const TrendDynamicData = ({data}) => {
                                     </div>
                                     <div className='horizontal-container'>
                                     {
-                                        item.items.map((item, index) => (
+                                        item.items.map((item) => (
                                             <div className='delta-cell border-style' style={{color: GetColorDelta(item.delta) }}>
                                                 {GetValueDelta(item.delta)}
                                             </div>

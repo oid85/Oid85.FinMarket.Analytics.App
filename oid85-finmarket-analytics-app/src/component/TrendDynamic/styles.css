@@ -35,12 +35,18 @@
     width: 145px;  
 }
 
-.ticker-cell {
-    text-align: left;    
+.ticker-cell {   
     height: 41px;
     width: 145px;  
-    font-size: 14px; 
     padding: 2px;   
+}
+
+.ticker-cell-ticker { 
+    font-size: 14px;   
+}
+
+.ticker-cell-name {
+    font-size: 10px;  
 }
 
 .trend-cell {  
