@@ -17,7 +17,7 @@ export const InstrumentList = ({instruments}) => {
                         dispatch(sagaInstrumentSelect())
                     }                
                     }>{instrument.isSelected 
-                        ? <div>{instrument.ticker}</div> 
+                        ? <b><div>{instrument.ticker}</div></b>
                         : <del><div>{instrument.ticker}</div></del>}
                 </button> 
             ))

@@ -2,10 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
-import { TrendDynamic } from '../TrendDynamic/TrendDynamic'
+import { CompareTrend } from '../CompareTrend/CompareTrend'
 import './styles.css'
 
-export const MainScreen = () => {
+export const CompareTrendScreen = () => {
     const alert = useSelector(state => state.app.alert)
 
     return (
@@ -13,7 +13,7 @@ export const MainScreen = () => {
             {alert && <Alert text={alert} />}
             <div>
                 <div className='horizontal-container'>
-                    <TrendDynamic />
+                    <CompareTrend />
                 </div>
             </div>            
         </React.Fragment>

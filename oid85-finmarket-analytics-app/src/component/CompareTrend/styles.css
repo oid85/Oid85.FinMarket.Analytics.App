@@ -1,0 +1,28 @@
+.horizontal-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;    
+}
+
+.vertical-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+.border-style {
+    border: 1px solid #000;     
+    margin: .5px;  
+}
+
+.instrument-list-container {     
+    width: 120px;
+}
+
+.compare-trend-container {     
+    padding: 1px; 
+}
+
+.compare-trend-diagram {     
+    padding: 1px; 
+}
