@@ -18,7 +18,7 @@ export const CompareTrendDiagram = ({series}) => {
                 {series.map(s => (
                     <Line dataKey="value" data={s.data} name={s.name} key={s.name} stroke={s.color}/>
                 ))}
-                <Tooltip />
+                <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>
             </LineChart>
             </div>
         </React.Fragment>                
