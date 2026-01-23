@@ -3,14 +3,6 @@ import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'r
 import { CONSTANTS } from "../../constants"
 import './styles.css'
 
-const getColor = (ticker) => {
-    if (ticker === 'MCFTR') {
-        return CONSTANTS.COLOR_RED
-    }
-
-    return CONSTANTS.COLOR_MIDNIGHTBLUE
-}
-
 export const CompareTrendDiagram = ({series}) => {
     return (
         <React.Fragment>          
@@ -30,7 +22,7 @@ export const CompareTrendDiagram = ({series}) => {
                         data={s.data} 
                         name={s.name} 
                         key={s.name} 
-                        stroke={getColor(s.name)}
+                        stroke={s.color}
                         strokeWidth={2}                        
                         />
                 ))}
