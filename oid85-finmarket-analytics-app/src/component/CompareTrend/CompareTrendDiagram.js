@@ -1,6 +1,15 @@
 import React from 'react'
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { CONSTANTS } from "../../constants"
 import './styles.css'
+
+const getColor = (ticker) => {
+    if (ticker === 'MCFTR') {
+        return CONSTANTS.COLOR_RED
+    }
+
+    return CONSTANTS.COLOR_MIDNIGHTBLUE
+}
 
 export const CompareTrendDiagram = ({series}) => {
     return (
@@ -16,7 +25,14 @@ export const CompareTrendDiagram = ({series}) => {
                 <YAxis domain={['auto', 'auto']}/>
                 <Legend />
                 {series.map(s => (
-                    <Line dataKey="value" data={s.data} name={s.name} key={s.name} stroke={s.color}/>
+                    <Line 
+                        dataKey="value" 
+                        data={s.data} 
+                        name={s.name} 
+                        key={s.name} 
+                        stroke={getColor(s.name)}
+                        strokeWidth={2}                        
+                        />
                 ))}
                 <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>
             </LineChart>

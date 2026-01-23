@@ -33,7 +33,7 @@ export const CompareTrend = () => {
             ? <Loader/>
             :
             <div className='horizontal-container'>
-                <div className='instrument-list-container border-style'>
+                <div className='instrument-list-container'>
                     <InstrumentList instruments = {instrumentListData.result.instruments} />
                 </div>                
                 <div className='compare-trend-container border-style'>

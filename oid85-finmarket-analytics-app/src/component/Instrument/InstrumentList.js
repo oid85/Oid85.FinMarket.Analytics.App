@@ -7,6 +7,10 @@ export const InstrumentList = ({instruments}) => {
     
     const dispatch = useDispatch()
     
+    const displayText = (instrument) => {
+        return `${instrument.ticker} (${instrument.benchmarkChange} %)`
+    }
+
     return (
         <React.Fragment>
         {
@@ -17,8 +21,8 @@ export const InstrumentList = ({instruments}) => {
                         dispatch(sagaInstrumentSelect())
                     }                
                     }>{instrument.isSelected 
-                        ? <b><div>{instrument.ticker}</div></b>
-                        : <del><div>{instrument.ticker}</div></del>}
+                        ? <b><div className='select-instrument-button-text'>{displayText(instrument)}</div></b>
+                        : <del><div className='select-instrument-button-text'>{displayText(instrument)}</div></del>}
                 </button> 
             ))
         }

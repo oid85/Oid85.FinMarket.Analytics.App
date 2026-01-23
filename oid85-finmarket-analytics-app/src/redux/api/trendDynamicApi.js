@@ -3,6 +3,6 @@
 const controller = 'trends'
 
 export const getTrendDynamicFromApi = async () => {
-    return sendPostRequest(`${controller}/dynamic`, {})
+    return sendPostRequest(`${controller}/dynamic`, {lastDaysCount: 30})
 }
 

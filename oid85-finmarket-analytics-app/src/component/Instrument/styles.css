@@ -12,10 +12,14 @@
 
 .border-style {
     border: 1px solid #000;     
-    margin: .5px;  
+    margin: .5px;
 }
 
 .select-instrument-button {
     width: 116px;
-    margin: 1px;
+    margin: .5px;
+}
+
+.select-instrument-button-text {
+    font-size: 10px;
 }

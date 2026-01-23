@@ -34,7 +34,7 @@ export const TrendDynamic = () => {
             ? <Loader/>
             :
             <div className='horizontal-container'>
-                <div className='instrument-list-container border-style'>
+                <div className='instrument-list-container'>
                     <InstrumentList instruments = {instrumentListData.result.instruments} />
                 </div>                
                 <div className='trend-dynamic-container border-style'>
