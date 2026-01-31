@@ -10,6 +10,7 @@ import { rootReducer } from './redux/reducers/rootReducer'
 import { sagaWatcherTrendDynamic } from './redux/sagas/sagaTrendDynamic'
 import { sagaWatcherCompareTrend } from './redux/sagas/sagaCompareTrend'
 import { sagaWatcherInstrument } from './redux/sagas/sagaInstrument'
+import { sagaWatcherFundamentalParameter } from './redux/sagas/sagaFundamentalParameter'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const saga = createSagaMiddleware()
@@ -22,6 +23,7 @@ const store = createStore(rootReducer, undefined, composedEnhancers)
 saga.run(sagaWatcherTrendDynamic)
 saga.run(sagaWatcherCompareTrend)
 saga.run(sagaWatcherInstrument)
+saga.run(sagaWatcherFundamentalParameter)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

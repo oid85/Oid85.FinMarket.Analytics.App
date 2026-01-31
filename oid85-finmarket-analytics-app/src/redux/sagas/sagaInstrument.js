@@ -17,13 +17,13 @@ export function* sagaWatcherInstrument() {
 }
 
 function* sagaWorkerInstrumentList() {
-    let sagaWorkerInstrumentList = yield call(getInstrumentListFromApi)    
-    yield put(fetchInstrumentList(sagaWorkerInstrumentList))
+    let getInstrumentListResult = yield call(getInstrumentListFromApi)    
+    yield put(fetchInstrumentList(getInstrumentListResult))
 }
 
 function* sagaWorkerInstrumentSelect() {
     let instrument = yield select(currentInstrument)    
     yield call(selectInstrumentFromApi, instrument.id)  
-    let sagaWorkerInstrumentList = yield call(getInstrumentListFromApi)    
-    yield put(fetchInstrumentList(sagaWorkerInstrumentList))      
+    let getInstrumentListResult = yield call(getInstrumentListFromApi)    
+    yield put(fetchInstrumentList(getInstrumentListResult))     
 }

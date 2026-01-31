@@ -23,7 +23,8 @@ export const CompareTrendDiagram = ({series}) => {
                         name={s.name} 
                         key={s.name} 
                         stroke={s.color}
-                        strokeWidth={2}                        
+                        strokeWidth={2}
+                        dot={false}                        
                         />
                 ))}
                 <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>

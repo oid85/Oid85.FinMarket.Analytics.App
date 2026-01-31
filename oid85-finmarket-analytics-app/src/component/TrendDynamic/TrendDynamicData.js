@@ -25,38 +25,36 @@ export const TrendDynamicData = ({data}) => {
     return (
         <React.Fragment>          
             <div className='vertical-container'>
-                <div>
-                    {
-                        data.map((item, index) => (
+            {
+                data.map((item, index) => (
+                    <div className='horizontal-container'>
+                        <div className='vertical-container ticker-cell border-style' key = {index}>
+                            <div className='ticker-cell-ticker'>{item.ticker}</div>
+                            <div className='ticker-cell-name'>{item.name}</div>
+                        </div>
+                        <div className='vertical-container'>
                             <div className='horizontal-container'>
-                                <div className='vertical-container ticker-cell border-style' key = {index}>
-                                    <div className='ticker-cell-ticker'>{item.ticker}</div>
-                                    <div className='ticker-cell-name'>{item.name}</div>
-                                </div>                                
-                                <div className='vertical-container'>
-                                    <div className='horizontal-container'>
-                                    {
-                                        item.items.map((item) => (                                                
-                                            <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
-                                                {item.price}
-                                            </div>
-                                        ))
-                                    }     
+                            {
+                                item.items.map((item) => (                                                
+                                    <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
+                                        {item.price}
                                     </div>
-                                    <div className='horizontal-container'>
-                                    {
-                                        item.items.map((item) => (
-                                            <div className='delta-cell border-style' style={{color: GetColorDelta(item.delta) }}>
-                                                {GetValueDelta(item.delta)}
-                                            </div>
-                                        ))
-                                    }     
-                                    </div>      
-                                </div>                                    
+                                ))
+                            }     
                             </div>
-                        ))
-                    }
-                </div>           
+                            <div className='horizontal-container'>
+                            {
+                                item.items.map((item) => (
+                                    <div className='delta-cell border-style' style={{color: GetColorDelta(item.delta) }}>
+                                        {GetValueDelta(item.delta)}
+                                    </div>
+                                ))
+                            }     
+                            </div>      
+                        </div>                                    
+                    </div>
+                ))
+            }           
             </div>
         </React.Fragment>                
     )

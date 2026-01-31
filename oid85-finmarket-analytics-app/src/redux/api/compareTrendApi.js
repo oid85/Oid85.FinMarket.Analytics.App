@@ -3,6 +3,6 @@
 const controller = 'trends'
 
 export const getCompareTrendFromApi = async () => {
-    return sendPostRequest(`${controller}/compare`, {lastDaysCount: 14})
+    return sendPostRequest(`${controller}/compare`, {lastDaysCount: 90})
 }
 

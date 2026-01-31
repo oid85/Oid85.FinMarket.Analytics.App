@@ -3,7 +3,7 @@
 const controller = 'instruments'
 
 export const getInstrumentListFromApi = async () => {
-    return sendPostRequest(`${controller}/list`, {lastDaysCount: 14})
+    return sendPostRequest(`${controller}/list`, {lastDaysCount: 90})
 }
 
 export const selectInstrumentFromApi = async (id) => {
