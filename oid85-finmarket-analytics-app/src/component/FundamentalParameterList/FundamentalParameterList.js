@@ -32,7 +32,7 @@ export const FundamentalParameterList = () => {
                 {
                     fundamentalParameterListData.result.fundamentalParameters.map((fundamentalParameter) => (
                         <div className='horizontal-container'>
-                            <div className='border-style'>
+                            <div className='border-style emitent-cell'>
                                 <div className='ticker-cell'>{fundamentalParameter.ticker}</div>
                                 <div className='name-cell'>{fundamentalParameter.name}</div>
                             </div>                             

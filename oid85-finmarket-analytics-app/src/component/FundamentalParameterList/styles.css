@@ -44,7 +44,12 @@
     font-size: 12px;  
 }
 
+.emitent-cell {
+    height: 146px;
+}
+
 .ticker-cell {
+    height: 25px;
     width: 100px; 
     padding: 1px;
     font-size: 12px; 
