@@ -94,3 +94,27 @@
     width: 70px;
     height: 20px;    
 }
+
+/*Edit modal*/
+.edit-modal-save-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-delete-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-cancel-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-input {
+    margin: 5px;
+    font-size: 10px;
+}

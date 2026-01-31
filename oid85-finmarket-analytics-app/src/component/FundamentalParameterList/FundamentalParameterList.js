@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { sagaFundamentalParameterList, fetchCurrentFundamentalParameter } from '../../redux/actions/fundamentalParameterActions'
+import { sagaFundamentalParameterList, fetchCurrentFundamentalParameter, showEditFundamentalParameterPeModal, showEditFundamentalParameterRevenueModal, showEditFundamentalParameterNetProfitModal } from '../../redux/actions/fundamentalParameterActions'
+import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
+import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
+import {EditFundamentalParameterNetProfitModal} from './EditFundamentalParameterNetProfitModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -55,7 +58,8 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style pe-cell'>{fundamentalParameter.pe2025}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
-
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterPeModal())
                                         }}></button>
                             </div>  
                             <div className=''>
@@ -68,20 +72,22 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style revenue-cell'>{fundamentalParameter.revenue2025}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
-
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterRevenueModal())
                                         }}></button>                               
                             </div>    
                             <div className=''>
-                                <div className='border-style netprofit-cell'>{fundamentalParameter.netprofit2019}</div>
-                                <div className='border-style netprofit-cell'>{fundamentalParameter.netprofit2020}</div>
-                                <div className='border-style netprofit-cell'>{fundamentalParameter.netprofit2021}</div>
-                                <div className='border-style netprofit-cell'>{fundamentalParameter.netprofit2022}</div>
-                                <div className='border-style netprofit-cell'>{fundamentalParameter.netprofit2023}</div>
-                                <div className='border-style netprofit-cell'>{fundamentalParameter.netprofit2024}</div>
-                                <div className='border-style netprofit-cell'>{fundamentalParameter.netprofit2025}</div>
+                                <div className='border-style netprofit-cell'>{fundamentalParameter.netProfit2019}</div>
+                                <div className='border-style netprofit-cell'>{fundamentalParameter.netProfit2020}</div>
+                                <div className='border-style netprofit-cell'>{fundamentalParameter.netProfit2021}</div>
+                                <div className='border-style netprofit-cell'>{fundamentalParameter.netProfit2022}</div>
+                                <div className='border-style netprofit-cell'>{fundamentalParameter.netProfit2023}</div>
+                                <div className='border-style netprofit-cell'>{fundamentalParameter.netProfit2024}</div>
+                                <div className='border-style netprofit-cell'>{fundamentalParameter.netProfit2025}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
-
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterNetProfitModal())
                                         }}></button>                              
                             </div>                                                                                                                                                               
                         </div>
@@ -89,6 +95,9 @@ export const FundamentalParameterList = () => {
                 }
             </div>
         }
+        <EditFundamentalParameterPeModal />
+        <EditFundamentalParameterRevenueModal />
+        <EditFundamentalParameterNetProfitModal />
         </React.Fragment>                
     )
 }
