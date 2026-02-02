@@ -54,6 +54,12 @@
     font-size: 12px;  
 }
 
+.ebitda-header-cell {
+    width: 70px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
 .emitent-cell {
     height: 146px;
 }
@@ -101,6 +107,13 @@
 }
 
 .price-cell {
+    width: 70px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.ebitda-cell {
     width: 70px;
     height: 20px;
     font-size: 12px;

@@ -21,3 +21,9 @@ export const netProfitColor = (value) => {
         
     return CONSTANTS.COLOR_WHITE
 }
+
+export const ebitdaColor = (value) => {
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+        
+    return CONSTANTS.COLOR_WHITE
+}

@@ -4,16 +4,16 @@ import Modal from 'react-modal';
 import { 
     sagaEditFundamentalParameter,
     fetchCurrentFundamentalParameter,
-    hideEditFundamentalParameterNetProfitModal
+    hideEditFundamentalParameterEbitdaModal
 } from '../../redux/actions/fundamentalParameterActions'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 
-export const EditFundamentalParameterNetProfitModal = () => {
+export const EditFundamentalParameterEbitdaModal = () => {
     
     const dispatch = useDispatch()
     const currentFundamentalParameter = useSelector(state => state.fundamentalParameter.currentFundamentalParameter)
-    const editFundamentalParameterNetProfitModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterNetProfitModalIsOpened)
+    const editFundamentalParameterEbitdaModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterEbitdaModalIsOpened)
 
     const customStyles = {
         content: {
@@ -30,76 +30,76 @@ export const EditFundamentalParameterNetProfitModal = () => {
         <React.Fragment>
             <div>                
                 <Modal
-                    isOpen={editFundamentalParameterNetProfitModalIsOpened}
+                    isOpen={editFundamentalParameterEbitdaModalIsOpened}
                     style={customStyles}>
-                    <h6>Чистая прибыль</h6>
+                    <h6>EBITDA</h6>
                     <form>
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.netProfit2019} 
+                            defaultValue={currentFundamentalParameter.ebitda2019} 
                             placeholder='2019 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netProfit2019: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2019: event.target.value})) 
                                 }} />
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.netProfit2020} 
+                            defaultValue={currentFundamentalParameter.ebitda2020} 
                             placeholder='2020 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netProfit2020: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2020: event.target.value})) 
                                 }} />     
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.netProfit2021} 
+                            defaultValue={currentFundamentalParameter.ebitda2021} 
                             placeholder='2021 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netProfit2021: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2021: event.target.value})) 
                                 }} />   
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.netProfit2022} 
+                            defaultValue={currentFundamentalParameter.ebitda2022} 
                             placeholder='2022 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netProfit2022: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2022: event.target.value})) 
                                 }} />    
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.netProfit2023} 
+                            defaultValue={currentFundamentalParameter.ebitda2023} 
                             placeholder='2023 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netProfit2023: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2023: event.target.value})) 
                                 }} />  
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.netProfit2024} 
+                            defaultValue={currentFundamentalParameter.ebitda2024} 
                             placeholder='2024 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netProfit2024: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2024: event.target.value})) 
                                 }} />        
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.netProfit2025} 
+                            defaultValue={currentFundamentalParameter.ebitda2025} 
                             placeholder='2025 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netProfit2025: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2025: event.target.value})) 
                                 }} />                                                                                                                                                                          
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {
                                     dispatch(sagaEditFundamentalParameter())
-                                    dispatch(hideEditFundamentalParameterNetProfitModal())
+                                    dispatch(hideEditFundamentalParameterEbitdaModal())
                                     }}>Сохранить</button>                                   
                         <button 
                             className='btn btn-outline-primary edit-modal-cancel-button' 
                             onClick={ () => { 
-                                dispatch(hideEditFundamentalParameterNetProfitModal()) 
+                                dispatch(hideEditFundamentalParameterEbitdaModal()) 
                                 }}>Закрыть</button>                        
                     </form>
                 </Modal>

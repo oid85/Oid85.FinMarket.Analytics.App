@@ -8,7 +8,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL
 } from '../types/fundamentalParameterTypes'
 
 
@@ -71,5 +73,17 @@ export const showEditFundamentalParameterNetProfitModal = () => {
 export const hideEditFundamentalParameterNetProfitModal = () => {
     return {
         type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL
+    }
+}
+
+export const showEditFundamentalParameterEbitdaModal = () => {
+    return {
+        type: SHOW_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL
+    }
+}
+
+export const hideEditFundamentalParameterEbitdaModal = () => {
+    return {
+        type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL
     }
 }
