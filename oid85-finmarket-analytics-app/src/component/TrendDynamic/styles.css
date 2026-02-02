@@ -35,17 +35,11 @@
     width: 145px;  
 }
 
-.ticker-cell {   
-    height: 41px;
-    width: 145px;  
-    padding: 2px;   
-}
-
-.ticker-cell-ticker { 
+.instrument-ticker-cell { 
     font-size: 14px;   
 }
 
-.ticker-cell-name {
+.instrument-name-cell {
     font-size: 10px;  
 }
 

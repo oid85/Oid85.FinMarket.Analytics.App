@@ -26,11 +26,11 @@ export const TrendDynamicData = ({data}) => {
         <React.Fragment>          
             <div className='vertical-container'>
             {
-                data.map((item, index) => (
+                data.map((item) => (
                     <div className='horizontal-container'>
-                        <div className='vertical-container ticker-cell border-style' key = {index}>
-                            <div className='ticker-cell-ticker'>{item.ticker}</div>
-                            <div className='ticker-cell-name'>{item.name}</div>
+                        <div className='vertical-container border-style'>
+                            <div className='instrument-ticker-cell'>{item.ticker}</div>
+                            <div className='instrument-name-cell'>{item.name}</div>
                         </div>
                         <div className='vertical-container'>
                             <div className='horizontal-container'>
