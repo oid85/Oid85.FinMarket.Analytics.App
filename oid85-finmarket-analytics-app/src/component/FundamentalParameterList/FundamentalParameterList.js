@@ -7,13 +7,15 @@ import {
     showEditFundamentalParameterRevenueModal, 
     showEditFundamentalParameterNetProfitModal,
     showEditFundamentalParameterEbitdaModal,
-    showEditFundamentalParameterEvModal 
+    showEditFundamentalParameterEvModal,
+    showEditFundamentalParameterPbvModal 
 } from '../../redux/actions/fundamentalParameterActions'
 import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
 import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
 import {EditFundamentalParameterNetProfitModal} from './EditFundamentalParameterNetProfitModal'
 import {EditFundamentalParameterEbitdaModal} from './EditFundamentalParameterEbitdaModal'
 import {EditFundamentalParameterEvModal} from './EditFundamentalParameterEvModal'
+import {EditFundamentalParameterPbvModal} from './EditFundamentalParameterPbvModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -22,7 +24,8 @@ import {
     peColor, 
     revenueColor, 
     ebitdaColor,
-    evColor 
+    evColor,
+    pbvColor 
 } from '../../colorHelper'
 
 export const FundamentalParameterList = () => {
@@ -46,6 +49,7 @@ export const FundamentalParameterList = () => {
                     <div className='ticker-header-cell border-style'></div>
                     <div className='year-header-cell border-style'>Год</div>
                     <div className='pe-header-cell border-style'>P/E</div>
+                    <div className='pbv-header-cell border-style'>P/BV</div>
                     <div className='ev-header-cell border-style'>EV, млрд. руб.</div>
                     <div className='ebitda-header-cell border-style'>EBITDA, млрд. руб.</div>
                     <div className='revenue-header-cell border-style'>Выручка, млрд. руб.</div>
@@ -84,6 +88,21 @@ export const FundamentalParameterList = () => {
                                         dispatch(showEditFundamentalParameterPeModal())
                                         }}><div className='edit-button-text'>P/E</div></button>
                             </div>
+                            <div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2019)}}>{fundamentalParameter.pbv2019}</div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2020)}}>{fundamentalParameter.pbv2020}</div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2021)}}>{fundamentalParameter.pbv2021}</div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2022)}}>{fundamentalParameter.pbv2022}</div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2023)}}>{fundamentalParameter.pbv2023}</div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2024)}}>{fundamentalParameter.pbv2024}</div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2025)}}>{fundamentalParameter.pbv2025}</div>
+                                <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2026)}}>{fundamentalParameter.pbv2026}</div>
+                                <button className='btn btn-outline-dark edit-button'
+                                    onClick={() => {
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterPbvModal())
+                                        }}><div className='edit-button-text'>P/BV</div></button>
+                            </div>                            
                             <div>
                                 <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2019)}}>{fundamentalParameter.ev2019}</div>
                                 <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2020)}}>{fundamentalParameter.ev2020}</div>
@@ -160,6 +179,7 @@ export const FundamentalParameterList = () => {
             </div>
         }
         <EditFundamentalParameterPeModal />
+        <EditFundamentalParameterPbvModal />
         <EditFundamentalParameterEvModal />
         <EditFundamentalParameterRevenueModal />
         <EditFundamentalParameterNetProfitModal />

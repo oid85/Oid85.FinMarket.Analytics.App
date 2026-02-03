@@ -12,7 +12,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL
 } from '../types/fundamentalParameterTypes'
 
 
@@ -99,5 +101,17 @@ export const showEditFundamentalParameterEvModal = () => {
 export const hideEditFundamentalParameterEvModal = () => {
     return {
         type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL
+    }
+}
+
+export const showEditFundamentalParameterPbvModal = () => {
+    return {
+        type: SHOW_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL
+    }
+}
+
+export const hideEditFundamentalParameterPbvModal = () => {
+    return {
+        type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL
     }
 }
