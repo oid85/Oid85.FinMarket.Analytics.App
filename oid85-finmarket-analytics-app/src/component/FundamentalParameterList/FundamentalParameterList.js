@@ -67,6 +67,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style year-cell'>2023</div>
                                 <div className='border-style year-cell'>2024</div>
                                 <div className='border-style year-cell'>2025</div>
+                                <div className='border-style year-cell'>2026</div>
                             </div>     
                             <div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2019)}}>{fundamentalParameter.pe2019}</div>
@@ -76,6 +77,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2023)}}>{fundamentalParameter.pe2023}</div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2024)}}>{fundamentalParameter.pe2024}</div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2025)}}>{fundamentalParameter.pe2025}</div>
+                                <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2026)}}>{fundamentalParameter.pe2026}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
@@ -90,6 +92,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2023)}}>{fundamentalParameter.ev2023}</div>
                                 <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2024)}}>{fundamentalParameter.ev2024}</div>
                                 <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2025)}}>{fundamentalParameter.ev2025}</div>
+                                <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2026)}}>{fundamentalParameter.ev2026}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
@@ -104,6 +107,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style ebitda-cell' style={{backgroundColor: ebitdaColor(fundamentalParameter.ebitda2023)}}>{fundamentalParameter.ebitda2023}</div>
                                 <div className='border-style ebitda-cell' style={{backgroundColor: ebitdaColor(fundamentalParameter.ebitda2024)}}>{fundamentalParameter.ebitda2024}</div>
                                 <div className='border-style ebitda-cell' style={{backgroundColor: ebitdaColor(fundamentalParameter.ebitda2025)}}>{fundamentalParameter.ebitda2025}</div>
+                                <div className='border-style ebitda-cell' style={{backgroundColor: ebitdaColor(fundamentalParameter.ebitda2026)}}>{fundamentalParameter.ebitda2026}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
@@ -118,6 +122,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style revenue-cell' style={{backgroundColor: revenueColor(fundamentalParameter.revenue2023)}}>{fundamentalParameter.revenue2023}</div>
                                 <div className='border-style revenue-cell' style={{backgroundColor: revenueColor(fundamentalParameter.revenue2024)}}>{fundamentalParameter.revenue2024}</div>
                                 <div className='border-style revenue-cell' style={{backgroundColor: revenueColor(fundamentalParameter.revenue2025)}}>{fundamentalParameter.revenue2025}</div>
+                                <div className='border-style revenue-cell' style={{backgroundColor: revenueColor(fundamentalParameter.revenue2026)}}>{fundamentalParameter.revenue2026}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
@@ -132,6 +137,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style netprofit-cell' style={{backgroundColor: netProfitColor(fundamentalParameter.netProfit2023)}}>{fundamentalParameter.netProfit2023}</div>
                                 <div className='border-style netprofit-cell' style={{backgroundColor: netProfitColor(fundamentalParameter.netProfit2024)}}>{fundamentalParameter.netProfit2024}</div>
                                 <div className='border-style netprofit-cell' style={{backgroundColor: netProfitColor(fundamentalParameter.netProfit2025)}}>{fundamentalParameter.netProfit2025}</div>
+                                <div className='border-style netprofit-cell' style={{backgroundColor: netProfitColor(fundamentalParameter.netProfit2026)}}>{fundamentalParameter.netProfit2026}</div>
                                 <button className='btn btn-outline-dark edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
@@ -145,7 +151,8 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style price-cell'>{fundamentalParameter.price2022}</div>
                                 <div className='border-style price-cell'>{fundamentalParameter.price2023}</div>
                                 <div className='border-style price-cell'>{fundamentalParameter.price2024}</div>
-                                <div className='border-style price-cell'>{fundamentalParameter.price2025}</div>                              
+                                <div className='border-style price-cell'>{fundamentalParameter.price2025}</div>
+                                <div className='border-style price-cell'>{fundamentalParameter.price2026}</div>
                             </div>                            
                         </div>
                     ))
