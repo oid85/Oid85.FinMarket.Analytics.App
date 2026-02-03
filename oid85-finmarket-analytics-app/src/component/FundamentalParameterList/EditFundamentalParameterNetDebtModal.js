@@ -4,16 +4,16 @@ import Modal from 'react-modal';
 import { 
     sagaEditFundamentalParameter,
     fetchCurrentFundamentalParameter,
-    hideEditFundamentalParameterRevenueModal
+    hideEditFundamentalParameterNetDebtModal
 } from '../../redux/actions/fundamentalParameterActions'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 
-export const EditFundamentalParameterRevenueModal = () => {
+export const EditFundamentalParameterNetDebtModal = () => {
     
     const dispatch = useDispatch()
     const currentFundamentalParameter = useSelector(state => state.fundamentalParameter.currentFundamentalParameter)
-    const editFundamentalParameterRevenueModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterRevenueModalIsOpened)
+    const editFundamentalParameterNetDebtModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterNetDebtModalIsOpened)
 
     const customStyles = {
         content: {
@@ -30,84 +30,84 @@ export const EditFundamentalParameterRevenueModal = () => {
         <React.Fragment>
             <div>                
                 <Modal
-                    isOpen={editFundamentalParameterRevenueModalIsOpened}
+                    isOpen={editFundamentalParameterNetDebtModalIsOpened}
                     style={customStyles}>
-                    <h6>Выручка</h6>
+                    <h6>Чистый долг</h6>
                     <form>
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2019} 
+                            defaultValue={currentFundamentalParameter.netDebt2019} 
                             placeholder='2019 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2019: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2019: event.target.value})) 
                                 }} />
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2020} 
+                            defaultValue={currentFundamentalParameter.netDebt2020} 
                             placeholder='2020 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2020: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2020: event.target.value})) 
                                 }} />     
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2021} 
+                            defaultValue={currentFundamentalParameter.netDebt2021} 
                             placeholder='2021 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2021: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2021: event.target.value})) 
                                 }} />   
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2022} 
+                            defaultValue={currentFundamentalParameter.netDebt2022} 
                             placeholder='2022 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2022: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2022: event.target.value})) 
                                 }} />    
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2023} 
+                            defaultValue={currentFundamentalParameter.netDebt2023} 
                             placeholder='2023 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2023: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2023: event.target.value})) 
                                 }} />  
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2024} 
+                            defaultValue={currentFundamentalParameter.netDebt2024} 
                             placeholder='2024 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2024: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2024: event.target.value})) 
                                 }} />        
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2025} 
+                            defaultValue={currentFundamentalParameter.netDebt2025} 
                             placeholder='2025 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenuee2025: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2025: event.target.value})) 
                                 }} />  
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2026} 
+                            defaultValue={currentFundamentalParameter.netDebt2026} 
                             placeholder='2026 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenuee2026: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, netDebt2026: event.target.value})) 
                                 }} />
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {
                                     dispatch(sagaEditFundamentalParameter())
-                                    dispatch(hideEditFundamentalParameterRevenueModal())
+                                    dispatch(hideEditFundamentalParameterNetDebtModal())
                                     }}>Сохранить</button>                                   
                         <button 
                             className='btn btn-outline-primary edit-modal-cancel-button' 
                             onClick={ () => { 
-                                dispatch(hideEditFundamentalParameterRevenueModal()) 
+                                dispatch(hideEditFundamentalParameterNetDebtModal()) 
                                 }}>Закрыть</button>                        
                     </form>
                 </Modal>

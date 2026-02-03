@@ -4,16 +4,16 @@ import Modal from 'react-modal';
 import { 
     sagaEditFundamentalParameter,
     fetchCurrentFundamentalParameter,
-    hideEditFundamentalParameterRevenueModal
+    hideEditFundamentalParameterEvModal
 } from '../../redux/actions/fundamentalParameterActions'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 
-export const EditFundamentalParameterRevenueModal = () => {
+export const EditFundamentalParameterEvModal = () => {
     
     const dispatch = useDispatch()
     const currentFundamentalParameter = useSelector(state => state.fundamentalParameter.currentFundamentalParameter)
-    const editFundamentalParameterRevenueModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterRevenueModalIsOpened)
+    const editFundamentalParameterEvModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterEvModalIsOpened)
 
     const customStyles = {
         content: {
@@ -30,84 +30,84 @@ export const EditFundamentalParameterRevenueModal = () => {
         <React.Fragment>
             <div>                
                 <Modal
-                    isOpen={editFundamentalParameterRevenueModalIsOpened}
+                    isOpen={editFundamentalParameterEvModalIsOpened}
                     style={customStyles}>
-                    <h6>Выручка</h6>
+                    <h6>EV</h6>
                     <form>
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2019} 
+                            defaultValue={currentFundamentalParameter.ev2019} 
                             placeholder='2019 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2019: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2019: event.target.value})) 
                                 }} />
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2020} 
+                            defaultValue={currentFundamentalParameter.ev2020} 
                             placeholder='2020 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2020: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2020: event.target.value})) 
                                 }} />     
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2021} 
+                            defaultValue={currentFundamentalParameter.ev2021} 
                             placeholder='2021 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2021: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2021: event.target.value})) 
                                 }} />   
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2022} 
+                            defaultValue={currentFundamentalParameter.ev2022} 
                             placeholder='2022 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2022: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2022: event.target.value})) 
                                 }} />    
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2023} 
+                            defaultValue={currentFundamentalParameter.ev2023} 
                             placeholder='2023 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2023: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2023: event.target.value})) 
                                 }} />  
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2024} 
+                            defaultValue={currentFundamentalParameter.ev2024} 
                             placeholder='2024 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenue2024: event.target.value})) 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2024: event.target.value})) 
                                 }} />        
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2025} 
+                            defaultValue={currentFundamentalParameter.ev2025} 
                             placeholder='2025 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenuee2025: event.target.value})) 
-                                }} />  
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2025: event.target.value})) 
+                                }} />     
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentFundamentalParameter.revenue2026} 
+                            defaultValue={currentFundamentalParameter.ev2026} 
                             placeholder='2026 г.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, revenuee2026: event.target.value})) 
-                                }} />
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2026: event.target.value})) 
+                                }} />								
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {
                                     dispatch(sagaEditFundamentalParameter())
-                                    dispatch(hideEditFundamentalParameterRevenueModal())
+                                    dispatch(hideEditFundamentalParameterEvModal())
                                     }}>Сохранить</button>                                   
                         <button 
                             className='btn btn-outline-primary edit-modal-cancel-button' 
                             onClick={ () => { 
-                                dispatch(hideEditFundamentalParameterRevenueModal()) 
+                                dispatch(hideEditFundamentalParameterEvModal()) 
                                 }}>Закрыть</button>                        
                     </form>
                 </Modal>

@@ -8,7 +8,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL
 } from '../types/fundamentalParameterTypes'
 
 const initialState = {
@@ -17,7 +19,8 @@ const initialState = {
     editFundamentalParameterPeModalIsOpened: false,
     editFundamentalParameterRevenueModalIsOpened: false,
     editFundamentalParameterNetProfitModalIsOpened: false,
-    editFundamentalParameterEbitdaModalIsOpened: false
+    editFundamentalParameterEbitdaModalIsOpened: false,
+    editFundamentalParameterEvModalIsOpened: false
 }
 
 export const fundamentalParameterReducer = (state = initialState, action) => {
@@ -52,6 +55,12 @@ export const fundamentalParameterReducer = (state = initialState, action) => {
         
         case HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL:
             return {...state, editFundamentalParameterEbitdaModalIsOpened: false}
+
+        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL:
+            return {...state, editFundamentalParameterEvModalIsOpened: true}
+        
+        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL:
+            return {...state, editFundamentalParameterEvModalIsOpened: false}
 
         default: return state
     }

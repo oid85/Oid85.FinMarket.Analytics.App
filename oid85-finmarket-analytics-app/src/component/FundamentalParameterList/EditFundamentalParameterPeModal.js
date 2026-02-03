@@ -89,7 +89,15 @@ export const EditFundamentalParameterPeModal = () => {
                             placeholder='2025 г.' 
                             onChange={ (event) => { 
                                 dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, pe2025: event.target.value})) 
-                                }} />                                                                                                                                                                          
+                                }} />      
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.pe2026} 
+                            placeholder='2026 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, pe2026: event.target.value})) 
+                                }} />
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {
