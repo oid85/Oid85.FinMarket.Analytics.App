@@ -39,3 +39,9 @@ export const pbvColor = (value) => {
         
     return CONSTANTS.COLOR_WHITE
 }
+
+export const roaColor = (value) => {
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+        
+    return CONSTANTS.COLOR_WHITE
+}

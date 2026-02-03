@@ -14,7 +14,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL
 } from '../types/fundamentalParameterTypes'
 
 
@@ -113,5 +115,17 @@ export const showEditFundamentalParameterPbvModal = () => {
 export const hideEditFundamentalParameterPbvModal = () => {
     return {
         type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL
+    }
+}
+
+export const showEditFundamentalParameterRoaModal = () => {
+    return {
+        type: SHOW_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL
+    }
+}
+
+export const hideEditFundamentalParameterRoaModal = () => {
+    return {
+        type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL
     }
 }

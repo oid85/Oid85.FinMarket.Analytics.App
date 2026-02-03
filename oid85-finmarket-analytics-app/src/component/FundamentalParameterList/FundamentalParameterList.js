@@ -8,7 +8,8 @@ import {
     showEditFundamentalParameterNetProfitModal,
     showEditFundamentalParameterEbitdaModal,
     showEditFundamentalParameterEvModal,
-    showEditFundamentalParameterPbvModal 
+    showEditFundamentalParameterPbvModal,
+    showEditFundamentalParameterRoaModal 
 } from '../../redux/actions/fundamentalParameterActions'
 import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
 import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
@@ -16,6 +17,7 @@ import {EditFundamentalParameterNetProfitModal} from './EditFundamentalParameter
 import {EditFundamentalParameterEbitdaModal} from './EditFundamentalParameterEbitdaModal'
 import {EditFundamentalParameterEvModal} from './EditFundamentalParameterEvModal'
 import {EditFundamentalParameterPbvModal} from './EditFundamentalParameterPbvModal'
+import {EditFundamentalParameterRoaModal} from './EditFundamentalParameterRoaModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -25,7 +27,8 @@ import {
     revenueColor, 
     ebitdaColor,
     evColor,
-    pbvColor 
+    pbvColor,
+    roaColor 
 } from '../../colorHelper'
 
 export const FundamentalParameterList = () => {
@@ -50,6 +53,7 @@ export const FundamentalParameterList = () => {
                     <div className='year-header-cell border-style'>Год</div>
                     <div className='pe-header-cell border-style'>P/E</div>
                     <div className='pbv-header-cell border-style'>P/BV</div>
+                    <div className='roa-header-cell border-style'>ROA</div>
                     <div className='ev-header-cell border-style'>EV, млрд. руб.</div>
                     <div className='ebitda-header-cell border-style'>EBITDA, млрд. руб.</div>
                     <div className='revenue-header-cell border-style'>Выручка, млрд. руб.</div>
@@ -102,7 +106,22 @@ export const FundamentalParameterList = () => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
                                         dispatch(showEditFundamentalParameterPbvModal())
                                         }}><div className='edit-button-text'>P/BV</div></button>
-                            </div>                            
+                            </div>    
+                            <div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2019)}}>{fundamentalParameter.roa2019}</div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2020)}}>{fundamentalParameter.roa2020}</div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2021)}}>{fundamentalParameter.roa2021}</div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2022)}}>{fundamentalParameter.roa2022}</div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2023)}}>{fundamentalParameter.roa2023}</div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2024)}}>{fundamentalParameter.roa2024}</div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2025)}}>{fundamentalParameter.roa2025}</div>
+                                <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2026)}}>{fundamentalParameter.roa2026}</div>
+                                <button className='btn btn-outline-dark edit-button'
+                                    onClick={() => {
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterRoaModal())
+                                        }}><div className='edit-button-text'>ROA</div></button>
+                            </div>
                             <div>
                                 <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2019)}}>{fundamentalParameter.ev2019}</div>
                                 <div className='border-style ev-cell' style={{backgroundColor: evColor(fundamentalParameter.ev2020)}}>{fundamentalParameter.ev2020}</div>
@@ -180,6 +199,7 @@ export const FundamentalParameterList = () => {
         }
         <EditFundamentalParameterPeModal />
         <EditFundamentalParameterPbvModal />
+        <EditFundamentalParameterRoaModal />
         <EditFundamentalParameterEvModal />
         <EditFundamentalParameterRevenueModal />
         <EditFundamentalParameterNetProfitModal />

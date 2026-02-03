@@ -7,7 +7,8 @@ export const getFundamentalParameterListFromApi = async () => {
 }
 
 export const editFundamentalParameterFromApi = async (
-    ticker, 
+    ticker,
+     
     pe2019, 
     pe2020, 
     pe2021, 
@@ -16,6 +17,7 @@ export const editFundamentalParameterFromApi = async (
     pe2024, 
     pe2025, 
     pe2026, 
+
     pbv2019, 
     pbv2020, 
     pbv2021, 
@@ -23,7 +25,17 @@ export const editFundamentalParameterFromApi = async (
     pbv2023, 
     pbv2024, 
     pbv2025, 
-    pbv2026,    
+    pbv2026,  
+
+    roa2019, 
+    roa2020, 
+    roa2021, 
+    roa2022, 
+    roa2023, 
+    roa2024, 
+    roa2025, 
+    roa2026,   
+
     ev2019, 
     ev2020, 
     ev2021, 
@@ -31,7 +43,8 @@ export const editFundamentalParameterFromApi = async (
     ev2023, 
     ev2024, 
     ev2025,   
-    ev2026,     
+    ev2026,    
+
     ebitda2019, 
     ebitda2020, 
     ebitda2021, 
@@ -39,7 +52,8 @@ export const editFundamentalParameterFromApi = async (
     ebitda2023, 
     ebitda2024, 
     ebitda2025,
-    ebitda2026,     
+    ebitda2026,   
+
     revenue2019, 
     revenue2020, 
     revenue2021, 
@@ -48,6 +62,7 @@ export const editFundamentalParameterFromApi = async (
     revenue2024, 
     revenue2025,
     revenue2026, 
+
     netProfit2019, 
     netProfit2020, 
     netProfit2021, 
@@ -59,6 +74,7 @@ export const editFundamentalParameterFromApi = async (
 ) => {
     return sendPostRequest(`${controller}/create-or-update`, {
         ticker, 
+
         pe2019, 
         pe2020, 
         pe2021, 
@@ -67,6 +83,7 @@ export const editFundamentalParameterFromApi = async (
         pe2024, 
         pe2025, 
         pe2026,
+
         pbv2019, 
         pbv2020, 
         pbv2021, 
@@ -75,6 +92,16 @@ export const editFundamentalParameterFromApi = async (
         pbv2024, 
         pbv2025, 
         pbv2026,
+
+        roa2019, 
+        roa2020, 
+        roa2021, 
+        roa2022, 
+        roa2023, 
+        roa2024, 
+        roa2025, 
+        roa2026, 
+
         ev2019, 
         ev2020, 
         ev2021, 
@@ -82,7 +109,8 @@ export const editFundamentalParameterFromApi = async (
         ev2023, 
         ev2024, 
         ev2025,   
-        ev2026,       
+        ev2026,  
+
         ebitda2019, 
         ebitda2020, 
         ebitda2021, 
@@ -90,7 +118,8 @@ export const editFundamentalParameterFromApi = async (
         ebitda2023, 
         ebitda2024, 
         ebitda2025, 
-        ebitda2026,        
+        ebitda2026,   
+
         revenue2019, 
         revenue2020, 
         revenue2021, 
@@ -99,6 +128,7 @@ export const editFundamentalParameterFromApi = async (
         revenue2024, 
         revenue2025,
         revenue2026, 
+
         netProfit2019, 
         netProfit2020, 
         netProfit2021, 
