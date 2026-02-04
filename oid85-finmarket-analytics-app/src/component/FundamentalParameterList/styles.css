@@ -84,6 +84,18 @@
     font-size: 12px;  
 }
 
+.dividend-yield-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
+.marketcap-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
 .emitent-cell {
     height: 167px;
 }
@@ -166,6 +178,20 @@
 }
 
 .netdebt-cell {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.marketcap-cell {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.dividend-yield-cell {
     width: 80px;
     height: 20px;
     font-size: 12px;

@@ -41,3 +41,11 @@ export const roaColor = (value) => {
 export const netDebtColor = (value) => { 
     return CONSTANTS.COLOR_WHITE
 }
+
+export const marketCapColor = (value) => { 
+    return CONSTANTS.COLOR_WHITE
+}
+
+export const dividendYieldColor = (value) => { 
+    return CONSTANTS.COLOR_WHITE
+}
