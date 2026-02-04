@@ -49,3 +49,15 @@ export const marketCapColor = (value) => {
 export const dividendYieldColor = (value) => { 
     return CONSTANTS.COLOR_WHITE
 }
+
+export const evEbitdaColor = (value) => { 
+    return CONSTANTS.COLOR_WHITE
+}
+
+export const netDebtEbitdaColor = (value) => { 
+    return CONSTANTS.COLOR_WHITE
+}
+
+export const ebitdaRevenueColor = (value) => { 
+    return CONSTANTS.COLOR_WHITE
+}

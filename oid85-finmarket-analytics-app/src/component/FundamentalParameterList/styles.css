@@ -96,6 +96,24 @@
     font-size: 12px;  
 }
 
+.ev-ebitda-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
+.netdebt-ebitda-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
+.ebitda-revenue-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
 .emitent-cell {
     height: 167px;
 }
@@ -192,6 +210,27 @@
 }
 
 .dividend-yield-cell {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.ev-ebitda-cell {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.netdebt-ebitda-cell {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.ebitda-revenue-cell {
     width: 80px;
     height: 20px;
     font-size: 12px;

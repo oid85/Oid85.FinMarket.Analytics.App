@@ -37,7 +37,10 @@ import {
     roaColor,
     netDebtColor,
     marketCapColor,
-    dividendYieldColor
+    dividendYieldColor,
+    evEbitdaColor,
+    netDebtEbitdaColor,
+    ebitdaRevenueColor
 } from '../../colorHelper'
 
 export const FundamentalParameterList = () => {
@@ -58,12 +61,15 @@ export const FundamentalParameterList = () => {
             :
             <div className='fundamental-parameter-container border-style'>
                 <div className='horizontal-container'>
-                    <div className='ticker-header-cell border-style'></div>
+                    <div className='ticker-header-cell border-style'>Компания</div>
                     <div className='year-header-cell border-style'>Год</div>
-                    <div className='pe-header-cell border-style'>P/E</div>
-                    <div className='pbv-header-cell border-style'>P/BV</div>
+                    <div className='pe-header-cell border-style'>P / E</div>
+                    <div className='pbv-header-cell border-style'>P / BV</div>
                     <div className='roa-header-cell border-style'>ROA</div>
-                    <div className='marketcap-header-cell border-style'>Капитализация, млрд. руб.</div>
+                    <div className='ev-ebitda-header-cell border-style'>EV/EBITDA</div>
+                    <div className='netdebt-ebitda-header-cell border-style'>NetDebt / EBITDA</div>
+                    <div className='ebitda-revenue-header-cell border-style'>EBITDA / Выручка</div>
+                    <div className='marketcap-header-cell border-style'>Капит-ция, млрд. руб.</div>
                     <div className='ev-header-cell border-style'>EV, млрд. руб.</div>
                     <div className='ebitda-header-cell border-style'>EBITDA, млрд. руб.</div>
                     <div className='netdebt-header-cell border-style'>Чистый долг, млрд. руб.</div>
@@ -134,6 +140,36 @@ export const FundamentalParameterList = () => {
                                         dispatch(showEditFundamentalParameterRoaModal())
                                         }}><div className='edit-button-text'>ROA</div></button>
                             </div>
+                            <div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2019)}}>{fundamentalParameter.evEbitda2019}</div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2020)}}>{fundamentalParameter.evEbitda2020}</div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2021)}}>{fundamentalParameter.evEbitda2021}</div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2022)}}>{fundamentalParameter.evEbitda2022}</div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2023)}}>{fundamentalParameter.evEbitda2023}</div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2024)}}>{fundamentalParameter.evEbitda2024}</div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2025)}}>{fundamentalParameter.evEbitda2025}</div>
+                                <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2026)}}>{fundamentalParameter.evEbitda2026}</div>
+                            </div>
+                            <div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2019)}}>{fundamentalParameter.netDebtEbitda2019}</div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2020)}}>{fundamentalParameter.netDebtEbitda2020}</div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2021)}}>{fundamentalParameter.netDebtEbitda2021}</div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2022)}}>{fundamentalParameter.netDebtEbitda2022}</div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2023)}}>{fundamentalParameter.netDebtEbitda2023}</div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2024)}}>{fundamentalParameter.netDebtEbitda2024}</div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2025)}}>{fundamentalParameter.netDebtEbitda2025}</div>
+                                <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2026)}}>{fundamentalParameter.netDebtEbitda2026}</div>
+                            </div>
+                            <div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2019)}}>{fundamentalParameter.ebitdaRevenue2019}</div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2020)}}>{fundamentalParameter.ebitdaRevenue2020}</div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2021)}}>{fundamentalParameter.ebitdaRevenue2021}</div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2022)}}>{fundamentalParameter.ebitdaRevenue2022}</div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2023)}}>{fundamentalParameter.ebitdaRevenue2023}</div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2024)}}>{fundamentalParameter.ebitdaRevenue2024}</div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2025)}}>{fundamentalParameter.ebitdaRevenue2025}</div>
+                                <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2026)}}>{fundamentalParameter.ebitdaRevenue2026}</div>
+                            </div>                                                                                    
                             <div>
                                 <div className='border-style marketcap-cell' style={{backgroundColor: marketCapColor(fundamentalParameter.marketCap2019)}}>{fundamentalParameter.marketCap2019}</div>
                                 <div className='border-style marketcap-cell' style={{backgroundColor: marketCapColor(fundamentalParameter.marketCap2020)}}>{fundamentalParameter.marketCap2020}</div>
