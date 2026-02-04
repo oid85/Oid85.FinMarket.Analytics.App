@@ -65,7 +65,7 @@ export const FundamentalParameterList = () => {
                     <div className='year-header-cell border-style'>Год</div>
                     <div className='pe-header-cell border-style'>P / E</div>
                     <div className='pbv-header-cell border-style'>P / BV</div>
-                    <div className='roa-header-cell border-style'>ROA</div>
+                    <div className='roa-header-cell border-style'>ROA, %</div>
                     <div className='ev-ebitda-header-cell border-style'>EV/EBITDA</div>
                     <div className='netdebt-ebitda-header-cell border-style'>NetDebt / EBITDA</div>
                     <div className='ebitda-revenue-header-cell border-style'>EBITDA / Выручка</div>
