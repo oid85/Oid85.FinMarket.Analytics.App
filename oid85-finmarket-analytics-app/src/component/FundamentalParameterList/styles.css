@@ -66,6 +66,12 @@
     font-size: 12px;  
 }
 
+.netdebt-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
 .ebitda-header-cell {
     width: 80px;
     padding: 1px;
@@ -153,6 +159,13 @@
 }
 
 .ev-cell {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.netdebt-cell {
     width: 80px;
     height: 20px;
     font-size: 12px;

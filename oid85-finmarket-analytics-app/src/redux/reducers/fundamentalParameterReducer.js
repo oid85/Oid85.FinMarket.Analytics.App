@@ -14,7 +14,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL
 } from '../types/fundamentalParameterTypes'
 
 const initialState = {
@@ -26,7 +28,8 @@ const initialState = {
     editFundamentalParameterEbitdaModalIsOpened: false,
     editFundamentalParameterEvModalIsOpened: false,
     editFundamentalParameterPbvModalIsOpened: false,
-    editFundamentalParameterRoaModalIsOpened: false
+    editFundamentalParameterRoaModalIsOpened: false,
+    editFundamentalParameterNetDebtModalIsOpened: false
 }
 
 export const fundamentalParameterReducer = (state = initialState, action) => {
@@ -79,6 +82,12 @@ export const fundamentalParameterReducer = (state = initialState, action) => {
         
         case HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL:
             return {...state, editFundamentalParameterRoaModalIsOpened: false}
+
+        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL:
+            return {...state, editFundamentalParameterNetDebtModalIsOpened: true}
+        
+        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL:
+            return {...state, editFundamentalParameterNetDebtModalIsOpened: false}
 
         default: return state
     }

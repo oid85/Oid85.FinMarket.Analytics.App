@@ -71,6 +71,15 @@ function* sagaWorkerEditFundamentalParameter() {
         fundamentalParameter.ebitda2025,
         fundamentalParameter.ebitda2026, 
 
+        fundamentalParameter.netDebt2019,
+        fundamentalParameter.netDebt2020,
+        fundamentalParameter.netDebt2021,
+        fundamentalParameter.netDebt2022,
+        fundamentalParameter.netDebt2023,
+        fundamentalParameter.netDebt2024,
+        fundamentalParameter.netDebt2025,
+        fundamentalParameter.netDebt2026,        
+
         fundamentalParameter.revenue2019,
         fundamentalParameter.revenue2020,
         fundamentalParameter.revenue2021,

@@ -22,26 +22,22 @@ export const netProfitColor = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
-export const ebitdaColor = (value) => {
-    if (value < 0) { return CONSTANTS.COLOR_RED }
-        
+export const ebitdaColor = (value) => { 
     return CONSTANTS.COLOR_WHITE
 }
 
 export const evColor = (value) => {
-    if (value < 0) { return CONSTANTS.COLOR_RED }
-        
     return CONSTANTS.COLOR_WHITE
 }
 
 export const pbvColor = (value) => {
-    if (value < 0) { return CONSTANTS.COLOR_RED }
-        
     return CONSTANTS.COLOR_WHITE
 }
 
-export const roaColor = (value) => {
-    if (value < 0) { return CONSTANTS.COLOR_RED }
-        
+export const roaColor = (value) => { 
+    return CONSTANTS.COLOR_WHITE
+}
+
+export const netDebtColor = (value) => { 
     return CONSTANTS.COLOR_WHITE
 }

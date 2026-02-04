@@ -54,6 +54,15 @@ export const editFundamentalParameterFromApi = async (
     ebitda2025,
     ebitda2026,   
 
+    netDebt2019, 
+    netDebt2020, 
+    netDebt2021, 
+    netDebt2022, 
+    netDebt2023, 
+    netDebt2024, 
+    netDebt2025,
+    netDebt2026, 
+
     revenue2019, 
     revenue2020, 
     revenue2021, 
@@ -119,6 +128,15 @@ export const editFundamentalParameterFromApi = async (
         ebitda2024, 
         ebitda2025, 
         ebitda2026,   
+
+        netDebt2019, 
+        netDebt2020, 
+        netDebt2021, 
+        netDebt2022, 
+        netDebt2023, 
+        netDebt2024, 
+        netDebt2025,
+        netDebt2026, 
 
         revenue2019, 
         revenue2020, 

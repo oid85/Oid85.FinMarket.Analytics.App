@@ -9,7 +9,8 @@ import {
     showEditFundamentalParameterEbitdaModal,
     showEditFundamentalParameterEvModal,
     showEditFundamentalParameterPbvModal,
-    showEditFundamentalParameterRoaModal 
+    showEditFundamentalParameterRoaModal,
+    showEditFundamentalParameterNetDebtModal 
 } from '../../redux/actions/fundamentalParameterActions'
 import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
 import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
@@ -18,6 +19,7 @@ import {EditFundamentalParameterEbitdaModal} from './EditFundamentalParameterEbi
 import {EditFundamentalParameterEvModal} from './EditFundamentalParameterEvModal'
 import {EditFundamentalParameterPbvModal} from './EditFundamentalParameterPbvModal'
 import {EditFundamentalParameterRoaModal} from './EditFundamentalParameterRoaModal'
+import {EditFundamentalParameterNetDebtModal} from './EditFundamentalParameterNetDebtModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -28,7 +30,8 @@ import {
     ebitdaColor,
     evColor,
     pbvColor,
-    roaColor 
+    roaColor,
+    netDebtColor 
 } from '../../colorHelper'
 
 export const FundamentalParameterList = () => {
@@ -56,6 +59,7 @@ export const FundamentalParameterList = () => {
                     <div className='roa-header-cell border-style'>ROA</div>
                     <div className='ev-header-cell border-style'>EV, млрд. руб.</div>
                     <div className='ebitda-header-cell border-style'>EBITDA, млрд. руб.</div>
+                    <div className='netdebt-header-cell border-style'>Чистый долг, млрд. руб.</div>
                     <div className='revenue-header-cell border-style'>Выручка, млрд. руб.</div>
                     <div className='netprofit-header-cell border-style'>Чистая прибыль, млрд. руб.</div>
                     <div className='price-header-cell border-style'>Цена акции, руб.</div>
@@ -151,7 +155,22 @@ export const FundamentalParameterList = () => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
                                         dispatch(showEditFundamentalParameterEbitdaModal())
                                         }}><div className='edit-button-text'>EBITDA</div></button>                              
-                            </div>                            
+                            </div>
+                            <div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2019)}}>{fundamentalParameter.netDebt2019}</div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2020)}}>{fundamentalParameter.netDebt2020}</div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2021)}}>{fundamentalParameter.netDebt2021}</div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2022)}}>{fundamentalParameter.netDebt2022}</div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2023)}}>{fundamentalParameter.netDebt2023}</div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2024)}}>{fundamentalParameter.netDebt2024}</div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2025)}}>{fundamentalParameter.netDebt2025}</div>
+                                <div className='border-style netdebt-cell' style={{backgroundColor: netDebtColor(fundamentalParameter.netDebt2026)}}>{fundamentalParameter.netDebt2026}</div>
+                                <button className='btn btn-outline-dark edit-button'
+                                    onClick={() => {
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterNetDebtModal())
+                                        }}><div className='edit-button-text'>NetDebt</div></button>                              
+                            </div>                                                        
                             <div>
                                 <div className='border-style revenue-cell' style={{backgroundColor: revenueColor(fundamentalParameter.revenue2019)}}>{fundamentalParameter.revenue2019}</div>
                                 <div className='border-style revenue-cell' style={{backgroundColor: revenueColor(fundamentalParameter.revenue2020)}}>{fundamentalParameter.revenue2020}</div>
@@ -204,6 +223,7 @@ export const FundamentalParameterList = () => {
         <EditFundamentalParameterRevenueModal />
         <EditFundamentalParameterNetProfitModal />
         <EditFundamentalParameterEbitdaModal />
+        <EditFundamentalParameterNetDebtModal />
         </React.Fragment>                
     )
 }

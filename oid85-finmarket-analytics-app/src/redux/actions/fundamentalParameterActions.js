@@ -16,7 +16,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL
 } from '../types/fundamentalParameterTypes'
 
 
@@ -127,5 +129,17 @@ export const showEditFundamentalParameterRoaModal = () => {
 export const hideEditFundamentalParameterRoaModal = () => {
     return {
         type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL
+    }
+}
+
+export const showEditFundamentalParameterNetDebtModal = () => {
+    return {
+        type: SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL
+    }
+}
+
+export const hideEditFundamentalParameterNetDebtModal = () => {
+    return {
+        type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL
     }
 }
