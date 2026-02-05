@@ -38,7 +38,7 @@ export const roaColor = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
-export const netDebtColor = (value) => { 
+export const netDebtColor = (value) => {     
     return CONSTANTS.COLOR_WHITE
 }
 
@@ -51,10 +51,14 @@ export const dividendYieldColor = (value) => {
 }
 
 export const evEbitdaColor = (value) => { 
+    if (value >= 5.0) { return CONSTANTS.COLOR_RED }
+    
     return CONSTANTS.COLOR_WHITE
 }
 
 export const netDebtEbitdaColor = (value) => { 
+    if (value >= 2.0) { return CONSTANTS.COLOR_RED }
+
     return CONSTANTS.COLOR_WHITE
 }
 
