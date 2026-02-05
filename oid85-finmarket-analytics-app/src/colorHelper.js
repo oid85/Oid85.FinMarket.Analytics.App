@@ -1,11 +1,12 @@
 import { CONSTANTS } from "./constants"
 
 export const peColor = (value) => {
-    if (value === 0) { return CONSTANTS.COLOR_WHITE }
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+
     if (value < 0) { return CONSTANTS.COLOR_RED }
-    if (value > 0 && value <= 5) { return CONSTANTS.COLOR_WHITE }
-    if (value > 5 && value <= 10) { return CONSTANTS.COLOR_YELLOW }
-    if (value > 10) { return CONSTANTS.COLOR_RED }
+    if (value > 0 && value <= 3) { return CONSTANTS.COLOR_GREEN }
+    if (value > 3 && value <= 7) { return CONSTANTS.COLOR_YELLOW }
+    if (value > 7) { return CONSTANTS.COLOR_RED }
 
     return CONSTANTS.COLOR_WHITE
 }
@@ -51,13 +52,22 @@ export const dividendYieldColor = (value) => {
 }
 
 export const evEbitdaColor = (value) => { 
-    if (value >= 5.0) { return CONSTANTS.COLOR_RED }
-    
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+    if (value > 0 && value <= 3) { return CONSTANTS.COLOR_GREEN }
+    if (value > 3 && value <= 7) { return CONSTANTS.COLOR_YELLOW }
+    if (value > 7) { return CONSTANTS.COLOR_RED }
+
     return CONSTANTS.COLOR_WHITE
 }
 
 export const netDebtEbitdaColor = (value) => { 
-    if (value >= 2.0) { return CONSTANTS.COLOR_RED }
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+
+    if (value >= 3.0) { return CONSTANTS.COLOR_RED }
+    if (value < 3.0 && value >= 1.5) { return CONSTANTS.COLOR_YELLOW }
+    if (value < 1.5) { return CONSTANTS.COLOR_GREEN }
 
     return CONSTANTS.COLOR_WHITE
 }
