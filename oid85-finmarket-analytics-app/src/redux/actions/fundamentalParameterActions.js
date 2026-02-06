@@ -22,7 +22,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL
 } from '../types/fundamentalParameterTypes'
 
 
@@ -169,5 +171,17 @@ export const showEditFundamentalParameterDividendYieldModal = () => {
 export const hideEditFundamentalParameterDividendYieldModal = () => {
     return {
         type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL
+    }
+}
+
+export const showEditFundamentalParameterMoexModal = () => {
+    return {
+        type: SHOW_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL
+    }
+}
+
+export const hideEditFundamentalParameterMoexModal = () => {
+    return {
+        type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL
     }
 }

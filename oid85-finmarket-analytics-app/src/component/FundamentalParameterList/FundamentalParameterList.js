@@ -12,7 +12,8 @@ import {
     showEditFundamentalParameterRoaModal,
     showEditFundamentalParameterNetDebtModal,
     showEditFundamentalParameterMarketCapModal,
-    showEditFundamentalParameterDividendYieldModal
+    showEditFundamentalParameterDividendYieldModal,
+    showEditFundamentalParameterMoexModal
 } from '../../redux/actions/fundamentalParameterActions'
 import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
 import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
@@ -24,6 +25,7 @@ import {EditFundamentalParameterRoaModal} from './EditFundamentalParameterRoaMod
 import {EditFundamentalParameterNetDebtModal} from './EditFundamentalParameterNetDebtModal'
 import {EditFundamentalParameterMarketCapModal} from './EditFundamentalParameterMarketCapModal'
 import {EditFundamentalParameterDividendYieldModal} from './EditFundamentalParameterDividendYieldModal'
+import {EditFundamentalParameterMoexModal} from './EditFundamentalParameterMoexModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -63,6 +65,7 @@ export const FundamentalParameterList = () => {
                 <div className='horizontal-container'>
                     <div className='ticker-header-cell border-style'>Компания</div>
                     <div className='year-header-cell border-style'>Год</div>
+                    <div className='moex-header-cell border-style'>IMOEX</div>
                     <div className='pe-header-cell border-style'>P / E</div>
                     <div className='pbv-header-cell border-style'>P / BV</div>
                     <div className='roa-header-cell border-style'>ROA, %</div>
@@ -94,7 +97,15 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style year-cell'>2024</div>
                                 <div className='border-style year-cell'>2025</div>
                                 <div className='border-style year-cell'>2026</div>
-                            </div>     
+                            </div>  
+                            <div>
+                                <div className='border-style moex-cell'>{fundamentalParameter.moex}</div>
+                                <button className='btn btn-outline-dark edit-button'
+                                    onClick={() => {
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterMoexModal())
+                                        }}><div className='edit-button-text'>IMOEX</div></button>
+                            </div>                               
                             <div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2019)}}>{fundamentalParameter.pe2019}</div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2020)}}>{fundamentalParameter.pe2020}</div>
@@ -300,6 +311,7 @@ export const FundamentalParameterList = () => {
         <EditFundamentalParameterNetDebtModal />
         <EditFundamentalParameterMarketCapModal />
         <EditFundamentalParameterDividendYieldModal />
+        <EditFundamentalParameterMoexModal />
         </React.Fragment>                
     )
 }

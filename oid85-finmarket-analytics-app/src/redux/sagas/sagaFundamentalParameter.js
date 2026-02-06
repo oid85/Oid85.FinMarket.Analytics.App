@@ -26,6 +26,8 @@ function* sagaWorkerEditFundamentalParameter() {
     yield call(editFundamentalParameterFromApi, 
         fundamentalParameter.ticker, 
 
+        fundamentalParameter.moex, 
+
         fundamentalParameter.pe2019, 
         fundamentalParameter.pe2020, 
         fundamentalParameter.pe2021, 

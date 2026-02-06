@@ -9,6 +9,8 @@ export const getFundamentalParameterListFromApi = async () => {
 export const editFundamentalParameterFromApi = async (
     ticker, 
 
+    moex,
+
     pe2019, 
     pe2020, 
     pe2021, 
@@ -101,6 +103,8 @@ export const editFundamentalParameterFromApi = async (
 ) => {
     return sendPostRequest(`${controller}/create-or-update`, {
         ticker, 
+
+        moex,
 
         pe2019, 
         pe2020, 

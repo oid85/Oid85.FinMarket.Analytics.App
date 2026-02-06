@@ -20,7 +20,9 @@ import {
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL
 } from '../types/fundamentalParameterTypes'
 
 const initialState = {
@@ -35,7 +37,8 @@ const initialState = {
     editFundamentalParameterRoaModalIsOpened: false,
     editFundamentalParameterNetDebtModalIsOpened: false,
     editFundamentalParameterMarketCapModalIsOpened: false,
-    editFundamentalParameterDividendYieldModalIsOpened: false
+    editFundamentalParameterDividendYieldModalIsOpened: false,
+    editFundamentalParameterMoexModalIsOpened: false
 }
 
 export const fundamentalParameterReducer = (state = initialState, action) => {
@@ -106,6 +109,12 @@ export const fundamentalParameterReducer = (state = initialState, action) => {
         
         case HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_YIELD_MODAL:
             return {...state, editFundamentalParameterDividendYieldModalIsOpened: false}
+
+        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL:
+            return {...state, editFundamentalParameterMoexModalIsOpened: true}
+        
+        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL:
+            return {...state, editFundamentalParameterMoexModalIsOpened: false}
 
         default: return state
     }
