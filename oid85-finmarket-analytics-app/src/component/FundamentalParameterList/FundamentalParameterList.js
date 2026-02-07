@@ -160,6 +160,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2024)}}>{fundamentalParameter.evEbitda2024}</div>
                                 <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2025)}}>{fundamentalParameter.evEbitda2025}</div>
                                 <div className='border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(fundamentalParameter.evEbitda2026)}}>{fundamentalParameter.evEbitda2026}</div>
+                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>EV/EBITDA</div></button>
                             </div>
                             <div>
                                 <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2019)}}>{fundamentalParameter.netDebtEbitda2019}</div>
@@ -170,6 +171,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2024)}}>{fundamentalParameter.netDebtEbitda2024}</div>
                                 <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2025)}}>{fundamentalParameter.netDebtEbitda2025}</div>
                                 <div className='border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(fundamentalParameter.netDebtEbitda2026)}}>{fundamentalParameter.netDebtEbitda2026}</div>
+                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>ND/EBITDA</div></button>
                             </div>
                             <div>
                                 <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2019)}}>{fundamentalParameter.ebitdaRevenue2019}</div>
@@ -180,6 +182,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2024)}}>{fundamentalParameter.ebitdaRevenue2024}</div>
                                 <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2025)}}>{fundamentalParameter.ebitdaRevenue2025}</div>
                                 <div className='border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(fundamentalParameter.ebitdaRevenue2026)}}>{fundamentalParameter.ebitdaRevenue2026}</div>
+                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>EBITDA/Rev</div></button>
                             </div>                                                                                    
                             <div>
                                 <div className='border-style marketcap-cell' style={{backgroundColor: marketCapColor(fundamentalParameter.marketCap2019)}}>{fundamentalParameter.marketCap2019}</div>
@@ -295,6 +298,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style price-cell'>{fundamentalParameter.price2024}</div>
                                 <div className='border-style price-cell'>{fundamentalParameter.price2025}</div>
                                 <div className='border-style price-cell'>{fundamentalParameter.price2026}</div>
+                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Price</div></button>
                             </div>                            
                         </div>
                     ))
