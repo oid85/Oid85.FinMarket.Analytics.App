@@ -22,6 +22,7 @@
 .ticker-header-cell {
     width: 102px;  
     padding: 1px;
+    font-size: 12px; 
 }
 
 .year-header-cell {

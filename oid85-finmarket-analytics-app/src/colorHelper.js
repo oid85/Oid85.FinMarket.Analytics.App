@@ -12,12 +12,16 @@ export const peColor = (value) => {
 }
 
 export const revenueColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 0) { return CONSTANTS.COLOR_GREEN }
     if (value < 0) { return CONSTANTS.COLOR_RED }
 
     return CONSTANTS.COLOR_WHITE
 }
 
 export const netProfitColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 0) { return CONSTANTS.COLOR_GREEN }
     if (value < 0) { return CONSTANTS.COLOR_RED }
         
     return CONSTANTS.COLOR_WHITE
@@ -32,22 +36,43 @@ export const evColor = (value) => {
 }
 
 export const pbvColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+    if (value > 0 && value <= 3) { return CONSTANTS.COLOR_GREEN }
+    if (value > 3 && value <= 5) { return CONSTANTS.COLOR_YELLOW }
+    if (value > 5) { return CONSTANTS.COLOR_RED }
+
     return CONSTANTS.COLOR_WHITE
 }
 
 export const roaColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 15) { return CONSTANTS.COLOR_GREEN }
+
     return CONSTANTS.COLOR_WHITE
 }
 
-export const netDebtColor = (value) => {     
+export const netDebtColor = (value) => {   
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value < 0) { return CONSTANTS.COLOR_GREEN }
+
     return CONSTANTS.COLOR_WHITE
 }
 
 export const marketCapColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 1000) { return CONSTANTS.COLOR_GREEN }
+    if (value > 500) { return CONSTANTS.COLOR_YELLOW }
+
     return CONSTANTS.COLOR_WHITE
 }
 
 export const dividendYieldColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 10) { return CONSTANTS.COLOR_GREEN }
+    if (value > 5) { return CONSTANTS.COLOR_YELLOW }
+
     return CONSTANTS.COLOR_WHITE
 }
 
