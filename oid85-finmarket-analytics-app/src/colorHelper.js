@@ -98,6 +98,9 @@ export const netDebtEbitdaColor = (value) => {
 }
 
 export const ebitdaRevenueColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 0.15) { return CONSTANTS.COLOR_GREEN }
+
     return CONSTANTS.COLOR_WHITE
 }
 
