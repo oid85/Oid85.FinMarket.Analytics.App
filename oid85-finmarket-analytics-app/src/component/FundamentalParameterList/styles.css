@@ -25,7 +25,13 @@
 }
 
 .year-header-cell {
-    width: 50px;
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
+.score-header-cell {
+    width: 80px;
     padding: 1px;
     font-size: 12px;  
 }
@@ -120,6 +126,12 @@
     font-size: 12px;  
 }
 
+.delta-min-max-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
 .emitent-cell {
     height: 167px;
 }
@@ -139,10 +151,18 @@
 
 .year-cell {
     text-align: center;
-    width: 50px;  
+    width: 80px;  
     height: 20px;
     padding: 1px;
     font-size: 12px;
+}
+
+.score-cell {
+    text-align: center;    
+    width: 80px;
+    height: 167px;
+    font-size: 16px;
+    padding: 10px;
 }
 
 .moex-cell {
@@ -245,6 +265,13 @@
 }
 
 .ebitda-revenue-cell {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+}
+
+.delta-min-max-cell {
     width: 80px;
     height: 20px;
     font-size: 12px;

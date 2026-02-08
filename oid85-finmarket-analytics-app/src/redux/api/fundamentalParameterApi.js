@@ -9,6 +9,8 @@ export const getFundamentalParameterListFromApi = async () => {
 export const editFundamentalParameterFromApi = async (
     ticker, 
 
+    score,
+
     moex,
 
     pe2019, 
@@ -99,7 +101,16 @@ export const editFundamentalParameterFromApi = async (
     pbv2023, 
     pbv2024, 
     pbv2025, 
-    pbv2026
+    pbv2026,
+
+    deltaMinMax2019, 
+    deltaMinMax2020, 
+    deltaMinMax2021, 
+    deltaMinMax2022, 
+    deltaMinMax2023, 
+    deltaMinMax2024, 
+    deltaMinMax2025, 
+    deltaMinMax2026    
 ) => {
     return sendPostRequest(`${controller}/create-or-update`, {
         ticker, 

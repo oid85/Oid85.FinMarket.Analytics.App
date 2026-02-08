@@ -64,8 +64,9 @@ export const FundamentalParameterList = () => {
             <div className='fundamental-parameter-container border-style'>
                 <div className='horizontal-container'>
                     <div className='ticker-header-cell border-style'>Компания</div>
-                    <div className='year-header-cell border-style'>Год</div>
+                    <div className='score-header-cell border-style'>SCORE</div>
                     <div className='moex-header-cell border-style'>IMOEX</div>
+                    <div className='year-header-cell border-style'>Год</div>                    
                     <div className='pe-header-cell border-style'>P / E</div>
                     <div className='pbv-header-cell border-style'>P / BV</div>
                     <div className='roa-header-cell border-style'>ROA, %</div>
@@ -80,14 +81,27 @@ export const FundamentalParameterList = () => {
                     <div className='netprofit-header-cell border-style'>Чистая прибыль, млрд. руб.</div>
                     <div className='dividend-yield-header-cell border-style'>ДД, %</div>
                     <div className='price-header-cell border-style'>Цена акции, руб.</div>
+                    <div className='delta-min-max-header-cell border-style'>Изм. мин-макс, %</div>                    
                 </div>
                 {
                     fundamentalParameterListData.result.fundamentalParameters.map((fundamentalParameter) => (
                         <div className='horizontal-container'>
                             <div className='border-style emitent-cell'>
                                 <div className='ticker-cell'>{fundamentalParameter.ticker}</div>
-                                <div className='name-cell'>{fundamentalParameter.name}</div>
+                                <div className='name-cell'>{fundamentalParameter.name}</div>                                
                             </div>                             
+                            <div>
+                                <div className='border-style score-cell'>{fundamentalParameter.score}</div>
+                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Score</div></button>
+                            </div>
+                            <div>
+                                <div className='border-style moex-cell'>{fundamentalParameter.moex}</div>
+                                <button className='btn btn-outline-dark edit-button'
+                                    onClick={() => {
+                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                        dispatch(showEditFundamentalParameterMoexModal())
+                                        }}><div className='edit-button-text'>IMOEX</div></button>
+                            </div>                                                        
                             <div>
                                 <div className='border-style year-cell'>2019</div>
                                 <div className='border-style year-cell'>2020</div>
@@ -97,15 +111,8 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style year-cell'>2024</div>
                                 <div className='border-style year-cell'>2025</div>
                                 <div className='border-style year-cell'>2026</div>
-                            </div>  
-                            <div>
-                                <div className='border-style moex-cell'>{fundamentalParameter.moex}</div>
-                                <button className='btn btn-outline-dark edit-button'
-                                    onClick={() => {
-                                        dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                        dispatch(showEditFundamentalParameterMoexModal())
-                                        }}><div className='edit-button-text'>IMOEX</div></button>
-                            </div>                               
+                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Year</div></button>
+                            </div>                                 
                             <div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2019)}}>{fundamentalParameter.pe2019}</div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2020)}}>{fundamentalParameter.pe2020}</div>
@@ -299,7 +306,18 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style price-cell'>{fundamentalParameter.price2025}</div>
                                 <div className='border-style price-cell'>{fundamentalParameter.price2026}</div>
                                 <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Price</div></button>
-                            </div>                            
+                            </div> 
+                            <div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2019}</div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2020}</div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2021}</div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2022}</div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2023}</div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2024}</div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2025}</div>
+                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2026}</div>
+                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>DeltaMinMax</div></button>
+                            </div>                                                       
                         </div>
                     ))
                 }
