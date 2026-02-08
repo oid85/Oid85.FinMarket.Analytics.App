@@ -65,7 +65,7 @@ export const FundamentalParameterList = () => {
             <div className='fundamental-parameter-container border-style'>
                 <div className='horizontal-container'>
                     <div className='ticker-header-cell border-style'>Компания</div>
-                    <div className='score-header-cell border-style'>SCORE</div>
+                    <div className='score-header-cell border-style'>Score</div>
                     <div className='moex-header-cell border-style'>IMOEX</div>
                     <div className='year-header-cell border-style'>Год</div>                    
                     <div className='pe-header-cell border-style'>P / E</div>
