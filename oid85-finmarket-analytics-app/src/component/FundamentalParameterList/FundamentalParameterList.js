@@ -42,7 +42,8 @@ import {
     dividendYieldColor,
     evEbitdaColor,
     netDebtEbitdaColor,
-    ebitdaRevenueColor
+    ebitdaRevenueColor,
+    deltaMinMaxColor
 } from '../../colorHelper'
 
 export const FundamentalParameterList = () => {
@@ -308,14 +309,14 @@ export const FundamentalParameterList = () => {
                                 <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Price</div></button>
                             </div> 
                             <div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2019}</div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2020}</div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2021}</div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2022}</div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2023}</div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2024}</div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2025}</div>
-                                <div className='border-style delta-min-max-cell'>{fundamentalParameter.deltaMinMax2026}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2019)}}>{fundamentalParameter.deltaMinMax2019}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2020)}}>{fundamentalParameter.deltaMinMax2020}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2021)}}>{fundamentalParameter.deltaMinMax2021}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2022)}}>{fundamentalParameter.deltaMinMax2022}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2023)}}>{fundamentalParameter.deltaMinMax2023}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2024)}}>{fundamentalParameter.deltaMinMax2024}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2025)}}>{fundamentalParameter.deltaMinMax2025}</div>
+                                <div className='border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2026)}}>{fundamentalParameter.deltaMinMax2026}</div>
                                 <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>DeltaMinMax</div></button>
                             </div>                                                       
                         </div>

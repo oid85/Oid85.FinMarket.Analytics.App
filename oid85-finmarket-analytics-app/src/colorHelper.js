@@ -75,3 +75,11 @@ export const netDebtEbitdaColor = (value) => {
 export const ebitdaRevenueColor = (value) => { 
     return CONSTANTS.COLOR_WHITE
 }
+
+export const deltaMinMaxColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+    if (value > 0) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
