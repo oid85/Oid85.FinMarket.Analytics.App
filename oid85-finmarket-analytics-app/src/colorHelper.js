@@ -39,9 +39,9 @@ export const pbvColor = (value) => {
     if (!value) { return CONSTANTS.COLOR_WHITE }
 
     if (value < 0) { return CONSTANTS.COLOR_RED }
-    if (value > 0 && value <= 3) { return CONSTANTS.COLOR_GREEN }
-    if (value > 3 && value <= 5) { return CONSTANTS.COLOR_YELLOW }
-    if (value > 5) { return CONSTANTS.COLOR_RED }
+    if (value > 0 && value <= 1) { return CONSTANTS.COLOR_GREEN }
+    if (value > 1 && value <= 1.5) { return CONSTANTS.COLOR_YELLOW }
+    if (value > 1.5) { return CONSTANTS.COLOR_RED }
 
     return CONSTANTS.COLOR_WHITE
 }
