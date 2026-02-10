@@ -71,7 +71,7 @@ export const marketCapColor = (value) => {
 export const dividendYieldColor = (value) => { 
     if (!value) { return CONSTANTS.COLOR_WHITE }
     if (value > 10) { return CONSTANTS.COLOR_GREEN }
-    if (value > 5) { return CONSTANTS.COLOR_YELLOW }
+    if (value > 0) { return CONSTANTS.COLOR_YELLOW }
 
     return CONSTANTS.COLOR_WHITE
 }

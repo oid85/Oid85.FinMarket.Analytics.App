@@ -32,7 +32,7 @@ export const EditFundamentalParameterRoaModal = () => {
                 <Modal
                     isOpen={editFundamentalParameterRoaModalIsOpened}
                     style={customStyles}>
-                    <h6>Дивидендная доходность</h6>
+                    <h6>ROA</h6>
                     <form>
                         <input 
                             className='form-control edit-modal-input' 
