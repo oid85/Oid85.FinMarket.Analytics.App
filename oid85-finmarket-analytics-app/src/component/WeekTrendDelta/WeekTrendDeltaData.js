@@ -5,13 +5,10 @@ import {CONSTANTS} from '../../constants'
 const GetColorDelta = (delta) => {
     if (!delta) { return CONSTANTS.COLOR_WHITE }
     if (delta > 0) { return CONSTANTS.COLOR_GREEN }
-    if (delta < 0) { return CONSTANTS.COLOR_RED }
-    return CONSTANTS.COLOR_WHITE
-}
+    if (delta > -2 && delta <= 0) { return CONSTANTS.COLOR_YELLOW }
+    if (delta <= -2) { return CONSTANTS.COLOR_RED }
 
-const GetTextValue = (item) => {
-    if (!item) { return "" }
-    return item.price + " (" + item.delta + " %)"
+    return CONSTANTS.COLOR_WHITE
 }
 
 export const WeekTrendDeltaData = ({data}) => {
@@ -29,8 +26,9 @@ export const WeekTrendDeltaData = ({data}) => {
                         <div className='horizontal-container'>
                             {
                                 item.items.map((item) => (                                                
-                                    <div className='week-trend-delta-delta-cell border-style' style={{backgroundColor: GetColorDelta(item.delta)}}>
-                                        {GetTextValue(item)}
+                                    <div className='week-trend-delta-value-cell border-style' style={{backgroundColor: GetColorDelta(item.delta)}}>
+                                        <div className='week-trend-delta-price-cell'>{item.price}</div>
+                                        <div className='week-trend-delta-delta-cell'>{`${item.delta} %`}</div>
                                     </div>
                                 ))
                             }     

@@ -39,9 +39,21 @@
     font-size: 10px;  
 }
 
-.week-trend-delta-delta-cell {  
+.week-trend-delta-value-cell {  
     height: 40px;
     width: 100px;  
     font-size: 12px;
+    text-align: center; 
+}
+
+.week-trend-delta-price-cell {  
+    width: 100px;  
+    font-size: 10px;
+    text-align: center; 
+}
+
+.week-trend-delta-delta-cell {  
+    width: 100px;  
+    font-size: 16px;
     text-align: center; 
 }
