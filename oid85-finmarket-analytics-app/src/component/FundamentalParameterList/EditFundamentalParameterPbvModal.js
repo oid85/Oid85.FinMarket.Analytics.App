@@ -32,7 +32,7 @@ export const EditFundamentalParameterPbvModal = () => {
                 <Modal
                     isOpen={editFundamentalParameterPbvModalIsOpened}
                     style={customStyles}>
-                    <h6>Дивидендная доходность</h6>
+                    <h6>P/BV</h6>
                     <form>
                         <input 
                             className='form-control edit-modal-input' 

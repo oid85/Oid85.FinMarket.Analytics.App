@@ -11,6 +11,7 @@ import { sagaWatcherTrendDynamic } from './redux/sagas/sagaTrendDynamic'
 import { sagaWatcherCompareTrend } from './redux/sagas/sagaCompareTrend'
 import { sagaWatcherInstrument } from './redux/sagas/sagaInstrument'
 import { sagaWatcherFundamentalParameter } from './redux/sagas/sagaFundamentalParameter'
+import { sagaWatcherWeekTrendDelta } from './redux/sagas/sagaWeekTrendDelta'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const saga = createSagaMiddleware()
@@ -24,6 +25,7 @@ saga.run(sagaWatcherTrendDynamic)
 saga.run(sagaWatcherCompareTrend)
 saga.run(sagaWatcherInstrument)
 saga.run(sagaWatcherFundamentalParameter)
+saga.run(sagaWatcherWeekTrendDelta)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

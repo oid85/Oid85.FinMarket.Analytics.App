@@ -6,6 +6,7 @@ import { Alert } from '../Alert/Alert'
 import { TrendDynamicScreen } from '../Screens/TrendDynamicScreen'
 import { CompareTrendScreen } from '../Screens/CompareTrendScreen'
 import { FundamentalParameterScreen } from '../Screens/FundamentalParameterScreen'
+import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -15,19 +16,23 @@ export const Workspace = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                    <Tab>Фундаментальные параметры</Tab>
+                    <Tab>Недельные изменения</Tab>
+                    <Tab>Фундаментальные параметры</Tab>                    
                     <Tab>Динамика трендов</Tab>
-                    <Tab>Сравнение трендов</Tab>
+                    <Tab>Сравнение трендов</Tab>                    
                 </TabList>
                 <TabPanel>
+                    <WeekTrendDeltaScreen />
+                </TabPanel>                
+                <TabPanel>
                     <FundamentalParameterScreen />
-                </TabPanel>                                
+                </TabPanel>                                                
                 <TabPanel>
                     <TrendDynamicScreen />
                 </TabPanel>
                 <TabPanel>
                     <CompareTrendScreen />
-                </TabPanel>
+                </TabPanel>                
             </Tabs>
         </React.Fragment>
     )    
