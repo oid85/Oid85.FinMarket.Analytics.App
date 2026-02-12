@@ -23,13 +23,13 @@ export const WeekTrendDeltaData = ({data}) => {
                 data.map((item) => (
                     <div className='horizontal-container'>
                         <div className='vertical-container border-style'>
-                            <div className='instrument-ticker-cell'>{item.ticker}</div>
-                            <div className='instrument-name-cell'>{item.name}</div>
+                            <div className='week-trend-delta-instrument-ticker-cell'>{item.ticker}</div>
+                            <div className='week-trend-delta-instrument-name-cell'>{item.name}</div>
                         </div>
                         <div className='horizontal-container'>
                             {
                                 item.items.map((item) => (                                                
-                                    <div className='delta-cell border-style' style={{backgroundColor: GetColorDelta(item.delta)}}>
+                                    <div className='week-trend-delta-delta-cell border-style' style={{backgroundColor: GetColorDelta(item.delta)}}>
                                         {GetTextValue(item)}
                                     </div>
                                 ))

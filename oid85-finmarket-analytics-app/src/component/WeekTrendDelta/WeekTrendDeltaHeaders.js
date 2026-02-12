@@ -7,10 +7,10 @@ export const WeekTrendDeltaHeaders = ({weeks}) => {
     return (
         <React.Fragment>          
             <div className='horizontal-container'>
-                <div className='corner-cell'></div>
+                <div className='week-trend-delta-corner-cell'></div>
                 {
                     weeks.map((week, index) => (
-                        <div className='calendar-cell border-style'>
+                        <div className='week-trend-delta-calendar-cell border-style'>
                             <div className=''>{week.weekNumber}</div>
                             <div className='horizontal-container'>
                                 <div className='border-style'>

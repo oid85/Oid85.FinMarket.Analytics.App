@@ -12,15 +12,14 @@
 
 .border-style {
     border: 1px solid #000;     
-    margin: .5px;  
+    margin: 1px;
 }
 
-.corner-cell {    
-    height: 52px;
-    width: 145px;  
+.week-trend-delta-corner-cell {    
+    width: 150px;  
 }
 
-.calendar-cell {
+.week-trend-delta-calendar-cell {
     text-align: left;    
     height: 90px;
     width: 100px;
@@ -32,15 +31,15 @@
     padding: 1px; 
 }
 
-.instrument-ticker-cell { 
+.week-trend-delta-instrument-ticker-cell { 
     font-size: 14px;   
 }
 
-.instrument-name-cell {
+.week-trend-delta-instrument-name-cell {
     font-size: 10px;  
 }
 
-.delta-cell {  
+.week-trend-delta-delta-cell {  
     height: 40px;
     width: 100px;  
     font-size: 12px;
