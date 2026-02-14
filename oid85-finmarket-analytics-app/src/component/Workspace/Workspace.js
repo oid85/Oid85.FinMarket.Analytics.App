@@ -6,6 +6,7 @@ import { Alert } from '../Alert/Alert'
 import { TrendDynamicScreen } from '../Screens/TrendDynamicScreen'
 import { CompareTrendScreen } from '../Screens/CompareTrendScreen'
 import { FundamentalParameterScreen } from '../Screens/FundamentalParameterScreen'
+import { FundamentalParameterBubbleScreen } from '../Screens/FundamentalParameterBubbleScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 
 export const Workspace = () => {
@@ -16,17 +17,21 @@ export const Workspace = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                    <Tab>Недельные изменения</Tab>
-                    <Tab>Фундаментальные параметры</Tab>                    
-                    <Tab>Динамика трендов</Tab>
-                    <Tab>Сравнение трендов</Tab>                    
+                    <Tab>Недели</Tab>
+                    <Tab>Фунд. (табл.)</Tab>
+                    <Tab>Фунд. (диагр.)</Tab>                    
+                    <Tab>Динамика</Tab>
+                    <Tab>Сравнение</Tab>                    
                 </TabList>
                 <TabPanel>
                     <WeekTrendDeltaScreen />
                 </TabPanel>                
                 <TabPanel>
                     <FundamentalParameterScreen />
-                </TabPanel>                                                
+                </TabPanel>  
+                <TabPanel>
+                    <FundamentalParameterBubbleScreen />
+                </TabPanel>                                                              
                 <TabPanel>
                     <TrendDynamicScreen />
                 </TabPanel>

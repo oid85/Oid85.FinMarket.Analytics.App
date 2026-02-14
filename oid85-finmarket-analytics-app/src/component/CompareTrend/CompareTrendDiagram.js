@@ -1,6 +1,5 @@
 import React from 'react'
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
-import { CONSTANTS } from "../../constants"
 import './styles.css'
 
 export const CompareTrendDiagram = ({series}) => {

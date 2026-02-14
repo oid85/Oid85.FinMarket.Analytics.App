@@ -16,8 +16,6 @@ export const WeekTrendDelta = () => {
         dispatch(sagaWeekTrendDelta())
     }, [])
 
-    console.log(weekTrendDeltaData)
-
     return (
         <React.Fragment>
         {

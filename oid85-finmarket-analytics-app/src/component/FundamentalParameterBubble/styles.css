@@ -1,0 +1,24 @@
+.horizontal-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;    
+}
+
+.vertical-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+.border-style {
+    border: 1px solid #000;     
+    margin: 1px;
+}
+
+.fundamental-parameter-bubble-container {     
+    padding: 1px; 
+}
+
+.fundamental-parameter-bubble-diagram {     
+    padding: 1px; 
+}
