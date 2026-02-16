@@ -20,6 +20,14 @@ const GetColorChange = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetInvertColorChange = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 0) { return CONSTANTS.COLOR_RED }
+    if (value <= 0) { return CONSTANTS.COLOR_GREEN }    
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 export const MacroParameterList = () => {
     
     const dispatch = useDispatch()
@@ -81,7 +89,7 @@ export const MacroParameterList = () => {
                                 <div className='macro-parameter-cell-value'>{macroParameter.deposits}</div>
                                 <div className='macro-parameter-cell-change'>{`${macroParameter.depositsChange} %`}</div>                                
                             </div>                                                        
-                            <div className='macro-parameter-cell border-style'>
+                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetInvertColorChange(macroParameter.consumerPriceIndexChange)}}>
                                 <div className='macro-parameter-cell-change'>{`${macroParameter.consumerPriceIndexChange} %`}</div>
                             </div>
                             <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.m1ConsumerPriceIndexDifferenceChange)}}>
