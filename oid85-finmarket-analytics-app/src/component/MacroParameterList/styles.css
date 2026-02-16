@@ -1,0 +1,87 @@
+.horizontal-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;    
+}
+
+.vertical-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+.border-style {
+    border: 1px solid #000;     
+    margin: 1px;
+}
+
+.macro-parameter-container {     
+    padding: 1px; 
+}
+
+.macro-parameter-date-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 16px;  
+}
+
+.macro-parameter-header-cell {
+    width: 140px;
+    padding: 1px;
+    font-size: 16px;  
+}
+
+.macro-parameter-edit-button-header-cell {
+    width: 80px;
+    padding: 1px;
+    font-size: 16px;  
+}
+
+.macro-parameter-date-cell {
+    height: 55px;
+    width: 80px;   
+}
+
+.macro-parameter-cell {
+    height: 55px;
+    width: 140px;   
+}
+
+.macro-parameter-cell-value {
+    font-size: 18px;
+    text-align: center;
+}
+
+.macro-parameter-cell-change {
+    font-size: 16px;
+    text-align: center;
+}
+
+.macro-parameter-edit-button-cell {
+    height: 55px;
+    width: 80px;   
+}
+
+/*Edit modal*/
+.edit-modal-save-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-delete-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-cancel-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-input {
+    margin: 5px;
+    font-size: 10px;
+}

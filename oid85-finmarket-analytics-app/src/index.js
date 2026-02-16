@@ -11,6 +11,7 @@ import { sagaWatcherTrendDynamic } from './redux/sagas/sagaTrendDynamic'
 import { sagaWatcherCompareTrend } from './redux/sagas/sagaCompareTrend'
 import { sagaWatcherInstrument } from './redux/sagas/sagaInstrument'
 import { sagaWatcherFundamentalParameter } from './redux/sagas/sagaFundamentalParameter'
+import { sagaWatcherMacroParameter } from './redux/sagas/sagaMacroParameter'
 import { sagaWatcherFundamentalParameterBubble } from './redux/sagas/sagaFundamentalParameterBubble'
 import { sagaWatcherWeekTrendDelta } from './redux/sagas/sagaWeekTrendDelta'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -26,6 +27,7 @@ saga.run(sagaWatcherTrendDynamic)
 saga.run(sagaWatcherCompareTrend)
 saga.run(sagaWatcherInstrument)
 saga.run(sagaWatcherFundamentalParameter)
+saga.run(sagaWatcherMacroParameter)
 saga.run(sagaWatcherFundamentalParameterBubble)
 saga.run(sagaWatcherWeekTrendDelta)
 

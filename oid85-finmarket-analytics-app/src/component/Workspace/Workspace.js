@@ -6,6 +6,7 @@ import { Alert } from '../Alert/Alert'
 import { TrendDynamicScreen } from '../Screens/TrendDynamicScreen'
 import { CompareTrendScreen } from '../Screens/CompareTrendScreen'
 import { FundamentalParameterScreen } from '../Screens/FundamentalParameterScreen'
+import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
 import { FundamentalParameterBubbleScreen } from '../Screens/FundamentalParameterBubbleScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 
@@ -21,7 +22,8 @@ export const Workspace = () => {
                     <Tab>Фунд. (табл.)</Tab>
                     <Tab>Фунд. (диагр.)</Tab>                    
                     <Tab>Динамика</Tab>
-                    <Tab>Сравнение</Tab>                    
+                    <Tab>Сравнение</Tab>
+                    <Tab>Макро. (табл.)</Tab>
                 </TabList>
                 <TabPanel>
                     <WeekTrendDeltaScreen />
@@ -37,7 +39,10 @@ export const Workspace = () => {
                 </TabPanel>
                 <TabPanel>
                     <CompareTrendScreen />
-                </TabPanel>                
+                </TabPanel>  
+                <TabPanel>
+                    <MacroParameterScreen />
+                </TabPanel>                              
             </Tabs>
         </React.Fragment>
     )    
