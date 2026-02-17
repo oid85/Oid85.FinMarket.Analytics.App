@@ -20,12 +20,19 @@ const GetColorChange = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
-const GetInvertColorChange = (value) => {
-    if (!value) { return CONSTANTS.COLOR_WHITE }
-    if (value > 0) { return CONSTANTS.COLOR_RED }
-    if (value <= 0) { return CONSTANTS.COLOR_GREEN }    
+const GetValue = (value) => {
+    if (!value) { return "" }
+    return value
+}
 
-    return CONSTANTS.COLOR_WHITE
+const GetMonthValueChange = (valueChange) => {
+    if (!valueChange) { return "" }
+    return "мес " + valueChange + " %"
+}
+
+const GetYearValueChange = (valueChange) => {
+    if (!valueChange) { return "" }
+    return "год " + valueChange + " %"
 }
 
 export const MacroParameterList = () => {
@@ -45,18 +52,24 @@ export const MacroParameterList = () => {
             ? <Loader/>
             :
             <div>
+                <div>
+                    <div>М0: Наличные деньги в обращении (банкноты и монеты) — самая высокая ликвидность</div>
+                    <div>М1: М0 + чеки, вклады до востребования (текущие счета)</div>
+                    <div>М2: М1 + небольшие срочные вклады (денежная масса). В России М2 — основной показатель, включающий наличные и безналичные средства</div>
+                    <div>ИПЦ: Индекс потребительских цен</div>
+                </div>
                 <div className='horizontal-container'>
                     <div className='macro-parameter-date-header-cell border-style'>Дата</div>
-                    <div className='macro-parameter-header-cell border-style'>M0, млрд. руб.</div>
-                    <div className='macro-parameter-header-cell border-style'>M1, млрд. руб.</div>
-                    <div className='macro-parameter-header-cell border-style'>M2, млрд. руб.</div>
-                    <div className='macro-parameter-header-cell border-style'>M2X, млрд. руб.</div>
-                    <div className='macro-parameter-header-cell border-style'>Валюта, млрд. руб.</div>
-                    <div className='macro-parameter-header-cell border-style'>Вклады, млрд. руб.</div>
-                    <div className='macro-parameter-header-cell border-style'>ИПЦ, %</div>
-                    <div className='macro-parameter-header-cell border-style'>M1-ИПЦ, %</div>
-                    <div className='macro-parameter-header-cell border-style'>Ключ. ставка, %</div>
-                    <div className='macro-parameter-header-cell border-style'>IMOEX, руб.</div>
+                    <div className='macro-parameter-header-cell border-style'>M0 (наличные)</div>
+                    <div className='macro-parameter-header-cell border-style'>M1 (М0 + текущие счета)</div>
+                    <div className='macro-parameter-header-cell border-style'>M2 (денежная масса: М1 + срочные вклады)</div>
+                    <div className='macro-parameter-header-cell border-style'>M2X (M2 + валюта)</div>
+                    <div className='macro-parameter-header-cell border-style'>Валюта (M2X - M2)</div>
+                    <div className='macro-parameter-header-cell border-style'>Вклады (M2 - M1)</div>
+                    <div className='macro-parameter-header-cell border-style'>ИПЦ</div>
+                    <div className='macro-parameter-header-cell border-style'>M1-ИПЦ</div>
+                    <div className='macro-parameter-header-cell border-style'>Ключевая ставка</div>
+                    <div className='macro-parameter-header-cell border-style'>IMOEX</div>
                     <div className='macro-parameter-edit-button-header-cell border-style'></div>
                 </div>
                 {
@@ -65,42 +78,51 @@ export const MacroParameterList = () => {
                             <div className='macro-parameter-date-cell border-style'>
                                 <Calendar key = {index} date = {macroParameter.date} />
                             </div>
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.m0Change)}}>
-                                <div className='macro-parameter-cell-value'>{macroParameter.m0}</div>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.m0Change} %`}</div>                                
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m0)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m0Change)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m0Change)}</div>
                             </div>
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.m1Change)}}>
-                                <div className='macro-parameter-cell-value'>{macroParameter.m1}</div>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.m1Change} %`}</div>                                
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m1)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m1Change)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1Change)}</div>
                             </div>
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.m2Change)}}>
-                                <div className='macro-parameter-cell-value'>{macroParameter.m2}</div>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.m2Change} %`}</div>                                
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m2)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m2Change)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m2Change)}</div>
                             </div>
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.m2XChange)}}>
-                                <div className='macro-parameter-cell-value'>{macroParameter.m2X}</div>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.m2XChange} %`}</div>                                
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m2X)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m2XChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m2XChange)}</div>
                             </div>
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.currencyChange)}}>
-                                <div className='macro-parameter-cell-value'>{macroParameter.currency}</div>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.currencyChange} %`}</div>                                
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.currency)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.currencyChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.currencyChange)}</div>
                             </div>
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.depositsChange)}}>
-                                <div className='macro-parameter-cell-value'>{macroParameter.deposits}</div>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.depositsChange} %`}</div>                                
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.deposits)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.depositsChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.depositsChange)}</div>
                             </div>                                                        
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetInvertColorChange(macroParameter.consumerPriceIndexChange)}}>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.consumerPriceIndexChange} %`}</div>
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.consumerPriceIndexChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.consumerPriceIndexChange)}</div>
                             </div>
-                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.m1ConsumerPriceIndexDifferenceChange)}}>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.m1ConsumerPriceIndexDifferenceChange} %`}</div>
+                            <div className='macro-parameter-cell border-style'>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m1ConsumerPriceIndexDifferenceChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1ConsumerPriceIndexDifferenceChange)}</div>
                             </div>                            
                             <div className='macro-parameter-cell border-style'>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.keyRate} %`}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetValue(macroParameter.keyRate)}</div>                                
                             </div>
                             <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.moexIndexChange)}}>
-                                <div className='macro-parameter-cell-value'>{macroParameter.moexIndex}</div>
-                                <div className='macro-parameter-cell-change'>{`${macroParameter.moexIndexChange} %`}</div>                                  
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.moexIndex)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.moexIndexChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.moexIndexChange)}</div>
                             </div>
                             <div className='macro-parameter-edit-button-cell border-style'>
 

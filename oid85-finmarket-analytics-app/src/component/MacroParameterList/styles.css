@@ -22,43 +22,51 @@
 .macro-parameter-date-header-cell {
     width: 80px;
     padding: 1px;
-    font-size: 16px;  
+    font-size: 12px; 
+    text-align: center; 
 }
 
 .macro-parameter-header-cell {
-    width: 140px;
+    width: 150px;
     padding: 1px;
-    font-size: 16px;  
+    font-size: 12px; 
+    text-align: center; 
 }
 
 .macro-parameter-edit-button-header-cell {
     width: 80px;
     padding: 1px;
-    font-size: 16px;  
+    font-size: 12px; 
+    text-align: center; 
 }
 
 .macro-parameter-date-cell {
-    height: 55px;
+    height: 65px;
     width: 80px;   
 }
 
 .macro-parameter-cell {
-    height: 55px;
-    width: 140px;   
+    height: 65px;
+    width: 150px;   
 }
 
 .macro-parameter-cell-value {
-    font-size: 18px;
-    text-align: center;
-}
-
-.macro-parameter-cell-change {
     font-size: 16px;
     text-align: center;
 }
 
+.macro-parameter-cell-month-change {
+    font-size: 12px;
+    text-align: center;
+}
+
+.macro-parameter-cell-year-change {
+    font-size: 12px;
+    text-align: center;
+}
+
 .macro-parameter-edit-button-cell {
-    height: 55px;
+    height: 65px;
     width: 80px;   
 }
 
