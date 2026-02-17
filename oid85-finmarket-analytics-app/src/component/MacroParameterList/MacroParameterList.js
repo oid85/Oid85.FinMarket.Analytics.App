@@ -57,7 +57,7 @@ export const MacroParameterList = () => {
                     <div>М1: М0 + чеки, вклады до востребования (текущие счета)</div>
                     <div>М2: М1 + небольшие срочные вклады (денежная масса). В России М2 — основной показатель, включающий наличные и безналичные средства</div>
                     <div>ИПЦ: Индекс потребительских цен</div>
-                </div>
+                </div>                
                 <div className='horizontal-container'>
                     <div className='macro-parameter-date-header-cell border-style'>Дата</div>
                     <div className='macro-parameter-header-cell border-style'>M0 (наличные)</div>
@@ -70,6 +70,7 @@ export const MacroParameterList = () => {
                     <div className='macro-parameter-header-cell border-style'>M1-ИПЦ</div>
                     <div className='macro-parameter-header-cell border-style'>Ключевая ставка</div>
                     <div className='macro-parameter-header-cell border-style'>IMOEX</div>
+                    <div className='macro-parameter-header-cell border-style'>RGBI</div>
                     <div className='macro-parameter-edit-button-header-cell border-style'></div>
                 </div>
                 {
@@ -81,40 +82,40 @@ export const MacroParameterList = () => {
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m0)}</div>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m0Change)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m0Change)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m0YearChange)}</div>
                             </div>
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m1)}</div>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m1Change)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1Change)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1YearChange)}</div>
                             </div>
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m2)}</div>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m2Change)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m2Change)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m2YearChange)}</div>
                             </div>
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m2X)}</div>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m2XChange)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m2XChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m2XYearChange)}</div>
                             </div>
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.currency)}</div>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.currencyChange)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.currencyChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.currencyYearChange)}</div>
                             </div>
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.deposits)}</div>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.depositsChange)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.depositsChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.depositsYearChange)}</div>
                             </div>                                                        
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.consumerPriceIndexChange)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.consumerPriceIndexChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.consumerPriceIndexYearChange)}</div>
                             </div>
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m1ConsumerPriceIndexDifferenceChange)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1ConsumerPriceIndexDifferenceChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1ConsumerPriceIndexDifferenceYearChange)}</div>
                             </div>                            
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-month-change'>{GetValue(macroParameter.keyRate)}</div>                                
@@ -122,8 +123,13 @@ export const MacroParameterList = () => {
                             <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.moexIndexChange)}}>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.moexIndex)}</div>
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.moexIndexChange)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.moexIndexChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.moexIndexYearChange)}</div>
                             </div>
+                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorChange(macroParameter.rgbiIndexChange)}}>
+                                <div className='macro-parameter-cell-value'>{GetValue(macroParameter.rgbiIndex)}</div>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.rgbiIndexChange)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.rgbiIndexYearChange)}</div>
+                            </div>                            
                             <div className='macro-parameter-edit-button-cell border-style'>
 
                             </div>
