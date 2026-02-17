@@ -41,32 +41,32 @@
 }
 
 .macro-parameter-date-cell {
-    height: 65px;
+    height: 70px;
     width: 80px;   
 }
 
 .macro-parameter-cell {
-    height: 65px;
+    height: 70px;
     width: 150px;   
 }
 
 .macro-parameter-cell-value {
-    font-size: 16px;
-    text-align: center;
+    font-size: 18px;
+    text-align: center;    
 }
 
 .macro-parameter-cell-month-change {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
 }
 
 .macro-parameter-cell-year-change {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
 }
 
 .macro-parameter-edit-button-cell {
-    height: 65px;
+    height: 70px;
     width: 80px;   
 }
 

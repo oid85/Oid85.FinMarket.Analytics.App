@@ -20,6 +20,14 @@ const GetColorChange = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetColorM1ConsumerPriceIndexYearDifference = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 10) { return CONSTANTS.COLOR_GREEN }
+    if (value <= 0) { return CONSTANTS.COLOR_RED }    
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 const GetValue = (value) => {
     if (!value) { return "" }
     return value
@@ -113,9 +121,9 @@ export const MacroParameterList = () => {
                                 <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.consumerPriceIndexChange)}</div>
                                 <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.consumerPriceIndexYearChange)}</div>
                             </div>
-                            <div className='macro-parameter-cell border-style'>
-                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m1ConsumerPriceIndexDifferenceChange)}</div>
-                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1ConsumerPriceIndexDifferenceYearChange)}</div>
+                            <div className='macro-parameter-cell border-style' style={{backgroundColor: GetColorM1ConsumerPriceIndexYearDifference(macroParameter.m1ConsumerPriceIndexYearDifference)}}>
+                                <div className='macro-parameter-cell-month-change'>{GetMonthValueChange(macroParameter.m1ConsumerPriceIndexDifference)}</div>
+                                <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.m1ConsumerPriceIndexYearDifference)}</div>
                             </div>                            
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-month-change'>{GetValue(macroParameter.keyRate)}</div>                                
