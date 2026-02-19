@@ -139,7 +139,12 @@ export const MacroParameterList = () => {
                                 <div className='macro-parameter-cell-year-change'>{GetYearValueChange(macroParameter.rgbiIndexYearChange)}</div>
                             </div>                            
                             <div className='macro-parameter-edit-button-cell border-style'>
-
+                            <button className='btn btn-outline-link btn-sm'
+                                onClick={() => {                        
+                                    dispatch(fetchCurrentMacroParameter({...macroParameter}))
+                                    dispatch(showEditMacroParameterModal())
+                                }                
+                                }>...</button>
                             </div>
                         </div>
                     ))
