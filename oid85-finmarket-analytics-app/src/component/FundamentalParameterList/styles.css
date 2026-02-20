@@ -284,7 +284,20 @@
     height: 25px;
 }
 
+.instrument-list-button-container {    
+    padding: 1px;
+}
+
+.instrument-list-button {    
+    width: 90px;
+    height: 25px;
+}
+
 .edit-button-text {        
+    font-size: 10px;     
+}
+
+.instrument-list-button-text {        
     font-size: 10px;     
 }
 

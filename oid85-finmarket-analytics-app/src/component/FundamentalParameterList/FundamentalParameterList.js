@@ -15,6 +15,7 @@ import {
     showEditFundamentalParameterDividendYieldModal,
     showEditFundamentalParameterMoexModal
 } from '../../redux/actions/fundamentalParameterActions'
+import { fetchCurrentInstrument, sagaInstrumentSelect } from '../../redux/actions/instrumentActions'
 import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
 import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
 import {EditFundamentalParameterNetProfitModal} from './EditFundamentalParameterNetProfitModal'
@@ -89,7 +90,23 @@ export const FundamentalParameterList = () => {
                         <div className='horizontal-container'>
                             <div className='border-style emitent-cell'>
                                 <div className='ticker-cell'>{fundamentalParameter.ticker}</div>
-                                <div className='name-cell'>{fundamentalParameter.name}</div>                                
+                                <div className='name-cell'>{fundamentalParameter.name}</div> 
+                                <div className='instrument-list-button-container'>
+                                    <div>
+                                        <button className='btn btn-outline-dark instrument-list-button'
+                                            onClick={() => {
+                                                dispatch(fetchCurrentInstrument({ticker: fundamentalParameter.ticker}))
+                                                dispatch(sagaInstrumentSelect())                                                
+                                                dispatch(sagaFundamentalParameterList())
+                                            }}><div className='instrument-list-button-text'>{fundamentalParameter.isSelected ? <div>Лист. набл.</div> : <del><div>Лист. набл.</div></del>}</div></button>
+                                    </div>
+                                    <div>
+                                        <button className='btn btn-outline-dark instrument-list-button'
+                                            onClick={() => {
+                                                dispatch(sagaFundamentalParameterList())
+                                            }}><div className='instrument-list-button-text'>{fundamentalParameter.inPortfolio ? <div>Портфель</div> : <del><div>Портфель</div></del>}</div></button>
+                                    </div>                                  
+                                </div>
                             </div>                             
                             <div>
                                 <div className='border-style score-cell'>{fundamentalParameter.score}</div>
