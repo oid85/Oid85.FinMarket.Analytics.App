@@ -29,15 +29,15 @@ export const TrendDynamicData = ({data}) => {
                 data.map((item) => (
                     <div className='horizontal-container'>
                         <div className='vertical-container border-style'>
-                            <div className='instrument-ticker-cell'>{item.ticker}</div>
-                            <div className='instrument-name-cell'>{item.name}</div>
+                            <div className='instrument-ticker-cell'>{item.inPortfolio ? <div><b>{item.ticker}</b></div> : <div>{item.ticker}</div>}</div>
+                            <div className='instrument-name-cell'>{item.inPortfolio ? <div><b>{item.name}</b></div> : <div>{item.name}</div>}</div>                            
                         </div>
                         <div className='vertical-container'>
                             <div className='horizontal-container'>
                             {
                                 item.items.map((item) => (                                                
                                     <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
-                                        {item.price}
+                                        {item.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}
                                     </div>
                                 ))
                             }     
@@ -46,7 +46,7 @@ export const TrendDynamicData = ({data}) => {
                             {
                                 item.items.map((item) => (
                                     <div className='delta-cell border-style' style={{color: GetColorDelta(item.delta) }}>
-                                        {GetValueDelta(item.delta)}
+                                        {item.inPortfolio ? <div><b>{GetValueDelta(item.delta)}</b></div> : <div>{GetValueDelta(item.delta)}</div>}
                                     </div>
                                 ))
                             }     
