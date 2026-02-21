@@ -26,27 +26,27 @@ export const TrendDynamicData = ({data}) => {
         <React.Fragment>          
             <div className='vertical-container'>
             {
-                data.map((item) => (
+                data.map((dataItem) => (
                     <div className='horizontal-container'>
                         <div className='vertical-container border-style'>
-                            <div className='instrument-ticker-cell'>{item.inPortfolio ? <div><b>{item.ticker}</b></div> : <div>{item.ticker}</div>}</div>
-                            <div className='instrument-name-cell'>{item.inPortfolio ? <div><b>{item.name}</b></div> : <div>{item.name}</div>}</div>                            
+                            <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>
+                            <div className='instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>                            
                         </div>
                         <div className='vertical-container'>
                             <div className='horizontal-container'>
                             {
-                                item.items.map((item) => (                                                
+                                dataItem.items.map((item) => (                                                
                                     <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
-                                        {item.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}
+                                        {dataItem.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}
                                     </div>
                                 ))
                             }     
                             </div>
                             <div className='horizontal-container'>
                             {
-                                item.items.map((item) => (
+                                dataItem.items.map((item) => (
                                     <div className='delta-cell border-style' style={{color: GetColorDelta(item.delta) }}>
-                                        {item.inPortfolio ? <div><b>{GetValueDelta(item.delta)}</b></div> : <div>{GetValueDelta(item.delta)}</div>}
+                                        {dataItem.inPortfolio ? <div><b>{GetValueDelta(item.delta)}</b></div> : <div>{GetValueDelta(item.delta)}</div>}
                                     </div>
                                 ))
                             }     
