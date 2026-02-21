@@ -15,7 +15,7 @@ import {
     showEditFundamentalParameterDividendYieldModal,
     showEditFundamentalParameterMoexModal
 } from '../../redux/actions/fundamentalParameterActions'
-import { fetchCurrentInstrument, sagaInstrumentSelect } from '../../redux/actions/instrumentActions'
+import { fetchCurrentInstrument, sagaInstrumentPortfolio, sagaInstrumentSelect } from '../../redux/actions/instrumentActions'
 import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
 import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
 import {EditFundamentalParameterNetProfitModal} from './EditFundamentalParameterNetProfitModal'
@@ -103,6 +103,8 @@ export const FundamentalParameterList = () => {
                                     <div>
                                         <button className='btn btn-outline-dark instrument-button'
                                             onClick={() => {
+                                                dispatch(fetchCurrentInstrument({ticker: fundamentalParameter.ticker}))
+                                                dispatch(sagaInstrumentPortfolio()) 
                                                 dispatch(sagaFundamentalParameterList())
                                             }}><div className='instrument-button-text'>{fundamentalParameter.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>
                                     </div>                                  

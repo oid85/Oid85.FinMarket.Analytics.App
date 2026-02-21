@@ -1,6 +1,7 @@
 import {
     SAGA_INSTRUMENT_LIST,
     SAGA_INSTRUMENT_SELECT,
+    SAGA_INSTRUMENT_PORTFOLIO,
     FETCH_INSTRUMENT_LIST,
     FETCH_CURRENT_INSTRUMENT
 } from '../types/instrumentTypes'
@@ -15,6 +16,12 @@ export const sagaInstrumentList = () => {
 export const sagaInstrumentSelect = () => {
     return {
         type: SAGA_INSTRUMENT_SELECT
+    }
+}
+
+export const sagaInstrumentPortfolio = () => {
+    return {
+        type: SAGA_INSTRUMENT_PORTFOLIO
     }
 }
 
