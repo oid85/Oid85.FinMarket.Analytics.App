@@ -26,13 +26,13 @@
 }
 
 .year-header-cell {
-    width: 80px;
+    width: 40px;
     padding: 1px;
     font-size: 12px;  
 }
 
 .score-header-cell {
-    width: 80px;
+    width: 50px;
     padding: 1px;
     font-size: 12px;  
 }
@@ -152,7 +152,7 @@
 
 .year-cell {
     text-align: center;
-    width: 80px;  
+    width: 40px;  
     height: 20px;
     padding: 1px;
     font-size: 12px;
@@ -160,7 +160,7 @@
 
 .score-cell {
     text-align: center;    
-    width: 80px;
+    width: 50px;
     height: 167px;
     font-size: 16px;
     padding: 10px;
@@ -279,25 +279,35 @@
     padding: 1px;
 }
 
+.year-edit-button {    
+    width: 40px;
+    height: 25px;
+}
+
+.score-edit-button {    
+    width: 50px;
+    height: 25px;
+}
+
 .edit-button {    
     width: 80px;
     height: 25px;
 }
 
-.instrument-list-button-container {    
+.instrument-button-container {    
     padding: 1px;
 }
 
-.instrument-list-button {    
+.instrument-button {    
     width: 90px;
     height: 25px;
 }
 
-.edit-button-text {        
-    font-size: 10px;     
+.instrument-button-text {        
+    font-size: 12px;     
 }
 
-.instrument-list-button-text {        
+.edit-button-text {        
     font-size: 10px;     
 }
 

@@ -45,7 +45,7 @@ import {
     netDebtEbitdaColor,
     ebitdaRevenueColor,
     deltaMinMaxColor
-} from '../../colorHelper'
+} from './colorHelper'
 
 export const FundamentalParameterList = () => {
     
@@ -91,26 +91,26 @@ export const FundamentalParameterList = () => {
                             <div className='border-style emitent-cell'>
                                 <div className='ticker-cell'>{fundamentalParameter.ticker}</div>
                                 <div className='name-cell'>{fundamentalParameter.name}</div> 
-                                <div className='instrument-list-button-container'>
+                                <div className='instrument-button-container'>
                                     <div>
-                                        <button className='btn btn-outline-dark instrument-list-button'
+                                        <button className='btn btn-outline-dark instrument-button'
                                             onClick={() => {
                                                 dispatch(fetchCurrentInstrument({ticker: fundamentalParameter.ticker}))
                                                 dispatch(sagaInstrumentSelect())                                                
                                                 dispatch(sagaFundamentalParameterList())
-                                            }}><div className='instrument-list-button-text'>{fundamentalParameter.isSelected ? <div>Лист. набл.</div> : <del><div>Лист. набл.</div></del>}</div></button>
+                                            }}><div className='instrument-button-text'>{fundamentalParameter.isSelected ? <div><b>Наблюдать</b></div> : <div><del>Наблюдать</del></div>}</div></button>
                                     </div>
                                     <div>
-                                        <button className='btn btn-outline-dark instrument-list-button'
+                                        <button className='btn btn-outline-dark instrument-button'
                                             onClick={() => {
                                                 dispatch(sagaFundamentalParameterList())
-                                            }}><div className='instrument-list-button-text'>{fundamentalParameter.inPortfolio ? <div>Портфель</div> : <del><div>Портфель</div></del>}</div></button>
+                                            }}><div className='instrument-button-text'>{fundamentalParameter.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>
                                     </div>                                  
                                 </div>
                             </div>                             
                             <div>
                                 <div className='border-style score-cell'>{fundamentalParameter.score}</div>
-                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Score</div></button>
+                                <button className='btn btn-outline-dark score-edit-button'><div className='edit-button-text'>Score</div></button>
                             </div>
                             <div>
                                 <div className='border-style moex-cell'>{fundamentalParameter.moex}</div>
@@ -129,7 +129,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style year-cell'>2024</div>
                                 <div className='border-style year-cell'>2025</div>
                                 <div className='border-style year-cell'>2026</div>
-                                <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Year</div></button>
+                                <button className='btn btn-outline-dark year-edit-button'><div className='edit-button-text'>Year</div></button>
                             </div>                                 
                             <div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2019)}}>{fundamentalParameter.pe2019}</div>
