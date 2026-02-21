@@ -2,10 +2,10 @@ import React from 'react'
 import './styles.css'
 import {CONSTANTS} from '../../constants'
 
-const GetColorTrend = (trend) => {
+const GetColorTrend = (trend, inPortfolio) => {
     if (!trend) { return CONSTANTS.COLOR_WHITE }
-    if (trend == 1) { return CONSTANTS.COLOR_GREEN }
-    return CONSTANTS.COLOR_RED
+    if (trend == 1) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
+    return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED
 }
 
 const GetColorDelta = (delta) => {
@@ -36,7 +36,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='horizontal-container'>
                             {
                                 dataItem.items.map((item) => (                                                
-                                    <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend)}}>
+                                    <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend, dataItem.inPortfolio)}}>
                                         {dataItem.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}
                                     </div>
                                 ))
