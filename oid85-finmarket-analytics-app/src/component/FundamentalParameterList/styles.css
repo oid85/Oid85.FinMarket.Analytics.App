@@ -38,7 +38,7 @@
 }
 
 .moex-header-cell {
-    width: 80px;
+    width: 50px;
     padding: 1px;
     font-size: 12px;  
 }
@@ -168,7 +168,7 @@
 
 .moex-cell {
     text-align: center;    
-    width: 80px;
+    width: 50px;
     height: 167px;
     font-size: 16px;
     padding: 10px;
@@ -285,6 +285,11 @@
 }
 
 .score-edit-button {    
+    width: 50px;
+    height: 25px;
+}
+
+.imoex-edit-button {    
     width: 50px;
     height: 25px;
 }

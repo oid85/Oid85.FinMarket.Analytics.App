@@ -114,7 +114,7 @@ export const FundamentalParameterList = () => {
                             </div>
                             <div>
                                 <div className='border-style moex-cell'>{fundamentalParameter.moex}</div>
-                                <button className='btn btn-outline-dark edit-button'
+                                <button className='btn btn-outline-dark imoex-edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
                                         dispatch(showEditFundamentalParameterMoexModal())
