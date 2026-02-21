@@ -1,5 +1,13 @@
 import { CONSTANTS } from "../../constants"
 
+export const benchmarkChangeColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 0) { return CONSTANTS.COLOR_GREEN }
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 export const peColor = (value) => {
     if (!value) { return CONSTANTS.COLOR_WHITE }
 

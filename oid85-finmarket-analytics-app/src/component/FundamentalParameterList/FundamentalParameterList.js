@@ -31,6 +31,7 @@ import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { 
+    benchmarkChangeColor,
     netProfitColor, 
     peColor, 
     revenueColor, 
@@ -67,6 +68,7 @@ export const FundamentalParameterList = () => {
                 <div className='horizontal-container'>
                     <div className='ticker-header-cell border-style'>Компания</div>
                     <div className='score-header-cell border-style'>Score</div>
+                    <div className='mcftr-change-header-cell border-style'>MCFTR изм.</div>
                     <div className='moex-header-cell border-style'>IMOEX</div>
                     <div className='year-header-cell border-style'>Год</div>                    
                     <div className='pe-header-cell border-style'>P / E</div>
@@ -89,6 +91,7 @@ export const FundamentalParameterList = () => {
                     fundamentalParameterListData.result.fundamentalParameters.map((fundamentalParameter) => (
                         <div className='horizontal-container'>
                             <div className='border-style emitent-cell'>
+                                <div className='number-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.number}</b></div> : <div>{fundamentalParameter.number}</div>}</div>
                                 <div className='ticker-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.ticker}</b></div> : <div>{fundamentalParameter.ticker}</div>}</div>
                                 <div className='name-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.name}</b></div> : <div>{fundamentalParameter.name}</div>}</div>
                                 <div className='instrument-button-container'>
@@ -110,10 +113,14 @@ export const FundamentalParameterList = () => {
                                     </div>                                  
                                 </div>
                             </div>                             
-                            <div>                                
+                            <div>
                                 <div className='border-style score-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.score}</b></div> : <div>{fundamentalParameter.score}</div>}</div>
                                 <button className='btn btn-outline-dark score-edit-button'><div className='edit-button-text'>Score</div></button>
                             </div>
+                            <div>
+                                <div className='border-style mcftr-change-cell' style={{backgroundColor: benchmarkChangeColor(fundamentalParameter.benchmarkChange)}}>{fundamentalParameter.inPortfolio ? <div><b>{`${fundamentalParameter.benchmarkChange} %`}</b></div> : <div>{`${fundamentalParameter.benchmarkChange} %`}</div>}</div>
+                                <button className='btn btn-outline-dark mcftr-change-edit-button'><div className='edit-button-text'>MCFTR</div></button>
+                            </div>                            
                             <div>
                                 <div className='border-style moex-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.moex}</b></div> : <div>{fundamentalParameter.moex}</div>}</div>
                                 <button className='btn btn-outline-dark imoex-edit-button'

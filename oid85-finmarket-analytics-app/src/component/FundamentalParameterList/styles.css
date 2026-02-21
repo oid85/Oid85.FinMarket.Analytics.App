@@ -37,6 +37,12 @@
     font-size: 12px;  
 }
 
+.mcftr-change-header-cell {
+    width: 75px;
+    padding: 1px;
+    font-size: 12px;  
+}
+
 .moex-header-cell {
     width: 50px;
     padding: 1px;
@@ -144,6 +150,12 @@
     font-size: 12px; 
 }
 
+.number-cell {
+    width: 100px; 
+    padding: 1px;
+    font-size: 12px; 
+}
+
 .name-cell {
     width: 100px; 
     padding: 1px;
@@ -163,6 +175,14 @@
     width: 50px;
     height: 167px;
     font-size: 16px;
+    padding: 10px;
+}
+
+.mcftr-change-cell {
+    text-align: center;    
+    width: 75px;
+    height: 167px;
+    font-size: 14px;
     padding: 10px;
 }
 
@@ -286,6 +306,11 @@
 
 .score-edit-button {    
     width: 50px;
+    height: 25px;
+}
+
+.mcftr-change-edit-button {    
+    width: 75px;
     height: 25px;
 }
 
