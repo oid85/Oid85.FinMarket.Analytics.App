@@ -5,4 +5,3 @@ const controller = 'trends'
 export const getCompareTrendFromApi = async () => {
     return sendPostRequest(`${controller}/compare`, {lastDaysCount: 90})
 }
-

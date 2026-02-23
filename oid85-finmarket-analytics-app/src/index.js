@@ -14,6 +14,7 @@ import { sagaWatcherFundamentalParameter } from './redux/sagas/sagaFundamentalPa
 import { sagaWatcherMacroParameter } from './redux/sagas/sagaMacroParameter'
 import { sagaWatcherFundamentalParameterBubble } from './redux/sagas/sagaFundamentalParameterBubble'
 import { sagaWatcherWeekTrendDelta } from './redux/sagas/sagaWeekTrendDelta'
+import { sagaWatcherPortfolio } from './redux/sagas/sagaPortfolio'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const saga = createSagaMiddleware()
@@ -30,6 +31,7 @@ saga.run(sagaWatcherFundamentalParameter)
 saga.run(sagaWatcherMacroParameter)
 saga.run(sagaWatcherFundamentalParameterBubble)
 saga.run(sagaWatcherWeekTrendDelta)
+saga.run(sagaWatcherPortfolio)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
