@@ -32,16 +32,26 @@ export const EditPortfolioPositionModal = () => {
                 <Modal
                     isOpen={editPortfolioPositionModalIsOpened}
                     style={customStyles}>
-                    <h6>Позиция в портфеле</h6>
+                    <h6>Настройки позиции</h6>
                     <form>
+                        <label>Дивидендный коэф.</label>
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
-                            defaultValue={currentPortfolioPosition.dividendFactorCoefficient} 
-                            placeholder='Дивидендный фактор' 
+                            defaultValue={currentPortfolioPosition.dividendCoefficient} 
+                            placeholder='Дивидендный коэф.' 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentPortfolioPosition({...currentPortfolioPosition, dividendFactorCoefficient: event.target.value})) 
+                                dispatch(fetchCurrentPortfolioPosition({...currentPortfolioPosition, dividendCoefficient: event.target.value})) 
                                 }} />
+                        <label>Ручной коэф.</label>
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentPortfolioPosition.manualCoefficient} 
+                            placeholder='Ручной коэф.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentPortfolioPosition({...currentPortfolioPosition, manualCoefficient: event.target.value})) 
+                                }} />                                
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {

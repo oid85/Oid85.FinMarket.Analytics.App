@@ -19,88 +19,157 @@
     padding: 1px; 
 }
 
-.portfolio-position-ticker-header-cell {
-    width: 102px;  
+.portfolio-position-number-header-cell {
+    width: 60px;  
     padding: 1px;
-    font-size: 12px; 
+    font-size: 18px; 
+}
+
+.portfolio-position-ticker-header-cell {
+    width: 100px;  
+    padding: 1px;
+    font-size: 18px; 
 }
 
 .portfolio-position-name-header-cell {
-    width: 102px;  
+    width: 270px;  
     padding: 1px;
-    font-size: 12px; 
+    font-size: 18px; 
 }
 
 .portfolio-position-dividend-coefficient-header-cell {
-    width: 50px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
+}
+
+.portfolio-position-manual-coefficient-header-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.portfolio-position-result-coefficient-header-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
 }
 
 .portfolio-position-percentage-header-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
 }
 
 .portfolio-position-price-header-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
+}
+
+.portfolio-position-message-header-cell {
+    width: 200px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.portfolio-position-size-header-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
 }
 
 .portfolio-position-cost-header-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
 }
 
 .portfolio-position-edit-button-header-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
+}
+
+.portfolio-position-number-cell {
+    width: 60px;  
+    padding: 1px;
+    font-size: 18px; 
 }
 
 .portfolio-position-ticker-cell {
-    width: 102px;  
+    width: 100px;  
     padding: 1px;
-    font-size: 12px; 
+    font-size: 18px; 
 }
 
 .portfolio-position-name-cell {
-    width: 102px;  
+    width: 270px;
     padding: 1px;
-    font-size: 12px; 
+    font-size: 18px; 
 }
 
 .portfolio-position-dividend-coefficient-cell {
-    width: 50px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
+}
+
+.portfolio-position-manual-coefficient-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.portfolio-position-result-coefficient-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
 }
 
 .portfolio-position-percentage-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
 }
 
 .portfolio-position-price-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
+}
+
+.portfolio-position-message-cell {
+    width: 200px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.portfolio-position-size-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
 }
 
 .portfolio-position-cost-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
 }
 
 .portfolio-position-edit-button-cell {
-    width: 75px;
+    width: 100px;
     padding: 1px;
-    font-size: 12px;  
+    font-size: 18px;  
+}
+
+.edit-button {    
+    width: 80px;
+    height: 25px;
+}
+
+.edit-button-text {        
+    font-size: 10px;     
 }
 
 /*Edit modal*/

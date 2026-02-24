@@ -23,7 +23,7 @@ function* sagaWorkerPortfolioPositionList() {
 
 function* sagaWorkerEditPortfolioPosition() {
     let portfolioPosition = yield select(currentPortfolioPosition)    
-    yield call(editPortfolioPositionFromApi, portfolioPosition.ticker, portfolioPosition.dividendCoefficient)  
+    yield call(editPortfolioPositionFromApi, portfolioPosition.ticker, portfolioPosition.dividendCoefficient, portfolioPosition.manualCoefficient)  
     let getPortfolioPositionListResult = yield call(getPortfolioPositionListFromApi)    
     yield put(fetchPortfolioPositionList(getPortfolioPositionListResult))  
 }

@@ -6,6 +6,6 @@ export const getPortfolioPositionListFromApi = async () => {
     return sendPostRequest(`${controller}/position/list`, {})
 }
 
-export const editPortfolioPositionFromApi = async (ticker, dividendCoefficient) => {
-    return sendPostRequest(`${controller}/position/edit`, { ticker, dividendCoefficient })
+export const editPortfolioPositionFromApi = async (ticker, dividendCoefficient, manualCoefficient) => {
+    return sendPostRequest(`${controller}/position/edit`, { ticker, dividendCoefficient, manualCoefficient })
 }
