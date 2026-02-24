@@ -55,7 +55,7 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-dividend-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.dividendCoefficient}</div>
                             <div className='portfolio-position-manual-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.manualCoefficient}</div>
                             <div className='portfolio-position-result-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.resultCoefficient}</div>
-                            <div className='portfolio-position-percentage-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.percent}</div>
+                            <div className='portfolio-position-percentage-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{`${portfolioPosition.percent} %`}</div>
                             <div className='portfolio-position-size-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.size}</div>
                             <div className='portfolio-position-cost-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.cost}</div>
                             <div className='portfolio-position-price-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.price}</div>
