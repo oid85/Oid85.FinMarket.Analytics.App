@@ -68,8 +68,8 @@ export const FundamentalParameterList = () => {
                 <div className='horizontal-container'>
                     <div className='ticker-header-cell border-style'>Компания</div>
                     <div className='score-header-cell border-style'>Score</div>
-                    <div className='mcftr-change-header-cell border-style'>MCFTR изм.</div>
-                    <div className='moex-header-cell border-style'>IMOEX</div>
+                    <div className='mcftr-change-header-cell border-style'>MCFTR изм. (лучше/хуже индекса)</div>
+                    <div className='moex-header-cell border-style'>IMOEX (доля в индексе)</div>
                     <div className='year-header-cell border-style'>Год</div>                    
                     <div className='pe-header-cell border-style'>P / E</div>
                     <div className='pbv-header-cell border-style'>P / BV</div>

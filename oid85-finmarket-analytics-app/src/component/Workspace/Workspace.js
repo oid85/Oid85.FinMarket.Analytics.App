@@ -25,7 +25,7 @@ export const Workspace = () => {
                     <Tab>Динамика</Tab>
                     <Tab>Сравнение</Tab>
                     <Tab>Макро. (табл.)</Tab>
-                    <Tab>Портфель</Tab>
+                    <Tab>Модель портфеля</Tab>
                 </TabList>
                 <TabPanel>
                     <WeekTrendDeltaScreen />
