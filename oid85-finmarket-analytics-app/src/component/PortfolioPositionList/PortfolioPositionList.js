@@ -6,10 +6,12 @@ import {
     showEditPortfolioPositionModal
 } from '../../redux/actions/portfolioActions'
 import {EditPortfolioPositionModal} from './EditPortfolioPositionModal'
-
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
+import { 
+    rowChangeColor
+} from './colorHelper'
 
 export const PortfolioPositionList = () => {
     
@@ -46,19 +48,19 @@ export const PortfolioPositionList = () => {
                 {
                     portfolioPositionListData.result.portfolioPositions.map((portfolioPosition) => (
                         <div className='horizontal-container'>
-                            <div className='portfolio-position-number-cell border-style'>{portfolioPosition.number}</div>
-                            <div className='portfolio-position-ticker-cell border-style'>{portfolioPosition.ticker}</div>
-                            <div className='portfolio-position-name-cell border-style'>{portfolioPosition.name}</div>  
-                            <div className='portfolio-position-trend-coefficient-cell border-style'>{portfolioPosition.trendCoefficient}</div>
-                            <div className='portfolio-position-dividend-coefficient-cell border-style'>{portfolioPosition.dividendCoefficient}</div>
-                            <div className='portfolio-position-manual-coefficient-cell border-style'>{portfolioPosition.manualCoefficient}</div>
-                            <div className='portfolio-position-result-coefficient-cell border-style'>{portfolioPosition.resultCoefficient}</div>
-                            <div className='portfolio-position-percentage-cell border-style'>{portfolioPosition.percent}</div>
-                            <div className='portfolio-position-size-cell border-style'>{portfolioPosition.size}</div>
-                            <div className='portfolio-position-cost-cell border-style'>{portfolioPosition.cost}</div>
-                            <div className='portfolio-position-price-cell border-style'>{portfolioPosition.price}</div>
-                            <div className='portfolio-position-message-cell border-style'>{portfolioPosition.message}</div>
-                            <div className='portfolio-position-edit-button-cell border-style'>
+                            <div className='portfolio-position-number-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.number}</div>
+                            <div className='portfolio-position-ticker-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.ticker}</div>
+                            <div className='portfolio-position-name-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.name}</div>  
+                            <div className='portfolio-position-trend-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.trendCoefficient}</div>
+                            <div className='portfolio-position-dividend-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.dividendCoefficient}</div>
+                            <div className='portfolio-position-manual-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.manualCoefficient}</div>
+                            <div className='portfolio-position-result-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.resultCoefficient}</div>
+                            <div className='portfolio-position-percentage-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.percent}</div>
+                            <div className='portfolio-position-size-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.size}</div>
+                            <div className='portfolio-position-cost-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.cost}</div>
+                            <div className='portfolio-position-price-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.price}</div>
+                            <div className='portfolio-position-message-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.message}</div>
+                            <div className='portfolio-position-edit-button-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>
                                 <button className='btn btn-outline-dark edit-button'
                                         onClick={() => {
                                             dispatch(fetchCurrentPortfolioPosition({...portfolioPosition}))
