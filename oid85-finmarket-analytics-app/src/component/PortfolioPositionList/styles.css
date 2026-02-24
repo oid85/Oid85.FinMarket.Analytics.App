@@ -37,6 +37,12 @@
     font-size: 18px; 
 }
 
+.portfolio-position-trend-coefficient-header-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
 .portfolio-position-dividend-coefficient-header-cell {
     width: 100px;
     padding: 1px;
@@ -107,6 +113,12 @@
     width: 270px;
     padding: 1px;
     font-size: 18px; 
+}
+
+.portfolio-position-trend-coefficient-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
 }
 
 .portfolio-position-dividend-coefficient-cell {

@@ -32,6 +32,7 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-number-header-cell border-style'>Номер</div>
                     <div className='portfolio-position-ticker-header-cell border-style'>Тикер</div>
                     <div className='portfolio-position-name-header-cell border-style'>Наименование</div>
+                    <div className='portfolio-position-trend-coefficient-header-cell border-style'>Тренд. коэф.</div>
                     <div className='portfolio-position-dividend-coefficient-header-cell border-style'>Дивиденд. коэф.</div>
                     <div className='portfolio-position-manual-coefficient-header-cell border-style'>Ручной коэф.</div>
                     <div className='portfolio-position-result-coefficient-header-cell border-style'>Итоговый коэф.</div>
@@ -48,6 +49,7 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-number-cell border-style'>{portfolioPosition.number}</div>
                             <div className='portfolio-position-ticker-cell border-style'>{portfolioPosition.ticker}</div>
                             <div className='portfolio-position-name-cell border-style'>{portfolioPosition.name}</div>  
+                            <div className='portfolio-position-trend-coefficient-cell border-style'>{portfolioPosition.trendCoefficient}</div>
                             <div className='portfolio-position-dividend-coefficient-cell border-style'>{portfolioPosition.dividendCoefficient}</div>
                             <div className='portfolio-position-manual-coefficient-cell border-style'>{portfolioPosition.manualCoefficient}</div>
                             <div className='portfolio-position-result-coefficient-cell border-style'>{portfolioPosition.resultCoefficient}</div>
