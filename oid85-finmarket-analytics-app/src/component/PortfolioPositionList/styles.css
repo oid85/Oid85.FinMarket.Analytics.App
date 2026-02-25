@@ -15,6 +15,11 @@
     margin: 1px;
 }
 
+.portfolio-position-total-sum {    
+    padding: 1px;
+    font-size: 20px; 
+}
+
 .portfolio-position-container {     
     padding: 1px; 
 }

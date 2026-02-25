@@ -3,9 +3,12 @@ import {useDispatch, useSelector} from 'react-redux'
 import { 
     sagaPortfolioPositionList, 
     fetchCurrentPortfolioPosition, 
-    showEditPortfolioPositionModal
+    showEditPortfolioPositionModal,
+    showEditPortfolioTotalSumModal,
+    fetchPortfolioTotalSum
 } from '../../redux/actions/portfolioActions'
 import {EditPortfolioPositionModal} from './EditPortfolioPositionModal'
+import {EditPortfolioTotalSumModal} from './EditPortfolioTotalSumModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -23,6 +26,10 @@ export const PortfolioPositionList = () => {
         dispatch(sagaPortfolioPositionList())
     }, [])
 
+    const formatNumber = (num) => {
+        return new Intl.NumberFormat('ru-RU').format(num);
+      };
+
     return (
         <React.Fragment>
         {
@@ -30,6 +37,14 @@ export const PortfolioPositionList = () => {
             ? <Loader/>
             :
             <div className='portfolio-position-container border-style'>
+                <div className='horizontal-container'>
+                    <div className='portfolio-position-total-sum border-style'>{`Сумма портфеля: ${formatNumber(portfolioPositionListData.result.totalSum)} руб.`}</div>
+                    <button className='btn btn-outline-dark'
+                                        onClick={() => {
+                                            dispatch(fetchPortfolioTotalSum(portfolioPositionListData.result.totalSum))
+                                            dispatch(showEditPortfolioTotalSumModal())
+                                            }}>...</button>
+                </div>
                 <div className='horizontal-container'>
                     <div className='portfolio-position-number-header-cell border-style'>Номер</div>
                     <div className='portfolio-position-ticker-header-cell border-style'>Тикер</div>
@@ -56,12 +71,12 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-manual-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.manualCoefficient}</div>
                             <div className='portfolio-position-result-coefficient-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.resultCoefficient}</div>
                             <div className='portfolio-position-percentage-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{`${portfolioPosition.percent} %`}</div>
-                            <div className='portfolio-position-size-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.size}</div>
-                            <div className='portfolio-position-cost-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.cost}</div>
-                            <div className='portfolio-position-price-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.price}</div>
+                            <div className='portfolio-position-size-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.size)}</div>
+                            <div className='portfolio-position-cost-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.cost)}</div>
+                            <div className='portfolio-position-price-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.price)}</div>
                             <div className='portfolio-position-message-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.message}</div>
                             <div className='portfolio-position-edit-button-cell border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>
-                                <button className='btn btn-outline-dark edit-button'
+                                <button className='btn btn-outline-link edit-button'
                                         onClick={() => {
                                             dispatch(fetchCurrentPortfolioPosition({...portfolioPosition}))
                                             dispatch(showEditPortfolioPositionModal())
@@ -73,6 +88,7 @@ export const PortfolioPositionList = () => {
             </div>
         }
         <EditPortfolioPositionModal />
+        <EditPortfolioTotalSumModal />
         </React.Fragment>                
     )
 }
