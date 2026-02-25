@@ -38,7 +38,7 @@ export const PortfolioPositionList = () => {
             :
             <div className='portfolio-position-container border-style'>
                 <div className='horizontal-container'>
-                    <div className='portfolio-position-total-sum border-style'>{`Сумма портфеля: ${formatNumber(portfolioPositionListData.result.totalSum)} руб.`}</div>
+                    <div className='portfolio-position-total-sum'>{`Сумма портфеля: ${formatNumber(portfolioPositionListData.result.totalSum)} руб.`}</div>
                     <button className='btn btn-outline-dark'
                                         onClick={() => {
                                             dispatch(fetchPortfolioTotalSum(portfolioPositionListData.result.totalSum))
