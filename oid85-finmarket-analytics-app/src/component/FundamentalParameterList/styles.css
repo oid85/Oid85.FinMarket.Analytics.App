@@ -50,19 +50,19 @@
 }
 
 .pe-header-cell {
-    width: 80px;
+    width: 40px;
     padding: 1px;
     font-size: 12px;  
 }
 
 .pbv-header-cell {
-    width: 80px;
+    width: 40px;
     padding: 1px;
     font-size: 12px;  
 }
 
 .roa-header-cell {
-    width: 80px;
+    width: 50px;
     padding: 1px;
     font-size: 12px;  
 }
@@ -195,21 +195,21 @@
 }
 
 .pe-cell {
-    width: 80px;
+    width: 40px;
     height: 20px;
     font-size: 12px;
     padding: 1px;
 }
 
 .pbv-cell {
-    width: 80px;
+    width: 40px;
     height: 20px;
     font-size: 12px;
     padding: 1px;
 }
 
 .roa-cell {
-    width: 80px;
+    width: 50px;
     height: 20px;
     font-size: 12px;
     padding: 1px;
@@ -301,6 +301,21 @@
 
 .year-edit-button {    
     width: 40px;
+    height: 25px;
+}
+
+.pe-edit-button {    
+    width: 40px;
+    height: 25px;
+}
+
+.pbv-edit-button {    
+    width: 40px;
+    height: 25px;
+}
+
+.roa-edit-button {    
+    width: 50px;
     height: 25px;
 }
 

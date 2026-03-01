@@ -149,7 +149,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2024)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.pe2024}</b></div> : <div>{fundamentalParameter.pe2024}</div>}</div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2025)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.pe2025}</b></div> : <div>{fundamentalParameter.pe2025}</div>}</div>
                                 <div className='border-style pe-cell' style={{backgroundColor: peColor(fundamentalParameter.pe2026)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.pe2026}</b></div> : <div>{fundamentalParameter.pe2026}</div>}</div>
-                                <button className='btn btn-outline-dark edit-button'
+                                <button className='btn btn-outline-dark pe-edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
                                         dispatch(showEditFundamentalParameterPeModal())
@@ -164,7 +164,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2024)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.pbv2024}</b></div> : <div>{fundamentalParameter.pbv2024}</div>}</div>
                                 <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2025)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.pbv2025}</b></div> : <div>{fundamentalParameter.pbv2025}</div>}</div>
                                 <div className='border-style pbv-cell' style={{backgroundColor: pbvColor(fundamentalParameter.pbv2026)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.pbv2026}</b></div> : <div>{fundamentalParameter.pbv2026}</div>}</div>
-                                <button className='btn btn-outline-dark edit-button'
+                                <button className='btn btn-outline-dark pbv-edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
                                         dispatch(showEditFundamentalParameterPbvModal())
@@ -179,7 +179,7 @@ export const FundamentalParameterList = () => {
                                 <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2024)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.roa2024}</b></div> : <div>{fundamentalParameter.roa2024}</div>}</div>
                                 <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2025)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.roa2025}</b></div> : <div>{fundamentalParameter.roa2025}</div>}</div>
                                 <div className='border-style roa-cell' style={{backgroundColor: roaColor(fundamentalParameter.roa2026)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.roa2026}</b></div> : <div>{fundamentalParameter.roa2026}</div>}</div>
-                                <button className='btn btn-outline-dark edit-button'
+                                <button className='btn btn-outline-dark roa-edit-button'
                                     onClick={() => {
                                         dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
                                         dispatch(showEditFundamentalParameterRoaModal())
