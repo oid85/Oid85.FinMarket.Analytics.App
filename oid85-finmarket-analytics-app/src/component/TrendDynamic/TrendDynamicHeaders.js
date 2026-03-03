@@ -2,7 +2,7 @@ import React from 'react'
 import {Calendar} from '../Calendar/Calendar'
 import './styles.css'
 
-export const TrendDynamicDates = ({dates}) => {
+export const TrendDynamicHeaders = ({dates}) => {
 
     return (
         <React.Fragment>          

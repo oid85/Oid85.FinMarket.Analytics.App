@@ -8,6 +8,7 @@ import { macroParameterReducer } from './macroParameterReducer'
 import { fundamentalParameterBubbleReducer } from './fundamentalParameterBubbleReducer'
 import { weekTrendDeltaReducer } from './weekTrendDeltaReducer'
 import { portfolioReducer } from './portfolioReducer'
+import { bondAnalyseReducer } from './bondAnalyseReducer'
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -18,5 +19,6 @@ export const rootReducer = combineReducers({
     macroParameter: macroParameterReducer,
     fundamentalParameterBubble: fundamentalParameterBubbleReducer,
     weekTrendDelta: weekTrendDeltaReducer,
-    portfolio: portfolioReducer
+    portfolio: portfolioReducer,
+    bondAnalyse: bondAnalyseReducer
 })

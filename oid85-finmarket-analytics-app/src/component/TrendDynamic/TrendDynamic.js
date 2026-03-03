@@ -4,7 +4,7 @@ import { sagaTrendDynamic } from '../../redux/actions/trendDynamicActions'
 import Loader from '../Loader/Loader'
 import './styles.css'
 import { TrendDynamicData } from './TrendDynamicData'
-import { TrendDynamicDates } from './TrendDynamicDates'
+import { TrendDynamicHeaders } from './TrendDynamicHeaders'
 
 export const TrendDynamic = () => {
     
@@ -24,7 +24,7 @@ export const TrendDynamic = () => {
             :
             <div className='horizontal-container'>             
                 <div className='trend-dynamic-container border-style'>
-                    <TrendDynamicDates dates = {trendDynamicData.result.dates} />
+                    <TrendDynamicHeaders dates = {trendDynamicData.result.dates} />
                     <h6>Индексы</h6>
                     <TrendDynamicData data = {trendDynamicData.result.indexes} />
                     <h6>Акции</h6>

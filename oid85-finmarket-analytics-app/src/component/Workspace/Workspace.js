@@ -10,6 +10,7 @@ import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
 import { FundamentalParameterBubbleScreen } from '../Screens/FundamentalParameterBubbleScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
+import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -26,6 +27,7 @@ export const Workspace = () => {
                     <Tab>Сравнение</Tab>
                     <Tab>Макро. (табл.)</Tab>
                     <Tab>Модель портфеля</Tab>
+                    <Tab>Анализ облигаций</Tab>
                 </TabList>
                 <TabPanel>
                     <WeekTrendDeltaScreen />
@@ -47,7 +49,10 @@ export const Workspace = () => {
                 </TabPanel>   
                 <TabPanel>
                     <PortfolioScreen />
-                </TabPanel>                                             
+                </TabPanel>  
+                <TabPanel>
+                    <BondAnalyseScreen />
+                </TabPanel>                                                           
             </Tabs>
         </React.Fragment>
     )    

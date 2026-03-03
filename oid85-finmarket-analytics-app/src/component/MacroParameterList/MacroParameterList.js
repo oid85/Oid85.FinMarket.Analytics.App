@@ -7,7 +7,7 @@ import {
 } from '../../redux/actions/macroParameterActions'
 import {EditMacroParameterModal} from './EditMacroParameterModal'
 import Loader from '../Loader/Loader'
-import {Calendar} from '../Calendar/Calendar'
+import {CalendarMonth} from '../Calendar/CalendarMonth'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import {CONSTANTS} from '../../constants'
@@ -85,7 +85,7 @@ export const MacroParameterList = () => {
                     macroParameterListData.result.macroParameters.map((macroParameter, index) => (
                         <div className='horizontal-container'>
                             <div className='macro-parameter-date-cell border-style'>
-                                <Calendar key = {index} date = {macroParameter.date} />
+                                <CalendarMonth key = {index} date = {macroParameter.date} />
                             </div>
                             <div className='macro-parameter-cell border-style'>
                                 <div className='macro-parameter-cell-value'>{GetValue(macroParameter.m0)}</div>
