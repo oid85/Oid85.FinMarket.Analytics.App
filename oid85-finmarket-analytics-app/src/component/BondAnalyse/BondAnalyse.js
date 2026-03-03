@@ -3,7 +3,11 @@ import {useDispatch, useSelector} from 'react-redux'
 import { sagaBondAnalyse } from '../../redux/actions/bondAnalyseActions'
 import { CalendarMonth } from '../Calendar/CalendarMonth'
 import Loader from '../Loader/Loader'
+import { CONSTANTS } from "../../constants"
 import './styles.css'
+import { 
+    couponColor
+} from './colorHelper'
 
 export const BondAnalyse = () => {
     
@@ -49,7 +53,7 @@ export const BondAnalyse = () => {
                             <div className='bond-analyse-days-to-maturity-cell border-style'>{item.daysToMaturity}</div> 
                             {
                                 item.coupons.map((coupon, index) => (
-                                    <div className='bond-analyse-coupon-cell border-style'>{coupon.couponSum}</div>                             
+                                    <div className='bond-analyse-coupon-cell border-style' style={{backgroundColor: couponColor(coupon.couponSum)}}>{coupon.couponSum}</div>                             
                                 ))
                             }                                                       
                         </div>                         
