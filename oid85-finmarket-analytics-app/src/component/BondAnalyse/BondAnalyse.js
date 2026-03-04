@@ -34,7 +34,7 @@ export const BondAnalyse = () => {
                     <div className='bond-analyse-nkd-header-cell bond-analyse-border-style'>НКД</div>
                     <div className='bond-analyse-price-header-cell bond-analyse-border-style'>Цена</div>
                     <div className='bond-analyse-yield-header-cell bond-analyse-border-style'>Дох-ть</div>
-                    <div className='bond-analyse-days-to-maturity-header-cell bond-analyse-border-style'>До погаш.</div>
+                    <div className='bond-analyse-days-to-maturity-header-cell bond-analyse-border-style'>Лет до погаш.</div>
                     {
                         bondAnalyseData.result.dates.map((date, index) => (
                             <div className='bond-analyse-date-header-cell bond-analyse-border-style'>
@@ -51,7 +51,7 @@ export const BondAnalyse = () => {
                             <div className='bond-analyse-nkd-cell bond-analyse-border-style'>{item.nkd}</div>
                             <div className='bond-analyse-price-cell bond-analyse-border-style' style={{backgroundColor: priceColor(item.price)}}>{item.price}</div>
                             <div className='bond-analyse-yield-cell bond-analyse-border-style' style={{backgroundColor: yieldColor(item.yield)}}>{`${item.yield} %`}</div>                            
-                            <div className='bond-analyse-days-to-maturity-cell bond-analyse-border-style' style={{backgroundColor: daysToMaturityColor(item.daysToMaturity)}}>{item.daysToMaturity}</div> 
+                            <div className='bond-analyse-days-to-maturity-cell bond-analyse-border-style' style={{backgroundColor: daysToMaturityColor(item.daysToMaturity)}}>{(item.daysToMaturity / 365.0).toFixed(1)}</div> 
                             {
                                 item.coupons.map((coupon, index) => (
                                     <div className='bond-analyse-coupon-cell bond-analyse-border-style' style={{backgroundColor: couponColor(coupon.couponSum)}}>{coupon.couponSum}</div>                             
