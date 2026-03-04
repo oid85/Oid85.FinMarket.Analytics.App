@@ -21,29 +21,29 @@ export const Workspace = () => {
             <Tabs>
                 <TabList>
                     <Tab>Недели</Tab>
+                    <Tab>Динамика</Tab>
+                    <Tab>Сравнение</Tab>                    
                     <Tab>Фунд. (табл.)</Tab>
                     <Tab>Фунд. (диагр.)</Tab>                    
-                    <Tab>Динамика</Tab>
-                    <Tab>Сравнение</Tab>
                     <Tab>Макро. (табл.)</Tab>
                     <Tab>Модель портфеля</Tab>
                     <Tab>Анализ облигаций</Tab>
                 </TabList>
                 <TabPanel>
                     <WeekTrendDeltaScreen />
-                </TabPanel>                
-                <TabPanel>
-                    <FundamentalParameterScreen />
-                </TabPanel>  
-                <TabPanel>
-                    <FundamentalParameterBubbleScreen />
-                </TabPanel>                                                              
+                </TabPanel>    
                 <TabPanel>
                     <TrendDynamicScreen />
                 </TabPanel>
                 <TabPanel>
                     <CompareTrendScreen />
+                </TabPanel>                             
+                <TabPanel>
+                    <FundamentalParameterScreen />
                 </TabPanel>  
+                <TabPanel>
+                    <FundamentalParameterBubbleScreen />
+                </TabPanel>                                                               
                 <TabPanel>
                     <MacroParameterScreen />
                 </TabPanel>   
