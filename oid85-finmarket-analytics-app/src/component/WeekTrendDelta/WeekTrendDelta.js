@@ -28,6 +28,8 @@ export const WeekTrendDelta = () => {
             <WeekTrendDeltaData data = {weekTrendDeltaData.result.indexes} />
             <h6>Акции</h6>
             <WeekTrendDeltaData data = {weekTrendDeltaData.result.shares} />
+            <h6>Фьючерсы</h6>
+            <WeekTrendDeltaData data = {weekTrendDeltaData.result.futures} />            
         </div>         
         }
         </React.Fragment>                
