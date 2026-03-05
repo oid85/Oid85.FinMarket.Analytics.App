@@ -10,9 +10,9 @@
     flex-direction: column;    
 }
 
-.border-style {
+.portfolio-position-border-style {
     border: 1px solid #000;     
-    margin: 1px;
+    margin: .5px;
 }
 
 .portfolio-position-total-sum {    
