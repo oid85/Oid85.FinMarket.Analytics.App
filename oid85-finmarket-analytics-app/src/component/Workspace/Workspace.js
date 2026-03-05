@@ -20,8 +20,8 @@ export const Workspace = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                    <Tab>Недели</Tab>
-                    <Tab>Динамика</Tab>
+                    <Tab>По неделям</Tab>
+                    <Tab>По дням</Tab>
                     <Tab>Сравнение</Tab>                    
                     <Tab>Фунд. (табл.)</Tab>
                     <Tab>Фунд. (диагр.)</Tab>                    

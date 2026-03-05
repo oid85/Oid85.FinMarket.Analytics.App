@@ -51,7 +51,7 @@ export const BondAnalyse = () => {
                             <div className='bond-analyse-nkd-cell bond-analyse-border-style'>{item.nkd}</div>
                             <div className='bond-analyse-price-cell bond-analyse-border-style' style={{backgroundColor: priceColor(item.price)}}>{item.price}</div>
                             <div className='bond-analyse-yield-cell bond-analyse-border-style' style={{backgroundColor: yieldColor(item.yield)}}>{`${item.yield} %`}</div>                            
-                            <div className='bond-analyse-days-to-maturity-cell bond-analyse-border-style' style={{backgroundColor: daysToMaturityColor(item.daysToMaturity)}}>{(item.daysToMaturity / 365.0).toFixed(1)}</div> 
+                            <div className='bond-analyse-days-to-maturity-cell bond-analyse-border-style' style={{backgroundColor: daysToMaturityColor(item.daysToMaturity)}}>{`${(item.daysToMaturity / 365.0).toFixed(1)} г.`}</div> 
                             {
                                 item.coupons.map((coupon, index) => (
                                     <div className='bond-analyse-coupon-cell bond-analyse-border-style' style={{backgroundColor: couponColor(coupon.couponSum)}}>{coupon.couponSum}</div>                             
