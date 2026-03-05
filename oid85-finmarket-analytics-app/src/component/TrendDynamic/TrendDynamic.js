@@ -31,8 +31,6 @@ export const TrendDynamic = () => {
                     <TrendDynamicData data = {trendDynamicData.result.shares} />
                     <h6>Фьючерсы</h6>
                     <TrendDynamicData data = {trendDynamicData.result.futures} />
-                    <h6>Облигации</h6>
-                    <TrendDynamicData data = {trendDynamicData.result.bonds} />
                 </div> 
             </div>         
         }
