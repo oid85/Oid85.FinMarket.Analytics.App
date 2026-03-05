@@ -15,93 +15,115 @@
     margin: .5px;
 }
 
+.bond-analyse-in-portfolio-button-header-cell {    
+    width: 120px;
+    height: 45px;
+    font-size: 14px;
+    padding: 1px;
+}
+
 .bond-analyse-ticker-header-cell {    
     width: 120px;
-    height: 40px;
-    font-size: 12px;
+    height: 45px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-name-header-cell {    
     width: 350px;
-    height: 40px;
-    font-size: 12px;
+    height: 45px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-nkd-header-cell {    
-    width: 50px;
-    height: 40px;
-    font-size: 12px;
+    width: 55px;
+    height: 45px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-price-header-cell {    
-    width: 50px;
-    height: 40px;
-    font-size: 12px;
+    width: 55px;
+    height: 45px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-yield-header-cell {    
-    width: 50px;
-    height: 40px;
-    font-size: 12px;
+    width: 60px;
+    height: 45px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-days-to-maturity-header-cell {    
-    width: 50px;
-    height: 40px;
-    font-size: 12px;
+    width: 55px;
+    height: 45px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-date-header-cell {    
-    width: 50px;
-    height: 40px;
-    font-size: 12px;
+    width: 55px;
+    height: 45px;
+    font-size: 14px;
+    padding: 1px;
+}
+
+.bond-analyse-in-portfolio-button-cell {    
+    width: 120px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-ticker-cell {    
     width: 120px;
-    font-size: 12px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-name-cell {    
     width: 350px;   
-    font-size: 12px; 
+    font-size: 14px; 
     padding: 1px;
 }
 
 .bond-analyse-nkd-cell {    
-    width: 50px;
-    font-size: 12px;
+    width: 55px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-price-cell {    
-    width: 50px;
-    font-size: 12px;
+    width: 55px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-yield-cell {    
-    width: 50px;
-    font-size: 12px;
+    width: 60px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-days-to-maturity-cell {    
-    width: 50px;
-    font-size: 12px;
+    width: 55px;
+    font-size: 14px;
     padding: 1px;
 }
 
 .bond-analyse-coupon-cell {    
-    width: 50px;
-    font-size: 12px;
+    width: 55px;
+    font-size: 14px;
     padding: 1px;
+}
+
+.bond-analyse-in-portfolio-button {    
+    width: 116px;
+    height: 25px;
+}
+
+.bond-analyse-in-portfolio-button-text {        
+    font-size: 12px;
 }
