@@ -12,6 +12,6 @@ export function* sagaWatcherBondAnalyse() {
 }
 
 function* sagaWorkerBondAnalyse() {
-    let getBondAnalyseResult = yield call(getBondAnalyseFromApi)    
-    yield put(fetchBondAnalyse(getBondAnalyseResult))
+    let result = yield call(getBondAnalyseFromApi)    
+    yield put(fetchBondAnalyse(result))
 }

@@ -20,20 +20,20 @@ export function* sagaWatcherInstrument() {
 }
 
 function* sagaWorkerInstrumentList() {
-    let getInstrumentListResult = yield call(getInstrumentListFromApi)    
-    yield put(fetchInstrumentList(getInstrumentListResult))
+    let result = yield call(getInstrumentListFromApi)    
+    yield put(fetchInstrumentList(result))
 }
 
 function* sagaWorkerInstrumentSelect() {
     let instrument = yield select(currentInstrument)    
     yield call(selectInstrumentFromApi, instrument.ticker)  
-    let getInstrumentListResult = yield call(getInstrumentListFromApi)    
-    yield put(fetchInstrumentList(getInstrumentListResult))     
+    let result = yield call(getInstrumentListFromApi)    
+    yield put(fetchInstrumentList(result))     
 }
 
 function* sagaWorkerInstrumentPortfolio() {
     let instrument = yield select(currentInstrument)    
     yield call(portfolioInstrumentFromApi, instrument.ticker)  
-    let getInstrumentListResult = yield call(getInstrumentListFromApi)    
-    yield put(fetchInstrumentList(getInstrumentListResult))     
+    let result = yield call(getInstrumentListFromApi)    
+    yield put(fetchInstrumentList(result))     
 }

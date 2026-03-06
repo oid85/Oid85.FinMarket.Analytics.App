@@ -12,6 +12,6 @@ export function* sagaWatcherFundamentalParameterBubble() {
 }
 
 function* sagaWorkerFundamentalParameterBubble() {
-    let getFundamentalParameterBubbleResult = yield call(getFundamentalParameterBubbleFromApi)    
-    yield put(fetchFundamentalParameterBubble(getFundamentalParameterBubbleResult))
+    let result = yield call(getFundamentalParameterBubbleFromApi)    
+    yield put(fetchFundamentalParameterBubble(result))
 }

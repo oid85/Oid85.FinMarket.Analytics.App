@@ -12,6 +12,6 @@ export function* sagaWatcherWeekTrendDelta() {
 }
 
 function* sagaWorkerWeekTrendDelta() {
-    let getWeekTrendDeltaResult = yield call(getWeekTrendDeltaFromApi)    
-    yield put(fetchWeekTrendDelta(getWeekTrendDeltaResult))
+    let result = yield call(getWeekTrendDeltaFromApi)    
+    yield put(fetchWeekTrendDelta(result))
 }

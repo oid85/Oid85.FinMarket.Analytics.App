@@ -21,20 +21,20 @@ export function* sagaWatcherPortfolio() {
 }
 
 function* sagaWorkerPortfolioPositionList() {
-    let getPortfolioPositionListResult = yield call(getPortfolioPositionListFromApi)    
-    yield put(fetchPortfolioPositionList(getPortfolioPositionListResult))
+    let result = yield call(getPortfolioPositionListFromApi)    
+    yield put(fetchPortfolioPositionList(result))
 }
 
 function* sagaWorkerEditPortfolioPosition() {
     let portfolioPosition = yield select(currentPortfolioPosition)    
     yield call(editPortfolioPositionFromApi, portfolioPosition.ticker, portfolioPosition.dividendCoefficient, portfolioPosition.manualCoefficient)  
-    let getPortfolioPositionListResult = yield call(getPortfolioPositionListFromApi)    
-    yield put(fetchPortfolioPositionList(getPortfolioPositionListResult))  
+    let result = yield call(getPortfolioPositionListFromApi)    
+    yield put(fetchPortfolioPositionList(result))  
 }
 
 function* sagaWorkerEditPortfolioTotalSum() {
     let totalSum = yield select(portfolioTotalSum)    
     yield call(editPortfolioTotalSumFromApi, totalSum)  
-    let getPortfolioPositionListResult = yield call(getPortfolioPositionListFromApi)    
-    yield put(fetchPortfolioPositionList(getPortfolioPositionListResult))  
+    let result = yield call(getPortfolioPositionListFromApi)    
+    yield put(fetchPortfolioPositionList(result))  
 }

@@ -10,6 +10,7 @@ import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
 import { FundamentalParameterBubbleScreen } from '../Screens/FundamentalParameterBubbleScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
+import { BondPortfolioScreen } from '../Screens/BondPortfolioScreen'
 import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
 
 export const Workspace = () => {
@@ -25,9 +26,10 @@ export const Workspace = () => {
                     <Tab>Сравнение</Tab>                    
                     <Tab>Фунд. (табл.)</Tab>
                     <Tab>Фунд. (диагр.)</Tab>                    
-                    <Tab>Макро. (табл.)</Tab>
-                    <Tab>Модель портфеля</Tab>
+                    <Tab>Макро. (табл.)</Tab>                    
                     <Tab>Анализ облигаций</Tab>
+                    <Tab>Модель портфеля акций</Tab>
+                    <Tab>Модель портфеля облигаций</Tab>
                 </TabList>
                 <TabPanel>
                     <WeekTrendDeltaScreen />
@@ -46,13 +48,16 @@ export const Workspace = () => {
                 </TabPanel>                                                               
                 <TabPanel>
                     <MacroParameterScreen />
-                </TabPanel>   
-                <TabPanel>
-                    <PortfolioScreen />
-                </TabPanel>  
+                </TabPanel>    
                 <TabPanel>
                     <BondAnalyseScreen />
-                </TabPanel>                                                           
+                </TabPanel> 
+                <TabPanel>
+                    <PortfolioScreen />
+                </TabPanel>                 
+                <TabPanel>
+                    <BondPortfolioScreen />
+                </TabPanel>                                                                            
             </Tabs>
         </React.Fragment>
     )    

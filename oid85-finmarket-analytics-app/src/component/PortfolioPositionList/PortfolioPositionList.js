@@ -13,7 +13,7 @@ import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { 
-    rowChangeColor
+    rowColor
 } from './colorHelper'
 
 export const PortfolioPositionList = () => {
@@ -63,19 +63,19 @@ export const PortfolioPositionList = () => {
                 {
                     portfolioPositionListData.result.portfolioPositions.map((portfolioPosition) => (
                         <div className='horizontal-container'>
-                            <div className='portfolio-position-number-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.number}</div>
-                            <div className='portfolio-position-ticker-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.ticker}</div>
-                            <div className='portfolio-position-name-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.name}</div>  
-                            <div className='portfolio-position-trend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.trendCoefficient}</div>
-                            <div className='portfolio-position-dividend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.dividendCoefficient}</div>
-                            <div className='portfolio-position-manual-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.manualCoefficient}</div>
-                            <div className='portfolio-position-result-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.resultCoefficient}</div>
-                            <div className='portfolio-position-percentage-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{`${portfolioPosition.percent} %`}</div>
-                            <div className='portfolio-position-size-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.size)}</div>
-                            <div className='portfolio-position-cost-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.cost)}</div>
-                            <div className='portfolio-position-price-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.price)}</div>
-                            <div className='portfolio-position-message-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.message}</div>
-                            <div className='portfolio-position-edit-button-cell portfolio-position-border-style' style={{backgroundColor: rowChangeColor(portfolioPosition.trendCoefficient)}}>
+                            <div className='portfolio-position-number-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.number}</div>
+                            <div className='portfolio-position-ticker-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.ticker}</div>
+                            <div className='portfolio-position-name-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.name}</div>  
+                            <div className='portfolio-position-trend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.trendCoefficient}</div>
+                            <div className='portfolio-position-dividend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.dividendCoefficient}</div>
+                            <div className='portfolio-position-manual-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.manualCoefficient}</div>
+                            <div className='portfolio-position-result-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.resultCoefficient}</div>
+                            <div className='portfolio-position-percentage-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{`${portfolioPosition.percent} %`}</div>
+                            <div className='portfolio-position-size-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.size)}</div>
+                            <div className='portfolio-position-cost-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.cost)}</div>
+                            <div className='portfolio-position-price-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{formatNumber(portfolioPosition.price)}</div>
+                            <div className='portfolio-position-message-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>{portfolioPosition.message}</div>
+                            <div className='portfolio-position-edit-button-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.trendCoefficient)}}>
                                 <button className='btn btn-outline-link edit-button'
                                         onClick={() => {
                                             dispatch(fetchCurrentPortfolioPosition({...portfolioPosition}))

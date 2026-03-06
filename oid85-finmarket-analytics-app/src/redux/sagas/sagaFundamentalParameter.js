@@ -17,8 +17,8 @@ export function* sagaWatcherFundamentalParameter() {
 }
 
 function* sagaWorkerFundamentalParameterList() {
-    let getFundamentalParameterListResult = yield call(getFundamentalParameterListFromApi)    
-    yield put(fetchFundamentalParameterList(getFundamentalParameterListResult))
+    let result = yield call(getFundamentalParameterListFromApi)    
+    yield put(fetchFundamentalParameterList(result))
 }
 
 function* sagaWorkerEditFundamentalParameter() {
@@ -118,6 +118,6 @@ function* sagaWorkerEditFundamentalParameter() {
         fundamentalParameter.pbv2025, 
         fundamentalParameter.pbv2026
         )  
-    let getFundamentalParameterListResult = yield call(getFundamentalParameterListFromApi)    
-    yield put(fetchFundamentalParameterList(getFundamentalParameterListResult))  
+    let result = yield call(getFundamentalParameterListFromApi)    
+    yield put(fetchFundamentalParameterList(result))  
 }

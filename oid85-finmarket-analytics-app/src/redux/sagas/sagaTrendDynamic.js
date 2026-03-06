@@ -12,6 +12,6 @@ export function* sagaWatcherTrendDynamic() {
 }
 
 function* sagaWorkerTrendDynamic() {
-    let getTrendDynamicResult = yield call(getTrendDynamicFromApi)    
-    yield put(fetchTrendDynamic(getTrendDynamicResult))
+    let result = yield call(getTrendDynamicFromApi)    
+    yield put(fetchTrendDynamic(result))
 }

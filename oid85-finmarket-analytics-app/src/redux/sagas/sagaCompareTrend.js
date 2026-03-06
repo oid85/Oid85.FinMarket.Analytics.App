@@ -12,6 +12,6 @@ export function* sagaWatcherCompareTrend() {
 }
 
 function* sagaWorkerCompareTrend() {
-    let getCompareTrendResult = yield call(getCompareTrendFromApi)    
-    yield put(fetchCompareTrend(getCompareTrendResult))
+    let result = yield call(getCompareTrendFromApi)    
+    yield put(fetchCompareTrend(result))
 }

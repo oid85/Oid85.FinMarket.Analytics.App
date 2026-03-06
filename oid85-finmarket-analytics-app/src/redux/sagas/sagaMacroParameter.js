@@ -17,8 +17,8 @@ export function* sagaWatcherMacroParameter() {
 }
 
 function* sagaWorkerMacroParameterList() {
-    let getMacroParameterListResult = yield call(getMacroParameterListFromApi)    
-    yield put(fetchMacroParameterList(getMacroParameterListResult))
+    let result = yield call(getMacroParameterListFromApi)    
+    yield put(fetchMacroParameterList(result))
 }
 
 function* sagaWorkerEditMacroParameter() {
@@ -32,6 +32,6 @@ function* sagaWorkerEditMacroParameter() {
         macroParameter.consumerPriceIndexChange, 
         macroParameter.keyRate
         )  
-    let getMacroParameterListResult = yield call(getMacroParameterListFromApi)    
-    yield put(fetchMacroParameterList(getMacroParameterListResult))  
+    let result = yield call(getMacroParameterListFromApi)    
+    yield put(fetchMacroParameterList(result))  
 }

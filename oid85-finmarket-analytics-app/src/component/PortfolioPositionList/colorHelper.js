@@ -1,6 +1,6 @@
 import { CONSTANTS } from "../../constants"
 
-export const rowChangeColor = (value) => {
+export const rowColor = (value) => {
     if (!value) { return CONSTANTS.COLOR_WHITE }
     if (value == 1.6) { return CONSTANTS.COLOR_GREEN }
     if (value == 1.3) { return CONSTANTS.COLOR_GREEN }
