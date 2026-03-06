@@ -28,7 +28,7 @@ export const TrendDynamicData = ({data}) => {
             {
                 data.map((dataItem) => (
                     <div className='horizontal-container'>
-                        <div className='vertical-container border-style'>
+                        <div className='vertical-container trend-dynamic-border-style'>
                             <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>
                             <div className='instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>                            
                         </div>
@@ -36,7 +36,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='horizontal-container'>
                             {
                                 dataItem.items.map((item) => (                                                
-                                    <div className='trend-cell border-style' style={{backgroundColor: GetColorTrend(item.trend, dataItem.inPortfolio)}}>
+                                    <div className='trend-cell trend-dynamic-border-style' style={{backgroundColor: GetColorTrend(item.trend, dataItem.inPortfolio)}}>
                                         {dataItem.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}
                                     </div>
                                 ))
@@ -45,7 +45,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='horizontal-container'>
                             {
                                 dataItem.items.map((item) => (
-                                    <div className='delta-cell border-style' style={{color: GetColorDelta(item.delta) }}>
+                                    <div className='delta-cell trend-dynamic-border-style' style={{color: GetColorDelta(item.delta) }}>
                                         {dataItem.inPortfolio ? <div><b>{GetValueDelta(item.delta)}</b></div> : <div>{GetValueDelta(item.delta)}</div>}
                                     </div>
                                 ))

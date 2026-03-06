@@ -10,7 +10,7 @@ export const TrendDynamicHeaders = ({dates}) => {
                 <div className='corner-cell'></div>
                 {
                     dates.map((date, index) => (
-                        <div className='calendar-cell border-style'>
+                        <div className='calendar-cell trend-dynamic-border-style'>
                             <Calendar key = {index} date = {date} />
                         </div>
                     ))

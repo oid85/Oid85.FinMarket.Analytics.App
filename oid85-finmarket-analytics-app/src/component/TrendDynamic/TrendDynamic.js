@@ -23,7 +23,7 @@ export const TrendDynamic = () => {
             ? <Loader/>
             :
             <div className='horizontal-container'>             
-                <div className='trend-dynamic-container border-style'>
+                <div className='trend-dynamic-container'>
                     <TrendDynamicHeaders dates = {trendDynamicData.result.dates} />
                     <h6>Индексы</h6>
                     <TrendDynamicData data = {trendDynamicData.result.indexes} />

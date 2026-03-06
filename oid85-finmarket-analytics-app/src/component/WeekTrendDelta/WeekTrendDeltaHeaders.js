@@ -13,10 +13,10 @@ export const WeekTrendDeltaHeaders = ({weeks}) => {
                         <div className='week-trend-delta-calendar-cell'>
                             <div className=''>{week.weekNumber}</div>
                             <div className='horizontal-container'>
-                                <div className='border-style'>
+                                <div className='week-trend-border-style'>
                                     <Calendar key = {index} date = {week.weekStartDay} />
                                 </div>
-                                <div className='border-style'>
+                                <div className='week-trend-border-style'>
                                     <Calendar key = {index} date = {week.weekEndDay} />
                                 </div>
                             </div>

@@ -31,7 +31,7 @@ export const WeekTrendDeltaData = ({data}) => {
             {
                 data.map((dataItem) => (
                     <div className='horizontal-container'>
-                        <div className='vertical-container border-style'>
+                        <div className='vertical-container week-trend-border-style'>
                             <div className='week-trend-delta-instrument-ticker-cell'>
                                 {
                                     dataItem.inPortfolio 
@@ -50,7 +50,7 @@ export const WeekTrendDeltaData = ({data}) => {
                         <div className='horizontal-container'>
                             {
                                 dataItem.items.map((item) => (                                                
-                                    <div className='week-trend-delta-value-cell border-style' style={{backgroundColor: GetColorDelta(item.delta, dataItem.inPortfolio)}}>
+                                    <div className='week-trend-delta-value-cell week-trend-border-style' style={{backgroundColor: GetColorDelta(item.delta, dataItem.inPortfolio)}}>
                                         <div className='week-trend-delta-price-cell'>
                                             {
                                                 dataItem.inPortfolio 

@@ -22,15 +22,15 @@ export const WeekTrendDelta = () => {
             !weekTrendDeltaData.result || loading
             ? <Loader/>
             :
-            <div className='week-trend-delta-container border-style'>
-            <WeekTrendDeltaHeaders weeks = {weekTrendDeltaData.result.weeks} />
-            <h6>Индексы</h6>
-            <WeekTrendDeltaData data = {weekTrendDeltaData.result.indexes} />
-            <h6>Акции</h6>
-            <WeekTrendDeltaData data = {weekTrendDeltaData.result.shares} />
-            <h6>Фьючерсы</h6>
-            <WeekTrendDeltaData data = {weekTrendDeltaData.result.futures} />            
-        </div>         
+            <div className='week-trend-delta-container'>
+                <WeekTrendDeltaHeaders weeks = {weekTrendDeltaData.result.weeks} />
+                <h6>Индексы</h6>
+                <WeekTrendDeltaData data = {weekTrendDeltaData.result.indexes} />
+                <h6>Акции</h6>
+                <WeekTrendDeltaData data = {weekTrendDeltaData.result.shares} />
+                <h6>Фьючерсы</h6>
+                <WeekTrendDeltaData data = {weekTrendDeltaData.result.futures} />            
+            </div>         
         }
         </React.Fragment>                
     )

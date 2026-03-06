@@ -10,9 +10,9 @@
     flex-direction: column;    
 }
 
-.border-style {
+.week-trend-border-style {
     border: 1px solid #000;     
-    margin: 1px;
+    margin: .5px;
 }
 
 .week-trend-delta-corner-cell {    
@@ -22,7 +22,7 @@
 .week-trend-delta-calendar-cell {
     text-align: left;    
     height: 77px;
-    width: 102px;
+    width: 101px;
     font-size: 14px; 
     padding: .5px;   
 }
