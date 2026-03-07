@@ -20,6 +20,16 @@
     font-size: 22px; 
 }
 
+.bond-portfolio-position-year-coupon-sum {    
+    padding: 1px;
+    font-size: 22px; 
+}
+
+.bond-portfolio-position-month-coupon-sum {    
+    padding: 1px;
+    font-size: 22px; 
+}
+
 .bond-portfolio-position-container {     
     padding: 1px; 
 }
@@ -31,7 +41,7 @@
 }
 
 .bond-portfolio-position-ticker-header-cell {
-    width: 100px;  
+    width: 150px;  
     padding: 1px;
     font-size: 18px; 
 }
@@ -97,7 +107,7 @@
 }
 
 .bond-portfolio-position-ticker-cell {
-    width: 100px;  
+    width: 150px;  
     padding: 1px;
     font-size: 18px; 
 }

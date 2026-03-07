@@ -35,13 +35,15 @@ export const BondPortfolioPositionList = () => {
             :
             <div className='bond-portfolio-position-container'>
                 <div className='horizontal-container'>
-                    <div className='bond-portfolio-position-total-sum'>{`Сумма портфеля: ${formatNumber(bondPortfolioPositionListData.result.totalSum)} руб.`}</div>
-                    <button className='btn btn-outline-dark'
-                                        onClick={() => {
-                                            dispatch(fetchBondPortfolioTotalSum(bondPortfolioPositionListData.result.totalSum))
-                                            dispatch(showEditBondPortfolioTotalSumModal())
-                                            }}>...</button>
+                    <div className='bond-portfolio-position-total-sum'>{`Сумма портфеля: ${formatNumber(bondPortfolioPositionListData.result.totalSum)} руб.`}</div>            
+                        <button className='btn btn-outline-dark'
+                                            onClick={() => {
+                                                dispatch(fetchBondPortfolioTotalSum(bondPortfolioPositionListData.result.totalSum))
+                                                dispatch(showEditBondPortfolioTotalSumModal())
+                                                }}>...</button>
                 </div>
+                <div className='bond-portfolio-position-year-coupon-sum'>{`Сумма купонов за год: ${formatNumber(bondPortfolioPositionListData.result.yearCouponSum)} руб. (${formatNumber(bondPortfolioPositionListData.result.yearCouponPrc)} %)`}</div>
+                <div className='bond-portfolio-position-month-coupon-sum'>{`Сумма купонов в месяц: ${formatNumber(bondPortfolioPositionListData.result.monthCouponSum)} руб.`}</div>                
                 <div className='horizontal-container'>
                     <div className='bond-portfolio-position-number-header-cell bond-portfolio-position-border-style'>Номер</div>
                     <div className='bond-portfolio-position-ticker-header-cell bond-portfolio-position-border-style'>Тикер</div>
@@ -56,7 +58,7 @@ export const BondPortfolioPositionList = () => {
                     <div className='bond-portfolio-position-edit-button-header-cell bond-portfolio-position-border-style'></div>
                 </div>
                 {
-                    bondPortfolioPositionListData.result.bondPortfolioPositions.map((bondPortfolioPosition) => (
+                    bondPortfolioPositionListData.result.portfolioPositions.map((bondPortfolioPosition) => (
                         <div className='horizontal-container'>
                             <div className='bond-portfolio-position-number-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.number}</div>
                             <div className='bond-portfolio-position-ticker-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.ticker}</div>
