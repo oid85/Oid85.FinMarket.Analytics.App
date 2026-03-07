@@ -51,6 +51,7 @@ export const BondPortfolioPositionList = () => {
                     <div className='bond-portfolio-position-manual-coefficient-header-cell bond-portfolio-position-border-style'>Ручной коэф.</div>
                     <div className='bond-portfolio-position-result-coefficient-header-cell bond-portfolio-position-border-style'>Итоговый коэф.</div>
                     <div className='bond-portfolio-position-percentage-header-cell bond-portfolio-position-border-style'>Доля, %</div>
+                    <div className='bond-portfolio-position-year-coupon-header-cell bond-portfolio-position-border-style'>Купоны (год.)</div>
                     <div className='bond-portfolio-position-size-header-cell bond-portfolio-position-border-style'>Кол-во, шт</div>
                     <div className='bond-portfolio-position-cost-header-cell bond-portfolio-position-border-style'>Стоимость, руб</div>                    
                     <div className='bond-portfolio-position-price-header-cell bond-portfolio-position-border-style'>Текущая цена, руб</div>
@@ -66,6 +67,7 @@ export const BondPortfolioPositionList = () => {
                             <div className='bond-portfolio-position-manual-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.manualCoefficient}</div>
                             <div className='bond-portfolio-position-result-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.resultCoefficient}</div>
                             <div className='bond-portfolio-position-percentage-cell bond-portfolio-position-border-style'>{`${bondPortfolioPosition.percent} %`}</div>
+                            <div className='bond-portfolio-position-year-coupon-cell bond-portfolio-position-border-style'>{`${bondPortfolioPosition.yearCoupon}`}</div>
                             <div className='bond-portfolio-position-size-cell bond-portfolio-position-border-style'>{formatNumber(bondPortfolioPosition.size)}</div>
                             <div className='bond-portfolio-position-cost-cell bond-portfolio-position-border-style'>{formatNumber(bondPortfolioPosition.cost)}</div>
                             <div className='bond-portfolio-position-price-cell bond-portfolio-position-border-style'>{formatNumber(bondPortfolioPosition.price)}</div>

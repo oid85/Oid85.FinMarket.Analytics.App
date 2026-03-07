@@ -64,6 +64,12 @@
     font-size: 18px;  
 }
 
+.bond-portfolio-position-year-coupon-header-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
 .bond-portfolio-position-percentage-header-cell {
     width: 100px;
     padding: 1px;
@@ -125,6 +131,12 @@
 }
 
 .bond-portfolio-position-result-coefficient-cell {
+    width: 100px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.bond-portfolio-position-year-coupon-cell {
     width: 100px;
     padding: 1px;
     font-size: 18px;  
