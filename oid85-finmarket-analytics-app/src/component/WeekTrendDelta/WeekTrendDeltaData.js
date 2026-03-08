@@ -11,15 +11,24 @@ const GetColorDelta = (delta, inPortfolio) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetColorTrendState = (trendState, inPortfolio) => {
+    if (!trendState) { return CONSTANTS.COLOR_WHITE }
+    if (trendState == 'ТРЕНД') { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
+    if (trendState == 'СИЛЬНЫЙ ТРЕНД') { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
+    if (trendState == 'СЛОМ ТРЕНДА') { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
+    if (trendState == 'НЕТ ТРЕНДА') { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
+    if (trendState == 'НЕ ОПРЕДЕЛЕН') { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 const GetPriceValue = (price) => {
     if (!price) { return '' }
-
     return price
 }
 
 const GetDeltaValue = (delta) => {
     if (!delta) { return '' }
-
     return `${delta} %`
 }
 
@@ -69,6 +78,15 @@ export const WeekTrendDeltaData = ({data}) => {
                                 ))
                             }
                         </div>
+                        <div className='week-trend-border-style' style={{backgroundColor: GetColorTrendState(dataItem.trendState, dataItem.inPortfolio)}}>
+                            <div className='week-trend-delta-trend-state-cell'>
+                            {
+                                dataItem.inPortfolio 
+                                ? <div><b>{dataItem.trendState}</b></div> 
+                                : <div>{dataItem.trendState}</div>
+                            }
+                            </div>
+                        </div>                       
                     </div>
                 ))
             }
