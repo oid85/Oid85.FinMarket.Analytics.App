@@ -48,6 +48,8 @@ export const BondPortfolioPositionList = () => {
                     <div className='bond-portfolio-position-number-header-cell bond-portfolio-position-border-style'>Номер</div>
                     <div className='bond-portfolio-position-ticker-header-cell bond-portfolio-position-border-style'>Тикер</div>
                     <div className='bond-portfolio-position-name-header-cell bond-portfolio-position-border-style'>Наименование</div>
+                    <div className='bond-portfolio-position-coupon-coefficient-header-cell bond-portfolio-position-border-style'>Купон. коэф.</div>
+                    <div className='bond-portfolio-position-time-coefficient-header-cell bond-portfolio-position-border-style'>Времен. коэф.</div>
                     <div className='bond-portfolio-position-manual-coefficient-header-cell bond-portfolio-position-border-style'>Ручной коэф.</div>
                     <div className='bond-portfolio-position-result-coefficient-header-cell bond-portfolio-position-border-style'>Итоговый коэф.</div>
                     <div className='bond-portfolio-position-percentage-header-cell bond-portfolio-position-border-style'>Доля, %</div>
@@ -64,6 +66,8 @@ export const BondPortfolioPositionList = () => {
                             <div className='bond-portfolio-position-number-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.number}</div>
                             <div className='bond-portfolio-position-ticker-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.ticker}</div>
                             <div className='bond-portfolio-position-name-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.name}</div>  
+                            <div className='bond-portfolio-position-coupon-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.couponCoefficient}</div>
+                            <div className='bond-portfolio-position-time-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.timeCoefficient}</div>
                             <div className='bond-portfolio-position-manual-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.manualCoefficient}</div>
                             <div className='bond-portfolio-position-result-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.resultCoefficient}</div>
                             <div className='bond-portfolio-position-percentage-cell bond-portfolio-position-border-style'>{`${bondPortfolioPosition.percent} %`}</div>

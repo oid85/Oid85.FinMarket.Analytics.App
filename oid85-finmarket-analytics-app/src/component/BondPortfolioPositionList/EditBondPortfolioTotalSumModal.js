@@ -2,8 +2,7 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import Modal from 'react-modal';
 import { 
-    sagaEditBondPortfolioTotalSum,
-    fetchCurrentBondPortfolioTotalSum,
+    sagaEditBondPortfolioTotalSum,    
     hideEditBondPortfolioTotalSumModal,
     fetchBondPortfolioTotalSum
 } from '../../redux/actions/bondPortfolioActions'
