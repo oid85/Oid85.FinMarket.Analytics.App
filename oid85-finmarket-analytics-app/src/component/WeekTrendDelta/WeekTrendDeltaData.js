@@ -22,6 +22,15 @@ const GetColorTrendState = (trendState, inPortfolio) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetColorFallingFromMax = (fallingFromMax, inPortfolio) => {
+    if (!fallingFromMax) { return CONSTANTS.COLOR_WHITE }
+    if (fallingFromMax < -10) { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
+    if (fallingFromMax < -5) { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
+    if (fallingFromMax < 0) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 const GetPriceValue = (price) => {
     if (!price) { return '' }
     return price
@@ -86,7 +95,16 @@ export const WeekTrendDeltaData = ({data}) => {
                                 : <div>{dataItem.trendState}</div>
                             }
                             </div>
-                        </div>                       
+                        </div> 
+                        <div className='week-trend-border-style' style={{backgroundColor: GetColorFallingFromMax(dataItem.fallingFromMax, dataItem.inPortfolio)}}>
+                            <div className='week-trend-delta-falling-from-max-cell'>
+                            {
+                                dataItem.inPortfolio 
+                                ? <div><b>{`${dataItem.fallingFromMax} %`}</b></div> 
+                                : <div>{`${dataItem.fallingFromMax} %`}</div>
+                            }
+                            </div>
+                        </div>                                              
                     </div>
                 ))
             }

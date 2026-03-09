@@ -55,10 +55,16 @@
 .week-trend-delta-delta-cell {  
     width: 100px;  
     font-size: 16px;
-    text-align: center; 
+    text-align: center;
 }
 
 .week-trend-delta-trend-state-cell { 
     width: 140px;  
-    font-size: 14px;   
+    font-size: 14px;
+}
+
+.week-trend-delta-falling-from-max-cell { 
+    width: 100px;  
+    font-size: 14px;
+    text-align: center;
 }
