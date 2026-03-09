@@ -11,7 +11,7 @@ export const WeekTrendDeltaHeaders = ({weeks}) => {
                 {
                     weeks.map((week, index) => (
                         <div className='week-trend-delta-calendar-cell'>
-                            <div className=''>{week.weekNumber}</div>
+                            <div>{week.weekNumber}</div>
                             <div className='horizontal-container'>
                                 <div className='week-trend-border-style'>
                                     <Calendar key = {index} date = {week.weekStartDay} />
