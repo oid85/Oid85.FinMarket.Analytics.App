@@ -26,7 +26,7 @@
 .calendar-cell {
     text-align: left;    
     height: 52px;
-    width: 50px;
+    width: 55px;
     font-size: 14px;    
 }
 
@@ -44,15 +44,15 @@
 }
 
 .trend-cell {  
-    height: 20px;
-    width: 50px;  
-    font-size: 12px;
+    height: 27px;
+    width: 55px;  
+    font-size: 15px;
     text-align: center; 
 }
 
 .delta-cell {  
-    height: 20px;
-    width: 50px;
-    font-size: 12px;
+    height: 14px;
+    width: 55px;
+    font-size: 9px;
     text-align: center;   
 }
