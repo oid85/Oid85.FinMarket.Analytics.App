@@ -17,6 +17,7 @@ import { sagaWatcherWeekTrendDelta } from './redux/sagas/sagaWeekTrendDelta'
 import { sagaWatcherPortfolio } from './redux/sagas/sagaPortfolio'
 import { sagaWatcherBondPortfolio } from './redux/sagas/sagaBondPortfolio'
 import { sagaWatcherBondAnalyse } from './redux/sagas/sagaBondAnalyse'
+import { sagaWatcherClosePriceDiagram } from './redux/sagas/sagaClosePriceDiagram'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const saga = createSagaMiddleware()
@@ -36,6 +37,7 @@ saga.run(sagaWatcherWeekTrendDelta)
 saga.run(sagaWatcherPortfolio)
 saga.run(sagaWatcherBondPortfolio)
 saga.run(sagaWatcherBondAnalyse)
+saga.run(sagaWatcherClosePriceDiagram)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

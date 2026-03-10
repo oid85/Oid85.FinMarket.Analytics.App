@@ -10,6 +10,7 @@ import { weekTrendDeltaReducer } from './weekTrendDeltaReducer'
 import { portfolioReducer } from './portfolioReducer'
 import { bondPortfolioReducer } from './bondPortfolioReducer'
 import { bondAnalyseReducer } from './bondAnalyseReducer'
+import { closePriceDiagramReducer } from './closePriceDiagramReducer'
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -22,5 +23,6 @@ export const rootReducer = combineReducers({
     weekTrendDelta: weekTrendDeltaReducer,    
     portfolio: portfolioReducer,
     bondPortfolio: bondPortfolioReducer,
-    bondAnalyse: bondAnalyseReducer
+    bondAnalyse: bondAnalyseReducer,
+    closePriceDiagram: closePriceDiagramReducer
 })
