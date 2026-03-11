@@ -29,7 +29,8 @@ export const ClosePriceDiagram = () => {
                             ticker={diagram.ticker}
                             name={diagram.name} 
                             inPortfolio={diagram.inPortfolio} 
-                            data={diagram.data}/>))
+                            data={diagram.data} 
+                            trendState={diagram.trendState}/>))
                 }
             </div>         
         }

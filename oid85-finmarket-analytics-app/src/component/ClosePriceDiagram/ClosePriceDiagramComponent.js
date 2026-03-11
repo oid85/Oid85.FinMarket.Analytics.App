@@ -3,7 +3,29 @@ import { AreaChart, Area, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis
 import './styles.css'
 import {CONSTANTS} from '../../constants'
 
-export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data }) => {
+export const strokeColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_STATEBLUE }
+    if (value == 'ТРЕНД') { return CONSTANTS.COLOR_GREEN }
+    if (value == 'СИЛЬНЫЙ ТРЕНД') { return CONSTANTS.COLOR_GREEN }
+    if (value == 'СЛОМ ТРЕНДА') { return CONSTANTS.COLOR_RED }
+    if (value == 'НЕТ ТРЕНДА') { return CONSTANTS.COLOR_DARKSLATEGRAY }
+    if (value == 'НЕ ОПРЕДЕЛЕН') { return CONSTANTS.COLOR_DARKSLATEGRAY }
+
+    return CONSTANTS.COLOR_STATEBLUE
+}
+
+export const fillColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_STATEBLUE }
+    if (value == 'ТРЕНД') { return CONSTANTS.COLOR_LIGHTGREEN }
+    if (value == 'СИЛЬНЫЙ ТРЕНД') { return CONSTANTS.COLOR_LIGHTGREEN }
+    if (value == 'СЛОМ ТРЕНДА') { return CONSTANTS.COLOR_LIGHTRED }
+    if (value == 'НЕТ ТРЕНДА') { return CONSTANTS.COLOR_LIGHTYELLOW }
+    if (value == 'НЕ ОПРЕДЕЛЕН') { return CONSTANTS.COLOR_LIGHTYELLOW }
+
+    return CONSTANTS.COLOR_STATEBLUE
+}
+
+export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data, trendState }) => {
     return (
         <div className='close-price-diagram-border-style'>
             <div>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
@@ -12,7 +34,7 @@ export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, dat
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} />
                 <Tooltip />
-                <Area type="monotone" dataKey="value" strokeWidth={3} stroke={CONSTANTS.COLOR_GREEN} fill={CONSTANTS.COLOR_LIGHTGREEN} />
+                <Area type="monotone" dataKey="value" strokeWidth={3} stroke={strokeColor(trendState)} fill={fillColor(trendState)} />
             </AreaChart>
         </div>
     )
