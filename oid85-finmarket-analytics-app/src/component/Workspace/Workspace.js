@@ -25,7 +25,7 @@ export const Workspace = () => {
                     <Tab>По неделям</Tab>
                     <Tab>По дням</Tab>
                     <Tab>Сравнение</Tab>
-                    <Tab>Графики цен</Tab>
+                    <Tab>Графики</Tab>
                     <Tab>Фунд. (табл.)</Tab>
                     <Tab>Фунд. (диагр.)</Tab>                    
                     <Tab>Макро. (табл.)</Tab>                    
