@@ -71,10 +71,10 @@ export const BondPortfolioPositionList = () => {
                             <div className='bond-portfolio-position-manual-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.manualCoefficient}</div>
                             <div className='bond-portfolio-position-result-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.resultCoefficient}</div>
                             <div className='bond-portfolio-position-percentage-cell bond-portfolio-position-border-style'>{`${bondPortfolioPosition.percent} %`}</div>
-                            <div className='bond-portfolio-position-year-coupon-cell bond-portfolio-position-border-style'>{`${bondPortfolioPosition.yearCoupon}`}</div>
-                            <div className='bond-portfolio-position-size-cell bond-portfolio-position-border-style'>{formatNumber(bondPortfolioPosition.size)}</div>
-                            <div className='bond-portfolio-position-cost-cell bond-portfolio-position-border-style'>{formatNumber(bondPortfolioPosition.cost)}</div>
-                            <div className='bond-portfolio-position-price-cell bond-portfolio-position-border-style'>{formatNumber(bondPortfolioPosition.price)}</div>
+                            <div className='bond-portfolio-position-year-coupon-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.yearCoupon)} р.`}</div>
+                            <div className='bond-portfolio-position-size-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.size)} шт.`}</div>
+                            <div className='bond-portfolio-position-cost-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.cost)} р.`}</div>
+                            <div className='bond-portfolio-position-price-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.price)} р.`}</div>
                             <div className='bond-portfolio-position-message-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.message}</div>
                             <div className='bond-portfolio-position-edit-button-cell bond-portfolio-position-border-style'>
                                 <button className='btn btn-outline-link edit-button'
