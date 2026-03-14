@@ -34,24 +34,6 @@ export const EditBondPortfolioPositionModal = () => {
                     style={customStyles}>
                     <h6>Настройки позиции</h6>
                     <form>
-                        <label>Купонный коэф.</label>
-                        <input 
-                            className='form-control edit-modal-input' 
-                            type="number" 
-                            defaultValue={currentBondPortfolioPosition.couponCoefficient} 
-                            placeholder='Купонный коэф.' 
-                            onChange={ (event) => { 
-                                dispatch(fetchCurrentBondPortfolioPosition({...currentBondPortfolioPosition, couponCoefficient: event.target.value})) 
-                                }} />   
-                        <label>Временной коэф.</label>
-                        <input 
-                            className='form-control edit-modal-input' 
-                            type="number" 
-                            defaultValue={currentBondPortfolioPosition.timeCoefficient} 
-                            placeholder='Временной коэф.' 
-                            onChange={ (event) => { 
-                                dispatch(fetchCurrentBondPortfolioPosition({...currentBondPortfolioPosition, timeCoefficient: event.target.value})) 
-                                }} />
                         <label>Ручной коэф.</label>
                         <input 
                             className='form-control edit-modal-input' 
@@ -60,7 +42,16 @@ export const EditBondPortfolioPositionModal = () => {
                             placeholder='Ручной коэф.' 
                             onChange={ (event) => { 
                                 dispatch(fetchCurrentBondPortfolioPosition({...currentBondPortfolioPosition, manualCoefficient: event.target.value})) 
-                                }} />                                                                                             
+                                }} />     
+                        <label>Позиция в портфеле</label>
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentBondPortfolioPosition.lifeSize} 
+                            placeholder='Позиция в портфеле' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentBondPortfolioPosition({...currentBondPortfolioPosition, lifeSize: event.target.value})) 
+                                }} />                                                                                                                         
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {

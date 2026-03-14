@@ -106,6 +106,12 @@
     font-size: 18px;  
 }
 
+.bond-portfolio-position-life-size-header-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
 .bond-portfolio-position-cost-header-cell {
     width: 110px;
     padding: 1px;
@@ -186,6 +192,12 @@
 
 .bond-portfolio-position-size-cell {
     width: 100px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.bond-portfolio-position-life-size-cell {
+    width: 120px;
     padding: 1px;
     font-size: 18px;  
 }

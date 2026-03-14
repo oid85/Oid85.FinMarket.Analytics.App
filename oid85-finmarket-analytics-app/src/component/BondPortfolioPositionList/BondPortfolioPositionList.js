@@ -12,6 +12,7 @@ import {EditBondPortfolioTotalSumModal} from './EditBondPortfolioTotalSumModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
+import { sizeColor } from './colorHelper'
 
 export const BondPortfolioPositionList = () => {
     
@@ -26,6 +27,14 @@ export const BondPortfolioPositionList = () => {
     const formatNumber = (num) => {
         return new Intl.NumberFormat('ru-RU').format(num);
       };
+
+    const GetLifeSizeValue = (size, lifeSize) => {
+        let delta = Math.abs(size - lifeSize)        
+        if (size > lifeSize) { return `${formatNumber(lifeSize)} шт. (+${formatNumber(delta)})` }
+        if (size < lifeSize) { return `${formatNumber(lifeSize)} шт. (-${formatNumber(delta)})` }
+    
+        return `${formatNumber(lifeSize)} шт.`
+    }
 
     return (
         <React.Fragment>
@@ -54,10 +63,10 @@ export const BondPortfolioPositionList = () => {
                     <div className='bond-portfolio-position-result-coefficient-header-cell bond-portfolio-position-border-style'>Итоговый коэф.</div>
                     <div className='bond-portfolio-position-percentage-header-cell bond-portfolio-position-border-style'>Доля, %</div>
                     <div className='bond-portfolio-position-year-coupon-header-cell bond-portfolio-position-border-style'>Купоны (год.)</div>
-                    <div className='bond-portfolio-position-size-header-cell bond-portfolio-position-border-style'>Кол-во, шт</div>
                     <div className='bond-portfolio-position-cost-header-cell bond-portfolio-position-border-style'>Стоимость, руб</div>                    
                     <div className='bond-portfolio-position-price-header-cell bond-portfolio-position-border-style'>Текущая цена, руб</div>
-                    <div className='bond-portfolio-position-message-header-cell bond-portfolio-position-border-style'>Комментарий</div>
+                    <div className='bond-portfolio-position-size-header-cell bond-portfolio-position-border-style'>Кол-во, шт</div>
+                    <div className='bond-portfolio-position-life-size-header-cell bond-portfolio-position-border-style'>Кол-во (реал.), шт</div>                    
                     <div className='bond-portfolio-position-edit-button-header-cell bond-portfolio-position-border-style'></div>
                 </div>
                 {
@@ -72,10 +81,10 @@ export const BondPortfolioPositionList = () => {
                             <div className='bond-portfolio-position-result-coefficient-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.resultCoefficient}</div>
                             <div className='bond-portfolio-position-percentage-cell bond-portfolio-position-border-style'>{`${bondPortfolioPosition.percent} %`}</div>
                             <div className='bond-portfolio-position-year-coupon-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.yearCoupon)} р.`}</div>
-                            <div className='bond-portfolio-position-size-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.size)} шт.`}</div>
                             <div className='bond-portfolio-position-cost-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.cost)} р.`}</div>
                             <div className='bond-portfolio-position-price-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.price)} р.`}</div>
-                            <div className='bond-portfolio-position-message-cell bond-portfolio-position-border-style'>{bondPortfolioPosition.message}</div>
+                            <div className='bond-portfolio-position-size-cell bond-portfolio-position-border-style' style={{backgroundColor: sizeColor(bondPortfolioPosition.size, bondPortfolioPosition.lifeSize)}}>{`${formatNumber(bondPortfolioPosition.size)} шт.`}</div>
+                            <div className='bond-portfolio-position-life-size-cell bond-portfolio-position-border-style' style={{backgroundColor: sizeColor(bondPortfolioPosition.size, bondPortfolioPosition.lifeSize)}}>{GetLifeSizeValue(bondPortfolioPosition.size, bondPortfolioPosition.lifeSize)}</div>
                             <div className='bond-portfolio-position-edit-button-cell bond-portfolio-position-border-style'>
                                 <button className='btn btn-outline-link edit-button'
                                         onClick={() => {

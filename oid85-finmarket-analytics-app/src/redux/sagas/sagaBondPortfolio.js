@@ -27,7 +27,7 @@ function* sagaWorkerBondPortfolioPositionList() {
 
 function* sagaWorkerEditBondPortfolioPosition() {
     let bondPortfolioPosition = yield select(currentBondPortfolioPosition)    
-    yield call(editBondPortfolioPositionFromApi, bondPortfolioPosition.ticker, bondPortfolioPosition.manualCoefficient)  
+    yield call(editBondPortfolioPositionFromApi, bondPortfolioPosition.ticker, bondPortfolioPosition.manualCoefficient, bondPortfolioPosition.lifeSize)  
     let result = yield call(getBondPortfolioPositionListFromApi)    
     yield put(fetchBondPortfolioPositionList(result))  
 }
