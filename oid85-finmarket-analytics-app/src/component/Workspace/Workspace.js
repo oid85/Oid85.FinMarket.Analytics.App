@@ -22,16 +22,16 @@ export const Workspace = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                    <Tab>По неделям</Tab>
-                    <Tab>По дням</Tab>
+                    <Tab>Недели</Tab>
+                    <Tab>Дни</Tab>
                     <Tab>Сравнение</Tab>
                     <Tab>Графики</Tab>
                     <Tab>Фунд. (табл.)</Tab>
                     <Tab>Фунд. (диагр.)</Tab>                    
                     <Tab>Макро. (табл.)</Tab>                    
                     <Tab>Анализ облигаций</Tab>
-                    <Tab>Модель портфеля акций</Tab>
-                    <Tab>Модель портфеля облигаций</Tab>
+                    <Tab>Портфель акций</Tab>
+                    <Tab>Портфель облигаций</Tab>
                 </TabList>
                 <TabPanel>
                     <WeekTrendDeltaScreen />
