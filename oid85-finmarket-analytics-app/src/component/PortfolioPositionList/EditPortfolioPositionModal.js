@@ -51,7 +51,16 @@ export const EditPortfolioPositionModal = () => {
                             placeholder='Ручной коэф.' 
                             onChange={ (event) => { 
                                 dispatch(fetchCurrentPortfolioPosition({...currentPortfolioPosition, manualCoefficient: event.target.value})) 
-                                }} />                                
+                                }} />  
+                        <label>Позиция в портфеле</label>
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentPortfolioPosition.lifeSize} 
+                            placeholder='Позиция в портфеле' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentPortfolioPosition({...currentPortfolioPosition, lifeSize: event.target.value})) 
+                                }} />                                                               
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {

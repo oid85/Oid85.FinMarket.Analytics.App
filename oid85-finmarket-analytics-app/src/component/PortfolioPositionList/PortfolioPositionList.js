@@ -13,7 +13,7 @@ import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { 
-    rowColor
+    rowColor, sizeColor
 } from './colorHelper'
 
 export const PortfolioPositionList = () => {
@@ -29,6 +29,14 @@ export const PortfolioPositionList = () => {
     const formatNumber = (num) => {
         return new Intl.NumberFormat('ru-RU').format(num);
       };
+
+    const GetLifeSizeValue = (size, lifeSize) => {
+        let delta = Math.abs(size - lifeSize)        
+        if (size > lifeSize) { return `${formatNumber(lifeSize)} шт. (+${formatNumber(delta)})` }
+        if (size < lifeSize) { return `${formatNumber(lifeSize)} шт. (-${formatNumber(delta)})` }
+    
+        return `${formatNumber(lifeSize)} шт.`
+    }
 
     return (
         <React.Fragment>
@@ -55,6 +63,7 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-result-coefficient-header-cell portfolio-position-border-style'>Итоговый коэф.</div>
                     <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>Доля, %</div>
                     <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во, шт</div>
+                    <div className='portfolio-position-life-size-header-cell portfolio-position-border-style'>Кол-во (реал.), шт</div>
                     <div className='portfolio-position-cost-header-cell portfolio-position-border-style'>Стоимость, руб</div>                    
                     <div className='portfolio-position-price-header-cell portfolio-position-border-style'>Текущая цена, руб</div>
                     <div className='portfolio-position-message-header-cell portfolio-position-border-style'>Комментарий</div>
@@ -71,7 +80,8 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-manual-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.message)}}>{portfolioPosition.manualCoefficient}</div>
                             <div className='portfolio-position-result-coefficient-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.message)}}>{portfolioPosition.resultCoefficient}</div>
                             <div className='portfolio-position-percentage-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.message)}}>{`${portfolioPosition.percent} %`}</div>
-                            <div className='portfolio-position-size-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.message)}}>{formatNumber(portfolioPosition.size)}</div>
+                            <div className='portfolio-position-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{`${formatNumber(portfolioPosition.size)} шт.`}</div>
+                            <div className='portfolio-position-life-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{GetLifeSizeValue(portfolioPosition.size, portfolioPosition.lifeSize)}</div>
                             <div className='portfolio-position-cost-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.message)}}>{formatNumber(portfolioPosition.cost)}</div>
                             <div className='portfolio-position-price-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.message)}}>{formatNumber(portfolioPosition.price)}</div>
                             <div className='portfolio-position-message-cell portfolio-position-border-style' style={{backgroundColor: rowColor(portfolioPosition.message)}}>{portfolioPosition.message}</div>

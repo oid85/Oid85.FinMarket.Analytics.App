@@ -90,6 +90,12 @@
     font-size: 18px;  
 }
 
+.portfolio-position-life-size-header-cell {
+    width: 200px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
 .portfolio-position-cost-header-cell {
     width: 100px;
     padding: 1px;
@@ -164,6 +170,12 @@
 
 .portfolio-position-size-cell {
     width: 100px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.portfolio-position-life-size-cell {
+    width: 200px;
     padding: 1px;
     font-size: 18px;  
 }
