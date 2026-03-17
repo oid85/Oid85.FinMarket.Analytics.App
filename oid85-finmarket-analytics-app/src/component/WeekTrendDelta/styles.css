@@ -16,7 +16,17 @@
 }
 
 .week-trend-delta-corner-cell {    
-    width: 150px;  
+    width: 150px;    
+}
+
+.week-trend-delta-trend-state-header-cell {   
+    width: 137px;
+    padding: 5px;
+}
+
+.week-trend-delta-falling-from-max-header-cell {    
+    width: 102px;
+    padding: 5px;
 }
 
 .week-trend-delta-calendar-cell {
@@ -24,7 +34,7 @@
     height: 77px;
     width: 101px;
     font-size: 14px; 
-    padding: .5px;   
+    padding: .5px;
 }
 
 .week-trend-delta-container {     

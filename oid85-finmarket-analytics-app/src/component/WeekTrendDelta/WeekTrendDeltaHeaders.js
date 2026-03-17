@@ -23,6 +23,8 @@ export const WeekTrendDeltaHeaders = ({weeks}) => {
                         </div>
                     ))
                 }
+                <div className='week-trend-delta-trend-state-header-cell week-trend-border-style'>Оценка тренда</div>
+                <div className='week-trend-delta-falling-from-max-header-cell week-trend-border-style'>Падение от макс., %</div>
             </div>
         </React.Fragment>                
     )
