@@ -34,6 +34,38 @@ export const EditFundamentalParameterEbitdaModal = () => {
                     style={customStyles}>
                     <h6>EBITDA</h6>
                     <form>
+                    <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ebitda2015} 
+                            placeholder='2015 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2015: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ebitda2016} 
+                            placeholder='2016 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2016: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ebitda2017} 
+                            placeholder='2017 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2017: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ebitda2018} 
+                            placeholder='2018 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ebitda2018: event.target.value})) 
+                                }} />                        
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 

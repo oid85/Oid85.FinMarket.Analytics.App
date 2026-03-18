@@ -34,6 +34,38 @@ export const EditFundamentalParameterEvModal = () => {
                     style={customStyles}>
                     <h6>EV</h6>
                     <form>
+                    <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ev2015} 
+                            placeholder='2015 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2015: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ev2016} 
+                            placeholder='2016 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2016: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ev2017} 
+                            placeholder='2017 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2017: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.ev2018} 
+                            placeholder='2018 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, ev2018: event.target.value})) 
+                                }} />                        
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 

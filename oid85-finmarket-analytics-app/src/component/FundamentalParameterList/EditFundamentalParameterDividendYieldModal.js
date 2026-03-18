@@ -37,6 +37,38 @@ export const EditFundamentalParameterDividendYieldModal = () => {
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
+                            defaultValue={currentFundamentalParameter.dividendYield2015} 
+                            placeholder='2015 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, dividendYield2015: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.dividendYield2016} 
+                            placeholder='2016 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, dividendYield2016: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.dividendYield2017} 
+                            placeholder='2017 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, dividendYield2017: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.dividendYield2018} 
+                            placeholder='2018 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, dividendYield2018: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
                             defaultValue={currentFundamentalParameter.dividendYield2019} 
                             placeholder='2019 г.' 
                             onChange={ (event) => { 

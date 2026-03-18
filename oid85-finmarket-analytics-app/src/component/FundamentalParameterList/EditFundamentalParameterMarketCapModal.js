@@ -34,6 +34,38 @@ export const EditFundamentalParameterMarketCapModal = () => {
                     style={customStyles}>
                     <h6>Рыночная капитализация</h6>
                     <form>
+                    <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.marketCap2015} 
+                            placeholder='2015 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, marketCap2015: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.marketCap2016} 
+                            placeholder='2016 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, marketCap2016: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.marketCap2017} 
+                            placeholder='2017 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, marketCap2017: event.target.value})) 
+                                }} />
+                        <input 
+                            className='form-control edit-modal-input' 
+                            type="number" 
+                            defaultValue={currentFundamentalParameter.marketCap2018} 
+                            placeholder='2018 г.' 
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, marketCap2018: event.target.value})) 
+                                }} />                        
                         <input 
                             className='form-control edit-modal-input' 
                             type="number" 
