@@ -8,3 +8,10 @@ export const sizeColor = (size, lifeSize) => {
 
     return CONSTANTS.COLOR_WHITE
 }
+
+export const priceColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value < 1000) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_YELLOW
+}

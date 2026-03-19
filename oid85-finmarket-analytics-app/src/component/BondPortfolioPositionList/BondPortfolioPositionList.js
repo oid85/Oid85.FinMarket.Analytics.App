@@ -12,7 +12,7 @@ import {EditBondPortfolioTotalSumModal} from './EditBondPortfolioTotalSumModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
-import { sizeColor } from './colorHelper'
+import { priceColor, sizeColor } from './colorHelper'
 
 export const BondPortfolioPositionList = () => {
     
@@ -83,7 +83,7 @@ export const BondPortfolioPositionList = () => {
                             <div className='bond-portfolio-position-percentage-cell bond-portfolio-position-border-style'>{`${bondPortfolioPosition.percent} %`}</div>
                             <div className='bond-portfolio-position-year-coupon-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.yearCoupon)} р.`}</div>
                             <div className='bond-portfolio-position-cost-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.cost)} р.`}</div>
-                            <div className='bond-portfolio-position-price-cell bond-portfolio-position-border-style'>{`${formatNumber(bondPortfolioPosition.price)} р.`}</div>
+                            <div className='bond-portfolio-position-price-cell bond-portfolio-position-border-style' style={{backgroundColor: priceColor(bondPortfolioPosition.price)}}>{`${formatNumber(bondPortfolioPosition.price)} р.`}</div>
                             <div className='bond-portfolio-position-size-cell bond-portfolio-position-border-style' style={{backgroundColor: sizeColor(bondPortfolioPosition.size, bondPortfolioPosition.lifeSize)}}>{`${formatNumber(bondPortfolioPosition.size)} шт.`}</div>
                             <div className='bond-portfolio-position-life-size-cell bond-portfolio-position-border-style' style={{backgroundColor: sizeColor(bondPortfolioPosition.size, bondPortfolioPosition.lifeSize)}}>{GetLifeSizeValue(bondPortfolioPosition.size, bondPortfolioPosition.lifeSize)}</div>
                             <div className='bond-portfolio-position-edit-button-cell bond-portfolio-position-border-style'>
