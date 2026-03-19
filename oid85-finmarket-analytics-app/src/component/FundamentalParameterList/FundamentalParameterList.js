@@ -410,14 +410,6 @@ export const FundamentalParameterList = () => {
                                     <div className='fundamental-parameter-border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(fundamentalParameter.deltaMinMax2026)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.deltaMinMax2026}</b></div> : <div>{fundamentalParameter.deltaMinMax2026}</div>}</div>
                                     <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>DeltaMinMax</div></button>
                                 </div>                                                       
-                            </div>
-                            <div>
-                                <p>Комментарий</p>
-                                <textarea 
-                                className='fundamental-parameter-border-style fundamental-parameter-border-comment' 
-                                onChange={(event) => {
-                                    console.log(event.target.value)
-                                }}/>
                             </div>                        
                         </div>
                     ))
