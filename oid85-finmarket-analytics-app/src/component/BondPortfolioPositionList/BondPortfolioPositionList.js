@@ -66,7 +66,7 @@ export const BondPortfolioPositionList = () => {
                     <div className='bond-portfolio-position-year-coupon-header-cell bond-portfolio-position-border-style'>Купоны (год.)</div>
                     <div className='bond-portfolio-position-cost-header-cell bond-portfolio-position-border-style'>Стоимость, руб</div>                    
                     <div className='bond-portfolio-position-price-header-cell bond-portfolio-position-border-style'>Текущая цена, руб</div>
-                    <div className='bond-portfolio-position-size-header-cell bond-portfolio-position-border-style'>Кол-во, шт</div>
+                    <div className='bond-portfolio-position-size-header-cell bond-portfolio-position-border-style'>Кол-во (расч.), шт</div>
                     <div className='bond-portfolio-position-life-size-header-cell bond-portfolio-position-border-style'>Кол-во (реал.), шт</div>                    
                     <div className='bond-portfolio-position-edit-button-header-cell bond-portfolio-position-border-style'></div>
                 </div>

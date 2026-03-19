@@ -62,7 +62,7 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-manual-coefficient-header-cell portfolio-position-border-style'>Ручной коэф.</div>
                     <div className='portfolio-position-result-coefficient-header-cell portfolio-position-border-style'>Итоговый коэф.</div>
                     <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>Доля, %</div>
-                    <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во, шт</div>
+                    <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во (расч.), шт</div>
                     <div className='portfolio-position-life-size-header-cell portfolio-position-border-style'>Кол-во (реал.), шт</div>
                     <div className='portfolio-position-cost-header-cell portfolio-position-border-style'>Стоимость, руб</div>                    
                     <div className='portfolio-position-price-header-cell portfolio-position-border-style'>Текущая цена, руб</div>
