@@ -12,7 +12,7 @@ import {
     showEditFundamentalParameterRoaModal,
     showEditFundamentalParameterNetDebtModal,
     showEditFundamentalParameterMarketCapModal,
-    showEditFundamentalParameterDividendYieldModal,
+    showEditFundamentalParameterDividendModal,
     showEditFundamentalParameterMoexModal
 } from '../../redux/actions/fundamentalParameterActions'
 import { fetchCurrentInstrument, sagaInstrumentPortfolio, sagaInstrumentSelect } from '../../redux/actions/instrumentActions'
@@ -25,7 +25,7 @@ import {EditFundamentalParameterPbvModal} from './EditFundamentalParameterPbvMod
 import {EditFundamentalParameterRoaModal} from './EditFundamentalParameterRoaModal'
 import {EditFundamentalParameterNetDebtModal} from './EditFundamentalParameterNetDebtModal'
 import {EditFundamentalParameterMarketCapModal} from './EditFundamentalParameterMarketCapModal'
-import {EditFundamentalParameterDividendYieldModal} from './EditFundamentalParameterDividendYieldModal'
+import {EditFundamentalParameterDividendModal} from './EditFundamentalParameterDividendModal'
 import {EditFundamentalParameterMoexModal} from './EditFundamentalParameterMoexModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -41,7 +41,7 @@ import {
     roaColor,
     netDebtColor,
     marketCapColor,
-    dividendYieldColor,
+    dividendColor,
     evEbitdaColor,
     netDebtEbitdaColor,
     ebitdaRevenueColor,
@@ -86,6 +86,7 @@ export const FundamentalParameterList = () => {
                                 <div className='netdebt-header-cell fundamental-parameter-border-style'>Чистый долг, млрд. руб.</div>
                                 <div className='revenue-header-cell fundamental-parameter-border-style'>Выручка (чист. опер. доход), млрд. руб.</div>
                                 <div className='netprofit-header-cell fundamental-parameter-border-style'>Чистая прибыль, млрд. руб.</div>
+                                <div className='dividend-header-cell fundamental-parameter-border-style'>ДД, руб</div>
                                 <div className='dividend-yield-header-cell fundamental-parameter-border-style'>ДД, %</div>
                                 <div className='price-header-cell fundamental-parameter-border-style'>Цена акции, руб.</div>
                                 <div className='delta-min-max-header-cell fundamental-parameter-border-style'>Изм. мин-макс, %</div>                    
@@ -362,6 +363,25 @@ export const FundamentalParameterList = () => {
                                             }}><div className='edit-button-text'>NetProfit</div></button>                              
                                 </div>
                                 <div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2015)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2015}</b></div> : <div>{fundamentalParameter.dividend2015}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2016)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2016}</b></div> : <div>{fundamentalParameter.dividend2016}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2017)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2017}</b></div> : <div>{fundamentalParameter.dividend2017}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2018)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2018}</b></div> : <div>{fundamentalParameter.dividend2018}</div>}</div>								
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2019)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2019}</b></div> : <div>{fundamentalParameter.dividend2019}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2020)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2020}</b></div> : <div>{fundamentalParameter.dividend2020}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2021)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2021}</b></div> : <div>{fundamentalParameter.dividend2021}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2022)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2022}</b></div> : <div>{fundamentalParameter.dividend2022}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2023)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2023}</b></div> : <div>{fundamentalParameter.dividend2023}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2024)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2024}</b></div> : <div>{fundamentalParameter.dividend2024}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2025)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2025}</b></div> : <div>{fundamentalParameter.dividend2025}</div>}</div>
+                                    <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(fundamentalParameter.dividend2026)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividend2026}</b></div> : <div>{fundamentalParameter.dividend2026}</div>}</div>
+                                    <button className='btn btn-outline-dark edit-button'
+                                        onClick={() => {
+                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
+                                            dispatch(showEditFundamentalParameterDividendModal())
+                                            }}><div className='edit-button-text'>Dividend</div></button>                              
+                                </div>                                
+                                <div>
                                     <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(fundamentalParameter.dividendYield2015)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividendYield2015}</b></div> : <div>{fundamentalParameter.dividendYield2015}</div>}</div>
                                     <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(fundamentalParameter.dividendYield2016)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividendYield2016}</b></div> : <div>{fundamentalParameter.dividendYield2016}</div>}</div>
                                     <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(fundamentalParameter.dividendYield2017)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividendYield2017}</b></div> : <div>{fundamentalParameter.dividendYield2017}</div>}</div>
@@ -374,11 +394,7 @@ export const FundamentalParameterList = () => {
                                     <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(fundamentalParameter.dividendYield2024)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividendYield2024}</b></div> : <div>{fundamentalParameter.dividendYield2024}</div>}</div>
                                     <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(fundamentalParameter.dividendYield2025)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividendYield2025}</b></div> : <div>{fundamentalParameter.dividendYield2025}</div>}</div>
                                     <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(fundamentalParameter.dividendYield2026)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.dividendYield2026}</b></div> : <div>{fundamentalParameter.dividendYield2026}</div>}</div>
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterDividendYieldModal())
-                                            }}><div className='edit-button-text'>DividendYield</div></button>                              
+                                    <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>DividendYield</div></button>                              
                                 </div>                            
                                 <div>
                                     <div className='fundamental-parameter-border-style price-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.price2015}</b></div> : <div>{fundamentalParameter.price2015}</div>}</div>
@@ -425,7 +441,7 @@ export const FundamentalParameterList = () => {
         <EditFundamentalParameterEbitdaModal />
         <EditFundamentalParameterNetDebtModal />
         <EditFundamentalParameterMarketCapModal />
-        <EditFundamentalParameterDividendYieldModal />
+        <EditFundamentalParameterDividendModal />
         <EditFundamentalParameterMoexModal />
         </React.Fragment>                
     )
