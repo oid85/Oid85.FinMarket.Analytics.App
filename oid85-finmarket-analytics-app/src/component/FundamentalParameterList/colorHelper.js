@@ -84,6 +84,12 @@ export const dividendYieldColor = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+export const dividendColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 export const evEbitdaColor = (value) => { 
     if (!value) { return CONSTANTS.COLOR_WHITE }
 

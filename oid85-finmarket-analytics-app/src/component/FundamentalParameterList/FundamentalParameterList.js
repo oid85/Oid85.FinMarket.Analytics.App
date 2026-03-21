@@ -42,6 +42,7 @@ import {
     netDebtColor,
     marketCapColor,
     dividendColor,
+    dividendYieldColor,
     evEbitdaColor,
     netDebtEbitdaColor,
     ebitdaRevenueColor,
