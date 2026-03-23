@@ -32,7 +32,7 @@ function* sagaWorkerInstrumentSelect() {
 }
 
 function* sagaWorkerInstrumentPortfolio() {
-    let instrument = yield select(currentInstrument)    
+    let instrument = yield select(currentInstrument)
     yield call(portfolioInstrumentFromApi, instrument.ticker)  
     let result = yield call(getInstrumentListFromApi)    
     yield put(fetchInstrumentList(result))     

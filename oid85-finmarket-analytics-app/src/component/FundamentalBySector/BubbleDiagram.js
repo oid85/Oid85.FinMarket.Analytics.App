@@ -3,14 +3,14 @@ import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, LabelList,
 import { CONSTANTS } from '../../constants';
 import './styles.css'
 
-export const FundamentalParameterBubbleDiagram = ({data}) => {
+export const BubbleDiagram = ({data}) => {
     return (
         <React.Fragment>          
-            <div className='fundamental-parameter-bubble-diagram'>
+            <div className='fundamental-by-sector-border-style'>
             <ScatterChart                                    
                 data={data}
-                height={850}                                                
-                width={1900}
+                height={250}                                                
+                width={300}
             >
                 <ScatterChart />
                 <XAxis dataKey="evEbitda" type="number" />

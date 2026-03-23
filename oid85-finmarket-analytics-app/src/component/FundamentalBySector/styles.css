@@ -1,0 +1,51 @@
+.horizontal-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;    
+}
+
+.vertical-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+.fundamental-by-sector-border-style {
+    border: 1px solid #000;     
+    margin: 1px;
+}
+
+.fundamental-by-sector-container {     
+    padding: 1px; 
+}
+
+.fundamental-by-sector-sector-title {  
+    font-size: 18px;  
+    padding: 1px;
+}
+
+.fundamental-by-sector-diagram-title {  
+    font-size: 16px;  
+    padding: 1px;
+}
+
+.fundamental-by-sector-line-diagram-title {  
+    font-size: 12px;  
+}
+
+.fundamental-by-sector-line-diagram-name {  
+    font-size: 10px;  
+}
+
+.sector-button-container {    
+    padding: 1px;
+}
+
+.sector-button {    
+    width: 100px;
+    height: 30px;
+}
+
+.sector-button-text {        
+    font-size: 12px;
+}
