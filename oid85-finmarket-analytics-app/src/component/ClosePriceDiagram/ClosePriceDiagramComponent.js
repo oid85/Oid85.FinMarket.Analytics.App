@@ -30,7 +30,7 @@ export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, dat
         <div className='close-price-diagram-border-style'>
             <div>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
             <div>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
-            <AreaChart key = {key} width={470} height={380} data={data}>
+            <AreaChart key = {key} width={470} height={236} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} />
                 <Tooltip />
