@@ -17,7 +17,7 @@ export const BubbleDiagram = ({data}) => {
                 <YAxis dataKey="netDebtEbitda" type="number" />
                 <ZAxis dataKey="marketCap" type="number" range={[0, 2000]}/>
                 <Scatter data={data} stroke={CONSTANTS.COLOR_GREEN} fill={CONSTANTS.COLOR_LIGHTGREEN}>
-                    <LabelList dataKey="ticker" fill="black" />
+                    <LabelList dataKey="ticker" fill="black" fontSize={10} />
                 </Scatter>               
             </ScatterChart>
             </div>
