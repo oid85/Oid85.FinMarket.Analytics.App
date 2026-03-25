@@ -25,7 +25,7 @@ export const ClosePriceDiagramIndexes = () => {
             <div className='close-price-diagram-container'>             
                 {
                     closePriceDiagramData.result.items
-                    .filter(x => CONSTANTS.INDEX_TICKERS.includes(x.ticker))
+                    .filter(item => CONSTANTS.INDEX_TICKERS.includes(item.ticker))
                     .map((diagram, index) => (
                         <ClosePriceDiagramComponent
                             key={index}
@@ -33,7 +33,9 @@ export const ClosePriceDiagramIndexes = () => {
                             name={diagram.name} 
                             inPortfolio={diagram.inPortfolio} 
                             data={diagram.data} 
-                            trendState={diagram.trendState}/>))
+                            trendState={diagram.trendState}
+                            width={633}
+                            height={380} />))
                 }
             </div>         
         }

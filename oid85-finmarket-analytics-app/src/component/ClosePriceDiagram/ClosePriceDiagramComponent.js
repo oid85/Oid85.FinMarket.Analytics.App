@@ -25,12 +25,12 @@ export const fillColor = (value) => {
     return CONSTANTS.COLOR_STATEBLUE
 }
 
-export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data, trendState }) => {
+export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data, trendState, width, height }) => {
     return (
         <div className='close-price-diagram-border-style'>
             <div>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
             <div>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
-            <AreaChart key = {key} width={470} height={236} data={data}>
+            <AreaChart key = {key} width={width} height={height} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} />
                 <Tooltip />
