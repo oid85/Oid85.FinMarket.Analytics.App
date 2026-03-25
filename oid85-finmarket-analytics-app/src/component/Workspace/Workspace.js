@@ -13,7 +13,8 @@ import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
 import { BondPortfolioScreen } from '../Screens/BondPortfolioScreen'
 import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
-import { ClosePriceDiagramScreen } from '../Screens/ClosePriceDiagramScreen'
+import { ClosePriceDiagramSharesScreen } from '../Screens/ClosePriceDiagramSharesScreen'
+import { ClosePriceDiagramIndexesScreen } from '../Screens/ClosePriceDiagramIndexesScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -26,7 +27,8 @@ export const Workspace = () => {
                     <Tab>Недели</Tab>
                     <Tab>Дни</Tab>
                     <Tab>Сравнение</Tab>
-                    <Tab>Графики</Tab>
+                    <Tab>Графики (акции)</Tab>
+                    <Tab>Графики (индексы)</Tab>
                     <Tab>Фунд. (табл.)</Tab>
                     <Tab>Фунд. (диагр.)</Tab>
                     <Tab>Фунд. (сектора)</Tab>
@@ -45,8 +47,11 @@ export const Workspace = () => {
                     <CompareTrendScreen />
                 </TabPanel> 
                 <TabPanel>
-                    <ClosePriceDiagramScreen />
-                </TabPanel>                                            
+                    <ClosePriceDiagramSharesScreen />
+                </TabPanel>      
+                <TabPanel>
+                    <ClosePriceDiagramIndexesScreen />
+                </TabPanel>                                                         
                 <TabPanel>
                     <FundamentalParameterScreen />
                 </TabPanel>  
