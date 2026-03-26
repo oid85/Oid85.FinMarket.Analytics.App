@@ -85,8 +85,8 @@ export const FundamentalParameterList = () => {
                                 <div className='ev-header-cell fundamental-parameter-border-style'>EV, млрд. руб.</div>
                                 <div className='ebitda-header-cell fundamental-parameter-border-style'>EBITDA, млрд. руб.</div>
                                 <div className='netdebt-header-cell fundamental-parameter-border-style'>Чистый долг, млрд. руб.</div>
-                                <div className='revenue-header-cell fundamental-parameter-border-style'>Выручка (чист. опер. доход), млрд. руб.</div>
-                                <div className='netprofit-header-cell fundamental-parameter-border-style'>Чистая прибыль, млрд. руб.</div>
+                                <div className='revenue-header-cell fundamental-parameter-border-style'>Выручка, млрд. руб.</div>
+                                <div className='netprofit-header-cell fundamental-parameter-border-style'>Чистая прибыль (чист. опер. доход), млрд. руб.</div>
                                 <div className='dividend-header-cell fundamental-parameter-border-style'>ДД, руб</div>
                                 <div className='dividend-yield-header-cell fundamental-parameter-border-style'>ДД, %</div>
                                 <div className='price-header-cell fundamental-parameter-border-style'>Цена акции, руб.</div>

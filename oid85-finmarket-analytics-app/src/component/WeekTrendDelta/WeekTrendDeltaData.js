@@ -14,10 +14,7 @@ const GetColorDelta = (delta, inPortfolio) => {
 const GetColorTrendState = (trendState, inPortfolio) => {
     if (!trendState) { return CONSTANTS.COLOR_WHITE }
     if (trendState == 'ТРЕНД') { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
-    if (trendState == 'СИЛЬНЫЙ ТРЕНД') { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
-    if (trendState == 'СЛОМ ТРЕНДА') { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
     if (trendState == 'НЕТ ТРЕНДА') { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
-    if (trendState == 'НЕ ОПРЕДЕЛЕН') { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
 
     return CONSTANTS.COLOR_WHITE
 }
