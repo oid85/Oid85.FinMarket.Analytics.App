@@ -35,7 +35,8 @@ export const ClosePriceDiagramShares = () => {
                             data={diagram.data} 
                             trendState={diagram.trendState}
                             width={470}
-                            height={236} />))
+                            height={236}
+                            recommendation={diagram.recommendation} />))
                 }
             </div>         
         }
