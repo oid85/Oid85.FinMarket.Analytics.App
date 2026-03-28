@@ -136,7 +136,14 @@ export const FundamentalBySector = () => {
                                 dispatch(fetchCurrentSector({name: 'Энергетика'}))
                                 dispatch(sagaFundamentalBySector())
                             }}><div className='sector-button-text'>Энергетика</div></button>
-                    </div>                                                                                                                                                                                                                                              
+                    </div>   
+                    <div className='sector-button-container'>
+                        <button className='btn btn-outline-dark sector-button'
+                            onClick={() => {
+                                dispatch(fetchCurrentSector({name: 'Машиностроение'}))
+                                dispatch(sagaFundamentalBySector())
+                            }}><div className='sector-button-text'>Машиностр.</div></button>
+                    </div>                                                                                                                                                                                                                                                               
                 </div>
                 <div className='fundamental-by-sector-sector-title'>{currentSector.name}</div>
                 <div className='fundamental-by-sector-diagram-title'>График цены</div>
