@@ -1,6 +1,9 @@
 import React from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import './styles.css'
 import {CONSTANTS} from '../../constants'
+import { fetchCurrentInstrument, sagaInstrumentPortfolio } from '../../redux/actions/instrumentActions'
+import { sagaTrendDynamic } from '../../redux/actions/trendDynamicActions'
 
 const GetColorTrend = (trend, inPortfolio) => {
     if (!trend) { return CONSTANTS.COLOR_WHITE }
@@ -21,6 +24,8 @@ const GetValueDelta = (delta) => {
 }
 
 export const TrendDynamicData = ({data}) => {
+
+    const dispatch = useDispatch()
 
     return (
         <React.Fragment>          
@@ -51,7 +56,17 @@ export const TrendDynamicData = ({data}) => {
                                 ))
                             }     
                             </div>      
-                        </div>                                    
+                        </div> 
+                        <div className='trend-dynamic-border-style'>
+                            <div className='instrument-button-container'>
+                                <button className='btn btn-outline-dark instrument-button'
+                                    onClick={() => {
+                                        dispatch(fetchCurrentInstrument({ticker: dataItem.ticker}))
+                                        dispatch(sagaInstrumentPortfolio())
+                                        dispatch(sagaTrendDynamic())
+                                    }}><div className='instrument-button-text'>{dataItem.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>
+                            </div> 
+                        </div>                                                            
                     </div>
                 ))
             }           

@@ -32,7 +32,7 @@
 
 .corner-cell {    
     height: 52px;
-    width: 145px;  
+    width: 215px;  
 }
 
 .instrument-ticker-cell { 
@@ -56,4 +56,17 @@
     width: 59px;
     font-size: 9px;
     text-align: center;   
+}
+
+.instrument-button-container {    
+    padding: 1px;
+}
+
+.instrument-button {    
+    width: 90px;
+    height: 25px;
+}
+
+.instrument-button-text {        
+    font-size: 12px;     
 }

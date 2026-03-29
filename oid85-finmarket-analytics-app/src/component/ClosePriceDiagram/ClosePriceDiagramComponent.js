@@ -26,7 +26,11 @@ export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, dat
         <div className='close-price-diagram-border-style'>
             <div>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
             <div>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
-            <div>{inPortfolio ? <div><b>{`Рекомендация: ${recommendation}`}</b></div> : <div>{`Рекомендация: ${recommendation}`}</div>}</div>
+            {
+                !recommendation
+                ? <div></div>
+                : <div>{inPortfolio ? <div><b>{`Рекомендация: ${recommendation}`}</b></div> : <div>{`Рекомендация: ${recommendation}`}</div>}</div>
+            }            
             <ComposedChart key = {key} width={width} height={height} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} />

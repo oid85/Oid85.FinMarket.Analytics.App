@@ -1,6 +1,9 @@
 import React from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import './styles.css'
 import {CONSTANTS} from '../../constants'
+import { sagaWeekTrendDelta } from '../../redux/actions/weekTrendDeltaActions'
+import { fetchCurrentInstrument, sagaInstrumentPortfolio } from '../../redux/actions/instrumentActions'
 
 const GetColorDelta = (delta, inPortfolio) => {
     if (!delta) { return CONSTANTS.COLOR_WHITE }
@@ -41,6 +44,8 @@ const GetDeltaValue = (delta) => {
 
 export const WeekTrendDeltaData = ({data}) => {
 
+    const dispatch = useDispatch()
+    
     return (
         <React.Fragment>          
             <div className='vertical-container'>
@@ -102,7 +107,17 @@ export const WeekTrendDeltaData = ({data}) => {
                                 : <div>{`${dataItem.fallingFromMax} %`}</div>
                             }
                             </div>
-                        </div>                                              
+                        </div>  
+                        <div className='week-trend-border-style'>
+                            <div className='instrument-button-container'>
+                                <button className='btn btn-outline-dark instrument-button'
+                                    onClick={() => {
+                                        dispatch(fetchCurrentInstrument({ticker: dataItem.ticker}))
+                                        dispatch(sagaInstrumentPortfolio()) 
+                                        dispatch(sagaWeekTrendDelta())
+                                    }}><div className='instrument-button-text'>{dataItem.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>
+                            </div> 
+                        </div>                                                                    
                     </div>
                 ))
             }
