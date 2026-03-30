@@ -24,8 +24,8 @@ export const Workspace = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                    <Tab>Недели</Tab>
                     <Tab>Дни</Tab>
+                    <Tab>Недели</Tab>                    
                     <Tab>Сравнение</Tab>
                     <Tab>Графики (акции)</Tab>
                     <Tab>Графики (индексы)</Tab>
@@ -38,10 +38,10 @@ export const Workspace = () => {
                     <Tab>Портфель облигаций</Tab>
                 </TabList>
                 <TabPanel>
-                    <WeekTrendDeltaScreen />
+                    <TrendDynamicScreen />                    
                 </TabPanel>    
                 <TabPanel>
-                    <TrendDynamicScreen />
+                    <WeekTrendDeltaScreen />
                 </TabPanel>
                 <TabPanel>
                     <CompareTrendScreen />
