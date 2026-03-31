@@ -43,25 +43,25 @@
 }
 
 .portfolio-position-trend-coefficient-header-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
 
 .portfolio-position-dividend-coefficient-header-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
 
 .portfolio-position-manual-coefficient-header-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
 
 .portfolio-position-result-coefficient-header-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
@@ -79,7 +79,7 @@
 }
 
 .portfolio-position-message-header-cell {
-    width: 200px;
+    width: 120px;
     padding: 1px;
     font-size: 18px;  
 }
@@ -109,7 +109,8 @@
 }
 
 .portfolio-position-number-cell {
-    width: 60px;  
+    width: 60px;
+    height: 70px;  
     padding: 1px;
     font-size: 18px; 
 }
@@ -127,25 +128,25 @@
 }
 
 .portfolio-position-trend-coefficient-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
 
 .portfolio-position-dividend-coefficient-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
 
 .portfolio-position-manual-coefficient-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
 
 .portfolio-position-result-coefficient-cell {
-    width: 100px;
+    width: 70px;
     padding: 1px;
     font-size: 18px;  
 }
@@ -163,7 +164,7 @@
 }
 
 .portfolio-position-message-cell {
-    width: 200px;
+    width: 120px;
     padding: 1px;
     font-size: 18px;  
 }
