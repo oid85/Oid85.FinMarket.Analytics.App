@@ -154,7 +154,7 @@ export const FundamentalParameterList = () => {
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.pbv.map((item) => (
                                             <div className='fundamental-parameter-border-style pbv-cell' style={{backgroundColor: pbvColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -166,7 +166,7 @@ export const FundamentalParameterList = () => {
                                 </div>    
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.roa.map((item) => (
                                             <div className='fundamental-parameter-border-style roa-cell' style={{backgroundColor: roaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -178,7 +178,7 @@ export const FundamentalParameterList = () => {
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.evEbitda.map((item) => (
                                             <div className='fundamental-parameter-border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -186,7 +186,7 @@ export const FundamentalParameterList = () => {
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.netDebtEbitda.map((item) => (
                                             <div className='fundamental-parameter-border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -194,7 +194,7 @@ export const FundamentalParameterList = () => {
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.ebitdaRevenue.map((item) => (
                                             <div className='fundamental-parameter-border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -202,7 +202,7 @@ export const FundamentalParameterList = () => {
                                 </div>                                                                                    
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.marketCap.map((item) => (
                                             <div className='fundamental-parameter-border-style marketcap-cell' style={{backgroundColor: marketCapColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -214,7 +214,7 @@ export const FundamentalParameterList = () => {
                                 </div>                            
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.ev.map((item) => (
                                             <div className='fundamental-parameter-border-style ev-cell' style={{backgroundColor: evColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -226,7 +226,7 @@ export const FundamentalParameterList = () => {
                                 </div>                              
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.ebitda.map((item) => (
                                             <div className='fundamental-parameter-border-style ebitda-cell' style={{backgroundColor: ebitdaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -238,7 +238,7 @@ export const FundamentalParameterList = () => {
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.netDebt.map((item) => (
                                             <div className='fundamental-parameter-border-style netdebt-cell' style={{backgroundColor: netDebtColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -250,7 +250,7 @@ export const FundamentalParameterList = () => {
                                 </div>                                                        
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.revenue.map((item) => (
                                             <div className='fundamental-parameter-border-style revenue-cell' style={{backgroundColor: revenueColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -262,7 +262,7 @@ export const FundamentalParameterList = () => {
                                 </div>    
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.netProfit.map((item) => (
                                             <div className='fundamental-parameter-border-style netprofit-cell' style={{backgroundColor: netProfitColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -274,7 +274,7 @@ export const FundamentalParameterList = () => {
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.dividend.map((item) => (
                                             <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -286,7 +286,7 @@ export const FundamentalParameterList = () => {
                                 </div>                                
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.dividendYield.map((item) => (
                                             <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -294,7 +294,7 @@ export const FundamentalParameterList = () => {
                                 </div>                            
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.price.map((item) => (
                                             <div className='fundamental-parameter-border-style price-cell'>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
@@ -302,7 +302,7 @@ export const FundamentalParameterList = () => {
                                 </div> 
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
+                                        fundamentalParameter.deltaMinMax.map((item) => (
                                             <div className='fundamental-parameter-border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }

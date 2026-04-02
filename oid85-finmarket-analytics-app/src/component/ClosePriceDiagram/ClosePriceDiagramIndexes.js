@@ -36,7 +36,8 @@ export const ClosePriceDiagramIndexes = () => {
                             trendState={diagram.trendState}
                             width={630}
                             height={370} 
-                            recommendation={diagram.recommendation} />))
+                            recommendation={diagram.recommendation}
+                            dividendYield={diagram.dividendYield} />))
                 }
             </div>         
         }

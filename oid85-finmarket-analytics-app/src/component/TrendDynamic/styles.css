@@ -52,10 +52,20 @@
 }
 
 .delta-cell {  
-    height: 14px;
+    height: 20px;
     width: 59px;
-    font-size: 9px;
+    font-size: 12px;
     text-align: center;   
+}
+
+.trend-dynamic-dividend-yield-cell { 
+    width: 80px;  
+    font-size: 12px;
+    text-align: center;
+}
+
+.trend-dynamic-separator-cell { 
+    width: 10px;  
 }
 
 .instrument-button-container {    

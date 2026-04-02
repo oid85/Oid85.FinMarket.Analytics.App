@@ -32,6 +32,18 @@ const GetColorFallingFromMax = (fallingFromMax, inPortfolio) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetColorDividendYield = (dividendYield, inPortfolio) => {
+    if (!dividendYield) { return CONSTANTS.COLOR_WHITE }
+    if (dividendYield > 10) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
+const GetDividendYieldValue = (dividendYield) => {
+    if (!dividendYield) { return '' }
+    return `ДД ${dividendYield} %`
+}
+
 const GetPriceValue = (price) => {
     if (!price) { return '' }
     return price
@@ -90,6 +102,7 @@ export const WeekTrendDeltaData = ({data}) => {
                                 ))
                             }
                         </div>
+                        <div className='week-trend-separator-cell'></div>
                         <div className='week-trend-border-style' style={{backgroundColor: GetColorTrendState(dataItem.trendState, dataItem.inPortfolio)}}>
                             <div className='week-trend-delta-trend-state-cell'>
                             {
@@ -103,11 +116,20 @@ export const WeekTrendDeltaData = ({data}) => {
                             <div className='week-trend-delta-falling-from-max-cell'>
                             {
                                 dataItem.inPortfolio 
-                                ? <div><b>{`${dataItem.fallingFromMax} %`}</b></div> 
-                                : <div>{`${dataItem.fallingFromMax} %`}</div>
+                                ? <div><b>{`${dataItem.fallingFromMax} % от max`}</b></div> 
+                                : <div>{`${dataItem.fallingFromMax} % от max`}</div>
                             }
                             </div>
-                        </div>  
+                        </div> 
+                        <div className='week-trend-border-style' style={{backgroundColor: GetColorDividendYield(dataItem.dividendYield)}}>
+                            <div className='week-trend-delta-dividend-yield-cell'>
+                            {
+                                dataItem.inPortfolio 
+                                ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> 
+                                : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>
+                            }
+                            </div>
+                        </div>                         
                         <div className='week-trend-border-style'>
                             <div className='instrument-button-container'>
                                 <button className='btn btn-outline-dark instrument-button'

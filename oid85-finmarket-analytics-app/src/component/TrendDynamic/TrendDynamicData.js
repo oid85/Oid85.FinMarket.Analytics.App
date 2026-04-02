@@ -5,7 +5,7 @@ import {CONSTANTS} from '../../constants'
 import { fetchCurrentInstrument, sagaInstrumentPortfolio } from '../../redux/actions/instrumentActions'
 import { sagaTrendDynamic } from '../../redux/actions/trendDynamicActions'
 
-const GetColorTrend = (trend, inPortfolio) => {
+const GetColorTrend = (trend, delta, inPortfolio) => {
     if (!trend) { return CONSTANTS.COLOR_WHITE }
     if (trend == 1) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
     return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED
@@ -20,7 +20,26 @@ const GetColorDelta = (delta) => {
 
 const GetValueDelta = (delta) => {
     if (!delta) { return "" }
-    return delta + " %"
+    if (delta > 3) return `(!!!) ${delta} %`
+    if (delta > 2) return `(!!) ${delta} %`
+    if (delta > 1) return `(!) ${delta} %`
+    if (delta < -3) return `(!!!) ${delta} %`
+    if (delta < -2) return `(!!) ${delta} %`
+    if (delta < -1) return `(!) ${delta} %`
+
+    return `${delta} %`
+}
+
+const GetColorDividendYield = (dividendYield, inPortfolio) => {
+    if (!dividendYield) { return CONSTANTS.COLOR_WHITE }
+    if (dividendYield > 10) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
+const GetDividendYieldValue = (dividendYield) => {
+    if (!dividendYield) { return '' }
+    return `ДД ${dividendYield} %`
 }
 
 export const TrendDynamicData = ({data}) => {
@@ -41,7 +60,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='horizontal-container'>
                             {
                                 dataItem.items.map((item) => (                                                
-                                    <div className='trend-cell trend-dynamic-border-style' style={{backgroundColor: GetColorTrend(item.trend, dataItem.inPortfolio)}}>
+                                    <div className='trend-cell trend-dynamic-border-style' style={{backgroundColor: GetColorTrend(item.trend, item.delta, dataItem.inPortfolio)}}>
                                         {dataItem.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}
                                     </div>
                                 ))
@@ -57,6 +76,10 @@ export const TrendDynamicData = ({data}) => {
                             }     
                             </div>      
                         </div> 
+                        <div className='trend-dynamic-separator-cell'></div>
+                        <div className='trend-dynamic-border-style' style={{backgroundColor: GetColorDividendYield(dataItem.dividendYield)}}>
+                            <div className='trend-dynamic-dividend-yield-cell'>{dataItem.inPortfolio ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>}</div> 
+                        </div>                          
                         <div className='trend-dynamic-border-style'>
                             <div className='instrument-button-container'>
                                 <button className='btn btn-outline-dark instrument-button'
@@ -66,7 +89,7 @@ export const TrendDynamicData = ({data}) => {
                                         dispatch(sagaTrendDynamic())
                                     }}><div className='instrument-button-text'>{dataItem.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>
                             </div> 
-                        </div>                                                            
+                        </div>                                                                                  
                     </div>
                 ))
             }           

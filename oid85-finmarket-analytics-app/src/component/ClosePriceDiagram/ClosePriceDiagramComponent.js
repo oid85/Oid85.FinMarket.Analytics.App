@@ -21,16 +21,13 @@ export const fillColor = (value) => {
     return CONSTANTS.COLOR_STATEBLUE
 }
 
-export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data, trendState, width, height, recommendation }) => {
+export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data, trendState, width, height, recommendation, dividendYield }) => {
     return (
         <div className='close-price-diagram-border-style'>
-            <div>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
-            <div>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
-            {
-                !recommendation
-                ? <div></div>
-                : <div>{inPortfolio ? <div><b>{`Рекомендация: ${recommendation}`}</b></div> : <div>{`Рекомендация: ${recommendation}`}</div>}</div>
-            }            
+                <div className='close-price-diagram-ticker'>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
+                <div className='close-price-diagram-name'>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
+                <div className='close-price-diagram-recommendation'>{!recommendation? <div></div> : <div>{inPortfolio ? <div><b>{`Рекомендация: ${recommendation}`}</b></div> : <div>{`Рекомендация: ${recommendation}`}</div>}</div>} </div>          
+                <div className='close-price-diagram-dividend-yield'>{!dividendYield? <div></div> : <div>{inPortfolio ? <div><b>{`ДД ${dividendYield} %`}</b></div> : <div>{`ДД ${dividendYield} %`}</div>}</div>} </div>          
             <ComposedChart key = {key} width={width} height={height} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} />
