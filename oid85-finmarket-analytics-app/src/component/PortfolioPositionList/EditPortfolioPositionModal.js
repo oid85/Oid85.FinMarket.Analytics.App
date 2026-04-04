@@ -34,15 +34,6 @@ export const EditPortfolioPositionModal = () => {
                     style={customStyles}>
                     <h6>Настройки позиции</h6>
                     <form>
-                        <label>Дивидендный коэф.</label>
-                        <input 
-                            className='form-control edit-modal-input' 
-                            type="number" 
-                            defaultValue={currentPortfolioPosition.dividendCoefficient} 
-                            placeholder='Дивидендный коэф.' 
-                            onChange={ (event) => { 
-                                dispatch(fetchCurrentPortfolioPosition({...currentPortfolioPosition, dividendCoefficient: event.target.value})) 
-                                }} />
                         <label>Ручной коэф.</label>
                         <input 
                             className='form-control edit-modal-input' 
