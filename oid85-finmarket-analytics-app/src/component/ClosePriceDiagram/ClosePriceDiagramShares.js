@@ -34,8 +34,8 @@ export const ClosePriceDiagramShares = () => {
                             inPortfolio={diagram.inPortfolio} 
                             data={diagram.data} 
                             trendState={diagram.trendState}
-                            width={470}
-                            height={236}
+                            width={350}
+                            height={200}
                             recommendation={diagram.recommendation}
                             dividendYield={diagram.dividendYield} />))
                 }

@@ -3,30 +3,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import { 
     sagaFundamentalParameterList, 
     fetchCurrentFundamentalParameter, 
-    showEditFundamentalParameterPeModal, 
-    showEditFundamentalParameterRevenueModal, 
-    showEditFundamentalParameterNetProfitModal,
-    showEditFundamentalParameterEbitdaModal,
-    showEditFundamentalParameterEvModal,
-    showEditFundamentalParameterPbvModal,
-    showEditFundamentalParameterRoaModal,
-    showEditFundamentalParameterNetDebtModal,
-    showEditFundamentalParameterMarketCapModal,
-    showEditFundamentalParameterDividendModal,
-    showEditFundamentalParameterMoexModal
+    showEditFundamentalParameterModal
 } from '../../redux/actions/fundamentalParameterActions'
 import { fetchCurrentInstrument, sagaInstrumentPortfolio, sagaInstrumentSelect } from '../../redux/actions/instrumentActions'
-import {EditFundamentalParameterPeModal} from './EditFundamentalParameterPeModal'
-import {EditFundamentalParameterRevenueModal} from './EditFundamentalParameterRevenueModal'
-import {EditFundamentalParameterNetProfitModal} from './EditFundamentalParameterNetProfitModal'
-import {EditFundamentalParameterEbitdaModal} from './EditFundamentalParameterEbitdaModal'
-import {EditFundamentalParameterEvModal} from './EditFundamentalParameterEvModal'
-import {EditFundamentalParameterPbvModal} from './EditFundamentalParameterPbvModal'
-import {EditFundamentalParameterRoaModal} from './EditFundamentalParameterRoaModal'
-import {EditFundamentalParameterNetDebtModal} from './EditFundamentalParameterNetDebtModal'
-import {EditFundamentalParameterMarketCapModal} from './EditFundamentalParameterMarketCapModal'
-import {EditFundamentalParameterDividendModal} from './EditFundamentalParameterDividendModal'
-import {EditFundamentalParameterMoexModal} from './EditFundamentalParameterMoexModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -48,12 +27,13 @@ import {
     ebitdaRevenueColor,
     deltaMinMaxColor
 } from './colorHelper'
+import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
 
 export const FundamentalParameterList = () => {
     
     const dispatch = useDispatch()
     const loading = useSelector(state => state.app.loading)
-    const fundamentalParameterListData = useSelector(state => state.fundamentalParameter.fundamentalParameterListData)    
+    const fundamentalParameterListData = useSelector(state => state.fundamentalParameter.fundamentalParameterListData)
 
     useEffect(() => {
         dispatch(sagaFundamentalParameterList())
@@ -118,19 +98,17 @@ export const FundamentalParameterList = () => {
                                 </div>                             
                                 <div>
                                     <div className='fundamental-parameter-border-style score-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.score}</b></div> : <div>{fundamentalParameter.score}</div>}</div>
-                                    <button className='btn btn-outline-dark score-edit-button'><div className='edit-button-text'>Score</div></button>
                                 </div>
                                 <div>
                                     <div className='fundamental-parameter-border-style mcftr-change-cell' style={{backgroundColor: benchmarkChangeColor(fundamentalParameter.benchmarkChange)}}>{fundamentalParameter.inPortfolio ? <div><b>{`${fundamentalParameter.benchmarkChange} %`}</b></div> : <div>{`${fundamentalParameter.benchmarkChange} %`}</div>}</div>
-                                    <button className='btn btn-outline-dark mcftr-change-edit-button'><div className='edit-button-text'>MCFTR</div></button>
                                 </div>                            
                                 <div>
-                                    <div className='fundamental-parameter-border-style moex-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.moex}</b></div> : <div>{fundamentalParameter.moex}</div>}</div>
-                                    <button className='btn btn-outline-dark imoex-edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterMoexModal())
-                                            }}><div className='edit-button-text'>IMOEX</div></button>
+                                    <div className='fundamental-parameter-border-style moex-cell'
+                                        onDoubleClick={() => {
+                                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Moex', period: '', value: fundamentalParameter.moex }))
+                                            dispatch(showEditFundamentalParameterModal())
+                                        }}                                    
+                                    >{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.moex}</b></div> : <div>{fundamentalParameter.moex}</div>}</div>
                                 </div>                                                        
                                 <div>
                                     {
@@ -138,175 +116,189 @@ export const FundamentalParameterList = () => {
                                             <div className='fundamental-parameter-border-style year-cell'>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                    <button className='btn btn-outline-dark year-edit-button'><div className='edit-button-text'>Year</div></button>
                                 </div>                                 
                                 <div>
                                     {
-                                        fundamentalParameter.pe.map((item) => (
-                                            <div className='fundamental-parameter-border-style pe-cell' style={{backgroundColor: peColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        fundamentalParameter.pe.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style pe-cell' 
+                                                style={{backgroundColor: peColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Pe', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                    <button className='btn btn-outline-dark pe-edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterPeModal())
-                                            }}><div className='edit-button-text'>P/E</div></button>
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.pbv.map((item) => (
-                                            <div className='fundamental-parameter-border-style pbv-cell' style={{backgroundColor: pbvColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        fundamentalParameter.pbv.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style pbv-cell' 
+                                                style={{backgroundColor: pbvColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Pbv', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                    <button className='btn btn-outline-dark pbv-edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterPbvModal())
-                                            }}><div className='edit-button-text'>P/BV</div></button>
                                 </div>    
                                 <div>
                                     {
-                                        fundamentalParameter.roa.map((item) => (
-                                            <div className='fundamental-parameter-border-style roa-cell' style={{backgroundColor: roaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
+                                        fundamentalParameter.roa.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style roa-cell' 
+                                                style={{backgroundColor: roaColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Roa', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
                                     }
-                                    <button className='btn btn-outline-dark roa-edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterRoaModal())
-                                            }}><div className='edit-button-text'>ROA</div></button>
                                 </div>
                                 <div>
                                     {
                                         fundamentalParameter.evEbitda.map((item) => (
-                                            <div className='fundamental-parameter-border-style ev-ebitda-cell' style={{backgroundColor: evEbitdaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                            <div className='fundamental-parameter-border-style ev-ebitda-cell' 
+                                                style={{backgroundColor: evEbitdaColor(item)}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                    <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>EV/EBITDA</div></button>
                                 </div>
                                 <div>
                                     {
                                         fundamentalParameter.netDebtEbitda.map((item) => (
-                                            <div className='fundamental-parameter-border-style netdebt-ebitda-cell' style={{backgroundColor: netDebtEbitdaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                            <div className='fundamental-parameter-border-style netdebt-ebitda-cell' 
+                                                style={{backgroundColor: netDebtEbitdaColor(item)}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                    <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>ND/EBITDA</div></button>
                                 </div>
                                 <div>
                                     {
                                         fundamentalParameter.ebitdaRevenue.map((item) => (
-                                            <div className='fundamental-parameter-border-style ebitda-revenue-cell' style={{backgroundColor: ebitdaRevenueColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                            <div className='fundamental-parameter-border-style ebitda-revenue-cell' 
+                                                style={{backgroundColor: ebitdaRevenueColor(item)}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                    <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>EBITDA/Rev</div></button>
                                 </div>                                                                                    
                                 <div>
                                     {
-                                        fundamentalParameter.marketCap.map((item) => (
-                                            <div className='fundamental-parameter-border-style marketcap-cell' style={{backgroundColor: marketCapColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
+                                        fundamentalParameter.marketCap.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style marketcap-cell' 
+                                                style={{backgroundColor: marketCapColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'MarketCap', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
                                     }
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterMarketCapModal())
-                                            }}><div className='edit-button-text'>MarketCap</div></button>
-                                </div>                            
+                                </div>                           
                                 <div>
                                     {
-                                        fundamentalParameter.ev.map((item) => (
-                                            <div className='fundamental-parameter-border-style ev-cell' style={{backgroundColor: evColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
+                                        fundamentalParameter.ev.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style ev-cell' 
+                                                style={{backgroundColor: evColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Ev', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
                                     }
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterEvModal())
-                                            }}><div className='edit-button-text'>EV</div></button>
-                                </div>                              
-                                <div>
-                                    {
-                                        fundamentalParameter.ebitda.map((item) => (
-                                            <div className='fundamental-parameter-border-style ebitda-cell' style={{backgroundColor: ebitdaColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
-                                    }
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterEbitdaModal())
-                                            }}><div className='edit-button-text'>EBITDA</div></button>                              
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.netDebt.map((item) => (
-                                            <div className='fundamental-parameter-border-style netdebt-cell' style={{backgroundColor: netDebtColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
+                                        fundamentalParameter.ebitda.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style ebitda-cell' 
+                                                style={{backgroundColor: ebitdaColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Ebitda', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
                                     }
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterNetDebtModal())
-                                            }}><div className='edit-button-text'>NetDebt</div></button>                              
-                                </div>                                                        
-                                <div>
-                                    {
-                                        fundamentalParameter.revenue.map((item) => (
-                                            <div className='fundamental-parameter-border-style revenue-cell' style={{backgroundColor: revenueColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
-                                    }
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterRevenueModal())
-                                            }}><div className='edit-button-text'>Revenue</div></button>                               
-                                </div>    
-                                <div>
-                                    {
-                                        fundamentalParameter.netProfit.map((item) => (
-                                            <div className='fundamental-parameter-border-style netprofit-cell' style={{backgroundColor: netProfitColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
-                                    }
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterNetProfitModal())
-                                            }}><div className='edit-button-text'>NetProfit</div></button>                              
                                 </div>
                                 <div>
                                     {
-                                        fundamentalParameter.dividend.map((item) => (
-                                            <div className='fundamental-parameter-border-style dividend-cell' style={{backgroundColor: dividendColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
-                                        ))                                        
+                                        fundamentalParameter.netDebt.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style netdebt-cell' 
+                                                style={{backgroundColor: netDebtColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'NetDebt', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
                                     }
-                                    <button className='btn btn-outline-dark edit-button'
-                                        onClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({...fundamentalParameter}))
-                                            dispatch(showEditFundamentalParameterDividendModal())
-                                            }}><div className='edit-button-text'>Dividend</div></button>                              
-                                </div>                                
+                                </div>
+                                <div>
+                                    {
+                                        fundamentalParameter.revenue.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style revenue-cell' 
+                                                style={{backgroundColor: revenueColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Revenue', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
+                                    }
+                                </div>   
+                                <div>
+                                    {
+                                        fundamentalParameter.netProfit.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style netprofit-cell' 
+                                                style={{backgroundColor: netProfitColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'NetProfit', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
+                                    }
+                                </div>
+                                <div>
+                                    {
+                                        fundamentalParameter.dividend.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style dividend-cell' 
+                                                style={{backgroundColor: dividendColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Dividend', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
+                                    }
+                                </div>
                                 <div>
                                     {
                                         fundamentalParameter.dividendYield.map((item) => (
-                                            <div className='fundamental-parameter-border-style dividend-yield-cell' style={{backgroundColor: dividendYieldColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                            <div className='fundamental-parameter-border-style dividend-yield-cell' 
+                                                style={{backgroundColor: dividendYieldColor(item)}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
-                                    }
-                                    <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>DividendYield</div></button>                              
+                                    }                                    
                                 </div>                            
                                 <div>
                                     {
                                         fundamentalParameter.price.map((item) => (
-                                            <div className='fundamental-parameter-border-style price-cell'>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                            <div className='fundamental-parameter-border-style price-cell'
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
-                                    }
-                                    <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>Price</div></button>
+                                    }                                    
                                 </div> 
                                 <div>
                                     {
                                         fundamentalParameter.deltaMinMax.map((item) => (
-                                            <div className='fundamental-parameter-border-style delta-min-max-cell' style={{backgroundColor: deltaMinMaxColor(item)}}>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                            <div className='fundamental-parameter-border-style delta-min-max-cell' 
+                                                style={{backgroundColor: deltaMinMaxColor(item)}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                    <button className='btn btn-outline-dark edit-button'><div className='edit-button-text'>DeltaMinMax</div></button>
                                 </div>                                                       
                             </div>                        
                         </div>
@@ -314,17 +306,7 @@ export const FundamentalParameterList = () => {
                 }
             </div>
         }
-        <EditFundamentalParameterPeModal />
-        <EditFundamentalParameterPbvModal />
-        <EditFundamentalParameterRoaModal />
-        <EditFundamentalParameterEvModal />
-        <EditFundamentalParameterRevenueModal />
-        <EditFundamentalParameterNetProfitModal />
-        <EditFundamentalParameterEbitdaModal />
-        <EditFundamentalParameterNetDebtModal />
-        <EditFundamentalParameterMarketCapModal />
-        <EditFundamentalParameterDividendModal />
-        <EditFundamentalParameterMoexModal />
+        <EditFundamentalParameterModal />
         </React.Fragment>                
     )
 }

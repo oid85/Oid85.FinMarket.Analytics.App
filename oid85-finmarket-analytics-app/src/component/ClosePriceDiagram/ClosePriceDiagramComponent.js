@@ -30,7 +30,7 @@ export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, dat
                 <div className='close-price-diagram-dividend-yield'>{!dividendYield? <div></div> : <div>{inPortfolio ? <div><b>{`ДД ${dividendYield} %`}</b></div> : <div>{`ДД ${dividendYield} %`}</div>}</div>} </div>          
             <ComposedChart key = {key} width={width} height={height} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <YAxis type="number" domain={['auto', 'auto']} />
+                <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
                 <Area type="monotone" dataKey="value" strokeWidth={3} stroke={strokeColor(trendState)} fill={fillColor(trendState)} />
                 <Line type="monotone" dataKey="consensusPrice" strokeWidth={2} dot={false} stroke={CONSTANTS.COLOR_DARKSLATEGRAY} />

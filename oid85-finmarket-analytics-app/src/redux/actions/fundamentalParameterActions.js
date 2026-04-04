@@ -6,6 +6,8 @@ import {
     FETCH_CURRENT_FUNDAMENTAL_PARAMETER,
     FETCH_FUNDAMENTAL_BY_SECTOR,
     FETCH_CURRENT_SECTOR,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MODAL,    
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL,
@@ -74,6 +76,18 @@ export const fetchCurrentSector = (data) => {
     return {
         type: FETCH_CURRENT_SECTOR,
         payload: data
+    }
+}
+
+export const showEditFundamentalParameterModal = () => {
+    return {
+        type: SHOW_EDIT_FUNDAMENTAL_PARAMETER_MODAL
+    }
+}
+
+export const hideEditFundamentalParameterModal = () => {
+    return {
+        type: HIDE_EDIT_FUNDAMENTAL_PARAMETER_MODAL
     }
 }
 

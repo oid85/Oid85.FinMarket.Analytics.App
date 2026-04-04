@@ -4,16 +4,16 @@ import Modal from 'react-modal';
 import { 
     sagaEditFundamentalParameter,
     fetchCurrentFundamentalParameter,
-    hideEditFundamentalParameterMoexModal
+    hideEditFundamentalParameterModal
 } from '../../redux/actions/fundamentalParameterActions'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 
-export const EditFundamentalParameterMoexModal = () => {
+export const EditFundamentalParameterModal = () => {
     
     const dispatch = useDispatch()
     const currentFundamentalParameter = useSelector(state => state.fundamentalParameter.currentFundamentalParameter)
-    const editFundamentalParameterMoexModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterMoexModalIsOpened)
+    const editFundamentalParameterModalIsOpened = useSelector(state => state.fundamentalParameter.editFundamentalParameterModalIsOpened)
 
     const customStyles = {
         content: {
@@ -30,28 +30,28 @@ export const EditFundamentalParameterMoexModal = () => {
         <React.Fragment>
             <div>                
                 <Modal
-                    isOpen={editFundamentalParameterMoexModalIsOpened}
+                    isOpen={editFundamentalParameterModalIsOpened}
                     style={customStyles}>
-                    <h6>Доля в индексе IMOEX</h6>
+                    <h6>{`Редактирование параметра ${currentFundamentalParameter.type}`}</h6>
                     <form>
                         <input 
                             className='form-control edit-modal-input' 
-                            type="number" 
-                            defaultValue={currentFundamentalParameter.moex} 
-                            placeholder='IMOEX' 
+                            type="string" 
+                            defaultValue={currentFundamentalParameter.value} 
+                            placeholder={`${currentFundamentalParameter.period} г.`} 
                             onChange={ (event) => { 
-                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, moex: event.target.value})) 
-                                }} />
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, value: event.target.value }))
+                                }} /> 
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {
                                     dispatch(sagaEditFundamentalParameter())
-                                    dispatch(hideEditFundamentalParameterMoexModal())
+                                    dispatch(hideEditFundamentalParameterModal())
                                     }}>Сохранить</button>                                   
                         <button 
                             className='btn btn-outline-primary edit-modal-cancel-button' 
                             onClick={ () => { 
-                                dispatch(hideEditFundamentalParameterMoexModal()) 
+                                dispatch(hideEditFundamentalParameterModal()) 
                                 }}>Закрыть</button>                        
                     </form>
                 </Modal>

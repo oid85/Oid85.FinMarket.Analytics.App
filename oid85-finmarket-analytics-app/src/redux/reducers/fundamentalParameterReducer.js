@@ -3,6 +3,8 @@ import {
     FETCH_CURRENT_FUNDAMENTAL_PARAMETER,
     FETCH_FUNDAMENTAL_BY_SECTOR,
     FETCH_CURRENT_SECTOR,
+    SHOW_EDIT_FUNDAMENTAL_PARAMETER_MODAL,
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MODAL,    
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL,
     HIDE_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL,
@@ -30,8 +32,9 @@ import {
 const initialState = {
     fundamentalParameterListData: {},
     fundamentalBySectorData: {},
-    currentFundamentalParameter: {},
+    currentFundamentalParameter: {},    
     currentSector: { name: 'Металлургия' },
+    editFundamentalParameterModalIsOpened: false,
     editFundamentalParameterPeModalIsOpened: false,
     editFundamentalParameterRevenueModalIsOpened: false,
     editFundamentalParameterNetProfitModalIsOpened: false,
@@ -59,6 +62,12 @@ export const fundamentalParameterReducer = (state = initialState, action) => {
 
         case FETCH_CURRENT_SECTOR:
             return {...state, currentSector: {...action.payload}}
+
+        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_MODAL:
+            return {...state, editFundamentalParameterModalIsOpened: true}
+        
+        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_MODAL:
+            return {...state, editFundamentalParameterModalIsOpened: false}
 
         case SHOW_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL:
             return {...state, editFundamentalParameterPeModalIsOpened: true}
