@@ -28,6 +28,21 @@ import {
     deltaMinMaxColor
 } from './colorHelper'
 import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
+import { CONSTANTS } from '../../constants'
+
+const GetColorScoreValue = (scoreValue) => {
+    if (!scoreValue) { return CONSTANTS.COLOR_WHITE }
+    if (scoreValue >= 0.5) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
+const GetColorScoreIndicator = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
 
 export const FundamentalParameterList = () => {
     
@@ -97,7 +112,14 @@ export const FundamentalParameterList = () => {
                                     </div>
                                 </div>                             
                                 <div>
-                                    <div className='fundamental-parameter-border-style score-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.score}</b></div> : <div>{fundamentalParameter.score}</div>}</div>
+                                <div title='Рейтинг по фундаменталу' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreValue(fundamentalParameter.score.scoreValue)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.score.scoreValue}</b></div> : <div>{fundamentalParameter.score.scoreValue}</div>}</div>
+                                <div title='P/E <= 5' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.peOk)}}>{fundamentalParameter.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div>
+                                <div title='EV/EBITDA <= 3.5' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.evOk)}}>{fundamentalParameter.inPortfolio ? <div><b>EV</b></div> : <div>EV</div>}</div>
+                                <div title='P/BV <= 1' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.pbvOk)}}>{fundamentalParameter.inPortfolio ? <div><b>BV</b></div> : <div>BV</div>}</div>
+                                <div title='ДД >= 10.0' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.dividendYieldOk)}}>{fundamentalParameter.inPortfolio ? <div><b>ДД</b></div> : <div>ДД</div>}</div>
+                                <div title='Дивидендный аристократ' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.isDividendAristocrat)}}>{fundamentalParameter.inPortfolio ? <div><b>ДА</b></div> : <div>ДА</div>}</div>
+                                <div title='Рост чистой прибыли' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.netProfitOk)}}>{fundamentalParameter.inPortfolio ? <div><b>ЧП</b></div> : <div>ЧП</div>}</div>
+                                <div title='Долговая нагрузка' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.netDebtOk)}}>{fundamentalParameter.inPortfolio ? <div><b>Д</b></div> : <div>Д</div>}</div>
                                 </div>
                                 <div>
                                     <div className='fundamental-parameter-border-style mcftr-change-cell' style={{backgroundColor: benchmarkChangeColor(fundamentalParameter.benchmarkChange)}}>{fundamentalParameter.inPortfolio ? <div><b>{`${fundamentalParameter.benchmarkChange} %`}</b></div> : <div>{`${fundamentalParameter.benchmarkChange} %`}</div>}</div>

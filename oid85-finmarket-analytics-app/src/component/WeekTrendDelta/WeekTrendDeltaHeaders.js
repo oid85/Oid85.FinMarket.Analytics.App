@@ -23,10 +23,6 @@ export const WeekTrendDeltaHeaders = ({weeks}) => {
                         </div>
                     ))
                 }
-                <div className='week-trend-separator-header-cell'></div>
-                <div className='week-trend-delta-trend-state-header-cell week-trend-border-style'>Тренд</div>
-                <div className='week-trend-delta-falling-from-max-header-cell week-trend-border-style'>Пад. от макс., %</div>
-                <div className='week-trend-delta-falling-from-max-header-cell week-trend-border-style'>ДД, %</div>
             </div>
         </React.Fragment>                
     )

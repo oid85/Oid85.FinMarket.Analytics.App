@@ -19,24 +19,6 @@
     width: 147px;    
 }
 
-.week-trend-delta-trend-state-header-cell {   
-    width: 100px;
-    padding: 5px;
-    font-size: 12px; 
-}
-
-.week-trend-delta-falling-from-max-header-cell {    
-    width: 70px;
-    padding: 5px;
-    font-size: 12px; 
-}
-
-.week-trend-delta-dividend-yield-header-cell {    
-    width: 70px;
-    padding: 5px;
-    font-size: 12px; 
-}
-
 .week-trend-delta-calendar-cell {
     text-align: left;    
     height: 77px;
@@ -97,6 +79,12 @@
 
 .week-trend-delta-dividend-yield-cell { 
     width: 70px;  
+    font-size: 12px;
+    text-align: center;
+}
+
+.week-trend-delta-score-cell { 
+    width: 30px;  
     font-size: 12px;
     text-align: center;
 }

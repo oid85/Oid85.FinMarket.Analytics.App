@@ -179,9 +179,8 @@
 .score-cell {
     text-align: center;    
     width: 50px;
-    height: 251px;
-    font-size: 16px;
-    padding: 10px;
+    height: 25px;
+    font-size: 12px;    
 }
 
 .mcftr-change-cell {
