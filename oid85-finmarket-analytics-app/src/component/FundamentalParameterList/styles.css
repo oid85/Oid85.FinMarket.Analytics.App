@@ -32,7 +32,7 @@
 }
 
 .score-header-cell {
-    width: 50px;
+    width: 70px;
     padding: 1px;
     font-size: 12px;  
 }
@@ -178,8 +178,8 @@
 
 .score-cell {
     text-align: center;    
-    width: 50px;
-    height: 25px;
+    width: 70px;
+    height: 20px;
     font-size: 12px;    
 }
 

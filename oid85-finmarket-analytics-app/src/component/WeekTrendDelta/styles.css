@@ -83,7 +83,19 @@
     text-align: center;
 }
 
-.week-trend-delta-score-cell { 
+.week-trend-delta-forecast-cell { 
+    width: 70px;  
+    font-size: 12px;
+    text-align: center;
+}
+
+.week-trend-delta-score-value-cell { 
+    width: 70px;  
+    font-size: 12px;
+    text-align: center;
+}
+
+.week-trend-delta-score-indicator-cell { 
     width: 30px;  
     font-size: 12px;
     text-align: center;

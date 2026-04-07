@@ -68,6 +68,19 @@ const GetColorScoreIndicator = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetColorForecast = (forecast) => {
+    if (!forecast) { return CONSTANTS.COLOR_WHITE }
+    if (forecast.recommendation === 'Buy') { return CONSTANTS.COLOR_GREEN }
+    if (forecast.recommendation === 'Hold') { return CONSTANTS.COLOR_YELLOW }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
+const GetForecastValue = (forecast) => {
+    if (!forecast) { return '' }
+    return `ПР ${forecast.upsidePrc} %`
+}
+
 export const WeekTrendDeltaData = ({data}) => {
 
     const dispatch = useDispatch()
@@ -135,29 +148,32 @@ export const WeekTrendDeltaData = ({data}) => {
                             }
                             </div>
                         </div> 
+                        <div title='Прогноз' className='week-trend-border-style' style={{backgroundColor: GetColorForecast(dataItem.forecast)}}>
+                            <div className='week-trend-delta-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.forecast)}</b></div> : <div>{GetForecastValue(dataItem.forecast)}</div>}</div> 
+                        </div>                          
                         <div title='Дивидендная доходность' className='week-trend-border-style' style={{backgroundColor: GetColorDividendYield(dataItem.dividendYield)}}>
                             <div className='week-trend-delta-dividend-yield-cell'>{dataItem.inPortfolio ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>}</div>
                         </div>    
                         <div title='Рейтинг по фундаменталу' className='week-trend-border-style' style={{backgroundColor: GetColorScoreValue(dataItem.score.scoreValue)}}>
-                            <div className='week-trend-delta-score-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.score.scoreValue}</b></div> : <div>{dataItem.score.scoreValue}</div>}</div> 
+                            <div className='week-trend-delta-score-value-cell'>{dataItem.inPortfolio ? <div><b>{`SC ${dataItem.score.scoreValue}`}</b></div> : <div>{`SC ${dataItem.score.scoreValue}`}</div>}</div> 
                         </div>
                         <div title='P/E <= 5' className='week-trend-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.peOk)}}>
-                            <div className='week-trend-delta-score-cell'>{dataItem.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div> 
+                            <div className='week-trend-delta-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div> 
                         </div>
                         <div title='EV/EBITDA <= 3.5' className='trend-dynamic-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.evOk)}}>
-                            <div className='trend-dynamic-score-cell'>{dataItem.inPortfolio ? <div><b>EV</b></div> : <div>EV</div>}</div> 
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>EV</b></div> : <div>EV</div>}</div> 
                         </div>                           
                         <div title='P/BV <= 1' className='week-trend-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.pbvOk)}}>
-                            <div className='week-trend-delta-score-cell'>{dataItem.inPortfolio ? <div><b>BV</b></div> : <div>BV</div>}</div> 
+                            <div className='week-trend-delta-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>BV</b></div> : <div>BV</div>}</div> 
                         </div>          
                         <div title='Дивидендный аристократ' className='week-trend-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.isDividendAristocrat)}}>
-                            <div className='week-trend-delta-score-cell'>{dataItem.inPortfolio ? <div><b>ДА</b></div> : <div>ДА</div>}</div> 
+                            <div className='week-trend-delta-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ДА</b></div> : <div>ДА</div>}</div> 
                         </div>                               
                         <div title='Рост чистой прибыли' className='week-trend-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.netProfitOk)}}>
-                            <div className='week-trend-delta-score-cell'>{dataItem.inPortfolio ? <div><b>ЧП</b></div> : <div>ЧП</div>}</div> 
+                            <div className='week-trend-delta-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ЧП</b></div> : <div>ЧП</div>}</div> 
                         </div>       
                         <div title='Долговая нагрузка' className='week-trend-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.netDebtOk)}}>
-                            <div className='week-trend-delta-score-cell'>{dataItem.inPortfolio ? <div><b>Д</b></div> : <div>Д</div>}</div> 
+                            <div className='week-trend-delta-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>Д</b></div> : <div>Д</div>}</div> 
                         </div>                                                
                         <div className='week-trend-border-style'>
                             <div className='instrument-button-container'>

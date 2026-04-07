@@ -59,12 +59,24 @@
 }
 
 .trend-dynamic-dividend-yield-cell { 
-    width: 80px;  
+    width: 70px;  
     font-size: 12px;
     text-align: center;
 }
 
-.trend-dynamic-score-cell { 
+.trend-dynamic-forecast-cell { 
+    width: 70px;  
+    font-size: 12px;
+    text-align: center;
+}
+
+.trend-dynamic-score-value-cell { 
+    width: 70px;  
+    font-size: 12px;
+    text-align: center;
+}
+
+.trend-dynamic-score-indicator-cell { 
     width: 30px;  
     font-size: 12px;
     text-align: center;

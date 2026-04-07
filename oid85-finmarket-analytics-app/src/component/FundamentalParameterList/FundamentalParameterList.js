@@ -44,6 +44,19 @@ const GetColorScoreIndicator = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetColorForecast = (forecast) => {
+    if (!forecast) { return CONSTANTS.COLOR_WHITE }
+    if (forecast.recommendation === 'Buy') { return CONSTANTS.COLOR_GREEN }
+    if (forecast.recommendation === 'Hold') { return CONSTANTS.COLOR_YELLOW }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
+const GetForecastValue = (forecast) => {
+    if (!forecast) { return '' }
+    return `ПР ${forecast.upsidePrc} %`
+}
+
 export const FundamentalParameterList = () => {
     
     const dispatch = useDispatch()
@@ -112,7 +125,8 @@ export const FundamentalParameterList = () => {
                                     </div>
                                 </div>                             
                                 <div>
-                                <div title='Рейтинг по фундаменталу' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreValue(fundamentalParameter.score.scoreValue)}}>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.score.scoreValue}</b></div> : <div>{fundamentalParameter.score.scoreValue}</div>}</div>
+                                <div title='Рейтинг по фундаменталу' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreValue(fundamentalParameter.score.scoreValue)}}>{fundamentalParameter.inPortfolio ? <div><b>{`SC ${fundamentalParameter.score.scoreValue}`}</b></div> : <div>{`SC ${fundamentalParameter.score.scoreValue}`}</div>}</div>
+                                <div title='Прогноз' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorForecast(fundamentalParameter.forecast)}}>{fundamentalParameter.inPortfolio ? <div><b>{GetForecastValue(fundamentalParameter.forecast)}</b></div> : <div>{GetForecastValue(fundamentalParameter.forecast)}</div>}</div>
                                 <div title='P/E <= 5' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.peOk)}}>{fundamentalParameter.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div>
                                 <div title='EV/EBITDA <= 3.5' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.evOk)}}>{fundamentalParameter.inPortfolio ? <div><b>EV</b></div> : <div>EV</div>}</div>
                                 <div title='P/BV <= 1' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.pbvOk)}}>{fundamentalParameter.inPortfolio ? <div><b>BV</b></div> : <div>BV</div>}</div>
