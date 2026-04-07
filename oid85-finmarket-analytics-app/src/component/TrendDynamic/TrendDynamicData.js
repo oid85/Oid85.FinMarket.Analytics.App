@@ -11,29 +11,14 @@ const GetColorTrend = (trend, delta, inPortfolio) => {
     return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED
 }
 
-const GetColorDelta = (delta) => {
-    if (!delta) { return CONSTANTS.COLOR_WHITE }
-    if (delta > 0) { return CONSTANTS.COLOR_DARKGREEN }
-    if (delta < 0) { return CONSTANTS.COLOR_DARKRED }
-    return CONSTANTS.COLOR_WHITE
-}
-
 const GetValueDelta = (delta) => {
     if (!delta) { return "" }
-    if (delta > 3) return `(!!!) ${delta} %`
-    if (delta > 2) return `(!!) ${delta} %`
-    if (delta > 1) return `(!) ${delta} %`
-    if (delta < -3) return `(!!!) ${delta} %`
-    if (delta < -2) return `(!!) ${delta} %`
-    if (delta < -1) return `(!) ${delta} %`
-
     return `${delta} %`
 }
 
 const GetColorDividendYield = (dividendYield) => {
     if (!dividendYield) { return CONSTANTS.COLOR_WHITE }
     if (dividendYield >= 10) { return CONSTANTS.COLOR_GREEN }
-
     return CONSTANTS.COLOR_WHITE
 }
 
@@ -46,26 +31,23 @@ const GetColorForecast = (forecast) => {
     if (!forecast) { return CONSTANTS.COLOR_WHITE }
     if (forecast.recommendation === 'Buy') { return CONSTANTS.COLOR_GREEN }
     if (forecast.recommendation === 'Hold') { return CONSTANTS.COLOR_YELLOW }
-
     return CONSTANTS.COLOR_WHITE
 }
 
 const GetForecastValue = (forecast) => {
     if (!forecast) { return '' }
-    return `ПР ${forecast.upsidePrc} %`
+    return `Прогноз ${forecast.upsidePrc} %`
 }
 
 const GetColorScoreValue = (scoreValue) => {
     if (!scoreValue) { return CONSTANTS.COLOR_WHITE }
     if (scoreValue >= 0.5) { return CONSTANTS.COLOR_GREEN }
-
     return CONSTANTS.COLOR_WHITE
 }
 
 const GetColorScoreIndicator = (value) => {
     if (!value) { return CONSTANTS.COLOR_WHITE }
     if (value) { return CONSTANTS.COLOR_GREEN }
-
     return CONSTANTS.COLOR_WHITE
 }
 
@@ -87,21 +69,13 @@ export const TrendDynamicData = ({data}) => {
                             <div className='horizontal-container'>
                             {
                                 dataItem.items.map((item) => (                                                
-                                    <div className='trend-cell trend-dynamic-border-style' style={{backgroundColor: GetColorTrend(item.trend, item.delta, dataItem.inPortfolio)}}>
-                                        {dataItem.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}
+                                    <div className='trend-dynamic-border-style' style={{backgroundColor: GetColorTrend(item.trend, item.delta, dataItem.inPortfolio)}}>
+                                        <div className='trend-cell'>{dataItem.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}</div>
+                                        <div className='delta-cell'>{dataItem.inPortfolio ? <div><b>{GetValueDelta(item.delta)}</b></div> : <div>{GetValueDelta(item.delta)}</div>}</div>
                                     </div>
                                 ))
                             }     
-                            </div>
-                            <div className='horizontal-container'>
-                            {
-                                dataItem.items.map((item) => (
-                                    <div className='delta-cell trend-dynamic-border-style' style={{color: GetColorDelta(item.delta) }}>
-                                        {dataItem.inPortfolio ? <div><b>{GetValueDelta(item.delta)}</b></div> : <div>{GetValueDelta(item.delta)}</div>}
-                                    </div>
-                                ))
-                            }     
-                            </div>      
+                            </div>     
                         </div> 
                         <div className='trend-dynamic-separator-cell'></div>
                         <div title='Прогноз' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.forecast)}}>
@@ -111,7 +85,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='trend-dynamic-dividend-yield-cell'>{dataItem.inPortfolio ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>}</div> 
                         </div>
                         <div title='Рейтинг по фундаменталу' className='trend-dynamic-border-style' style={{backgroundColor: GetColorScoreValue(dataItem.score.scoreValue)}}>
-                            <div className='trend-dynamic-score-value-cell'>{dataItem.inPortfolio ? <div><b>{`SC ${dataItem.score.scoreValue}`}</b></div> : <div>{`SC ${dataItem.score.scoreValue}`}</div>}</div> 
+                            <div className='trend-dynamic-score-value-cell'>{dataItem.inPortfolio ? <div><b>{`Фунд. рейт. ${dataItem.score.scoreValue}`}</b></div> : <div>{`Фунд. рейт. ${dataItem.score.scoreValue}`}</div>}</div> 
                         </div>
                         <div title='P/E <= 5' className='trend-dynamic-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.peOk)}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div> 
@@ -123,13 +97,13 @@ export const TrendDynamicData = ({data}) => {
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>BV</b></div> : <div>BV</div>}</div> 
                         </div>          
                         <div title='Дивидендный аристократ' className='trend-dynamic-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.isDividendAristocrat)}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ДА</b></div> : <div>ДА</div>}</div> 
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>Див. арист.</b></div> : <div>Див. арист.</div>}</div> 
                         </div>                               
                         <div title='Рост чистой прибыли' className='trend-dynamic-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.netProfitOk)}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ЧП</b></div> : <div>ЧП</div>}</div> 
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>Чист. приб.</b></div> : <div>Чист. приб.</div>}</div> 
                         </div>       
                         <div title='Долговая нагрузка' className='trend-dynamic-border-style' style={{backgroundColor: GetColorScoreIndicator(dataItem.score.netDebtOk)}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>Д</b></div> : <div>Д</div>}</div> 
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>Чист. долг</b></div> : <div>Чист. долг</div>}</div> 
                         </div>                                                                              
                         <div className='trend-dynamic-border-style'>
                             <div className='instrument-button-container'>

@@ -84,7 +84,7 @@
 }
 
 .week-trend-delta-forecast-cell { 
-    width: 70px;  
+    width: 55px;  
     font-size: 12px;
     text-align: center;
 }
@@ -96,7 +96,7 @@
 }
 
 .week-trend-delta-score-indicator-cell { 
-    width: 30px;  
+    width: 40px;  
     font-size: 12px;
     text-align: center;
 }
