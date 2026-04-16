@@ -1,0 +1,94 @@
+.horizontal-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.vertical-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+.fundamental-by-company-border-style {
+    border: 1px solid #000;     
+    margin: 1px;
+}
+
+.fundamental-by-company-container {     
+    padding: 1px; 
+}
+
+.fundamental-by-company-ticker {  
+    font-size: 20px;  
+    padding: 1px;
+}
+
+.fundamental-by-company-name {  
+    font-size: 18px;  
+    padding: 1px;
+}
+
+.fundamental-by-company-sector {  
+    font-size: 18px;
+    padding: 1px;
+}
+
+.fundamental-by-company-price-diagram {  
+    padding: 1px;
+}
+
+.fundamental-by-company-bar-diagram {  
+    padding: 1px;
+}
+
+.fundamental-by-company-bar-diagram-title {  
+    font-size: 18px;
+    padding: 1px;
+}
+
+.fundamental-by-sector-forecast {
+    padding: 5px;
+    height: 90px;
+    width: 159px;
+}
+
+.fundamental-by-sector-dividend {
+    padding: 5px;
+    height: 90px;
+    width: 159px;
+}
+
+.fundamental-by-sector-dividend-aristocrat {
+    padding: 5px;
+    height: 90px;
+    width: 159px;
+}
+
+.fundamental-by-sector-fundamental-score {
+    padding: 5px;
+    height: 90px;
+    width: 159px;
+}
+
+.fundamental-by-sector-fundamental-metric-indicator {
+    padding: 5px;
+    height: 90px;
+    width: 159px;
+}
+
+.fundamental-by-sector-fundamental-metric-indicator-value {
+    font-size: 32px;
+}
+
+.company-button-container {  
+    padding: 1px;
+}
+
+.company-button {    
+    width: 70px;
+}
+
+.company-button-text {        
+    font-size: 12px;
+}

@@ -3,5 +3,5 @@
 const controller = 'fundamental-parameters'
 
 export const getFundamentalParameterBubbleFromApi = async () => {
-    return sendPostRequest(`${controller}/bubble`, {year: 2024})
+    return sendPostRequest(`${controller}/bubble`, {})
 }

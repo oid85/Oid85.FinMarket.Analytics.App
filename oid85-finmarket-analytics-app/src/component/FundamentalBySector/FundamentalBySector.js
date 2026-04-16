@@ -22,8 +22,6 @@ export const FundamentalBySector = () => {
         dispatch(sagaFundamentalBySector())
     }, [])
 
-    console.log(fundamentalBySectorData.result)
-
     return (
         <React.Fragment>
         {

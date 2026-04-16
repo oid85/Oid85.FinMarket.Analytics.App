@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     instrumentListData: {},
-    currentInstrument: {}
+    currentInstrument: { ticker: 'SBER' }
 }
 
 export const instrumentReducer = (state = initialState, action) => {

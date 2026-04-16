@@ -31,7 +31,8 @@ const GetColorFallingFromMax = (fallingFromMax, inPortfolio) => {
 
 const GetColorDividendYield = (dividendYield) => {
     if (!dividendYield) { return CONSTANTS.COLOR_WHITE }
-    if (dividendYield >= 10) { return CONSTANTS.COLOR_GREEN }
+    if (dividendYield > 10) { return CONSTANTS.COLOR_GREEN }
+    if (dividendYield > 0) { return CONSTANTS.COLOR_YELLOW }
     return CONSTANTS.COLOR_WHITE
 }
 
@@ -64,8 +65,8 @@ const GetColorScoreIndicator = (value) => {
 
 const GetColorForecast = (forecast) => {
     if (!forecast) { return CONSTANTS.COLOR_WHITE }
-    if (forecast.recommendation === 'Buy') { return CONSTANTS.COLOR_GREEN }
-    if (forecast.recommendation === 'Hold') { return CONSTANTS.COLOR_YELLOW }
+    if (forecast.upsidePrc > 10) { return CONSTANTS.COLOR_GREEN }
+    if (forecast.upsidePrc > 0) { return CONSTANTS.COLOR_YELLOW }
     return CONSTANTS.COLOR_WHITE
 }
 

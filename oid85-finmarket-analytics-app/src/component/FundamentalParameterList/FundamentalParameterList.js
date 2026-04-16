@@ -54,7 +54,7 @@ const GetColorForecast = (forecast) => {
 
 const GetForecastValue = (forecast) => {
     if (!forecast) { return '' }
-    return `ПР ${forecast.upsidePrc} %`
+    return `Пр. ${forecast.upsidePrc} %`
 }
 
 export const FundamentalParameterList = () => {
@@ -125,7 +125,7 @@ export const FundamentalParameterList = () => {
                                     </div>
                                 </div>                             
                                 <div>
-                                <div title='Рейтинг по фундаменталу' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreValue(fundamentalParameter.score.scoreValue)}}>{fundamentalParameter.inPortfolio ? <div><b>{`SC ${fundamentalParameter.score.scoreValue}`}</b></div> : <div>{`SC ${fundamentalParameter.score.scoreValue}`}</div>}</div>
+                                <div title='Рейтинг по фундаменталу' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreValue(fundamentalParameter.score.scoreValue)}}>{fundamentalParameter.inPortfolio ? <div><b>{`Рейт. ${fundamentalParameter.score.scoreValue}`}</b></div> : <div>{`Рейт. ${fundamentalParameter.score.scoreValue}`}</div>}</div>
                                 <div title='Прогноз' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorForecast(fundamentalParameter.forecast)}}>{fundamentalParameter.inPortfolio ? <div><b>{GetForecastValue(fundamentalParameter.forecast)}</b></div> : <div>{GetForecastValue(fundamentalParameter.forecast)}</div>}</div>
                                 <div title='P/E <= 5' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.peOk)}}>{fundamentalParameter.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div>
                                 <div title='EV/EBITDA <= 3.5' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.evOk)}}>{fundamentalParameter.inPortfolio ? <div><b>EV</b></div> : <div>EV</div>}</div>

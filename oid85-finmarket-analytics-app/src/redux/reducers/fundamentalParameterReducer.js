@@ -2,50 +2,19 @@ import {
     FETCH_FUNDAMENTAL_PARAMETER_LIST,    
     FETCH_CURRENT_FUNDAMENTAL_PARAMETER,
     FETCH_FUNDAMENTAL_BY_SECTOR,
+    FETCH_FUNDAMENTAL_BY_COMPANY,
     FETCH_CURRENT_SECTOR,
     SHOW_EDIT_FUNDAMENTAL_PARAMETER_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MODAL,    
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_MODAL,
-    SHOW_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL,
-    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL
+    HIDE_EDIT_FUNDAMENTAL_PARAMETER_MODAL
 } from '../types/fundamentalParameterTypes'
 
 const initialState = {
     fundamentalParameterListData: {},
     fundamentalBySectorData: {},
+    fundamentalByCompanyData: {},
     currentFundamentalParameter: {},    
     currentSector: { name: 'Металлургия' },
-    editFundamentalParameterModalIsOpened: false,
-    editFundamentalParameterPeModalIsOpened: false,
-    editFundamentalParameterRevenueModalIsOpened: false,
-    editFundamentalParameterNetProfitModalIsOpened: false,
-    editFundamentalParameterEbitdaModalIsOpened: false,
-    editFundamentalParameterEvModalIsOpened: false,
-    editFundamentalParameterPbvModalIsOpened: false,
-    editFundamentalParameterRoaModalIsOpened: false,
-    editFundamentalParameterNetDebtModalIsOpened: false,
-    editFundamentalParameterMarketCapModalIsOpened: false,
-    editFundamentalParameterDividendModalIsOpened: false,
-    editFundamentalParameterMoexModalIsOpened: false
+    editFundamentalParameterModalIsOpened: false
 }
 
 export const fundamentalParameterReducer = (state = initialState, action) => {
@@ -60,6 +29,9 @@ export const fundamentalParameterReducer = (state = initialState, action) => {
         case FETCH_FUNDAMENTAL_BY_SECTOR:
             return {...state, fundamentalBySectorData: {...action.payload}}
 
+        case FETCH_FUNDAMENTAL_BY_COMPANY:
+            return {...state, fundamentalByCompanyData: {...action.payload}}
+
         case FETCH_CURRENT_SECTOR:
             return {...state, currentSector: {...action.payload}}
 
@@ -68,72 +40,6 @@ export const fundamentalParameterReducer = (state = initialState, action) => {
         
         case HIDE_EDIT_FUNDAMENTAL_PARAMETER_MODAL:
             return {...state, editFundamentalParameterModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL:
-            return {...state, editFundamentalParameterPeModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_PE_MODAL:
-            return {...state, editFundamentalParameterPeModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL:
-            return {...state, editFundamentalParameterRevenueModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_REVENUE_MODAL:
-            return {...state, editFundamentalParameterRevenueModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL:
-            return {...state, editFundamentalParameterNetProfitModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_PROFIT_MODAL:
-            return {...state, editFundamentalParameterNetProfitModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL:
-            return {...state, editFundamentalParameterEbitdaModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_EBITDA_MODAL:
-            return {...state, editFundamentalParameterEbitdaModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL:
-            return {...state, editFundamentalParameterEvModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_EV_MODAL:
-            return {...state, editFundamentalParameterEvModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL:
-            return {...state, editFundamentalParameterPbvModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_PBV_MODAL:
-            return {...state, editFundamentalParameterPbvModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL:
-            return {...state, editFundamentalParameterRoaModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_ROA_MODAL:
-            return {...state, editFundamentalParameterRoaModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL:
-            return {...state, editFundamentalParameterNetDebtModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_NET_DEBT_MODAL:
-            return {...state, editFundamentalParameterNetDebtModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL:
-            return {...state, editFundamentalParameterMarketCapModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_MARKET_CAP_MODAL:
-            return {...state, editFundamentalParameterMarketCapModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_MODAL:
-            return {...state, editFundamentalParameterDividendModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_DIVIDEND_MODAL:
-            return {...state, editFundamentalParameterDividendModalIsOpened: false}
-
-        case SHOW_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL:
-            return {...state, editFundamentalParameterMoexModalIsOpened: true}
-        
-        case HIDE_EDIT_FUNDAMENTAL_PARAMETER_MOEX_MODAL:
-            return {...state, editFundamentalParameterMoexModalIsOpened: false}
 
         default: return state
     }
