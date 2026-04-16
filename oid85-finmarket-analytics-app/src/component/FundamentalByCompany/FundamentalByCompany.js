@@ -20,7 +20,7 @@ export const FundamentalByCompany = () => {
     const dispatch = useDispatch()
     const loading = useSelector(state => state.app.loading)
     const fundamentalByCompanyData = useSelector(state => state.fundamentalParameter.fundamentalByCompanyData)
-    const instrumentListData = useSelector(state => state.instrument.instrumentListData)         
+    const instrumentListData = useSelector(state => state.instrument.instrumentListData)
 
     useEffect(() => {
         dispatch(sagaFundamentalByCompany())

@@ -10,138 +10,40 @@ import './styles.css'
 import { LineDiagram } from './LineDiagram'
 import { BarDiagram } from './BarDiagram'
 import { BubbleDiagram } from './BubbleDiagram'
+import { sagaSectorList } from '../../redux/actions/instrumentActions'
 
 export const FundamentalBySector = () => {
     
     const dispatch = useDispatch()
     const loading = useSelector(state => state.app.loading)
-    const fundamentalBySectorData = useSelector(state => state.fundamentalParameter.fundamentalBySectorData)    
+    const fundamentalBySectorData = useSelector(state => state.fundamentalParameter.fundamentalBySectorData)   
+    const sectorListData = useSelector(state => state.instrument.sectorListData) 
     const currentSector = useSelector(state => state.fundamentalParameter.currentSector)    
 
     useEffect(() => {
         dispatch(sagaFundamentalBySector())
+        dispatch(sagaSectorList())
     }, [])
 
     return (
         <React.Fragment>
         {
-            !fundamentalBySectorData.result || loading
+            !fundamentalBySectorData.result || !sectorListData.result || loading
             ? <Loader/>
             :
             <div className='fundamental-by-sector-container'>
                 <div className='horizontal-container'>
-                    <div className='sector-button-container'>
+                {
+                    sectorListData.result.sectors.map((sector) => (
+                        <div className='sector-button-container'>
                         <button className='btn btn-outline-dark sector-button'
                             onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Металлургия'}))
+                                dispatch(fetchCurrentSector({name: sector}))
                                 dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Металлургия</div></button>
-                    </div>
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Добыча'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Добыча</div></button>
-                    </div>       
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Нефтегаз'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Нефтегаз</div></button>
-                    </div>       
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Банки'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Банки</div></button>
-                    </div>    
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Ритейл'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Ритейл</div></button>
-                    </div>      
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'ИТ'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>ИТ</div></button>
-                    </div>  
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Телеком'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Телеком</div></button>
-                    </div>  
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Финансы'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Финансы</div></button>
-                    </div>    
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Строительство'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Строительство</div></button>
-                    </div>  
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Агросектор'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Агросектор</div></button>
-                    </div>  
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Химия'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Химия</div></button>
-                    </div>      
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Биотех'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Биотех</div></button>
-                    </div> 
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Транспорт'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Транспорт</div></button>
-                    </div>   
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Здравоохранение'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Здравоохр.</div></button>
-                    </div>    
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Энергетика'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Энергетика</div></button>
-                    </div>   
-                    <div className='sector-button-container'>
-                        <button className='btn btn-outline-dark sector-button'
-                            onClick={() => {
-                                dispatch(fetchCurrentSector({name: 'Машиностроение'}))
-                                dispatch(sagaFundamentalBySector())
-                            }}><div className='sector-button-text'>Машиностр.</div></button>
-                    </div>                                                                                                                                                                                                                                                               
+                            }}><div className='sector-button-text'>{sector}</div></button>
+                    </div>                        
+                    ))
+                }                                                                                                                                                                                                                                                              
                 </div>
                 <div className='fundamental-by-sector-sector-title'>{currentSector.name}</div>
                 <div className='fundamental-by-sector-diagram-title'>График цены</div>

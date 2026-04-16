@@ -1,10 +1,12 @@
 import {
     FETCH_INSTRUMENT_LIST,
+    FETCH_SECTOR_LIST,
     FETCH_CURRENT_INSTRUMENT    
 } from '../types/instrumentTypes'
 
 const initialState = {
     instrumentListData: {},
+    sectorListData: {},
     currentInstrument: { ticker: 'SBER' }
 }
 
@@ -13,6 +15,9 @@ export const instrumentReducer = (state = initialState, action) => {
 
         case FETCH_INSTRUMENT_LIST:
             return {...state, instrumentListData: {...action.payload}}
+
+        case FETCH_SECTOR_LIST:
+            return {...state, sectorListData: {...action.payload}}            
 
         case FETCH_CURRENT_INSTRUMENT:
             return {...state, currentInstrument: {...action.payload}}
