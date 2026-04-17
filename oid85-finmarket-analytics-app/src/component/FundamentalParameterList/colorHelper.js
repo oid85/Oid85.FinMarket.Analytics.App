@@ -56,7 +56,7 @@ export const pbvColor = (value) => {
 
 export const roaColor = (value) => { 
     if (!value) { return CONSTANTS.COLOR_WHITE }
-    if (value > 15) { return CONSTANTS.COLOR_GREEN }
+    if (value > 10) { return CONSTANTS.COLOR_GREEN }
 
     return CONSTANTS.COLOR_WHITE
 }

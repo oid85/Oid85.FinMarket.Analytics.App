@@ -14,6 +14,8 @@ export const PriceDiagram = ({data, trendState }) => {
                 <Area type="monotone" dataKey="ultimateSmootherValue" strokeWidth={3} stroke={strokeColor(trendState)} fill={fillColor(trendState)} />
                 <Line type="monotone" dataKey="priceValue" strokeWidth={1} dot={false} stroke={CONSTANTS.COLOR_GRAY} />
                 <Line type="monotone" dataKey="consensusPriceValue" strokeWidth={3} dot={false} stroke={CONSTANTS.COLOR_MIDNIGHTBLUE} strokeDasharray="5 5" />
+                <Line type="monotone" dataKey="nataliaBaffetovnaConsensusPriceValue" strokeWidth={3} dot={false} stroke={CONSTANTS.COLOR_DARKGREEN} strokeDasharray="5 5" />
+                <Line type="monotone" dataKey="financeMarkerConsensusPriceValue" strokeWidth={3} dot={false} stroke={CONSTANTS.COLOR_DARKSLATEGRAY} strokeDasharray="5 5" />
             </ComposedChart>
         </div>
     )

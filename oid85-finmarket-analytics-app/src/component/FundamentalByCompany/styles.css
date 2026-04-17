@@ -49,36 +49,37 @@
 
 .fundamental-by-sector-forecast {
     padding: 5px;
-    height: 90px;
-    width: 159px;
+    height: 100px;
+    width: 200px;
 }
 
 .fundamental-by-sector-dividend {
     padding: 5px;
-    height: 90px;
-    width: 159px;
+    height: 100px;
+    width: 200px;
 }
 
 .fundamental-by-sector-dividend-aristocrat {
     padding: 5px;
-    height: 90px;
-    width: 159px;
+    height: 100px;
+    width: 200px;
 }
 
 .fundamental-by-sector-fundamental-score {
     padding: 5px;
-    height: 90px;
-    width: 159px;
+    height: 100px;
+    width: 200px;
 }
 
 .fundamental-by-sector-fundamental-metric-indicator {
     padding: 5px;
-    height: 90px;
-    width: 159px;
+    height: 100px;
+    width: 200px;
 }
 
 .fundamental-by-sector-fundamental-metric-indicator-value {
-    font-size: 32px;
+    font-size: 34px;
+    font-weight: 500;
 }
 
 .company-button-container {  

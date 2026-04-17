@@ -14,6 +14,7 @@ import { Dividend } from './Dividend'
 import { FundamentalScore } from './FundamentalScore'
 import { FundamentalMetric } from './FundamentalMetric'
 import { DividendAristocrat } from './DividendAristocrat'
+import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
 
 export const FundamentalByCompany = () => {
     
@@ -59,10 +60,12 @@ export const FundamentalByCompany = () => {
                         <div>
                             <div className='horizontal-container'>
                                 <Forecast />
+                            </div>    
+                            <div className='horizontal-container'>
+                                <FundamentalScore />                                
                                 <Dividend />
-                                <DividendAristocrat />
-                                <FundamentalScore />
-                            </div>     
+                                <DividendAristocrat />                                
+                            </div>                              
                             <div className='horizontal-container'>
                                 <FundamentalMetric />
                             </div>                                                 
@@ -101,7 +104,7 @@ export const FundamentalByCompany = () => {
                 </div>
             </div>
         }
-
+        <EditFundamentalParameterModal />
         </React.Fragment>                
     )
 }

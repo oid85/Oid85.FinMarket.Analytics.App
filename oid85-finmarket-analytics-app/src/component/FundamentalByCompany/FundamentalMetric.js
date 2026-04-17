@@ -26,7 +26,7 @@ const colorRoa = (metric) => {
     if (!metric) { return CONSTANTS.COLOR_WHITE }
     if (!metric.roa) { return CONSTANTS.COLOR_WHITE }
 
-    if (metric.roa > 15) { return CONSTANTS.COLOR_GREEN }
+    if (metric.roa > 10) { return CONSTANTS.COLOR_GREEN }
 
     return CONSTANTS.COLOR_WHITE
 }
