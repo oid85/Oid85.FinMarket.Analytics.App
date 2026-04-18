@@ -48,7 +48,19 @@ export const Forecast = () => {
                 {
                     !fundamentalByCompanyData.result.financeMarkerForecast ? <div></div> : <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.financeMarkerForecast.upsidePrc} %`}</div>
                 }                                
-            </div>                         
+            </div>  
+            <div 
+                className='fundamental-by-sector-forecast fundamental-by-company-border-style' 
+                style={{backgroundColor: colorForecast(fundamentalByCompanyData.result.vladProDengiForecast)}}
+                onDoubleClick={() => {
+                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'VladProDengiForecast', period: new Date().getFullYear() + '', value: fundamentalByCompanyData.result.vladProDengiForecast ? fundamentalByCompanyData.result.vladProDengiForecast.consensusPrice : 0 }))
+                    dispatch(showEditFundamentalParameterModal())
+                }}>
+                <div>Прогноз VladProDengi</div>
+                {
+                    !fundamentalByCompanyData.result.vladProDengiForecast ? <div></div> : <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.vladProDengiForecast.upsidePrc} %`}</div>
+                }                                
+            </div>                                   
         </div>
     )
 }

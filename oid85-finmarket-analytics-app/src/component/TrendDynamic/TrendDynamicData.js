@@ -37,7 +37,7 @@ const GetColorForecast = (forecast) => {
 
 const GetForecastValue = (forecast, suffix) => {
     if (!forecast) { return '' }
-    return `Прог. ${suffix} ${forecast.upsidePrc} %`
+    return `Пр. ${suffix} ${forecast.upsidePrc} %`
 }
 
 const GetColorScoreValue = (scoreValue) => {
@@ -79,15 +79,18 @@ export const TrendDynamicData = ({data}) => {
                             </div>     
                         </div> 
                         <div className='trend-dynamic-separator-cell'></div>
-                        <div title='Прогноз' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.forecast)}}>
-                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.forecast, '')}</b></div> : <div>{GetForecastValue(dataItem.forecast, '')}</div>}</div> 
+                        <div title='Консенсус прогноз Tinkoff' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.forecast)}}>
+                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.forecast, 'T')}</b></div> : <div>{GetForecastValue(dataItem.forecast, 'T')}</div>}</div> 
                         </div>     
                         <div title='Прогноз NataliaBaffetovna' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.nataliaBaffetovnaForecast)}}>
                             <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.nataliaBaffetovnaForecast, 'NB')}</b></div> : <div>{GetForecastValue(dataItem.nataliaBaffetovnaForecast, 'NB')}</div>}</div> 
                         </div>
                         <div title='Прогноз FinanceMarker' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.financeMarkerForecast)}}>
                             <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.financeMarkerForecast, 'FM')}</b></div> : <div>{GetForecastValue(dataItem.financeMarkerForecast, 'FM')}</div>}</div> 
-                        </div>                                                                   
+                        </div>       
+                        <div title='Прогноз VladProDengi' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.vladProDengiForecast)}}>
+                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.vladProDengiForecast, 'VPD')}</b></div> : <div>{GetForecastValue(dataItem.vladProDengiForecast, 'VPD')}</div>}</div> 
+                        </div>                                                                                       
                         <div title='Дивидендная доходность' className='trend-dynamic-border-style' style={{backgroundColor: GetColorDividendYield(dataItem.dividendYield)}}>
                             <div className='trend-dynamic-dividend-yield-cell'>{dataItem.inPortfolio ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>}</div> 
                         </div>

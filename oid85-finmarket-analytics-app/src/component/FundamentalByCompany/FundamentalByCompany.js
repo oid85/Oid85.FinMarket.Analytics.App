@@ -115,23 +115,24 @@ export const FundamentalByCompany = () => {
                             <BarDiagram data={fundamentalByCompanyData.result.dividendDiagramData} />
                         </div>
                     </div>
+                    <h6>Сравнение с другими компаниями в секторе</h6>
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>Динамика P/E</div>
+                            <div className='fundamental-by-company-bar-diagram-title'>P/E</div>
                             <BarDiagram data={fundamentalByCompanyData.result.peDiagramData} />
                         </div>
                         <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>Динамика P/BV</div>
+                            <div className='fundamental-by-company-bar-diagram-title'>P/BV</div>
                             <BarDiagram data={fundamentalByCompanyData.result.pbvDiagramData} />
                         </div>
                     </div>
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>Динамика EV/EBITDA</div>
+                            <div className='fundamental-by-company-bar-diagram-title'>EV/EBITDA</div>
                             <BarDiagram data={fundamentalByCompanyData.result.evEbitdaDiagramData} />
                         </div>
                         <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>Динамика NetDebt/EBITDA</div>
+                            <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
                             <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaDiagramData} />
                         </div>
                     </div>
