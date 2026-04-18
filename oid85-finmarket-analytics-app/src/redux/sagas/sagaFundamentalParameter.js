@@ -47,7 +47,7 @@ function* sagaWorkerFundamentalByCompany() {
 
 function* sagaWorkerEditFundamentalParameter() {
     let fundamentalParameter = yield select(currentFundamentalParameter)    
-    yield call(editFundamentalParameterFromApi, fundamentalParameter.ticker, fundamentalParameter.type, fundamentalParameter.period, fundamentalParameter.value)
+    yield call(editFundamentalParameterFromApi, fundamentalParameter.ticker, fundamentalParameter.type, fundamentalParameter.period, fundamentalParameter.value, fundamentalParameter.extData)
     let result = yield call(getFundamentalParameterListFromApi)    
     yield put(fetchFundamentalParameterList(result))  
 }

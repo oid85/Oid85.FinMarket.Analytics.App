@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { 
-    sagaFundamentalByCompany
+    fetchCurrentFundamentalParameter,
+    sagaFundamentalByCompany,
+    showEditFundamentalParameterModal
 } from '../../redux/actions/fundamentalParameterActions'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -53,6 +55,38 @@ export const FundamentalByCompany = () => {
                         <div className='fundamental-by-company-name'>{fundamentalByCompanyData.result.name}</div>
                         <div className='fundamental-by-company-sector'>{fundamentalByCompanyData.result.sector}</div>
                     </div>
+                    <div 
+                        onDoubleClick={() => {
+                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'DividendPolyticInfo', period: '', extData: fundamentalByCompanyData.result.dividendPolyticInfo }))
+                            dispatch(showEditFundamentalParameterModal())
+                        }}>
+                        <h6>Дивидендная политика</h6>
+                        <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.dividendPolyticInfo}</div>
+                    </div>
+                    <div 
+                        onDoubleClick={() => {
+                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'Concept', period: '', extData: fundamentalByCompanyData.result.concept }))
+                            dispatch(showEditFundamentalParameterModal())
+                        }}>
+                        <h6>Инвестиционная идея</h6>
+                        <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.concept}</div>
+                    </div>       
+                    <div 
+                        onDoubleClick={() => {
+                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'GrowthDriverInfo', period: '', extData: fundamentalByCompanyData.result.growthDriverInfo }))
+                            dispatch(showEditFundamentalParameterModal())
+                        }}>
+                        <h6>Драйверы роста</h6>
+                        <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.growthDriverInfo}</div>
+                    </div>
+                    <div 
+                        onDoubleClick={() => {
+                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'RiskInfo', period: '', extData: fundamentalByCompanyData.result.riskInfo }))
+                            dispatch(showEditFundamentalParameterModal())
+                        }}>
+                        <h6>Риски</h6>
+                        <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.riskInfo}</div>
+                    </div>                    
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-price-diagram'>
                             <PriceDiagram data={fundamentalByCompanyData.result.priceDiagramData} trendState={fundamentalByCompanyData.result.trendState} />
@@ -70,7 +104,7 @@ export const FundamentalByCompany = () => {
                                 <FundamentalMetric />
                             </div>                                                 
                         </div>                   
-                    </div>
+                    </div>                                                          
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>Динамика чистой прибыли</div>

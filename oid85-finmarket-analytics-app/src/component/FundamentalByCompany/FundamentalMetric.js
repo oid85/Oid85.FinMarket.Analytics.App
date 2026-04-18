@@ -8,6 +8,7 @@ const colorPe = (metric) => {
 
     if (metric.pe <= 3) { return CONSTANTS.COLOR_GREEN }
     if (metric.pe <= 5) { return CONSTANTS.COLOR_YELLOW }
+    if (metric.pe > 5) { return CONSTANTS.COLOR_LIGHTRED }
 
     return CONSTANTS.COLOR_WHITE
 }
@@ -18,6 +19,7 @@ const colorPbv = (metric) => {
 
     if (metric.pbv <= 1) { return CONSTANTS.COLOR_GREEN }
     if (metric.pbv <= 1.5) { return CONSTANTS.COLOR_YELLOW }
+    if (metric.pbv > 1.5) { return CONSTANTS.COLOR_LIGHTRED }
 
     return CONSTANTS.COLOR_WHITE
 }
@@ -38,7 +40,7 @@ const colorEvEbitda = (metric) => {
     if (metric.evEbitda < 0) { return CONSTANTS.COLOR_RED }
     if (metric.evEbitda > 0 && metric.evEbitda <= 3.5) { return CONSTANTS.COLOR_GREEN }
     if (metric.evEbitda > 3.5 && metric.evEbitda <= 5) { return CONSTANTS.COLOR_YELLOW }
-    if (metric.evEbitda > 5) { return CONSTANTS.COLOR_RED }
+    if (metric.evEbitda > 5) { return CONSTANTS.COLOR_LIGHTRED }
 
     return CONSTANTS.COLOR_WHITE
 }
@@ -47,7 +49,7 @@ const colorNetDebtEbitda = (metric) => {
     if (!metric) { return CONSTANTS.COLOR_WHITE }
     if (!metric.netDebtEbitda) { return CONSTANTS.COLOR_WHITE }
 
-    if (metric.netDebtEbitda >= 3.0) { return CONSTANTS.COLOR_RED }
+    if (metric.netDebtEbitda >= 3.0) { return CONSTANTS.COLOR_LIGHTRED }
     if (metric.netDebtEbitda < 3.0 && metric.netDebtEbitda >= 1.5) { return CONSTANTS.COLOR_YELLOW }
     if (metric.netDebtEbitda < 1.5) { return CONSTANTS.COLOR_GREEN }
 
@@ -76,7 +78,7 @@ const colorTrendState = (trendState) => {
     if (!trendState) { return CONSTANTS.COLOR_WHITE }
 
     if (trendState == 'ТРЕНД ВВЕРХ') { return CONSTANTS.COLOR_GREEN }
-    if (trendState == 'ТРЕНД ВНИЗ') { return CONSTANTS.COLOR_RED }
+    if (trendState == 'ТРЕНД ВНИЗ') { return CONSTANTS.COLOR_LIGHTRED }
     if (trendState == 'НЕТ ТРЕНДА') { return CONSTANTS.COLOR_YELLOW }
 
     return CONSTANTS.COLOR_WHITE

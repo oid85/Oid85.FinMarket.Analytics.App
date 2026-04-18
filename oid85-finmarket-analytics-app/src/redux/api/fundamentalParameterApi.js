@@ -14,6 +14,6 @@ export const getFundamentalByCompanyFromApi = async (ticker) => {
     return sendPostRequest(`${controller}/company`, {ticker})
 }
 
-export const editFundamentalParameterFromApi = async (ticker, type, period, value) => {
-    return sendPostRequest(`${controller}/create-or-update`, {ticker, type, period, value})
+export const editFundamentalParameterFromApi = async (ticker, type, period, value, extData) => {
+    return sendPostRequest(`${controller}/create-or-update`, {ticker, type, period, value, extData})
 }

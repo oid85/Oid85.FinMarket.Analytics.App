@@ -7,7 +7,7 @@ import { fillColor, strokeColor } from './colorHelper';
 export const PriceDiagram = ({data, trendState }) => {
     return (
         <div className='fundamental-by-sector-border-style'>
-            <ComposedChart width={800} height={400} data={data}>
+            <ComposedChart width={800} height={404} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />

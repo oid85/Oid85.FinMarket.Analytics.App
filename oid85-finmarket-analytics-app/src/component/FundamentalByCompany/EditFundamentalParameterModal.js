@@ -39,10 +39,15 @@ export const EditFundamentalParameterModal = () => {
                             className='form-control edit-modal-input' 
                             type="string" 
                             defaultValue={currentFundamentalParameter.value} 
-                            placeholder={`${currentFundamentalParameter.period} г.`} 
+                            placeholder={`${currentFundamentalParameter.period}`} 
                             onChange={ (event) => { 
                                 dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, value: event.target.value }))
                                 }} /> 
+                        <textarea 
+                            className='form-control edit-modal-input'
+                            onChange={ (event) => { 
+                                dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, extData: event.target.value }))
+                                }}>{currentFundamentalParameter.extData}</textarea>
                         <button 
                             className='btn btn-outline-primary edit-modal-save-button' 
                             onClick={ () => {
