@@ -35,6 +35,22 @@ export const netProfitColor = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+export const fcfColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 0) { return CONSTANTS.COLOR_GREEN }
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+        
+    return CONSTANTS.COLOR_WHITE
+}
+
+export const epsColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 0) { return CONSTANTS.COLOR_GREEN }
+    if (value < 0) { return CONSTANTS.COLOR_RED }
+        
+    return CONSTANTS.COLOR_WHITE
+}
+
 export const ebitdaColor = (value) => { 
     return CONSTANTS.COLOR_WHITE
 }
