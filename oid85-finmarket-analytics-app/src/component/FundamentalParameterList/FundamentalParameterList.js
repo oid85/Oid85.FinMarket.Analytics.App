@@ -27,7 +27,8 @@ import {
     ebitdaRevenueColor,
     deltaMinMaxColor,
     fcfColor,
-    epsColor
+    epsColor,
+    numberSharesColor
 } from './colorHelper'
 import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
 import { CONSTANTS } from '../../constants'
@@ -46,17 +47,11 @@ const GetColorScoreIndicator = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
-const GetColorForecast = (forecast) => {
-    if (!forecast) { return CONSTANTS.COLOR_WHITE }
-    if (forecast.recommendation === 'Buy') { return CONSTANTS.COLOR_GREEN }
-    if (forecast.recommendation === 'Hold') { return CONSTANTS.COLOR_YELLOW }
+const GetColorEmitent = (fillData) => {
+    if (!fillData) { return CONSTANTS.COLOR_WHITE }
+    if (fillData) { return CONSTANTS.COLOR_LIGHTGREEN }    
 
     return CONSTANTS.COLOR_WHITE
-}
-
-const GetForecastValue = (forecast) => {
-    if (!forecast) { return '' }
-    return `Пр. ${forecast.upsidePrc} %`
 }
 
 export const FundamentalParameterList = () => {
@@ -78,25 +73,25 @@ export const FundamentalParameterList = () => {
             <div className='fundamental-parameter-container'>
                 {
                     fundamentalParameterListData.result.fundamentalParameters.map((fundamentalParameter) => (
-                        <div>
+                        <div style={{backgroundColor: GetColorEmitent(fundamentalParameter.fillData)}}>
                             <div className='horizontal-container'>
                                 <div className='ticker-header-cell fundamental-parameter-border-style'>Компания</div>
                                 <div className='score-header-cell fundamental-parameter-border-style'>Score</div>
-                                <div className='mcftr-change-header-cell fundamental-parameter-border-style'>MCFTR изм. (лучше/хуже индекса)</div>
-                                <div className='moex-header-cell fundamental-parameter-border-style'>IMOEX (доля в индексе)</div>
+                                <div className='mcftr-change-header-cell fundamental-parameter-border-style'>MCFTR изм. (лучше/хуже индекса)</div>                                
                                 <div className='year-header-cell fundamental-parameter-border-style'>Год</div>                    
+                                <div className='number-shares-header-cell fundamental-parameter-border-style'>Кол-во акций, млн.</div>
                                 <div className='pe-header-cell fundamental-parameter-border-style'>P / E</div>
                                 <div className='pbv-header-cell fundamental-parameter-border-style'>P / BV</div>
                                 <div className='roa-header-cell fundamental-parameter-border-style'>ROA, %</div>
-                                <div className='ev-ebitda-header-cell fundamental-parameter-border-style'>EV/EBITDA</div>
-                                <div className='netdebt-ebitda-header-cell fundamental-parameter-border-style'>NetDebt / EBITDA</div>
+                                <div className='ev-ebitda-header-cell fundamental-parameter-border-style'>EV / EBITDA</div>
+                                <div className='netdebt-ebitda-header-cell fundamental-parameter-border-style'>ND / EBITDA</div>
                                 <div className='ebitda-revenue-header-cell fundamental-parameter-border-style'>EBITDA / Выручка</div>
                                 <div className='marketcap-header-cell fundamental-parameter-border-style'>Капит-ция, млрд. руб.</div>
                                 <div className='ev-header-cell fundamental-parameter-border-style'>EV, млрд. руб.</div>
                                 <div className='ebitda-header-cell fundamental-parameter-border-style'>EBITDA, млрд. руб.</div>
                                 <div className='netdebt-header-cell fundamental-parameter-border-style'>Чистый долг, млрд. руб.</div>
                                 <div className='revenue-header-cell fundamental-parameter-border-style'>Выручка, млрд. руб.</div>
-                                <div className='netprofit-header-cell fundamental-parameter-border-style'>Чистая прибыль (чист. опер. доход), млрд. руб.</div>
+                                <div title='Чистая прибыль (чист. опер. доход), млрд. руб.' className='netprofit-header-cell fundamental-parameter-border-style'>ЧП, млрд. руб.</div>
                                 <div className='eps-header-cell fundamental-parameter-border-style'>EPS, руб.</div>
                                 <div className='fcf-header-cell fundamental-parameter-border-style'>FCF, млрд. руб.</div>
                                 <div className='dividend-header-cell fundamental-parameter-border-style'>ДД, руб</div>
@@ -109,7 +104,7 @@ export const FundamentalParameterList = () => {
                                     <div className='number-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.number}</b></div> : <div>{fundamentalParameter.number}</div>}</div>
                                     <div className='ticker-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.ticker}</b></div> : <div>{fundamentalParameter.ticker}</div>}</div>
                                     <div className='name-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.name}</b></div> : <div>{fundamentalParameter.name}</div>}</div>
-                                    <div className='instrument-button-container'>
+                                    <div>
                                         <div>
                                             <button className='btn btn-outline-dark instrument-button'
                                                 onClick={() => {
@@ -148,22 +143,27 @@ export const FundamentalParameterList = () => {
                                 </div>
                                 <div>
                                     <div className='fundamental-parameter-border-style mcftr-change-cell' style={{backgroundColor: benchmarkChangeColor(fundamentalParameter.benchmarkChange)}}>{fundamentalParameter.inPortfolio ? <div><b>{`${fundamentalParameter.benchmarkChange} %`}</b></div> : <div>{`${fundamentalParameter.benchmarkChange} %`}</div>}</div>
-                                </div>                            
-                                <div>
-                                    <div className='fundamental-parameter-border-style moex-cell'
-                                        onDoubleClick={() => {
-                                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Moex', period: '', value: fundamentalParameter.moex }))
-                                            dispatch(showEditFundamentalParameterModal())
-                                        }}                                    
-                                    >{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.moex}</b></div> : <div>{fundamentalParameter.moex}</div>}</div>
-                                </div>                                                        
+                                </div>                                                                                   
                                 <div>
                                     {
                                         fundamentalParameter.periods.map((item) => (
                                             <div className='fundamental-parameter-border-style year-cell'>{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }
-                                </div>                                 
+                                </div>   
+                                <div>
+                                    {
+                                        fundamentalParameter.numberShares.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style number-shares-cell' 
+                                                style={{backgroundColor: numberSharesColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'NumberShares', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))                                        
+                                    }
+                                </div>                                                              
                                 <div>
                                     {
                                         fundamentalParameter.pe.map((item, index) => (

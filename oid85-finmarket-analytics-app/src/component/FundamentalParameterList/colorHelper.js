@@ -8,6 +8,12 @@ export const benchmarkChangeColor = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+export const numberSharesColor = (value) => {
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    
+    return CONSTANTS.COLOR_WHITE
+}
+
 export const peColor = (value) => {
     if (!value) { return CONSTANTS.COLOR_WHITE }
 
