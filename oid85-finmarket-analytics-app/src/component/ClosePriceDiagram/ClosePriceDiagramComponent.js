@@ -21,20 +21,16 @@ export const fillColor = (value) => {
     return CONSTANTS.COLOR_STATEBLUE
 }
 
-export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data, trendState, width, height, recommendation, dividendYield }) => {
+export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, data, trendState, width, height, dividendYield }) => {
     return (
         <div className='close-price-diagram-border-style'>
                 <div className='close-price-diagram-ticker'>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
                 <div className='close-price-diagram-name'>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
-                <div className='close-price-diagram-recommendation'>{!recommendation? <div></div> : <div>{inPortfolio ? <div><b>{`Рекомендация: ${recommendation}`}</b></div> : <div>{`Рекомендация: ${recommendation}`}</div>}</div>} </div>          
                 <div className='close-price-diagram-dividend-yield'>{!dividendYield? <div></div> : <div>{inPortfolio ? <div><b>{`ДД ${dividendYield} %`}</b></div> : <div>{`ДД ${dividendYield} %`}</div>}</div>} </div>          
             <ComposedChart key = {key} width={width} height={height} data={data}>
                 <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
                 <Area type="monotone" dataKey="value" strokeWidth={3} stroke={strokeColor(trendState)} fill={fillColor(trendState)} />
-                <Line type="monotone" dataKey="consensusPrice" strokeWidth={3} dot={false} stroke={CONSTANTS.COLOR_MIDNIGHTBLUE} strokeDasharray="5 5" />
-                <Line type="monotone" dataKey="maxTarget" strokeWidth={0.5} dot={false} stroke={CONSTANTS.COLOR_GRAY} strokeDasharray="5 5" />
-                <Line type="monotone" dataKey="minTarget" strokeWidth={0.5} dot={false} stroke={CONSTANTS.COLOR_GRAY} strokeDasharray="5 5" />
             </ComposedChart>
         </div>
     )

@@ -85,7 +85,7 @@
 }
 
 .portfolio-position-size-header-cell {
-    width: 100px;
+    width: 120px;
     padding: 1px;
     font-size: 18px;  
 }
@@ -110,7 +110,6 @@
 
 .portfolio-position-number-cell {
     width: 60px;
-
     padding: 1px;
     font-size: 18px; 
 }
@@ -170,7 +169,7 @@
 }
 
 .portfolio-position-size-cell {
-    width: 100px;
+    width: 120px;
     padding: 1px;
     font-size: 18px;  
 }

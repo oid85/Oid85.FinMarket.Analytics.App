@@ -100,7 +100,7 @@ export const FundamentalParameterList = () => {
                                 <div className='delta-min-max-header-cell fundamental-parameter-border-style'>Изм. мин-макс, %</div>                    
                             </div>                            
                             <div className='horizontal-container'>
-                                <div className='fundamental-parameter-border-style emitent-cell'>
+                                <div title={fundamentalParameter.concept} className='fundamental-parameter-border-style emitent-cell'>
                                     <div className='number-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.number}</b></div> : <div>{fundamentalParameter.number}</div>}</div>
                                     <div className='ticker-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.ticker}</b></div> : <div>{fundamentalParameter.ticker}</div>}</div>
                                     <div className='name-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.name}</b></div> : <div>{fundamentalParameter.name}</div>}</div>
@@ -136,6 +136,10 @@ export const FundamentalParameterList = () => {
                                         <div title='ДД >= 10.0' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.dividendYieldOk)}}>{fundamentalParameter.inPortfolio ? <div><b>ДД</b></div> : <div>ДД</div>}</div>
                                         <div title='Дивидендный аристократ' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.isDividendAristocrat)}}>{fundamentalParameter.inPortfolio ? <div><b>ДА</b></div> : <div>ДА</div>}</div>
                                     </div>
+                                    <div className='horizontal-container'>
+                                        <div title='Рост FCF' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.fcfOk)}}>{fundamentalParameter.inPortfolio ? <div><b>FCF</b></div> : <div>FCF</div>}</div>
+                                        <div title='Рост EPS' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.epsOk)}}>{fundamentalParameter.inPortfolio ? <div><b>EPS</b></div> : <div>EPS</div>}</div>
+                                    </div>                                    
                                     <div className='horizontal-container'>
                                         <div title='Рост чистой прибыли' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.netProfitOk)}}>{fundamentalParameter.inPortfolio ? <div><b>ЧП</b></div> : <div>ЧП</div>}</div>
                                         <div title='Долговая нагрузка' className='fundamental-parameter-border-style score-cell' style={{backgroundColor: GetColorScoreIndicator(fundamentalParameter.score.netDebtOk)}}>{fundamentalParameter.inPortfolio ? <div><b>Д</b></div> : <div>Д</div>}</div>

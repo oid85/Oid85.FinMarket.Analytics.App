@@ -20,7 +20,7 @@
 }
 
 .emitent-cell {
-    height: 146px;
+    height: 125px;
 }
 
 .number-cell {
@@ -39,14 +39,12 @@
 }
 
 .ticker-cell {
-    height: 25px;
     width: 10px; 
     font-size: 12px; 
 }
 
 .instrument-button {    
     width: 90px;
-    height: 25px;
 }
 
 .instrument-button-text {        
@@ -84,7 +82,7 @@
 
 .mcftr-change-cell {
     width: 75px;
-    height: 146px;
+    height: 125px;
     font-size: 14px;
 }
 

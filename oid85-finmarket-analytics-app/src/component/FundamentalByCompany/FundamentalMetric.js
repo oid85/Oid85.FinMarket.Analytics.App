@@ -65,6 +65,24 @@ const colorGrowthNetProfit = (score) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const colorGrowthFcf = (score) => {
+    if (!score) { return CONSTANTS.COLOR_WHITE }
+    if (!score.fcfOk) { return CONSTANTS.COLOR_WHITE }
+
+    if (score.fcfOk) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
+const colorGrowthEps = (score) => {
+    if (!score) { return CONSTANTS.COLOR_WHITE }
+    if (!score.epsOk) { return CONSTANTS.COLOR_WHITE }
+
+    if (score.epsOk) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 const colorLowNetDebt = (score) => {
     if (!score) { return CONSTANTS.COLOR_WHITE }
     if (!score.netDebtOk) { return CONSTANTS.COLOR_WHITE }
@@ -130,6 +148,12 @@ export const FundamentalMetric = () => {
                     <div className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' style={{backgroundColor: colorGrowthNetProfit(fundamentalByCompanyData.result.fundamentalScore)}}>
                         <div>Рост чистой прибыли</div>
                     </div>
+                    <div className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' style={{backgroundColor: colorGrowthFcf(fundamentalByCompanyData.result.fundamentalScore)}}>
+                        <div>Рост FCF</div>
+                    </div>
+                    <div className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' style={{backgroundColor: colorGrowthEps(fundamentalByCompanyData.result.fundamentalScore)}}>
+                        <div>Рост EPS</div>
+                    </div>                                        
                     <div className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' style={{backgroundColor: colorLowNetDebt(fundamentalByCompanyData.result.fundamentalScore)}}>
                         <div>Низкая долговая нагрузка</div>
                     </div>                    

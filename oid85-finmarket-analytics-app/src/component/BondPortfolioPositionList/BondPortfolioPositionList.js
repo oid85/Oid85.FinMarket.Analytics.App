@@ -51,7 +51,7 @@ export const BondPortfolioPositionList = () => {
                                                 dispatch(showEditBondPortfolioTotalSumModal())
                                                 }}>...</button>
                 </div>
-                <div className='bond-portfolio-position-total-sum-long-ofz'>{`Сумма длинных ОФЗ: ${formatNumber(bondPortfolioPositionListData.result.totalSumLongOfz)} руб.`}</div>
+                <div className='bond-portfolio-position-total-sum-long-ofz'>{`Сумма ОФЗ: ${formatNumber(bondPortfolioPositionListData.result.totalSumOfz)} руб.`}</div>
                 <div className='bond-portfolio-position-year-coupon-sum'>{`Сумма купонов за год: ${formatNumber(bondPortfolioPositionListData.result.yearCouponSum)} руб. (${formatNumber(bondPortfolioPositionListData.result.yearCouponPrc)} %)`}</div>
                 <div className='bond-portfolio-position-month-coupon-sum'>{`Сумма купонов в месяц: ${formatNumber(bondPortfolioPositionListData.result.monthCouponSum)} руб.`}</div>                
                 <div className='horizontal-container'>

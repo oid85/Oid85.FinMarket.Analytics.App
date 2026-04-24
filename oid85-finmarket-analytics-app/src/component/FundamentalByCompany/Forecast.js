@@ -7,6 +7,8 @@ const colorForecast = (forecast) => {
     if (!forecast) { return CONSTANTS.COLOR_WHITE }
     if (forecast.upsidePrc > 10) { return CONSTANTS.COLOR_GREEN }
     if (forecast.upsidePrc > 0) { return CONSTANTS.COLOR_YELLOW }
+    if (forecast.upsidePrc <= 0) { return CONSTANTS.COLOR_LIGHTRED }
+
     return CONSTANTS.COLOR_WHITE
 }
 
@@ -60,7 +62,15 @@ export const Forecast = () => {
                 {
                     !fundamentalByCompanyData.result.vladProDengiForecast ? <div></div> : <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.vladProDengiForecast.upsidePrc} %`}</div>
                 }                                
-            </div>                                   
+            </div> 
+            <div 
+                className='fundamental-by-sector-forecast fundamental-by-company-border-style' 
+                style={{backgroundColor: colorForecast(fundamentalByCompanyData.result.predictNetProfitForecast)}}>
+                <div>Прогноз PredictNetProfit</div>
+                {
+                    !fundamentalByCompanyData.result.predictNetProfitForecast ? <div></div> : <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.predictNetProfitForecast.upsidePrc} %`}</div>
+                }                                
+            </div>                                              
         </div>
     )
 }
