@@ -104,18 +104,26 @@ export const FundamentalByCompany = () => {
                                 <FundamentalMetric />
                             </div>                                                 
                         </div>                   
-                    </div>                                                          
+                    </div>
+                    <h6>Динамика показателей компании</h6>
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>Динамика чистой прибыли</div>
+                            <div className='fundamental-by-company-bar-diagram-title'>Чистая прибыль, млрд. руб.</div>
                             <BarDiagram data={fundamentalByCompanyData.result.netProfitDiagramData} />
                         </div>
                         <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>Динамика дивидендов</div>
+                            <div className='fundamental-by-company-bar-diagram-title'>Дивиденды, руб.</div>
                             <BarDiagram data={fundamentalByCompanyData.result.dividendDiagramData} />
                         </div>
+                        <div className='fundamental-by-company-bar-diagram'>
+                            <div className='fundamental-by-company-bar-diagram-title'>FCF, млрд. руб.</div>
+                            <BarDiagram data={fundamentalByCompanyData.result.fcfDiagramData} />
+                        </div>
+                        <div className='fundamental-by-company-bar-diagram'>
+                            <div className='fundamental-by-company-bar-diagram-title'>EPS, руб.</div>
+                            <BarDiagram data={fundamentalByCompanyData.result.epsDiagramData} />
+                        </div>                        
                     </div>
-                    <h6>Сравнение с другими компаниями в секторе</h6>
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>P/E</div>
@@ -125,8 +133,6 @@ export const FundamentalByCompany = () => {
                             <div className='fundamental-by-company-bar-diagram-title'>P/BV</div>
                             <BarDiagram data={fundamentalByCompanyData.result.pbvDiagramData} />
                         </div>
-                    </div>
-                    <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>EV/EBITDA</div>
                             <BarDiagram data={fundamentalByCompanyData.result.evEbitdaDiagramData} />
@@ -134,6 +140,25 @@ export const FundamentalByCompany = () => {
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
                             <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaDiagramData} />
+                        </div>                        
+                    </div>                    
+                    <h6>Сравнение с другими компаниями в секторе</h6>
+                    <div className='horizontal-container'>
+                        <div className='fundamental-by-company-bar-diagram'>
+                            <div className='fundamental-by-company-bar-diagram-title'>P/E</div>
+                            <BarDiagram data={fundamentalByCompanyData.result.peSectorDiagramData} />
+                        </div>
+                        <div className='fundamental-by-company-bar-diagram'>
+                            <div className='fundamental-by-company-bar-diagram-title'>P/BV</div>
+                            <BarDiagram data={fundamentalByCompanyData.result.pbvSectorDiagramData} />
+                        </div>
+                        <div className='fundamental-by-company-bar-diagram'>
+                            <div className='fundamental-by-company-bar-diagram-title'>EV/EBITDA</div>
+                            <BarDiagram data={fundamentalByCompanyData.result.evEbitdaSectorDiagramData} />
+                        </div>
+                        <div className='fundamental-by-company-bar-diagram'>
+                            <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
+                            <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaSectorDiagramData} />
                         </div>
                     </div>
                 </div>

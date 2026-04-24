@@ -6,7 +6,7 @@ import {CONSTANTS} from '../../constants'
 export const BarDiagram = ({ data }) => {
     return (
         <div className='fundamental-by-company-border-style'>
-            <BarChart width={800} height={200} data={data}>
+            <BarChart width={400} height={200} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
                 <XAxis dataKey="x" />

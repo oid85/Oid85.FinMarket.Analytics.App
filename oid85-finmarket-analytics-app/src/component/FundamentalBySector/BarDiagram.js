@@ -10,7 +10,12 @@ export const BarDiagram = ({ key, data }) => {
                 <CartesianGrid strokeDasharray="3 3" />
                 <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
-                <Bar type="monotone" dataKey="value" strokeWidth={2} stroke={CONSTANTS.COLOR_GREEN} fill={CONSTANTS.COLOR_LIGHTGREEN} />
+                <Bar 
+                    type="monotone" 
+                    dataKey="value" 
+                    strokeWidth={2} 
+                    stroke={CONSTANTS.COLOR_MIDNIGHTBLUE} 
+                    fill={CONSTANTS.COLOR_STATEBLUE} />
             </BarChart>
         </div>
     )
