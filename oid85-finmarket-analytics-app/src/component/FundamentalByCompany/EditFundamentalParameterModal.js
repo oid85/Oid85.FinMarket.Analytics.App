@@ -5,7 +5,8 @@ import {
     sagaEditFundamentalParameter,
     fetchCurrentFundamentalParameter,
     hideEditFundamentalParameterModal,
-    sagaFundamentalByCompany
+    sagaFundamentalByCompany,
+    sagaDeleteFundamentalParameter
 } from '../../redux/actions/fundamentalParameterActions'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -59,7 +60,13 @@ export const EditFundamentalParameterModal = () => {
                             className='btn btn-outline-primary edit-modal-cancel-button' 
                             onClick={ () => { 
                                 dispatch(hideEditFundamentalParameterModal()) 
-                                }}>Закрыть</button>                        
+                                }}>Закрыть</button>    
+                        <button 
+                            className='btn btn-outline-primary edit-modal-save-button' 
+                            onClick={ () => {
+                                    dispatch(sagaDeleteFundamentalParameter())
+                                    dispatch(hideEditFundamentalParameterModal())
+                                    }}>Удалить</button>                                                     
                     </form>
                 </Modal>
             </div>

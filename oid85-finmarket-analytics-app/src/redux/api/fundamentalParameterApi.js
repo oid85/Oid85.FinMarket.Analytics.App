@@ -17,3 +17,7 @@ export const getFundamentalByCompanyFromApi = async (ticker) => {
 export const editFundamentalParameterFromApi = async (ticker, type, period, value, extData) => {
     return sendPostRequest(`${controller}/create-or-update`, {ticker, type, period, value, extData})
 }
+
+export const deleteFundamentalParameterFromApi = async (ticker, type, period) => {
+    return sendPostRequest(`${controller}/delete`, {ticker, type, period})
+}

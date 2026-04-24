@@ -8,13 +8,15 @@ import {
     SAGA_FUNDAMENTAL_PARAMETER_LIST,
     SAGA_FUNDAMENTAL_BY_SECTOR,
     SAGA_FUNDAMENTAL_BY_COMPANY,
-    SAGA_EDIT_FUNDAMENTAL_PARAMETER
+    SAGA_EDIT_FUNDAMENTAL_PARAMETER,
+    SAGA_DELETE_FUNDAMENTAL_PARAMETER
 } from '../types/fundamentalParameterTypes'
 import {
     getFundamentalParameterListFromApi,
     getFundamentalBySectorFromApi,
     getFundamentalByCompanyFromApi,
-    editFundamentalParameterFromApi
+    editFundamentalParameterFromApi,
+    deleteFundamentalParameterFromApi
 } from '../api/fundamentalParameterApi'
 
 const currentFundamentalParameter = (state) => state.fundamentalParameter.currentFundamentalParameter
@@ -26,6 +28,7 @@ export function* sagaWatcherFundamentalParameter() {
     yield takeEvery(SAGA_FUNDAMENTAL_BY_SECTOR, sagaWorkerFundamentalBySector)
     yield takeEvery(SAGA_FUNDAMENTAL_BY_COMPANY, sagaWorkerFundamentalByCompany)
     yield takeEvery(SAGA_EDIT_FUNDAMENTAL_PARAMETER, sagaWorkerEditFundamentalParameter)
+    yield takeEvery(SAGA_DELETE_FUNDAMENTAL_PARAMETER, sagaWorkerDeleteFundamentalParameter)
 }
 
 function* sagaWorkerFundamentalParameterList() {
@@ -48,6 +51,13 @@ function* sagaWorkerFundamentalByCompany() {
 function* sagaWorkerEditFundamentalParameter() {
     let fundamentalParameter = yield select(currentFundamentalParameter)    
     yield call(editFundamentalParameterFromApi, fundamentalParameter.ticker, fundamentalParameter.type, fundamentalParameter.period, fundamentalParameter.value, fundamentalParameter.extData)
+    let result = yield call(getFundamentalParameterListFromApi)    
+    yield put(fetchFundamentalParameterList(result))  
+}
+
+function* sagaWorkerDeleteFundamentalParameter() {
+    let fundamentalParameter = yield select(currentFundamentalParameter)    
+    yield call(deleteFundamentalParameterFromApi, fundamentalParameter.ticker, fundamentalParameter.type, fundamentalParameter.period)
     let result = yield call(getFundamentalParameterListFromApi)    
     yield put(fetchFundamentalParameterList(result))  
 }

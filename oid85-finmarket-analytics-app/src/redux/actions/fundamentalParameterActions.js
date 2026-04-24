@@ -1,6 +1,7 @@
 import {
     SAGA_FUNDAMENTAL_PARAMETER_LIST,
     SAGA_EDIT_FUNDAMENTAL_PARAMETER,
+    SAGA_DELETE_FUNDAMENTAL_PARAMETER,
     SAGA_FUNDAMENTAL_BY_SECTOR,
     SAGA_FUNDAMENTAL_BY_COMPANY,
     FETCH_FUNDAMENTAL_PARAMETER_LIST,
@@ -34,6 +35,12 @@ export const sagaFundamentalParameterList = () => {
 export const sagaEditFundamentalParameter = () => {
     return {
         type: SAGA_EDIT_FUNDAMENTAL_PARAMETER
+    }
+}
+
+export const sagaDeleteFundamentalParameter = () => {
+    return {
+        type: SAGA_DELETE_FUNDAMENTAL_PARAMETER
     }
 }
 
