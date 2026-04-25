@@ -71,6 +71,9 @@ export const FundamentalParameterList = () => {
             ? <Loader/>
             :
             <div className='fundamental-parameter-container'>
+                <div>Всего компаний: {fundamentalParameterListData.result.totalCount}</div>
+                <div>Не внесены данные: {fundamentalParameterListData.result.noFillDataCount}</div>
+                <div>Не внесены данные (тикеры): {fundamentalParameterListData.result.noFillDataTickers}</div>
                 {
                     fundamentalParameterListData.result.fundamentalParameters.map((fundamentalParameter) => (
                         <div style={{backgroundColor: GetColorEmitent(fundamentalParameter.fillData)}}>
