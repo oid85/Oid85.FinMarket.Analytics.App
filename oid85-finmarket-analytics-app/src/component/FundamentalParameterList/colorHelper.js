@@ -83,6 +83,13 @@ export const roaColor = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+export const roeColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (value > 15) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 export const netDebtColor = (value) => {   
     if (!value) { return CONSTANTS.COLOR_WHITE }
     if (value < 0) { return CONSTANTS.COLOR_GREEN }

@@ -29,7 +29,8 @@ import {
     fcfColor,
     epsColor,
     numberSharesColor,
-    priceColor
+    priceColor,
+    roeColor
 } from './colorHelper'
 import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
 import { CONSTANTS } from '../../constants'
@@ -86,6 +87,7 @@ export const FundamentalParameterList = () => {
                                 <div className='pe-header-cell fundamental-parameter-border-style'>P / E</div>
                                 <div className='pbv-header-cell fundamental-parameter-border-style'>P / BV</div>
                                 <div className='roa-header-cell fundamental-parameter-border-style'>ROA, %</div>
+                                <div className='roe-header-cell fundamental-parameter-border-style'>ROE, %</div>
                                 <div className='ev-ebitda-header-cell fundamental-parameter-border-style'>EV / EBITDA</div>
                                 <div className='netdebt-ebitda-header-cell fundamental-parameter-border-style'>ND / EBITDA</div>
                                 <div className='ebitda-revenue-header-cell fundamental-parameter-border-style'>EBITDA / Выручка</div>
@@ -210,6 +212,19 @@ export const FundamentalParameterList = () => {
                                         ))
                                     }
                                 </div>
+                                <div>
+                                    {
+                                        fundamentalParameter.roe.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style roe-cell' 
+                                                style={{backgroundColor: roeColor(item)}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Roe', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))
+                                    }
+                                </div>                                
                                 <div>
                                     {
                                         fundamentalParameter.evEbitda.map((item) => (
