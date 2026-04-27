@@ -28,7 +28,8 @@ import {
     deltaMinMaxColor,
     fcfColor,
     epsColor,
-    numberSharesColor
+    numberSharesColor,
+    priceColor
 } from './colorHelper'
 import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
 import { CONSTANTS } from '../../constants'
@@ -366,6 +367,7 @@ export const FundamentalParameterList = () => {
                                     {
                                         fundamentalParameter.price.map((item) => (
                                             <div className='fundamental-parameter-border-style price-cell'
+                                                style={{backgroundColor: priceColor(item)}}
                                                 >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))                                        
                                     }                                    

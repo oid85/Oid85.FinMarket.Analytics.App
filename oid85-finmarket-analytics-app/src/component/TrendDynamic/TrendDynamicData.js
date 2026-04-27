@@ -101,7 +101,10 @@ export const TrendDynamicData = ({data}) => {
                         </div>  
                         <div title='Прогноз PredictNetProfit' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.predictNetProfitForecast)}}>
                             <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.predictNetProfitForecast, 'PNP')}</b></div> : <div>{GetForecastValue(dataItem.predictNetProfitForecast, 'PNP')}</div>}</div> 
-                        </div>                         
+                        </div>  
+                        <div title='Прогноз Mozgovik' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.mozgovikForecast)}}>
+                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.mozgovikForecast, 'M')}</b></div> : <div>{GetForecastValue(dataItem.mozgovikForecast, 'M')}</div>}</div> 
+                        </div>                                                 
                         <div className='trend-dynamic-separator-cell'></div>                                                                                     
                         <div title='Дивидендная доходность' className='trend-dynamic-border-style' style={{backgroundColor: GetColorDividendYield(dataItem.dividendYield)}}>
                             <div className='trend-dynamic-dividend-yield-cell'>{dataItem.inPortfolio ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>}</div> 

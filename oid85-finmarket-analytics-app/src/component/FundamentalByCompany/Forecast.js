@@ -70,7 +70,19 @@ export const Forecast = () => {
                 {
                     !fundamentalByCompanyData.result.predictNetProfitForecast ? <div></div> : <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.predictNetProfitForecast.upsidePrc} %`}</div>
                 }                                
-            </div>                                              
+            </div>      
+            <div 
+                className='fundamental-by-sector-forecast fundamental-by-company-border-style' 
+                style={{backgroundColor: colorForecast(fundamentalByCompanyData.result.mozgovikForecast)}}
+                onDoubleClick={() => {
+                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'MozgovikForecast', period: new Date().getFullYear() + '', value: fundamentalByCompanyData.result.mozgovikForecast ? fundamentalByCompanyData.result.mozgovikForecast.consensusPrice : 0 }))
+                    dispatch(showEditFundamentalParameterModal())
+                }}>
+                <div>Прогноз Mozgovik</div>
+                {
+                    !fundamentalByCompanyData.result.mozgovikForecast ? <div></div> : <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.mozgovikForecast.upsidePrc} %`}</div>
+                }                                
+            </div>                                                       
         </div>
     )
 }

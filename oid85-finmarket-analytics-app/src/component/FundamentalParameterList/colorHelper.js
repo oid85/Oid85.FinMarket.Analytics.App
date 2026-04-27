@@ -147,3 +147,9 @@ export const deltaMinMaxColor = (value) => {
 
     return CONSTANTS.COLOR_WHITE
 }
+
+export const priceColor = (value) => { 
+    if (!value) { return CONSTANTS.COLOR_WHITE }
+
+    return CONSTANTS.COLOR_WHITE
+}

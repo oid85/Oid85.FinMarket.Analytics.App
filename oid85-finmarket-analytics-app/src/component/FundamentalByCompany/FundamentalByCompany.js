@@ -68,7 +68,7 @@ export const FundamentalByCompany = () => {
                             dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'Concept', period: '', extData: fundamentalByCompanyData.result.concept }))
                             dispatch(showEditFundamentalParameterModal())
                         }}>
-                        <h6>Инвестиционная идея</h6>
+                        <h6>Мысли по компании</h6>
                         <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.concept}</div>
                     </div>       
                     <div 
