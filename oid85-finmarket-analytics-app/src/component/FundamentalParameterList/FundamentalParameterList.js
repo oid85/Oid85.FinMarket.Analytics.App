@@ -176,29 +176,29 @@ export const FundamentalParameterList = () => {
                                 <div>
                                     {
                                         fundamentalParameter.pe.map((item, index) => (
-                                            <div className='fundamental-parameter-border-style pe-cell' 
-                                                style={{backgroundColor: peColor(item)}}
+                                            <div title={item.description} className='fundamental-parameter-border-style pe-cell' 
+                                                style={{backgroundColor: item.colorFill}}
                                                 onDoubleClick={() => {
-                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Pe', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Pe', period: fundamentalParameter.periods[index], value: item.value }))
                                                     dispatch(showEditFundamentalParameterModal())
                                                 }}
-                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item.value}</b></div> : <div>{item.value}</div>}</div>
                                         ))                                        
                                     }
                                 </div>
                                 <div>
                                     {
                                         fundamentalParameter.pbv.map((item, index) => (
-                                            <div className='fundamental-parameter-border-style pbv-cell' 
-                                                style={{backgroundColor: pbvColor(item)}}
+                                            <div title={item.description} className='fundamental-parameter-border-style pbv-cell' 
+                                                style={{backgroundColor: item.colorFill}}
                                                 onDoubleClick={() => {
-                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Pbv', period: fundamentalParameter.periods[index], value: item }))
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Pbv', period: fundamentalParameter.periods[index], value: item.value }))
                                                     dispatch(showEditFundamentalParameterModal())
                                                 }}
-                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item.value}</b></div> : <div>{item.value}</div>}</div>
                                         ))                                        
                                     }
-                                </div>    
+                                </div>
                                 <div>
                                     {
                                         fundamentalParameter.roa.map((item, index) => (
