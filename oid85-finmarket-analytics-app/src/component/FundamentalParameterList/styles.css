@@ -32,6 +32,11 @@
     font-size: 10px; 
 }
 
+.name-sector {
+    width: 100px; 
+    font-size: 10px; 
+}
+
 .ticker-header-cell {
     width: 102px;  
     font-size: 12px; 
@@ -75,232 +80,232 @@
 }
 
 .mcftr-change-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .mcftr-change-cell {
-    width: 75px;
+    width: 70px;
     
     font-size: 18px;
 }
 
 .number-shares-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .number-shares-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .pe-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .pe-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .pbv-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .pbv-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .roa-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .roa-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .roe-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .roe-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .revenue-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .revenue-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .netprofit-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .netprofit-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .fcf-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .fcf-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .eps-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .eps-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .price-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .price-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .netdebt-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .netdebt-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .ebitda-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .ebitda-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .ev-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .ev-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .dividend-yield-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .dividend-yield-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .dividend-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .dividend-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .marketcap-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .marketcap-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .ev-ebitda-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .ev-ebitda-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .netdebt-ebitda-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .netdebt-ebitda-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .ebitda-revenue-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .ebitda-revenue-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }
 
 .delta-min-max-header-cell {
-    width: 75px;
+    width: 70px;
     font-size: 12px;  
 }
 
 .delta-min-max-cell {
-    width: 75px;
+    width: 70px;
     height: 30px;
     font-size: 18px;
 }

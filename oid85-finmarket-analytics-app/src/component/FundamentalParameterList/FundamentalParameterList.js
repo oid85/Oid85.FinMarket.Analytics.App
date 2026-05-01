@@ -94,6 +94,7 @@ export const FundamentalParameterList = () => {
                                     <div className='number-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.number}</b></div> : <div>{fundamentalParameter.number}</div>}</div>
                                     <div className='ticker-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.ticker}</b></div> : <div>{fundamentalParameter.ticker}</div>}</div>
                                     <div className='name-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.name}</b></div> : <div>{fundamentalParameter.name}</div>}</div>
+                                    <div className='name-sector'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.sector}</b></div> : <div>{fundamentalParameter.sector}</div>}</div>
                                     <div>
                                         <div>
                                             <button className='btn btn-outline-dark instrument-button'
