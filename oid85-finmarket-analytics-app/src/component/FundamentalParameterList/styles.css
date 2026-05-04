@@ -221,6 +221,17 @@
     font-size: 18px;
 }
 
+.own-capital-header-cell {
+    width: 70px;
+    font-size: 12px;  
+}
+
+.own-capital-cell {
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+}
+
 .ev-header-cell {
     width: 70px;
     font-size: 12px;  
