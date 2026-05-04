@@ -42,18 +42,6 @@ const GetForecastValue = (forecast, suffix) => {
     return `Пр. ${suffix} ${forecast.upsidePrc} %`
 }
 
-const GetColorScoreValue = (scoreValue) => {
-    if (!scoreValue) { return CONSTANTS.COLOR_WHITE }
-    if (scoreValue >= 0.5) { return CONSTANTS.COLOR_GREEN }
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetColorScoreIndicator = (value) => {
-    if (!value) { return CONSTANTS.COLOR_WHITE }
-    if (value) { return CONSTANTS.COLOR_GREEN }
-    return CONSTANTS.COLOR_WHITE
-}
-
 const GetColorFillData = (value) => {
     if (!value) { return CONSTANTS.COLOR_YELLOW }
     if (value) { return CONSTANTS.COLOR_GREEN }
