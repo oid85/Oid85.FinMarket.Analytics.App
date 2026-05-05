@@ -111,10 +111,13 @@ export const FundamentalParameterList = () => {
                                     </div>
                                     <div className='horizontal-container'>
                                         <div title={fundamentalParameter.score.evEbitda.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.evEbitda.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>EV</b></div> : <div>EV</div>}</div>                                        
-                                        <div title={fundamentalParameter.score.netDebtEbitda.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.netDebtEbitda.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>Д</b></div> : <div>Д</div>}</div>                                                                                
+                                        <div title={fundamentalParameter.score.netDebtEbitda.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.netDebtEbitda.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>ND</b></div> : <div>ND</div>}</div>                                                                                
                                     </div>
                                     <div className='horizontal-container'>
-                                        <div title={fundamentalParameter.score.dividendAristocrat.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.dividendAristocrat.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>ДА</b></div> : <div>ДА</div>}</div>
+                                        <div title={fundamentalParameter.score.netProfit.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.netProfit.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>NP</b></div> : <div>NP</div>}</div>                                                                                
+                                    </div>                                    
+                                    <div className='horizontal-container'>
+                                        <div title={fundamentalParameter.score.dividendAristocrat.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.dividendAristocrat.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>DA</b></div> : <div>DA</div>}</div>
                                     </div>                                    
                                 </div>
                                 <div>
