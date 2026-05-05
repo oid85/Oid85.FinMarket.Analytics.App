@@ -114,15 +114,21 @@ export const TrendDynamicData = ({data}) => {
                         </div>  
                         <div title={dataItem.score.netProfit.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.netProfit.colorFill}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>NP</b></div> : <div>NP</div>}</div> 
-                        </div>                                                                              
+                        </div>       
+                        <div title={dataItem.score.fcf.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.fcf.colorFill}}>
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>FCF</b></div> : <div>FCF</div>}</div> 
+                        </div> 
+                        <div title={dataItem.score.eps.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.eps.colorFill}}>
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>EPS</b></div> : <div>EPS</div>}</div> 
+                        </div>                                                                                                                        
                         <div title={dataItem.score.dividendAristocrat.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.dividendAristocrat.colorFill}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>DA</b></div> : <div>DA</div>}</div> 
                         </div>                                                                                
                         <div title={dataItem.inPortfolio ? 'Заполнены данные по фундаменталу' : 'Не заполнены данные по фундаменталу'} className='trend-dynamic-border-style' style={{backgroundColor: GetColorFillData(dataItem.fillData)}}>
                             {
                                 dataItem.inPortfolio
-                                ? <div className='trend-dynamic-score-indicator-cell'>{dataItem.fillData ? <div><b>Запол. фунд.</b></div> : <div><del><b>Запол. фунд.</b></del></div>}</div>
-                                : <div className='trend-dynamic-score-indicator-cell'>{dataItem.fillData ? <div>Запол. фунд.</div> : <div><del>Запол. фунд.</del></div>}</div>
+                                ? <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div><b>Запол. фунд.</b></div> : <div><del><b>Запол. фунд.</b></del></div>}</div>
+                                : <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div>Запол. фунд.</div> : <div><del>Запол. фунд.</del></div>}</div>
                             }
                         </div>                                                                                                     
                         <div className='trend-dynamic-border-style'>

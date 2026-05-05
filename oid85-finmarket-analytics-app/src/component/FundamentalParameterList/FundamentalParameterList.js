@@ -115,7 +115,11 @@ export const FundamentalParameterList = () => {
                                     </div>
                                     <div className='horizontal-container'>
                                         <div title={fundamentalParameter.score.netProfit.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.netProfit.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>NP</b></div> : <div>NP</div>}</div>                                                                                
-                                    </div>                                    
+                                    </div> 
+                                    <div className='horizontal-container'>
+                                        <div title={fundamentalParameter.score.fcf.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.fcf.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>FCF</b></div> : <div>FCF</div>}</div>                                        
+                                        <div title={fundamentalParameter.score.eps.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.eps.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>EPS</b></div> : <div>EPS</div>}</div>                                                                                
+                                    </div>                                                                       
                                     <div className='horizontal-container'>
                                         <div title={fundamentalParameter.score.dividendAristocrat.description} className='fundamental-parameter-border-style score-cell' style={{backgroundColor: fundamentalParameter.score.dividendAristocrat.colorFill}}>{fundamentalParameter.inPortfolio ? <div><b>DA</b></div> : <div>DA</div>}</div>
                                     </div>                                    
