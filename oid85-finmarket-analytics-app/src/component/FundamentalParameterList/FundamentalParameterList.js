@@ -62,6 +62,7 @@ export const FundamentalParameterList = () => {
                                 <div className='ev-ebitda-header-cell fundamental-parameter-border-style'>EV / EBITDA</div>
                                 <div className='netdebt-ebitda-header-cell fundamental-parameter-border-style'>ND / EBITDA</div>
                                 <div className='ebitda-revenue-header-cell fundamental-parameter-border-style'>EBITDA / Выручка</div>
+                                <div className='own-cap-num-header-cell fundamental-parameter-border-style'>Соб. кап. / Кол-во акций</div>
                                 <div className='marketcap-header-cell fundamental-parameter-border-style'>Капит-ция, млрд. руб.</div>
                                 <div className='ev-header-cell fundamental-parameter-border-style'>EV, млрд. руб.</div>
                                 <div className='ebitda-header-cell fundamental-parameter-border-style'>EBITDA, млрд. руб.</div>
@@ -228,6 +229,15 @@ export const FundamentalParameterList = () => {
                                         ))                                        
                                     }
                                 </div>
+                                <div>
+                                    {
+                                        fundamentalParameter.ownCapitalNumberShares.map((item, index) => (
+                                            <div title={item.description} className='fundamental-parameter-border-style own-cap-num-cell' 
+                                                style={{backgroundColor: item.colorFill}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item.value}</b></div> : <div>{item.value}</div>}</div>
+                                        ))                                        
+                                    }
+                                </div>                                
                                 <div>
                                     {
                                         fundamentalParameter.marketCap.map((item, index) => (

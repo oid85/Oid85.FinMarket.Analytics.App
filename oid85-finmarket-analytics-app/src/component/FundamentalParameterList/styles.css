@@ -287,6 +287,17 @@
     font-size: 18px;
 }
 
+.own-cap-num-header-cell {
+    width: 70px;
+    font-size: 12px;  
+}
+
+.own-cap-num-cell {
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+}
+
 .netdebt-ebitda-header-cell {
     width: 70px;
     font-size: 12px;  
