@@ -31,9 +31,10 @@ export const PortfolioPositionList = () => {
       };
 
     const GetLifeSizeValue = (size, lifeSize) => {
-        let delta = Math.abs(size - lifeSize)        
-        if (size > lifeSize) { return `${formatNumber(lifeSize)} шт. (+${formatNumber(delta)})` }
-        if (size < lifeSize) { return `${formatNumber(lifeSize)} шт. (-${formatNumber(delta)})` }
+        let delta = Math.abs(size - lifeSize)
+        let deltaPercent = (delta / size * 100.0).toFixed(2)
+        if (size > lifeSize) { return `${formatNumber(lifeSize)} шт. (+${formatNumber(delta)} / ${formatNumber(deltaPercent)} %)` }
+        if (size < lifeSize) { return `${formatNumber(lifeSize)} шт. (-${formatNumber(delta)} / ${formatNumber(deltaPercent)} %)` }
     
         return `${formatNumber(lifeSize)} шт.`
     }
