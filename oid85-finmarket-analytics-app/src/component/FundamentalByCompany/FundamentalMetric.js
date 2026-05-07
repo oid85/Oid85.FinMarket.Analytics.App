@@ -51,7 +51,7 @@ export const FundamentalMetric = () => {
                         style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.colorFill}}>
                         <div>ND/EBITDA</div>            
                         <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value}</div>            
-                    </div>                    
+                    </div>
                 </div>
                 <div className='horizontal-container'>
                     <div 

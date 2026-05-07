@@ -101,6 +101,14 @@ export const FundamentalParameterList = () => {
                                                 }}><div className='instrument-button-text'>{fundamentalParameter.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>
                                         </div>                                  
                                     </div>
+                                    <div className='moex-cell-text'>{fundamentalParameter.inPortfolio ? <div><b>Доля в IMOEX</b></div> : <div>Доля в IMOEX</div>}</div>
+                                    <div 
+                                        className='moex-cell-value fundamental-parameter-border-style'
+                                        onDoubleClick={() => {
+                                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Moex', period: '', value: fundamentalParameter.moex }))
+                                            dispatch(showEditFundamentalParameterModal())
+                                        }}                                        
+                                        >{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.moex}</b></div> : <div>{fundamentalParameter.moex}</div>}</div>
                                 </div>                             
                                 <div>
                                     <div className='horizontal-container'>
