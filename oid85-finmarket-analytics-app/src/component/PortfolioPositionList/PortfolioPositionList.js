@@ -117,7 +117,14 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-result-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.resultCoefficient}</div>
                             <div className='portfolio-position-percentage-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{`${portfolioPosition.percent} %`}</div>
                             <div className='portfolio-position-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{`${formatNumber(portfolioPosition.size)} шт.`}</div>
-                            <div className='portfolio-position-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{GetLifeSizeValue(portfolioPosition.lifeSize)}</div>
+                            <div 
+                                className='portfolio-position-size-cell portfolio-position-border-style' 
+                                style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}
+                                onDoubleClick={() => {
+                                    dispatch(fetchCurrentPortfolioPosition({...portfolioPosition}))
+                                    dispatch(showEditPortfolioPositionModal())
+                                }}                                   
+                                >{GetLifeSizeValue(portfolioPosition.lifeSize)}</div>
                             <div className='portfolio-position-delta-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{GetDeltaValue(portfolioPosition.delta)}</div>
                             <div title={GetDeltaPercentTitle(portfolioPosition.deltaPercent)} className='portfolio-position-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{GetDeltaPercentValue(portfolioPosition.deltaPercent)}</div>
                             <div className='portfolio-position-cost-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{formatNumber(portfolioPosition.cost)}</div>
