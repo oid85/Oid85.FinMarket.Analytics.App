@@ -9,7 +9,6 @@ import { FundamentalParameterScreen } from '../Screens/FundamentalParameterScree
 import { FundamentalParameterSectorScreen } from '../Screens/FundamentalParameterSectorScreen'
 import { FundamentalParameterCompanyScreen } from '../Screens/FundamentalParameterCompanyScreen'
 import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
-import { FundamentalParameterBubbleScreen } from '../Screens/FundamentalParameterBubbleScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
 import { BondPortfolioScreen } from '../Screens/BondPortfolioScreen'
@@ -25,19 +24,18 @@ export const Workspace = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                    <Tab>Дни</Tab>
-                    <Tab>Недели</Tab>                    
-                    <Tab>Сравнение</Tab>
-                    <Tab>Графики (акции)</Tab>
-                    <Tab>Графики (индексы)</Tab>
-                    <Tab>Фунд. (табл.)</Tab>
-                    <Tab>Фунд. (диагр.)</Tab>
-                    <Tab>Фунд. (сектора)</Tab>
-                    <Tab>Фунд. (компании)</Tab>
-                    <Tab>Макро. (табл.)</Tab>
-                    <Tab>Анализ облигаций</Tab>
-                    <Tab>Портфель акций</Tab>
-                    <Tab>Портфель облигаций</Tab>
+                    <Tab title='Динамика по дням'>Дни</Tab>
+                    <Tab title='Динамика по неделям'>Нед.</Tab>                    
+                    <Tab title='Графики сравнения динамики акций с индексом полной доходности (MCFTR)'>Срав.</Tab>
+                    <Tab title='Графики акций'>Граф. (А)</Tab>
+                    <Tab title='Графики индексов'>Граф. (И)</Tab>
+                    <Tab title='Таблица с фундаментальными параметрами компаний'>Фунд. табл.</Tab>                    
+                    <Tab title='Аналитика по секторам'>Фунд. сект.</Tab>
+                    <Tab title='Аналитика по компаниям'>Фунд. комп.</Tab>
+                    <Tab title='Макропараметры'>Макро</Tab>
+                    <Tab title='Аналитика по облигациям'>Облиг.</Tab>
+                    <Tab title='Портфель акций'>Портф. (А)</Tab>
+                    <Tab title='Портфель облигаций'>Портф. (О)</Tab>
                 </TabList>
                 <TabPanel>
                     <TrendDynamicScreen />                    
@@ -57,9 +55,6 @@ export const Workspace = () => {
                 <TabPanel>
                     <FundamentalParameterScreen />
                 </TabPanel>  
-                <TabPanel>
-                    <FundamentalParameterBubbleScreen />
-                </TabPanel>
                 <TabPanel>
                     <FundamentalParameterSectorScreen />
                 </TabPanel>       

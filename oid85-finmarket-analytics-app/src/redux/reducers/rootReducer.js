@@ -5,7 +5,6 @@ import { compareTrendReducer } from './compareTrendReducer'
 import { instrumentReducer } from './instrumentReducer'
 import { fundamentalParameterReducer } from './fundamentalParameterReducer'
 import { macroParameterReducer } from './macroParameterReducer'
-import { fundamentalParameterBubbleReducer } from './fundamentalParameterBubbleReducer'
 import { weekTrendDeltaReducer } from './weekTrendDeltaReducer'
 import { portfolioReducer } from './portfolioReducer'
 import { bondPortfolioReducer } from './bondPortfolioReducer'
@@ -19,7 +18,6 @@ export const rootReducer = combineReducers({
     instrument: instrumentReducer,
     fundamentalParameter: fundamentalParameterReducer,
     macroParameter: macroParameterReducer,
-    fundamentalParameterBubble: fundamentalParameterBubbleReducer,
     weekTrendDelta: weekTrendDeltaReducer,    
     portfolio: portfolioReducer,
     bondPortfolio: bondPortfolioReducer,

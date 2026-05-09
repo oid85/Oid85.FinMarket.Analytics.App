@@ -12,7 +12,6 @@ import { sagaWatcherCompareTrend } from './redux/sagas/sagaCompareTrend'
 import { sagaWatcherInstrument } from './redux/sagas/sagaInstrument'
 import { sagaWatcherFundamentalParameter } from './redux/sagas/sagaFundamentalParameter'
 import { sagaWatcherMacroParameter } from './redux/sagas/sagaMacroParameter'
-import { sagaWatcherFundamentalParameterBubble } from './redux/sagas/sagaFundamentalParameterBubble'
 import { sagaWatcherWeekTrendDelta } from './redux/sagas/sagaWeekTrendDelta'
 import { sagaWatcherPortfolio } from './redux/sagas/sagaPortfolio'
 import { sagaWatcherBondPortfolio } from './redux/sagas/sagaBondPortfolio'
@@ -32,7 +31,6 @@ saga.run(sagaWatcherCompareTrend)
 saga.run(sagaWatcherInstrument)
 saga.run(sagaWatcherFundamentalParameter)
 saga.run(sagaWatcherMacroParameter)
-saga.run(sagaWatcherFundamentalParameterBubble)
 saga.run(sagaWatcherWeekTrendDelta)
 saga.run(sagaWatcherPortfolio)
 saga.run(sagaWatcherBondPortfolio)
