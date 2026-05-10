@@ -61,7 +61,7 @@ export const FundamentalParameterList = () => {
                                 <div className='roe-header-cell fundamental-parameter-border-style'>ROE, %</div>
                                 <div className='ev-ebitda-header-cell fundamental-parameter-border-style'>EV / EBITDA</div>
                                 <div className='netdebt-ebitda-header-cell fundamental-parameter-border-style'>ND / EBITDA</div>
-                                <div className='ebitda-revenue-header-cell fundamental-parameter-border-style'>EBITDA / Выручка</div>
+                                <div className='ebitda-revenue-header-cell fundamental-parameter-border-style'>EBITDA / Выруч.</div>
                                 <div className='own-cap-num-header-cell fundamental-parameter-border-style'>Соб. кап. / Кол-во акций</div>
                                 <div className='marketcap-header-cell fundamental-parameter-border-style'>Капит-ция, млрд. руб.</div>
                                 <div className='ev-header-cell fundamental-parameter-border-style'>EV, млрд. руб.</div>

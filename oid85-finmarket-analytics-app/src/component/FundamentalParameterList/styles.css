@@ -43,8 +43,8 @@
 }
 
 .moex-cell-value {
-    width: 50px;
-    height: 25px; 
+    width: 40px;
+    height: 23px; 
     font-size: 14px; 
 }
 
@@ -67,14 +67,14 @@
 }
 
 .year-header-cell {
-    width: 50px;
+    width: 40px;
     font-size: 12px;  
 }
 
 .year-cell {
-    width: 50px;  
-    height: 30px;
-    font-size: 18px;
+    width: 40px;  
+    height: 23px;
+    font-size: 14px;
 }
 
 .score-header-cell {
@@ -91,68 +91,68 @@
 }
 
 .mcftr-change-header-cell {
-    width: 70px;
+    width: 55px;
     font-size: 12px;  
 }
 
 .mcftr-change-cell {
-    width: 70px;    
+    width: 55px;    
     font-size: 12px;
 }
 
 .number-shares-header-cell {
-    width: 70px;
+    width: 50px;
     font-size: 12px;  
 }
 
 .number-shares-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 50px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .pe-header-cell {
-    width: 70px;
+    width: 40px;
     font-size: 12px;  
 }
 
 .pe-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .pbv-header-cell {
-    width: 70px;
+    width: 40px;
     font-size: 12px;  
 }
 
 .pbv-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .roa-header-cell {
-    width: 70px;
+    width: 40px;
     font-size: 12px;  
 }
 
 .roa-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .roe-header-cell {
-    width: 70px;
+    width: 40px;
     font-size: 12px;  
 }
 
 .roe-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .revenue-header-cell {
@@ -162,8 +162,8 @@
 
 .revenue-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .netprofit-header-cell {
@@ -173,8 +173,8 @@
 
 .netprofit-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .fcf-header-cell {
@@ -184,8 +184,8 @@
 
 .fcf-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .eps-header-cell {
@@ -195,8 +195,8 @@
 
 .eps-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .price-header-cell {
@@ -206,8 +206,8 @@
 
 .price-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .netdebt-header-cell {
@@ -217,8 +217,8 @@
 
 .netdebt-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .ebitda-header-cell {
@@ -228,8 +228,8 @@
 
 .ebitda-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .own-capital-header-cell {
@@ -239,8 +239,8 @@
 
 .own-capital-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .ev-header-cell {
@@ -250,30 +250,30 @@
 
 .ev-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .dividend-yield-header-cell {
-    width: 70px;
+    width: 40px;
     font-size: 12px;  
 }
 
 .dividend-yield-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .dividend-header-cell {
-    width: 70px;
+    width: 50px;
     font-size: 12px;  
 }
 
 .dividend-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 50px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .marketcap-header-cell {
@@ -283,19 +283,19 @@
 
 .marketcap-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .ev-ebitda-header-cell {
-    width: 70px;
-    font-size: 12px;  
+    width: 40px;
+    font-size: 10px;  
 }
 
 .ev-ebitda-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .own-cap-num-header-cell {
@@ -305,30 +305,30 @@
 
 .own-cap-num-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .netdebt-ebitda-header-cell {
-    width: 70px;
-    font-size: 12px;  
+    width: 40px;
+    font-size: 10px;  
 }
 
 .netdebt-ebitda-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .ebitda-revenue-header-cell {
-    width: 70px;
-    font-size: 12px;  
+    width: 40px;
+    font-size: 10px;  
 }
 
 .ebitda-revenue-cell {
-    width: 70px;
-    height: 30px;
-    font-size: 18px;
+    width: 40px;
+    height: 23px;
+    font-size: 14px;
 }
 
 .delta-min-max-header-cell {
@@ -338,8 +338,8 @@
 
 .delta-min-max-cell {
     width: 70px;
-    height: 30px;
-    font-size: 18px;
+    height: 23px;
+    font-size: 14px;
 }
 
 /*Edit modal*/

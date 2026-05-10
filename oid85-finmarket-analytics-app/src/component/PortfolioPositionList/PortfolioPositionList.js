@@ -90,7 +90,7 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-dividend-coefficient-header-cell portfolio-position-border-style'>Див. коэф.</div>
                     <div className='portfolio-position-manual-coefficient-header-cell portfolio-position-border-style'>Ручн. коэф.</div>
                     <div className='portfolio-position-result-coefficient-header-cell portfolio-position-border-style'>Рез. коэф.</div>
-                    <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>Доля, %</div>
+                    <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>Доля (расч.), %</div>
                     <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во (расч.), шт</div>
                     <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во (реал.), шт</div>
                     <div className='portfolio-position-delta-size-header-cell portfolio-position-border-style'>Изм., шт</div>
