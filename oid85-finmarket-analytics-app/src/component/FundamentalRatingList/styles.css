@@ -91,7 +91,7 @@
 
 .fundamental-rating-ev-ebitda-header-cell {
     width: 50px;  
-    font-size: 14px; 
+    font-size: 12px; 
 }
 
 .fundamental-rating-ev-ebitda-cell {   
@@ -101,7 +101,7 @@
 
 .fundamental-rating-netdebt-ebitda-header-cell {
     width: 50px;  
-    font-size: 14px; 
+    font-size: 12px; 
 }
 
 .fundamental-rating-netdebt-ebitda-cell {   
@@ -116,6 +116,16 @@
 
 .fundamental-rating-dividend-yield-cell {   
     width: 60px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-dividend-aristocrat-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-dividend-aristocrat-cell {   
+    width: 30px; 
     font-size: 14px; 
 }
 

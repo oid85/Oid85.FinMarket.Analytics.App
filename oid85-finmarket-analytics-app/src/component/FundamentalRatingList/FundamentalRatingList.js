@@ -73,6 +73,7 @@ console.log(fundamentalRatingListData.result)
                 <div className='fundamental-rating-ev-ebitda-header-cell fundamental-rating-border-style'>EV / EBITDA</div>
                 <div className='fundamental-rating-netdebt-ebitda-header-cell fundamental-rating-border-style'>ND / EBITDA</div>
                 <div className='fundamental-rating-dividend-yield-header-cell fundamental-rating-border-style'>ДД, %</div>
+                <div className='fundamental-rating-dividend-aristocrat-header-cell fundamental-rating-border-style'>ДА</div>
                 <div className='fundamental-rating-netprofit-header-cell fundamental-rating-border-style'>NP</div>
                 <div className='fundamental-rating-fcf-header-cell fundamental-rating-border-style'>FCF</div>
                 <div className='fundamental-rating-eps-header-cell fundamental-rating-border-style'>EPS</div>   
@@ -137,7 +138,15 @@ console.log(fundamentalRatingListData.result)
                                 >{fundamentalRatingItem.inPortfolio 
                                     ? <div><b>{GetDividendYieldValue(fundamentalRatingItem.metric.dividendYield)}</b></div> 
                                     : <div>{GetDividendYieldValue(fundamentalRatingItem.metric.dividendYield)}</div>}
-                            </div>                            
+                            </div>   
+                            <div 
+                                title={fundamentalRatingItem.score.dividendAristocrat.description}
+                                className='fundamental-rating-dividend-aristocrat-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.dividendAristocrat.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>DA</b></div> 
+                                    : <div>DA</div>}
+                            </div>                                                     
                             <div 
                                 title={fundamentalRatingItem.score.netProfit.description}
                                 className='fundamental-rating-netprofit-cell fundamental-rating-border-style' 
