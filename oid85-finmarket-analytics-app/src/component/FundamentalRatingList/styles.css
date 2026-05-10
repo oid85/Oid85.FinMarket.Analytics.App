@@ -159,13 +159,23 @@
     font-size: 14px; 
 }
 
+.fundamental-rating-falling-from-max-header-cell {
+    width: 70px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-falling-from-max-cell {   
+    width: 70px; 
+    font-size: 14px; 
+}
+
 .fundamental-rating-forecast-header-cell {
-    width: 90px;  
+    width: 70px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-forecast-cell {   
-    width: 90px; 
+    width: 70px; 
     font-size: 14px; 
 }
 
