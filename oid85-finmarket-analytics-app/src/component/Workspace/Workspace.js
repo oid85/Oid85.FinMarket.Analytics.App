@@ -15,6 +15,7 @@ import { BondPortfolioScreen } from '../Screens/BondPortfolioScreen'
 import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
 import { ClosePriceDiagramSharesScreen } from '../Screens/ClosePriceDiagramSharesScreen'
 import { ClosePriceDiagramIndexesScreen } from '../Screens/ClosePriceDiagramIndexesScreen'
+import { FundamentalRatingScreen } from '../Screens/FundamentalRatingScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -32,6 +33,7 @@ export const Workspace = () => {
                     <Tab title='Таблица с фундаментальными параметрами компаний'>Фунд. табл.</Tab>                    
                     <Tab title='Аналитика по секторам'>Фунд. сект.</Tab>
                     <Tab title='Аналитика по компаниям'>Фунд. комп.</Tab>
+                    <Tab title='Рейтинг по фундаментальным данным'>Фунд. рейт.</Tab>
                     <Tab title='Макропараметры'>Макро</Tab>
                     <Tab title='Аналитика по облигациям'>Облиг.</Tab>
                     <Tab title='Портфель акций'>Портф. (А)</Tab>
@@ -60,7 +62,10 @@ export const Workspace = () => {
                 </TabPanel>       
                 <TabPanel>
                     <FundamentalParameterCompanyScreen />
-                </TabPanel>                                                                                          
+                </TabPanel>        
+                <TabPanel>
+                    <FundamentalRatingScreen />
+                </TabPanel>                                                                                                     
                 <TabPanel>
                     <MacroParameterScreen />
                 </TabPanel>    

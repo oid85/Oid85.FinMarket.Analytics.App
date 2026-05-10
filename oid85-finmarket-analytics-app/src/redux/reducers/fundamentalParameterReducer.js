@@ -1,5 +1,6 @@
 import {
     FETCH_FUNDAMENTAL_PARAMETER_LIST,    
+    FETCH_FUNDAMENTAL_RATING_LIST,    
     FETCH_CURRENT_FUNDAMENTAL_PARAMETER,
     FETCH_FUNDAMENTAL_BY_SECTOR,
     FETCH_FUNDAMENTAL_BY_COMPANY,
@@ -10,6 +11,7 @@ import {
 
 const initialState = {
     fundamentalParameterListData: {},
+    fundamentalRatingListData: {},
     fundamentalBySectorData: {},
     fundamentalByCompanyData: {},
     currentFundamentalParameter: {},    
@@ -22,6 +24,9 @@ export const fundamentalParameterReducer = (state = initialState, action) => {
 
         case FETCH_FUNDAMENTAL_PARAMETER_LIST:
             return {...state, fundamentalParameterListData: {...action.payload}}
+
+        case FETCH_FUNDAMENTAL_RATING_LIST:
+            return {...state, fundamentalRatingListData: {...action.payload}}
 
         case FETCH_CURRENT_FUNDAMENTAL_PARAMETER:
             return {...state, currentFundamentalParameter: {...action.payload}}

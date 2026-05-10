@@ -1,11 +1,13 @@
 import {call, put, select, takeEvery} from 'redux-saga/effects'
 import {
     fetchFundamentalParameterList, 
+    fetchFundamentalRatingList, 
     fetchFundamentalBySector, 
     fetchFundamentalByCompany
 } from '../actions/fundamentalParameterActions'
 import {
     SAGA_FUNDAMENTAL_PARAMETER_LIST,
+    SAGA_FUNDAMENTAL_RATING_LIST,
     SAGA_FUNDAMENTAL_BY_SECTOR,
     SAGA_FUNDAMENTAL_BY_COMPANY,
     SAGA_EDIT_FUNDAMENTAL_PARAMETER,
@@ -13,6 +15,7 @@ import {
 } from '../types/fundamentalParameterTypes'
 import {
     getFundamentalParameterListFromApi,
+    getFundamentalRatingListFromApi,
     getFundamentalBySectorFromApi,
     getFundamentalByCompanyFromApi,
     editFundamentalParameterFromApi,
@@ -25,6 +28,7 @@ const currentInstrument = (state) => state.instrument.currentInstrument
 
 export function* sagaWatcherFundamentalParameter() {
     yield takeEvery(SAGA_FUNDAMENTAL_PARAMETER_LIST, sagaWorkerFundamentalParameterList)
+    yield takeEvery(SAGA_FUNDAMENTAL_RATING_LIST, sagaWorkerFundamentalRatingList)
     yield takeEvery(SAGA_FUNDAMENTAL_BY_SECTOR, sagaWorkerFundamentalBySector)
     yield takeEvery(SAGA_FUNDAMENTAL_BY_COMPANY, sagaWorkerFundamentalByCompany)
     yield takeEvery(SAGA_EDIT_FUNDAMENTAL_PARAMETER, sagaWorkerEditFundamentalParameter)
@@ -34,6 +38,11 @@ export function* sagaWatcherFundamentalParameter() {
 function* sagaWorkerFundamentalParameterList() {
     let result = yield call(getFundamentalParameterListFromApi)    
     yield put(fetchFundamentalParameterList(result))
+}
+
+function* sagaWorkerFundamentalRatingList() {
+    let result = yield call(getFundamentalRatingListFromApi)    
+    yield put(fetchFundamentalRatingList(result))
 }
 
 function* sagaWorkerFundamentalBySector() {

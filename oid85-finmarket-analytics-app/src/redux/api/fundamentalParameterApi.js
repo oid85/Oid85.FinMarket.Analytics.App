@@ -6,6 +6,10 @@ export const getFundamentalParameterListFromApi = async () => {
     return sendPostRequest(`${controller}/list`, {})
 }
 
+export const getFundamentalRatingListFromApi = async () => {
+    return sendPostRequest(`${controller}/rating/list`, {})
+}
+
 export const getFundamentalBySectorFromApi = async (sector) => {
     return sendPostRequest(`${controller}/sector`, {sector})
 }

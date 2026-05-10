@@ -1,10 +1,12 @@
 import {
     SAGA_FUNDAMENTAL_PARAMETER_LIST,
+    SAGA_FUNDAMENTAL_RATING_LIST,
     SAGA_EDIT_FUNDAMENTAL_PARAMETER,
     SAGA_DELETE_FUNDAMENTAL_PARAMETER,
     SAGA_FUNDAMENTAL_BY_SECTOR,
     SAGA_FUNDAMENTAL_BY_COMPANY,
     FETCH_FUNDAMENTAL_PARAMETER_LIST,
+    FETCH_FUNDAMENTAL_RATING_LIST,
     FETCH_CURRENT_FUNDAMENTAL_PARAMETER,
     FETCH_FUNDAMENTAL_BY_SECTOR,
     FETCH_FUNDAMENTAL_BY_COMPANY,
@@ -32,6 +34,12 @@ export const sagaFundamentalParameterList = () => {
     }
 }
 
+export const sagaFundamentalRatingList = () => {
+    return {
+        type: SAGA_FUNDAMENTAL_RATING_LIST
+    }
+}
+
 export const sagaEditFundamentalParameter = () => {
     return {
         type: SAGA_EDIT_FUNDAMENTAL_PARAMETER
@@ -47,6 +55,13 @@ export const sagaDeleteFundamentalParameter = () => {
 export const fetchFundamentalParameterList = (data) => {
     return {
         type: FETCH_FUNDAMENTAL_PARAMETER_LIST,
+        payload: data
+    }
+}
+
+export const fetchFundamentalRatingList = (data) => {
+    return {
+        type: FETCH_FUNDAMENTAL_RATING_LIST,
         payload: data
     }
 }

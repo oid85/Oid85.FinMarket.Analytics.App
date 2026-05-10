@@ -1,0 +1,164 @@
+.horizontal-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;    
+}
+
+.vertical-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+.fundamental-rating-border-style {
+    border: 1px solid #000;     
+    margin: .5px;
+}
+
+.fundamental-rating-container {     
+    padding: 1px; 
+}
+
+.fundamental-rating-number-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-number-cell {    
+    width: 30px;
+    font-size: 14px; 
+}
+
+.fundamental-rating-ticker-header-cell {
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-ticker-cell {  
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-name-header-cell {
+    width: 210px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-name-cell {   
+    width: 210px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-sector-header-cell {
+    width: 120px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-sector-cell { 
+    width: 120px;   
+    font-size: 14px; 
+}
+
+.fundamental-rating-score-header-cell {
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-score-cell {   
+    width: 50px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-pe-header-cell {
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-pe-cell {   
+    width: 50px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-pbv-header-cell {
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-pbv-cell {   
+    width: 50px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-ev-ebitda-header-cell {
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-ev-ebitda-cell {   
+    width: 50px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-netdebt-ebitda-header-cell {
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-netdebt-ebitda-cell {   
+    width: 50px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-dividend-yield-header-cell {
+    width: 60px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-dividend-yield-cell {   
+    width: 60px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-netprofit-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-netprofit-cell {   
+    width: 30px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-fcf-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-fcf-cell {   
+    width: 30px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-eps-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-eps-cell {   
+    width: 30px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-forecast-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-forecast-cell {   
+    width: 90px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-separator-cell { 
+    width: 10px;  
+}
