@@ -5,7 +5,6 @@ import {
     fetchCurrentFundamentalParameter, 
     showEditFundamentalParameterModal
 } from '../../redux/actions/fundamentalParameterActions'
-import { fetchCurrentInstrument, sagaInstrumentPortfolio, sagaInstrumentSelect } from '../../redux/actions/instrumentActions'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
@@ -79,28 +78,12 @@ export const FundamentalParameterList = () => {
                             </div>                            
                             <div className='horizontal-container'>
                                 <div title={fundamentalParameter.concept} className='fundamental-parameter-border-style emitent-cell'>
-                                    <div className='number-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.number}</b></div> : <div>{fundamentalParameter.number}</div>}</div>
-                                    <div className='ticker-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.ticker}</b></div> : <div>{fundamentalParameter.ticker}</div>}</div>
+                                    <div className='horizontal-container'>
+                                        <div className='number-cell'>{fundamentalParameter.inPortfolio ? <div><b>{`${fundamentalParameter.number}.`}</b></div> : <div>{`${fundamentalParameter.number}.`}</div>}</div>
+                                        <div className='ticker-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.ticker}</b></div> : <div>{fundamentalParameter.ticker}</div>}</div>
+                                    </div>
                                     <div className='name-cell'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.name}</b></div> : <div>{fundamentalParameter.name}</div>}</div>
                                     <div className='name-sector'>{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.sector}</b></div> : <div>{fundamentalParameter.sector}</div>}</div>
-                                    <div>
-                                        <div>
-                                            <button className='btn btn-outline-dark instrument-button'
-                                                onClick={() => {
-                                                    dispatch(fetchCurrentInstrument({ticker: fundamentalParameter.ticker}))
-                                                    dispatch(sagaInstrumentSelect())                                                
-                                                    dispatch(sagaFundamentalParameterList())
-                                                }}><div className='instrument-button-text'>{fundamentalParameter.isSelected ? <div><b>Наблюдать</b></div> : <div><del>Наблюдать</del></div>}</div></button>
-                                        </div>
-                                        <div>
-                                            <button className='btn btn-outline-dark instrument-button'
-                                                onClick={() => {
-                                                    dispatch(fetchCurrentInstrument({ticker: fundamentalParameter.ticker}))
-                                                    dispatch(sagaInstrumentPortfolio()) 
-                                                    dispatch(sagaFundamentalParameterList())
-                                                }}><div className='instrument-button-text'>{fundamentalParameter.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>
-                                        </div>                                  
-                                    </div>
                                     <div className='moex-cell-text'>{fundamentalParameter.inPortfolio ? <div><b>Доля в IMOEX</b></div> : <div>Доля в IMOEX</div>}</div>
                                     <div 
                                         className='moex-cell-value fundamental-parameter-border-style'
@@ -109,6 +92,14 @@ export const FundamentalParameterList = () => {
                                             dispatch(showEditFundamentalParameterModal())
                                         }}                                        
                                         >{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.moex}</b></div> : <div>{fundamentalParameter.moex}</div>}</div>
+                                    <div className='mfso-cell-text'>{fundamentalParameter.inPortfolio ? <div><b>Отчет</b></div> : <div>Отчет</div>}</div>
+                                    <div 
+                                        className='mfso-cell-value fundamental-parameter-border-style'
+                                        onDoubleClick={() => {
+                                            dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Report', period: '', value: fundamentalParameter.report }))
+                                            dispatch(showEditFundamentalParameterModal())
+                                        }}                                        
+                                        >{fundamentalParameter.inPortfolio ? <div><b>{fundamentalParameter.report}</b></div> : <div>{fundamentalParameter.report}</div>}</div>                                    
                                 </div>                             
                                 <div>
                                     <div className='horizontal-container'>

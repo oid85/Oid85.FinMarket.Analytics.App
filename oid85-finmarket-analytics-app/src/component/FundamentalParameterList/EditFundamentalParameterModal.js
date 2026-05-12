@@ -39,7 +39,7 @@ export const EditFundamentalParameterModal = () => {
                             className='form-control edit-modal-input' 
                             type="string" 
                             defaultValue={currentFundamentalParameter.value} 
-                            placeholder={`${currentFundamentalParameter.period} г.`} 
+                            placeholder={`${currentFundamentalParameter.period}`} 
                             onChange={ (event) => { 
                                 dispatch(fetchCurrentFundamentalParameter({...currentFundamentalParameter, value: event.target.value }))
                                 }} /> 

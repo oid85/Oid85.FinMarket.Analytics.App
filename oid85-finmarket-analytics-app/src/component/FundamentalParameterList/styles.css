@@ -39,13 +39,24 @@
 
 .moex-cell-text {
     width: 100px; 
-    font-size: 12px; 
+    font-size: 10px; 
 }
 
 .moex-cell-value {
-    width: 40px;
-    height: 23px; 
-    font-size: 14px; 
+    width: 50px;
+    height: 20px; 
+    font-size: 12px; 
+}
+
+.mfso-cell-text {
+    width: 100px; 
+    font-size: 10px; 
+}
+
+.mfso-cell-value {
+    width: 50px;
+    height: 20px; 
+    font-size: 12px; 
 }
 
 .ticker-header-cell {
