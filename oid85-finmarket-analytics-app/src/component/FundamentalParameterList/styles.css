@@ -232,6 +232,28 @@
     font-size: 14px;
 }
 
+.assets-header-cell {
+    width: 70px;
+    font-size: 12px;  
+}
+
+.assets-cell {
+    width: 70px;
+    height: 23px;
+    font-size: 14px;
+}
+
+.liabilities-header-cell {
+    width: 70px;
+    font-size: 12px;  
+}
+
+.liabilities-cell {
+    width: 70px;
+    height: 23px;
+    font-size: 14px;
+}
+
 .ebitda-header-cell {
     width: 70px;
     font-size: 12px;  

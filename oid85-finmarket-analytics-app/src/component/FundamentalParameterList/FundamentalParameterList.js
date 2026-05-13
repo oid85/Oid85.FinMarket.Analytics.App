@@ -66,6 +66,8 @@ export const FundamentalParameterList = () => {
                                 <div className='ev-header-cell fundamental-parameter-border-style'>EV, млрд. руб.</div>
                                 <div className='ebitda-header-cell fundamental-parameter-border-style'>EBITDA, млрд. руб.</div>
                                 <div title='Собственный капитал, млрд. руб.' className='own-capital-header-cell fundamental-parameter-border-style'>Соб. кап., млрд. руб.</div>
+                                <div className='assets-header-cell fundamental-parameter-border-style'>Активы, млрд. руб.</div>
+                                <div className='liabilities-header-cell fundamental-parameter-border-style'>Обяз-ва, млрд. руб.</div>
                                 <div className='netdebt-header-cell fundamental-parameter-border-style'>Чистый долг, млрд. руб.</div>
                                 <div className='revenue-header-cell fundamental-parameter-border-style'>Выручка, млрд. руб.</div>
                                 <div title='Чистая прибыль (чист. опер. доход), млрд. руб.' className='netprofit-header-cell fundamental-parameter-border-style'>ЧП, млрд. руб.</div>
@@ -288,7 +290,33 @@ export const FundamentalParameterList = () => {
                                                 >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
                                         ))
                                     }
-                                </div>                                
+                                </div>   
+                                <div>
+                                    {
+                                        fundamentalParameter.assets.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style assets-cell' 
+                                                style={{backgroundColor: '#fff'}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Assets', period: fundamentalParameter.periods[index], value: item.value }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))                                        
+                                    }
+                                </div>
+                                <div>
+                                    {
+                                        fundamentalParameter.liabilities.map((item, index) => (
+                                            <div className='fundamental-parameter-border-style liabilities-cell' 
+                                                style={{backgroundColor: '#fff'}}
+                                                onDoubleClick={() => {
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Liabilities', period: fundamentalParameter.periods[index], value: item.value }))
+                                                    dispatch(showEditFundamentalParameterModal())
+                                                }}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
+                                        ))                                        
+                                    }
+                                </div>                                                                                             
                                 <div>
                                     {
                                         fundamentalParameter.netDebt.map((item, index) => (
