@@ -297,7 +297,7 @@ export const FundamentalParameterList = () => {
                                             <div className='fundamental-parameter-border-style assets-cell' 
                                                 style={{backgroundColor: '#fff'}}
                                                 onDoubleClick={() => {
-                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Assets', period: fundamentalParameter.periods[index], value: item.value }))
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Assets', period: fundamentalParameter.periods[index], value: item }))
                                                     dispatch(showEditFundamentalParameterModal())
                                                 }}
                                                 >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
@@ -310,7 +310,7 @@ export const FundamentalParameterList = () => {
                                             <div className='fundamental-parameter-border-style liabilities-cell' 
                                                 style={{backgroundColor: '#fff'}}
                                                 onDoubleClick={() => {
-                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Liabilities', period: fundamentalParameter.periods[index], value: item.value }))
+                                                    dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalParameter.ticker, type: 'Liabilities', period: fundamentalParameter.periods[index], value: item }))
                                                     dispatch(showEditFundamentalParameterModal())
                                                 }}
                                                 >{fundamentalParameter.inPortfolio ? <div><b>{item}</b></div> : <div>{item}</div>}</div>
