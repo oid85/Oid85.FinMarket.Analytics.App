@@ -42,6 +42,12 @@
     font-size: 18px; 
 }
 
+.portfolio-position-sector-header-cell {
+    width: 200px;  
+    padding: 1px;
+    font-size: 18px; 
+}
+
 .portfolio-position-trend-coefficient-header-cell {
     width: 70px;
     padding: 1px;
@@ -122,6 +128,12 @@
 
 .portfolio-position-name-cell {
     width: 270px;
+    padding: 1px;
+    font-size: 18px; 
+}
+
+.portfolio-position-sector-cell {
+    width: 200px;
     padding: 1px;
     font-size: 18px; 
 }
