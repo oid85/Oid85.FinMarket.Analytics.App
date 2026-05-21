@@ -8,6 +8,7 @@ import { macroParameterReducer } from './macroParameterReducer'
 import { weekTrendDeltaReducer } from './weekTrendDeltaReducer'
 import { portfolioReducer } from './portfolioReducer'
 import { bondPortfolioReducer } from './bondPortfolioReducer'
+import { etfPortfolioReducer } from './etfPortfolioReducer'
 import { bondAnalyseReducer } from './bondAnalyseReducer'
 import { closePriceDiagramReducer } from './closePriceDiagramReducer'
 
@@ -21,6 +22,7 @@ export const rootReducer = combineReducers({
     weekTrendDelta: weekTrendDeltaReducer,    
     portfolio: portfolioReducer,
     bondPortfolio: bondPortfolioReducer,
+    etfPortfolio: etfPortfolioReducer,
     bondAnalyse: bondAnalyseReducer,
     closePriceDiagram: closePriceDiagramReducer
 })

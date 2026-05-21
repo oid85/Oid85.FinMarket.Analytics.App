@@ -27,6 +27,8 @@ export const TrendDynamic = () => {
                     <TrendDynamicHeaders dates = {trendDynamicData.result.dates} />
                     <h6>Акции</h6>
                     <TrendDynamicData data = {trendDynamicData.result.shares} />
+                    <h6>ETF</h6>
+                    <TrendDynamicData data = {trendDynamicData.result.etfs} />                    
                 </div> 
             </div>         
         }
