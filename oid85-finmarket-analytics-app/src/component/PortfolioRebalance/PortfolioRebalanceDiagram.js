@@ -9,7 +9,7 @@ export const PortfolioRebalanceDiagram = ({series}) => {
             <LineChart                                    
                 data={series}
                 height={850}                                                
-                width={1700}
+                width={1900}
             >
                 <CartesianGrid />
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
