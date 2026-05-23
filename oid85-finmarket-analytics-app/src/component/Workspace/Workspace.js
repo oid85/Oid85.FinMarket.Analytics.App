@@ -17,6 +17,7 @@ import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
 import { ClosePriceDiagramSharesScreen } from '../Screens/ClosePriceDiagramSharesScreen'
 import { ClosePriceDiagramIndexesScreen } from '../Screens/ClosePriceDiagramIndexesScreen'
 import { FundamentalRatingScreen } from '../Screens/FundamentalRatingScreen'
+import { PortfolioRebalanceScreen } from '../Screens/PortfolioRebalanceScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -40,6 +41,7 @@ export const Workspace = () => {
                     <Tab title='Портфель акций'>Портф. (акц.)</Tab>
                     <Tab title='Портфель фондов'>Портф. (фонд.)</Tab>
                     <Tab title='Портфель облигаций'>Портф. (облиг.)</Tab>
+                    <Tab title='Ребалансировка портфеля акций'>Ребал. (акц.)</Tab>
                 </TabList>
                 <TabPanel>
                     <TrendDynamicScreen />                    
@@ -82,7 +84,10 @@ export const Workspace = () => {
                 </TabPanel>                                
                 <TabPanel>
                     <BondPortfolioScreen />
-                </TabPanel>                                                                            
+                </TabPanel>
+                <TabPanel>
+                    <PortfolioRebalanceScreen />
+                </TabPanel>                                                                                             
             </Tabs>
         </React.Fragment>
     )    
