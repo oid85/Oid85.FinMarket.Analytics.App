@@ -1,12 +1,12 @@
 import React from 'react'
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Area, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
 export const PortfolioRebalanceDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div className='portfolio-rebalance-diagram'>
-            <LineChart                                    
+            <ComposedChart                                    
                 data={series}
                 height={850}                                                
                 width={1900}
@@ -22,12 +22,13 @@ export const PortfolioRebalanceDiagram = ({series}) => {
                         name={s.name} 
                         key={s.name} 
                         stroke={s.color}
-                        strokeWidth={2}
+                        fill={s.colorFill}
+                        strokeWidth={3}
                         dot={false}                        
                         />
                 ))}
                 <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>
-            </LineChart>
+            </ComposedChart>
             </div>
         </React.Fragment>                
     )

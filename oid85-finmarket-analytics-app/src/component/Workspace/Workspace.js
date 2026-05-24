@@ -41,7 +41,7 @@ export const Workspace = () => {
                     <Tab title='Портфель акций'>Портф. (акц.)</Tab>
                     <Tab title='Портфель фондов'>Портф. (фонд.)</Tab>
                     <Tab title='Портфель облигаций'>Портф. (облиг.)</Tab>
-                    <Tab title='Ребалансировка портфеля акций'>Ребал. (акц.)</Tab>
+                    <Tab title='Моделирование ребалансировок портфелей'>Ребалансировки</Tab>
                 </TabList>
                 <TabPanel>
                     <TrendDynamicScreen />                    
