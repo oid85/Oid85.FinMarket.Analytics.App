@@ -9,14 +9,14 @@ export const PortfolioRebalanceDiagram = ({series}) => {
             <ComposedChart                                    
                 data={series}
                 height={850}                                                
-                width={1900}
+                width={1200}
             >
                 <CartesianGrid />
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis domain={['auto', 'auto']}/>
                 <Legend />
                 {series.map(s => (
-                    <Line 
+                    <Area 
                         dataKey="value" 
                         data={s.data} 
                         name={s.name} 

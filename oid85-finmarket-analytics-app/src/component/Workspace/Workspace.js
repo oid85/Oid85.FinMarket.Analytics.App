@@ -12,7 +12,6 @@ import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
 import { BondPortfolioScreen } from '../Screens/BondPortfolioScreen'
-import { EtfPortfolioScreen } from '../Screens/EtfPortfolioScreen'
 import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
 import { ClosePriceDiagramSharesScreen } from '../Screens/ClosePriceDiagramSharesScreen'
 import { ClosePriceDiagramIndexesScreen } from '../Screens/ClosePriceDiagramIndexesScreen'
@@ -39,7 +38,6 @@ export const Workspace = () => {
                     <Tab title='Макропараметры'>Макро.</Tab>
                     <Tab title='Аналитика по облигациям'>Облиг.</Tab>
                     <Tab title='Портфель акций'>Портф. (акц.)</Tab>
-                    <Tab title='Портфель фондов'>Портф. (фонд.)</Tab>
                     <Tab title='Портфель облигаций'>Портф. (облиг.)</Tab>
                     <Tab title='Моделирование ребалансировок портфелей'>Ребалансировки</Tab>
                 </TabList>
@@ -78,10 +76,7 @@ export const Workspace = () => {
                 </TabPanel> 
                 <TabPanel>
                     <PortfolioScreen />
-                </TabPanel> 
-                <TabPanel>
-                    <EtfPortfolioScreen />
-                </TabPanel>                                
+                </TabPanel>                            
                 <TabPanel>
                     <BondPortfolioScreen />
                 </TabPanel>

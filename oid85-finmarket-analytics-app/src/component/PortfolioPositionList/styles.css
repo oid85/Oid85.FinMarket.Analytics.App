@@ -66,6 +66,12 @@
     font-size: 18px;  
 }
 
+.portfolio-position-marketcap-coefficient-header-cell {
+    width: 70px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
 .portfolio-position-result-coefficient-header-cell {
     width: 70px;
     padding: 1px;
@@ -151,6 +157,12 @@
 }
 
 .portfolio-position-manual-coefficient-cell {
+    width: 70px;
+    padding: 1px;
+    font-size: 18px;  
+}
+
+.portfolio-position-marketcap-coefficient-cell {
     width: 70px;
     padding: 1px;
     font-size: 18px;  

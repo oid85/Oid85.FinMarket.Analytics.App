@@ -81,6 +81,7 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-sector-header-cell portfolio-position-border-style'>Сектор (доля расч., %)</div>
                     <div className='portfolio-position-trend-coefficient-header-cell portfolio-position-border-style'>Тренд. коэф.</div>
                     <div className='portfolio-position-dividend-coefficient-header-cell portfolio-position-border-style'>Див. коэф.</div>
+                    <div className='portfolio-position-marketcap-coefficient-header-cell portfolio-position-border-style'>Кап. коэф.</div>
                     <div className='portfolio-position-manual-coefficient-header-cell portfolio-position-border-style'>Ручн. коэф.</div>
                     <div className='portfolio-position-result-coefficient-header-cell portfolio-position-border-style'>Рез. коэф.</div>
                     <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>Доля (расч.), %</div>
@@ -99,6 +100,7 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-sector-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.sector}</div>  
                             <div className='portfolio-position-trend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.trendCoefficient}</div>
                             <div className='portfolio-position-dividend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.dividendCoefficient}</div>
+                            <div className='portfolio-position-marketcap-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.marketCapCoefficient}</div>
                             <div 
                                 className='portfolio-position-manual-coefficient-cell portfolio-position-border-style' 
                                 style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}

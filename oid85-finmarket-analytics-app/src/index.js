@@ -15,7 +15,6 @@ import { sagaWatcherMacroParameter } from './redux/sagas/sagaMacroParameter'
 import { sagaWatcherWeekTrendDelta } from './redux/sagas/sagaWeekTrendDelta'
 import { sagaWatcherPortfolio } from './redux/sagas/sagaPortfolio'
 import { sagaWatcherBondPortfolio } from './redux/sagas/sagaBondPortfolio'
-import { sagaWatcherEtfPortfolio } from './redux/sagas/sagaEtfPortfolio'
 import { sagaWatcherBondAnalyse } from './redux/sagas/sagaBondAnalyse'
 import { sagaWatcherClosePriceDiagram } from './redux/sagas/sagaClosePriceDiagram'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -35,7 +34,6 @@ saga.run(sagaWatcherMacroParameter)
 saga.run(sagaWatcherWeekTrendDelta)
 saga.run(sagaWatcherPortfolio)
 saga.run(sagaWatcherBondPortfolio)
-saga.run(sagaWatcherEtfPortfolio)
 saga.run(sagaWatcherBondAnalyse)
 saga.run(sagaWatcherClosePriceDiagram)
 
