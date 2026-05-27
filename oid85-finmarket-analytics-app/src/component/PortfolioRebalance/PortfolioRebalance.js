@@ -25,6 +25,11 @@ export const PortfolioRebalance = () => {
                 <div className='portfolio-rebalance-container border-style'>
                     <PortfolioRebalanceDiagram series={portfolioRebalanceData.result.series}/>
                 </div> 
+                <div className='portfolio-rebalance-container'>
+                    <div>
+                        {`Доходность годовых средн.: ${portfolioRebalanceData.result.yield} %`}                        
+                    </div> 
+                </div>                
             </div>         
         }
         </React.Fragment>                
