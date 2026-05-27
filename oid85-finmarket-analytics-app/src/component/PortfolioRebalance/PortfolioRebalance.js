@@ -26,8 +26,9 @@ export const PortfolioRebalance = () => {
                     <PortfolioRebalanceDiagram series={portfolioRebalanceData.result.series}/>
                 </div> 
                 <div className='portfolio-rebalance-container'>
-                    <div>
-                        {`Доходность годовых средн.: ${portfolioRebalanceData.result.yield} %`}                        
+                    <div className='horizontal-container'>
+                        <div className='portfolio-rebalance-container'>Доходность годовых средн.:</div> 
+                        <div className='portfolio-rebalance-container'>{`${portfolioRebalanceData.result.yield} %`}</div> 
                     </div> 
                 </div>                
             </div>         
