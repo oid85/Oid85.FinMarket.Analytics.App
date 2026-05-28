@@ -1,10 +1,10 @@
 import {
     SAGA_PORTFOLIO_POSITION_LIST,
-    SAGA_PORTFOLIO_REBALANCE,
+    SAGA_PORTFOLIO_BACKTEST,
     SAGA_EDIT_PORTFOLIO_POSITION,
     SAGA_EDIT_PORTFOLIO_TOTAL_SUM,
     FETCH_PORTFOLIO_POSITION_LIST,
-    FETCH_PORTFOLIO_REBALANCE,
+    FETCH_PORTFOLIO_BACKTEST,
     FETCH_CURRENT_PORTFOLIO_POSITION,
     FETCH_PORTFOLIO_TOTAL_SUM,
     SHOW_EDIT_PORTFOLIO_POSITION_MODAL,
@@ -20,9 +20,9 @@ export const sagaPortfolioPositionList = () => {
     }
 }
 
-export const sagaPortfolioRebalance = () => {
+export const sagaPortfolioBacktest = () => {
     return {
-        type: SAGA_PORTFOLIO_REBALANCE
+        type: SAGA_PORTFOLIO_BACKTEST
     }
 }
 
@@ -45,9 +45,9 @@ export const fetchPortfolioPositionList = (data) => {
     }
 }
 
-export const fetchPortfolioRebalance = (data) => {
+export const fetchPortfolioBacktest = (data) => {
     return {
-        type: FETCH_PORTFOLIO_REBALANCE,
+        type: FETCH_PORTFOLIO_BACKTEST,
         payload: data
     }
 }

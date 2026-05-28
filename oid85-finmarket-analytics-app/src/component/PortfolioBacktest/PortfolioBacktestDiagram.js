@@ -2,10 +2,10 @@ import React from 'react'
 import { Area, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
-export const PortfolioRebalanceDiagram = ({series}) => {
+export const PortfolioBacktestDiagram = ({series}) => {
     return (
         <React.Fragment>          
-            <div className='portfolio-rebalance-diagram'>
+            <div className='portfolio-backtest-diagram'>
             <ComposedChart                                    
                 data={series}
                 height={850}                                                

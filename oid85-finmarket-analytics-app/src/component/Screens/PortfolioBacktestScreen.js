@@ -2,10 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
-import { PortfolioRebalance } from '../PortfolioRebalance/PortfolioRebalance'
+import { PortfolioBacktest } from '../PortfolioBacktest/PortfolioBacktest'
 import './styles.css'
 
-export const PortfolioRebalanceScreen = () => {
+export const PortfolioBacktestScreen = () => {
     const alert = useSelector(state => state.app.alert)
 
     return (
@@ -13,7 +13,7 @@ export const PortfolioRebalanceScreen = () => {
             {alert && <Alert text={alert} />}
             <div>
                 <div className='horizontal-container'>
-                    <PortfolioRebalance />
+                    <PortfolioBacktest />
                 </div>
             </div>            
         </React.Fragment>

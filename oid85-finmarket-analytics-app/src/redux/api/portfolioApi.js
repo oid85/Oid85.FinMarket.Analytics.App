@@ -6,7 +6,7 @@ export const getPortfolioPositionListFromApi = async () => {
     return sendPostRequest(`${controller}/position/list`, {})
 }
 
-export const getPortfolioRebalanceFromApi = async () => {
+export const getPortfolioBacktestFromApi = async () => {
     return sendPostRequest(`${controller}/backtest`, {})
 }
 

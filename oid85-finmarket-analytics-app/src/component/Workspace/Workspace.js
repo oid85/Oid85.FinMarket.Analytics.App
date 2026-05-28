@@ -16,7 +16,7 @@ import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
 import { ClosePriceDiagramSharesScreen } from '../Screens/ClosePriceDiagramSharesScreen'
 import { ClosePriceDiagramIndexesScreen } from '../Screens/ClosePriceDiagramIndexesScreen'
 import { FundamentalRatingScreen } from '../Screens/FundamentalRatingScreen'
-import { PortfolioRebalanceScreen } from '../Screens/PortfolioRebalanceScreen'
+import { PortfolioBacktestScreen } from '../Screens/PortfolioBacktestScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -81,7 +81,7 @@ export const Workspace = () => {
                     <BondPortfolioScreen />
                 </TabPanel>
                 <TabPanel>
-                    <PortfolioRebalanceScreen />
+                    <PortfolioBacktestScreen />
                 </TabPanel>                                                                                             
             </Tabs>
         </React.Fragment>
