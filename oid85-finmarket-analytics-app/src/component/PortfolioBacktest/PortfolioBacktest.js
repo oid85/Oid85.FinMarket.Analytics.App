@@ -5,6 +5,10 @@ import Loader from '../Loader/Loader'
 import { PortfolioBacktestDiagram } from './PortfolioBacktestDiagram'
 import './styles.css'
 
+const formatNumber = (num) => {
+    return new Intl.NumberFormat('ru-RU').format(num);
+  };
+
 export const PortfolioBacktest = () => {
     
     const dispatch = useDispatch()
@@ -33,7 +37,15 @@ export const PortfolioBacktest = () => {
                     <div className='horizontal-container'>
                         <div className='portfolio-backtest-container'>Макс. просадка:</div> 
                         <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.maxDrawdown} %`}</div> 
-                    </div>                     
+                    </div>     
+                    <div className='horizontal-container'>
+                        <div className='portfolio-backtest-container'>Получено дивидендов:</div> 
+                        <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.dividendSum)} руб.`}</div> 
+                    </div> 
+                    <div className='horizontal-container'>
+                        <div className='portfolio-backtest-container'>Внесено:</div> 
+                        <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.moneySum)} руб.`}</div> 
+                    </div>                                                        
                 </div>                
             </div>         
         }
