@@ -13,7 +13,3 @@ export const getPortfolioBacktestFromApi = async () => {
 export const editPortfolioPositionFromApi = async (ticker, manualCoefficient, lifeSize) => {
     return sendPostRequest(`${controller}/position/edit`, { ticker, manualCoefficient, lifeSize })
 }
-
-export const editPortfolioTotalSumFromApi = async (totalSum) => {
-    return sendPostRequest(`${controller}/total-sum/edit`, { totalSum })
-}
