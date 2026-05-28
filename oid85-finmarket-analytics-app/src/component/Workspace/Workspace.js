@@ -11,7 +11,6 @@ import { FundamentalParameterCompanyScreen } from '../Screens/FundamentalParamet
 import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
-import { BondPortfolioScreen } from '../Screens/BondPortfolioScreen'
 import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
 import { ClosePriceDiagramSharesScreen } from '../Screens/ClosePriceDiagramSharesScreen'
 import { ClosePriceDiagramIndexesScreen } from '../Screens/ClosePriceDiagramIndexesScreen'
@@ -38,7 +37,6 @@ export const Workspace = () => {
                     <Tab title='Макропараметры'>Макро.</Tab>
                     <Tab title='Аналитика по облигациям'>Облиг.</Tab>
                     <Tab title='Портфель акций'>Портф. (акц.)</Tab>
-                    <Tab title='Портфель облигаций'>Портф. (облиг.)</Tab>
                     <Tab title='Бектест портфеля'>Бектест</Tab>
                 </TabList>
                 <TabPanel>
@@ -77,9 +75,6 @@ export const Workspace = () => {
                 <TabPanel>
                     <PortfolioScreen />
                 </TabPanel>                            
-                <TabPanel>
-                    <BondPortfolioScreen />
-                </TabPanel>
                 <TabPanel>
                     <PortfolioBacktestScreen />
                 </TabPanel>                                                                                             
