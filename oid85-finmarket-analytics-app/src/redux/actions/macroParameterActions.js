@@ -1,7 +1,9 @@
 import {
     SAGA_MACRO_PARAMETER_LIST,
+    SAGA_MACRO_PARAMETER_DIAGRAM,
     SAGA_EDIT_MACRO_PARAMETER,
     FETCH_MACRO_PARAMETER_LIST,
+    FETCH_MACRO_PARAMETER_DIAGRAM,
     FETCH_CURRENT_MACRO_PARAMETER,
     SHOW_EDIT_MACRO_PARAMETER_MODAL,
     HIDE_EDIT_MACRO_PARAMETER_MODAL
@@ -14,6 +16,12 @@ export const sagaMacroParameterList = () => {
     }
 }
 
+export const sagaMacroParameterDiagram = () => {
+    return {
+        type: SAGA_MACRO_PARAMETER_DIAGRAM
+    }
+}
+
 export const sagaEditMacroParameter = () => {
     return {
         type: SAGA_EDIT_MACRO_PARAMETER
@@ -23,6 +31,13 @@ export const sagaEditMacroParameter = () => {
 export const fetchMacroParameterList = (data) => {
     return {
         type: FETCH_MACRO_PARAMETER_LIST,
+        payload: data
+    }
+}
+
+export const fetchMacroParameterDiagram = (data) => {
+    return {
+        type: FETCH_MACRO_PARAMETER_DIAGRAM,
         payload: data
     }
 }

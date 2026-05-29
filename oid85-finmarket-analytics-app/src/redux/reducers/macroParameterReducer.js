@@ -1,5 +1,6 @@
 import {
     FETCH_MACRO_PARAMETER_LIST,
+    FETCH_MACRO_PARAMETER_DIAGRAM,
     FETCH_CURRENT_MACRO_PARAMETER,
     SHOW_EDIT_MACRO_PARAMETER_MODAL,
     HIDE_EDIT_MACRO_PARAMETER_MODAL
@@ -7,6 +8,7 @@ import {
 
 const initialState = {
     macroParameterListData: {},
+    macroParameterDiagramData: {},
     currentMacroParameter: {},
     editMacroParameterModalIsOpened: false
 }
@@ -16,6 +18,9 @@ export const macroParameterReducer = (state = initialState, action) => {
 
         case FETCH_MACRO_PARAMETER_LIST:
             return {...state, macroParameterListData: {...action.payload}}
+
+        case FETCH_MACRO_PARAMETER_DIAGRAM:
+            return {...state, macroParameterDiagramData: {...action.payload}}
 
         case FETCH_CURRENT_MACRO_PARAMETER:
             return {...state, currentMacroParameter: {...action.payload}}

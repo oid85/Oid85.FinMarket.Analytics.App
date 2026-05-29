@@ -9,6 +9,7 @@ import { FundamentalParameterScreen } from '../Screens/FundamentalParameterScree
 import { FundamentalParameterSectorScreen } from '../Screens/FundamentalParameterSectorScreen'
 import { FundamentalParameterCompanyScreen } from '../Screens/FundamentalParameterCompanyScreen'
 import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
+import { MacroDiagramScreen } from '../Screens/MacroDiagramScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
 import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
@@ -34,7 +35,8 @@ export const Workspace = () => {
                     <Tab title='Аналитика по секторам'>Фунд. сект.</Tab>
                     <Tab title='Аналитика по компаниям'>Фунд. комп.</Tab>
                     <Tab title='Рейтинг по фундаментальным данным'>Фунд. рейт.</Tab>
-                    <Tab title='Макропараметры'>Макро.</Tab>
+                    <Tab title='Таблица по макропараметрам'>Макро. табл.</Tab>
+                    <Tab title='Диаграммы по макропараметрам'>Макро. диагр.</Tab>
                     <Tab title='Аналитика по облигациям'>Облигации</Tab>
                     <Tab title='Портфель акций'>Портфель</Tab>
                     <Tab title='Бектест портфеля'>Бектест</Tab>
@@ -68,7 +70,10 @@ export const Workspace = () => {
                 </TabPanel>                                                                                                     
                 <TabPanel>
                     <MacroParameterScreen />
-                </TabPanel>    
+                </TabPanel>
+                <TabPanel>
+                    <MacroDiagramScreen />
+                </TabPanel>                    
                 <TabPanel>
                     <BondAnalyseScreen />
                 </TabPanel> 

@@ -6,6 +6,10 @@ export const getMacroParameterListFromApi = async () => {
     return sendPostRequest(`${controller}/list`, {})
 }
 
+export const getMacroParameterDiagramFromApi = async () => {
+    return sendPostRequest(`${controller}/diagram`, {})
+}
+
 export const editMacroParameterFromApi = async (
     date, 
     m0, 

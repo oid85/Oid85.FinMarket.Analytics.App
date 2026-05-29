@@ -1,11 +1,13 @@
 import {call, put, select, takeEvery} from 'redux-saga/effects'
-import {fetchMacroParameterList} from '../actions/macroParameterActions'
+import {fetchMacroParameterList, fetchMacroParameterDiagram} from '../actions/macroParameterActions'
 import {
     SAGA_MACRO_PARAMETER_LIST,
+    SAGA_MACRO_PARAMETER_DIAGRAM,
     SAGA_EDIT_MACRO_PARAMETER
 } from '../types/macroParameterTypes'
 import {
     getMacroParameterListFromApi,
+    getMacroParameterDiagramFromApi,
     editMacroParameterFromApi
 } from '../api/macroParameterApi'
 
@@ -13,12 +15,18 @@ const currentMacroParameter = (state) => state.macroParameter.currentMacroParame
 
 export function* sagaWatcherMacroParameter() {
     yield takeEvery(SAGA_MACRO_PARAMETER_LIST, sagaWorkerMacroParameterList)
+    yield takeEvery(SAGA_MACRO_PARAMETER_DIAGRAM, sagaWorkerMacroParameterDiagram)
     yield takeEvery(SAGA_EDIT_MACRO_PARAMETER, sagaWorkerEditMacroParameter)
 }
 
 function* sagaWorkerMacroParameterList() {
     let result = yield call(getMacroParameterListFromApi)    
     yield put(fetchMacroParameterList(result))
+}
+
+function* sagaWorkerMacroParameterDiagram() {
+    let result = yield call(getMacroParameterDiagramFromApi)    
+    yield put(fetchMacroParameterDiagram(result))
 }
 
 function* sagaWorkerEditMacroParameter() {
