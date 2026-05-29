@@ -23,7 +23,7 @@ export const MacroParameterDiagramComponent = ({series}) => {
                         key={s.name} 
                         stroke={s.color}
                         fill={s.colorFill}
-                        strokeWidth={3}
+                        strokeWidth={5}
                         dot={false}                        
                         />
                 ))}
