@@ -38,20 +38,30 @@ export const FundamentalMetric = () => {
                         <div>P/BV</div>            
                         <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.pbv.value}</div>            
                     </div>
-                    <div 
-                        title={fundamentalByCompanyData.result.fundamentalScore.evEbitda.description} 
-                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
-                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.evEbitda.colorFill}}>
-                        <div>EV/EBITDA</div>            
-                        <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.evEbitda.value}</div>            
-                    </div>
-                    <div 
-                        title={fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.description} 
-                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
-                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.colorFill}}>
-                        <div>ND/EBITDA</div>            
-                        <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value}</div>            
-                    </div>
+                    {
+                        !fundamentalByCompanyData.result.fundamentalScore.evEbitda.value
+                        ? <div></div>
+                        :
+                        <div 
+                            title={fundamentalByCompanyData.result.fundamentalScore.evEbitda.description} 
+                            className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                            style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.evEbitda.colorFill}}>
+                            <div>EV/EBITDA</div>            
+                            <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.evEbitda.value}</div>            
+                        </div>                        
+                    }
+                    {
+                        !fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value
+                        ? <div></div>
+                        :
+                        <div 
+                            title={fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.description} 
+                            className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                            style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.colorFill}}>
+                            <div>ND/EBITDA</div>            
+                            <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value}</div>            
+                        </div>                      
+                    }
                 </div>
                 <div className='horizontal-container'>
                     <div 
