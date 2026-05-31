@@ -134,14 +134,24 @@ export const FundamentalByCompany = () => {
                             <div className='fundamental-by-company-bar-diagram-title'>P/BV</div>
                             <BarDiagram data={fundamentalByCompanyData.result.pbvDiagramData} />
                         </div>
-                        <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>EV/EBITDA</div>
-                            <BarDiagram data={fundamentalByCompanyData.result.evEbitdaDiagramData} />
-                        </div>
-                        <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
-                            <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaDiagramData} />
-                        </div>                        
+                        {
+                            !fundamentalByCompanyData.result.fundamentalScore.evEbitda.value
+                            ? <div></div>
+                            :
+                            <div className='fundamental-by-company-bar-diagram'>
+                                <div className='fundamental-by-company-bar-diagram-title'>EV/EBITDA</div>
+                                <BarDiagram data={fundamentalByCompanyData.result.evEbitdaDiagramData} />
+                            </div>                     
+                        }
+                        {
+                            !fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value
+                            ? <div></div>
+                            :
+                            <div className='fundamental-by-company-bar-diagram'>
+                                <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
+                                <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaDiagramData} />
+                            </div>                  
+                        }
                     </div>                    
                     <h6>Сравнение с другими компаниями в секторе</h6>
                     <div className='horizontal-container'>
@@ -153,14 +163,24 @@ export const FundamentalByCompany = () => {
                             <div className='fundamental-by-company-bar-diagram-title'>P/BV</div>
                             <BarDiagram data={fundamentalByCompanyData.result.pbvSectorDiagramData} />
                         </div>
-                        <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>EV/EBITDA</div>
-                            <BarDiagram data={fundamentalByCompanyData.result.evEbitdaSectorDiagramData} />
-                        </div>
-                        <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
-                            <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaSectorDiagramData} />
-                        </div>
+                        {
+                            !fundamentalByCompanyData.result.fundamentalScore.evEbitda.value
+                            ? <div></div>
+                            :
+                            <div className='fundamental-by-company-bar-diagram'>
+                                <div className='fundamental-by-company-bar-diagram-title'>EV/EBITDA</div>
+                                <BarDiagram data={fundamentalByCompanyData.result.evEbitdaSectorDiagramData} />
+                            </div>
+                        }
+                        {
+                            !fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value
+                            ? <div></div>
+                            :
+                            <div className='fundamental-by-company-bar-diagram'>
+                                <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
+                                <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaSectorDiagramData} />
+                            </div>
+                        }                        
                     </div>
                 </div>
             </div>
