@@ -55,7 +55,7 @@
 .fundamental-by-sector-forecast {
     padding: 5px;
     height: 100px;
-    width: 166px;
+    width: 132px;
 }
 
 .fundamental-by-sector-dividend {
@@ -83,7 +83,7 @@
 }
 
 .fundamental-by-sector-fundamental-metric-indicator-value {
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 500;
 }
 

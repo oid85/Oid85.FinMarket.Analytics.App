@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { sagaMacroParameterDiagram } from '../../redux/actions/macroParameterActions'
 import Loader from '../Loader/Loader'
 import { MacroParameterDiagramComponent } from './MacroParameterDiagramComponent'
+import { BarMacroParameterDiagramComponent } from './BarMacroParameterDiagramComponent'
 import './styles.css'
 
 const formatNumber = (num) => {
@@ -27,7 +28,7 @@ export const MacroParameterDiagram = () => {
             :
             <div className='macro-diagram-container border-style'>
                 <MacroParameterDiagramComponent series={macroParameterDiagramData.result.series}/>
-                <MacroParameterDiagramComponent series={macroParameterDiagramData.result.vvpSeries}/>
+                <BarMacroParameterDiagramComponent series={macroParameterDiagramData.result.vvpSeries}/>
             </div>        
         }
         </React.Fragment>                

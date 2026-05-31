@@ -75,11 +75,10 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-total-sum'>{`Сумма портфеля: ${formatNumber(portfolioPositionListData.result.totalSum)} руб.`}</div>
                 </div>
                 <div className='horizontal-container'>
-                    <div className='portfolio-position-number-header-cell portfolio-position-border-style'>Номер</div>
+                    <div className='portfolio-position-number-header-cell portfolio-position-border-style'>№</div>
                     <div className='portfolio-position-ticker-header-cell portfolio-position-border-style'>Тикер</div>
                     <div className='portfolio-position-name-header-cell portfolio-position-border-style'>Наименование</div>
                     <div className='portfolio-position-sector-header-cell portfolio-position-border-style'>Сектор (доля расч., %)</div>
-                    <div className='portfolio-position-trend-coefficient-header-cell portfolio-position-border-style'>Тренд. коэф.</div>
                     <div className='portfolio-position-dividend-coefficient-header-cell portfolio-position-border-style'>Див. коэф.</div>
                     <div className='portfolio-position-marketcap-coefficient-header-cell portfolio-position-border-style'>Кап. коэф.</div>
                     <div className='portfolio-position-manual-coefficient-header-cell portfolio-position-border-style'>Ручн. коэф.</div>
@@ -97,8 +96,7 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-number-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.number}</div>
                             <div className='portfolio-position-ticker-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.ticker}</div>
                             <div className='portfolio-position-name-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.name}</div>  
-                            <div className='portfolio-position-sector-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.sector}</div>  
-                            <div className='portfolio-position-trend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.trendCoefficient}</div>
+                            <div className='portfolio-position-sector-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.sector}</div>                              
                             <div className='portfolio-position-dividend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.dividendCoefficient}</div>
                             <div className='portfolio-position-marketcap-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.marketCapCoefficient}</div>
                             <div 

@@ -86,15 +86,16 @@ export const FundamentalByCompany = () => {
                         }}>
                         <h6>Риски</h6>
                         <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.riskInfo}</div>
-                    </div>                    
+                    </div> 
+                    <h6>Прогнозы</h6>
+                    <div className='horizontal-container'>
+                        <Forecast />
+                    </div>                                        
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-price-diagram'>
                             <PriceDiagram data={fundamentalByCompanyData.result.priceDiagramData} trendState={fundamentalByCompanyData.result.trendState} />
                         </div>
-                        <div>
-                            <div className='horizontal-container'>
-                                <Forecast />
-                            </div>    
+                        <div>   
                             <div className='horizontal-container'>
                                 <FundamentalScore />                                
                                 <Dividend />

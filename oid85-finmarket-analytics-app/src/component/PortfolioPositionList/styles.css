@@ -25,195 +25,195 @@
 }
 
 .portfolio-position-number-header-cell {
-    width: 60px;  
+    width: 30px;  
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-ticker-header-cell {
-    width: 80px;  
+    width: 65px;  
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-name-header-cell {
     width: 270px;  
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-sector-header-cell {
     width: 200px;  
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-trend-coefficient-header-cell {
     width: 70px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-dividend-coefficient-header-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-manual-coefficient-header-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-marketcap-coefficient-header-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-result-coefficient-header-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-percentage-header-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-price-header-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-message-header-cell {
     width: 120px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-size-header-cell {
     width: 150px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-delta-size-header-cell {
     width: 200px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-cost-header-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-edit-button-header-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-number-cell {
-    width: 60px;
+    width: 30px;
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-ticker-cell {
-    width: 80px;  
+    width: 65px;  
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-name-cell {
     width: 270px;
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-sector-cell {
     width: 200px;
     padding: 1px;
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .portfolio-position-trend-coefficient-cell {
     width: 70px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-dividend-coefficient-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-manual-coefficient-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-marketcap-coefficient-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-result-coefficient-cell {
-    width: 70px;
+    width: 60px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-percentage-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-price-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-message-cell {
     width: 120px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-size-cell {
     width: 150px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-delta-size-cell {
     width: 200px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-cost-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .portfolio-position-edit-button-cell {
     width: 100px;
     padding: 1px;
-    font-size: 18px;  
+    font-size: 14px;  
 }
 
 .edit-button {    
