@@ -8,8 +8,8 @@ export const MacroParameterDiagramComponent = ({series}) => {
             <div className='macro-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={850}                                                
-                width={1600}
+                height={425}                                                
+                width={900}
             >
                 <CartesianGrid />
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                

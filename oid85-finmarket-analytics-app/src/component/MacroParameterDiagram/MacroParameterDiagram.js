@@ -25,11 +25,10 @@ export const MacroParameterDiagram = () => {
             !macroParameterDiagramData.result || loading
             ? <Loader/>
             :
-            <div className='horizontal-container'>
-                <div className='macro-diagram-container border-style'>
-                    <MacroParameterDiagramComponent series={macroParameterDiagramData.result.series}/>
-                </div>              
-            </div>         
+            <div className='macro-diagram-container border-style'>
+                <MacroParameterDiagramComponent series={macroParameterDiagramData.result.series}/>
+                <MacroParameterDiagramComponent series={macroParameterDiagramData.result.vvpSeries}/>
+            </div>        
         }
         </React.Fragment>                
     )
