@@ -67,6 +67,7 @@ export const FundamentalMetric = () => {
                     <div 
                         className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
                         style={{backgroundColor: colorTrendState(fundamentalByCompanyData.result.trendState)}}>
+                        <div>Краткосрочно</div>
                         <div>{fundamentalByCompanyData.result.trendState}</div>
                     </div>                    
                     <div 

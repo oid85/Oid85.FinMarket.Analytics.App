@@ -90,10 +90,11 @@ export const FundamentalByCompany = () => {
                     <h6>Прогнозы</h6>
                     <div className='horizontal-container'>
                         <Forecast />
-                    </div>                                        
-                    <div className='horizontal-container'>
-                        <div className='fundamental-by-company-price-diagram'>
-                            <PriceDiagram data={fundamentalByCompanyData.result.priceDiagramData} trendState={fundamentalByCompanyData.result.trendState} />
+                    </div>
+                    <h6>Карточка компании</h6>
+                    <div>
+                        <div>
+                            <PriceDiagram data={fundamentalByCompanyData.result.priceDiagramData} />
                         </div>
                         <div>   
                             <div className='horizontal-container'>

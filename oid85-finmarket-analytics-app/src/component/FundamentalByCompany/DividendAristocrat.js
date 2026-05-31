@@ -13,7 +13,7 @@ export const DividendAristocrat = () => {
             ? <div></div>
             :
             <div>
-                <div>Дивидендный аристократ</div>
+                <div>Стабильные дивиденды</div>
             </div>            
         }
         </div>
