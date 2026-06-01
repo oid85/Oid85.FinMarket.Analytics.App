@@ -42,6 +42,12 @@
     font-size: 14px; 
 }
 
+.portfolio-position-current-dividend-yield-header-cell {
+    width: 70px;  
+    padding: 1px;
+    font-size: 14px; 
+}
+
 .portfolio-position-sector-header-cell {
     width: 200px;  
     padding: 1px;
@@ -134,6 +140,12 @@
 
 .portfolio-position-name-cell {
     width: 270px;
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-position-current-dividend-yield-cell {
+    width: 70px;
     padding: 1px;
     font-size: 14px; 
 }
