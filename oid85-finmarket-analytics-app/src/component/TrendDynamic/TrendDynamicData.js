@@ -39,9 +39,8 @@ export const TrendDynamicData = ({data}) => {
             {
                 data.map((dataItem) => (
                     <div className='horizontal-container'>
-                        <div title={dataItem.concept} className='vertical-container trend-dynamic-border-style'>
-                            <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>
-                            <div className='instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>                            
+                        <div title={`${dataItem.name}. ${dataItem.concept}`} className='vertical-container trend-dynamic-border-style'>
+                            <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>                            
                         </div>                  
                         <div className='vertical-container'>
                             <div className='horizontal-container'>
