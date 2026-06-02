@@ -89,7 +89,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ROE</b></div> : <div>ROE</div>}</div> 
                         </div>                                                                                                                                                                 
                         <div title={dataItem.score.dividendAristocrat.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.dividendAristocrat.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>DA</b></div> : <div>DA</div>}</div> 
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.score.dividendAristocrat.value ? 'DA' : ''}</b></div> : <div>{dataItem.score.dividendAristocrat.value ? 'DA' : ''}</div>}</div> 
                         </div>                                                                                
                         <div title={dataItem.inPortfolio ? 'Заполнены данные по фундаменталу' : 'Не заполнены данные по фундаменталу'} className='trend-dynamic-border-style' style={{backgroundColor: GetColorFillData(dataItem.fillData)}}>
                             {
