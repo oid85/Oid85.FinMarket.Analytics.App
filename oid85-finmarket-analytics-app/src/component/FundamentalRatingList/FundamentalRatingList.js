@@ -160,8 +160,8 @@ console.log(fundamentalRatingListData.result)
                                 className='fundamental-rating-dividend-aristocrat-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.dividendAristocrat.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>DA</b></div> 
-                                    : <div>DA</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.dividendAristocrat.value ? 'DA' : ''}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.dividendAristocrat.value ? 'DA' : ''}</div>}
                             </div>                                                     
                             <div 
                                 title={fundamentalRatingItem.score.netProfit.description}
