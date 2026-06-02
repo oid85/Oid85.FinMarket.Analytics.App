@@ -10,7 +10,7 @@ import { CONSTANTS } from '../../constants'
 
 const GetScoreColor = (score) => {
     if (!score) { return CONSTANTS.COLOR_WHITE }
-    if (score >= 5) { return CONSTANTS.COLOR_GREEN }
+    if (score >= 6) { return CONSTANTS.COLOR_GREEN }
     if (score >= 3) { return CONSTANTS.COLOR_YELLOW }
     if (score >= 0) { return CONSTANTS.COLOR_RED }
 
