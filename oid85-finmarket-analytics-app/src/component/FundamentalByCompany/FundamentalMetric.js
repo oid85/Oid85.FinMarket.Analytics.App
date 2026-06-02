@@ -63,29 +63,47 @@ export const FundamentalMetric = () => {
                         </div>                      
                     }
                 </div>
+                <div className='horizontal-container'>                   
+                    <div 
+                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netProfit.colorFill}}>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.netProfit.description}</div>
+                    </div>
+                    <div 
+                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.fcf.colorFill}}>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.fcf.description}</div>
+                    </div>
+                    <div 
+                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.eps.colorFill}}>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.eps.description}</div>
+                    </div>                                                          
+                </div>   
+                <div className='horizontal-container'>                   
+                    <div
+                        title={fundamentalByCompanyData.result.fundamentalScore.roa.description} 
+                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.roa.colorFill}}>
+                        <div>ROA</div>            
+                        <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.fundamentalScore.roa.value} %`}</div>            
+                    </div>
+                    <div 
+                        title={fundamentalByCompanyData.result.fundamentalScore.roe.description} 
+                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.roe.colorFill}}>
+                        <div>ROE</div>            
+                        <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.fundamentalScore.roe.value} %`}</div>            
+                    </div>
+                </div>                
                 <div className='horizontal-container'>
                     <div 
                         className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
                         style={{backgroundColor: colorTrendState(fundamentalByCompanyData.result.trendState)}}>
                         <div>Краткосрочно</div>
                         <div>{fundamentalByCompanyData.result.trendState}</div>
-                    </div>                    
-                    <div 
-                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
-                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netProfit.colorFill}}>
-                        <div>Рост чистой прибыли</div>
-                    </div>
-                    <div 
-                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
-                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.fcf.colorFill}}>
-                        <div>Рост FCF</div>
-                    </div>
-                    <div 
-                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
-                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.eps.colorFill}}>
-                        <div>Рост EPS</div>
-                    </div>                                                          
-                </div>                
+                    </div>                                                                             
+                </div>                               
             </div>            
         }
         </div>

@@ -90,6 +90,8 @@ console.log(fundamentalRatingListData.result)
                 <div className='fundamental-rating-netprofit-header-cell fundamental-rating-border-style'>NP</div>
                 <div className='fundamental-rating-fcf-header-cell fundamental-rating-border-style'>FCF</div>
                 <div className='fundamental-rating-eps-header-cell fundamental-rating-border-style'>EPS</div>   
+                <div className='fundamental-rating-roa-header-cell fundamental-rating-border-style'>ROA</div>   
+                <div className='fundamental-rating-roe-header-cell fundamental-rating-border-style'>ROE</div>   
                 <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от max, %</div>   
                 <div className='fundamental-rating-separator-cell'></div>
                 <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. T., %</div>
@@ -185,6 +187,22 @@ console.log(fundamentalRatingListData.result)
                                     ? <div><b>EPS</b></div> 
                                     : <div>EPS</div>}
                             </div>
+                            <div 
+                                title={fundamentalRatingItem.score.roa.description}
+                                className='fundamental-rating-roa-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.roa.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>ROA</b></div> 
+                                    : <div>ROA</div>}
+                            </div>
+                            <div 
+                                title={fundamentalRatingItem.score.roe.description}
+                                className='fundamental-rating-roe-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.roe.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>ROE</b></div> 
+                                    : <div>ROE</div>}
+                            </div>                                                      
                             <div 
                                 title='Падение от годового максимума'
                                 className='fundamental-rating-falling-from-max-cell fundamental-rating-border-style' 

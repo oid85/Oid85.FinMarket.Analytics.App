@@ -26,20 +26,6 @@ const GetDividendYieldValue = (dividendYield) => {
     return `ДД ${dividendYield} %`
 }
 
-const GetColorForecast = (forecast) => {
-    if (!forecast) { return CONSTANTS.COLOR_WHITE }
-    if (forecast.upsidePrc > 10) { return CONSTANTS.COLOR_GREEN }
-    if (forecast.upsidePrc > 0) { return CONSTANTS.COLOR_YELLOW }
-    if (forecast.upsidePrc <= 0) { return CONSTANTS.COLOR_LIGHTRED }
-
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetForecastValue = (forecast, suffix) => {
-    if (!forecast) { return '' }
-    return `Пр. ${suffix} ${forecast.upsidePrc} %`
-}
-
 const GetColorFillData = (value) => {
     if (!value) { return CONSTANTS.COLOR_YELLOW }
     if (value) { return CONSTANTS.COLOR_GREEN }
@@ -56,7 +42,7 @@ export const TrendDynamicData = ({data}) => {
                         <div title={dataItem.concept} className='vertical-container trend-dynamic-border-style'>
                             <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>
                             <div className='instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>                            
-                        </div>
+                        </div>                  
                         <div className='vertical-container'>
                             <div className='horizontal-container'>
                             {
@@ -74,7 +60,7 @@ export const TrendDynamicData = ({data}) => {
                             <div className='trend-dynamic-dividend-yield-cell'>{dataItem.inPortfolio ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>}</div> 
                         </div>
                         <div title={dataItem.score.score.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.score.colorFill}}>
-                            <div className='trend-dynamic-score-value-cell'>{dataItem.inPortfolio ? <div><b>{`Фунд. рейт. ${dataItem.score.score.value}`}</b></div> : <div>{`Фунд. рейт. ${dataItem.score.score.value}`}</div>}</div> 
+                            <div className='trend-dynamic-score-value-cell'>{dataItem.inPortfolio ? <div><b>{`Рейт. ${dataItem.score.score.value}`}</b></div> : <div>{`Рейт. ${dataItem.score.score.value}`}</div>}</div> 
                         </div>
                         <div title={dataItem.score.pe.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.pe.colorFill}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div> 
@@ -96,36 +82,23 @@ export const TrendDynamicData = ({data}) => {
                         </div> 
                         <div title={dataItem.score.eps.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.eps.colorFill}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>EPS</b></div> : <div>EPS</div>}</div> 
-                        </div>                                                                                                                        
+                        </div>                    
+                        <div title={dataItem.score.roa.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.roa.colorFill}}>
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ROA</b></div> : <div>ROA</div>}</div> 
+                        </div>             
+                        <div title={dataItem.score.roe.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.roe.colorFill}}>
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ROE</b></div> : <div>ROE</div>}</div> 
+                        </div>                                                                                                                                                                 
                         <div title={dataItem.score.dividendAristocrat.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.dividendAristocrat.colorFill}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>DA</b></div> : <div>DA</div>}</div> 
                         </div>                                                                                
                         <div title={dataItem.inPortfolio ? 'Заполнены данные по фундаменталу' : 'Не заполнены данные по фундаменталу'} className='trend-dynamic-border-style' style={{backgroundColor: GetColorFillData(dataItem.fillData)}}>
                             {
                                 dataItem.inPortfolio
-                                ? <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div><b>Запол. фунд.</b></div> : <div><del><b>Запол. фунд.</b></del></div>}</div>
-                                : <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div>Запол. фунд.</div> : <div><del>Запол. фунд.</del></div>}</div>
+                                ? <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div><b>Запол.</b></div> : <div><del><b>Запол.</b></del></div>}</div>
+                                : <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div>Запол.</div> : <div><del>Запол.</del></div>}</div>
                             }
-                        </div>
-                        <div className='trend-dynamic-separator-cell'></div>
-                        <div title='Консенсус прогноз Tinkoff' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.forecast)}}>
-                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.forecast, 'T')}</b></div> : <div>{GetForecastValue(dataItem.forecast, 'T.')}</div>}</div> 
-                        </div>     
-                        <div title='Прогноз NataliaBaffetovna' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.nataliaBaffetovnaForecast)}}>
-                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.nataliaBaffetovnaForecast, 'NB')}</b></div> : <div>{GetForecastValue(dataItem.nataliaBaffetovnaForecast, 'NB')}</div>}</div> 
-                        </div>
-                        <div title='Прогноз FinanceMarker' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.financeMarkerForecast)}}>
-                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.financeMarkerForecast, 'FM')}</b></div> : <div>{GetForecastValue(dataItem.financeMarkerForecast, 'FM')}</div>}</div> 
-                        </div>       
-                        <div title='Прогноз VladProDengi' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.vladProDengiForecast)}}>
-                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.vladProDengiForecast, 'VPD')}</b></div> : <div>{GetForecastValue(dataItem.vladProDengiForecast, 'VPD')}</div>}</div> 
-                        </div>  
-                        <div title='Прогноз PredictNetProfit' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.predictNetProfitForecast)}}>
-                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.predictNetProfitForecast, 'PNP')}</b></div> : <div>{GetForecastValue(dataItem.predictNetProfitForecast, 'PNP')}</div>}</div> 
-                        </div>  
-                        <div title='Прогноз Mozgovik' className='trend-dynamic-border-style' style={{backgroundColor: GetColorForecast(dataItem.mozgovikForecast)}}>
-                            <div className='trend-dynamic-forecast-cell'>{dataItem.inPortfolio ? <div><b>{GetForecastValue(dataItem.mozgovikForecast, 'M')}</b></div> : <div>{GetForecastValue(dataItem.mozgovikForecast, 'M')}</div>}</div> 
-                        </div>                                                                                                          
+                        </div>                    
                     </div>
                 ))
             }           

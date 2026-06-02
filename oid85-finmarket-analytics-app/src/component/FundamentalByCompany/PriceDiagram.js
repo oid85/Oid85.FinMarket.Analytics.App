@@ -6,7 +6,7 @@ import {CONSTANTS} from '../../constants'
 export const PriceDiagram = ({data}) => {
     return (
         <div>
-            <ComposedChart className='fundamental-by-company-border-style' width={800} height={404} data={data}>                
+            <ComposedChart className='fundamental-by-company-border-style' width={500} height={300} data={data}>                
                 <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
                 <Area type="monotone" dataKey="ultimateSmootherValue" strokeWidth={3} stroke={CONSTANTS.COLOR_DARKSLATEGRAY} fill={CONSTANTS.COLOR_STATEBLUE} />

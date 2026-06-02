@@ -159,6 +159,26 @@
     font-size: 14px; 
 }
 
+.fundamental-rating-roa-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-roa-cell {   
+    width: 30px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-roe-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-roe-cell {   
+    width: 30px; 
+    font-size: 14px; 
+}
+
 .fundamental-rating-falling-from-max-header-cell {
     width: 70px;  
     font-size: 14px; 

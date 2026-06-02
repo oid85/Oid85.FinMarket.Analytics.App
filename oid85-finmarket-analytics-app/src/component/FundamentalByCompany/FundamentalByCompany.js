@@ -107,6 +107,14 @@ export const FundamentalByCompany = () => {
                             </div>                                                 
                         </div>                   
                     </div>
+                    <div>
+                        <div>Стоимость:</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.pe.description}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.pbv.description}</div>
+                        <div>Рентабельность:</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.roa.description}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.roe.description}</div>
+                    </div>
                     <h6>Динамика показателей компании</h6>
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>

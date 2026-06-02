@@ -24,9 +24,7 @@ export const WeekTrendDelta = () => {
             :
             <div className='week-trend-delta-container'>
                 <WeekTrendDeltaHeaders weeks = {weekTrendDeltaData.result.weeks} />
-                <h6>Акции</h6>
                 <WeekTrendDeltaData data = {weekTrendDeltaData.result.shares} />     
-                <h6>ETF</h6>
                 <WeekTrendDeltaData data = {weekTrendDeltaData.result.etfs} />                   
             </div>         
         }
