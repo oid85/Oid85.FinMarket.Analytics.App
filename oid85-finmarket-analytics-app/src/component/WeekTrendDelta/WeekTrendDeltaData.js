@@ -16,14 +16,16 @@ const GetColorTrendState = (trendState, inPortfolio) => {
     if (trendState == 'ТРЕНД ВВЕРХ') { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
     if (trendState == 'ТРЕНД ВНИЗ') { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
     if (trendState == 'НЕТ ТРЕНДА') { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
+
     return CONSTANTS.COLOR_WHITE
 }
 
 const GetColorFallingFromMax = (fallingFromMax, inPortfolio) => {
-    if (!fallingFromMax) { return CONSTANTS.COLOR_WHITE }
+    if (!fallingFromMax) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
     if (fallingFromMax < -10) { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
     if (fallingFromMax < -5) { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
     if (fallingFromMax < 0) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
+
     return CONSTANTS.COLOR_WHITE
 }
 
