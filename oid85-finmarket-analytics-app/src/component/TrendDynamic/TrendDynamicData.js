@@ -74,6 +74,12 @@ export const TrendDynamicData = ({data}) => {
                         <div title={dataItem.score.netDebtEbitda.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.netDebtEbitda.colorFill}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ND</b></div> : <div>ND</div>}</div> 
                         </div>  
+                        <div title={dataItem.score.debtRatio.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.debtRatio.colorFill}}>
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>DR</b></div> : <div>DR</div>}</div> 
+                        </div> 
+                        <div title={dataItem.score.debtEquity.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.debtEquity.colorFill}}>
+                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>DE</b></div> : <div>DE</div>}</div> 
+                        </div>                                               
                         <div title={dataItem.score.netProfit.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.netProfit.colorFill}}>
                             <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>NP</b></div> : <div>NP</div>}</div> 
                         </div>       

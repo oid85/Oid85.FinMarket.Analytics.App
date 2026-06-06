@@ -109,6 +109,26 @@
     font-size: 14px; 
 }
 
+.fundamental-rating-debt-ratio-header-cell {
+    width: 50px;  
+    font-size: 12px; 
+}
+
+.fundamental-rating-debt-ratio-cell {   
+    width: 50px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-debt-equity-header-cell {
+    width: 50px;  
+    font-size: 12px; 
+}
+
+.fundamental-rating-debt-equity-cell {   
+    width: 50px; 
+    font-size: 14px; 
+}
+
 .fundamental-rating-dividend-yield-header-cell {
     width: 60px;  
     font-size: 14px; 

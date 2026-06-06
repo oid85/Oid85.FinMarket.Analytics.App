@@ -85,6 +85,8 @@ console.log(fundamentalRatingListData.result)
                 <div className='fundamental-rating-pbv-header-cell fundamental-rating-border-style'>P / BV</div>
                 <div className='fundamental-rating-ev-ebitda-header-cell fundamental-rating-border-style'>EV / EBITDA</div>
                 <div className='fundamental-rating-netdebt-ebitda-header-cell fundamental-rating-border-style'>ND / EBITDA</div>
+                <div className='fundamental-rating-debt-ratio-header-cell fundamental-rating-border-style'>Debt Ratio</div>
+                <div className='fundamental-rating-debt-equity-header-cell fundamental-rating-border-style'>Debt Equity</div>
                 <div className='fundamental-rating-dividend-yield-header-cell fundamental-rating-border-style'>ДД, %</div>
                 <div className='fundamental-rating-dividend-aristocrat-header-cell fundamental-rating-border-style'>ДА</div>
                 <div className='fundamental-rating-netprofit-header-cell fundamental-rating-border-style'>NP</div>
@@ -148,6 +150,22 @@ console.log(fundamentalRatingListData.result)
                                     ? <div><b>{fundamentalRatingItem.score.netDebtEbitda.value}</b></div> 
                                     : <div>{fundamentalRatingItem.score.netDebtEbitda.value}</div>}
                             </div>
+                            <div 
+                                title={fundamentalRatingItem.score.debtRatio.description}
+                                className='fundamental-rating-debt-ratio-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.debtRatio.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>{fundamentalRatingItem.score.debtRatio.value}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.debtRatio.value}</div>}
+                            </div> 
+                            <div 
+                                title={fundamentalRatingItem.score.debtEquity.description}
+                                className='fundamental-rating-debt-equity-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.debtEquity.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>{fundamentalRatingItem.score.debtEquity.value}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.debtEquity.value}</div>}
+                            </div>                                                       
                             <div                             
                                 className='fundamental-rating-dividend-yield-cell fundamental-rating-border-style'
                                 style={{backgroundColor: GetDividendYieldColor(fundamentalRatingItem.metric.dividendYield)}}                                 

@@ -62,6 +62,30 @@ export const FundamentalMetric = () => {
                             <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value}</div>            
                         </div>                      
                     }
+                    {
+                        !fundamentalByCompanyData.result.fundamentalScore.debtRatio.value
+                        ? <div></div>
+                        :
+                        <div 
+                            title={fundamentalByCompanyData.result.fundamentalScore.debtRatio.description} 
+                            className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                            style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.debtRatio.colorFill}}>
+                            <div>Debt Ratio</div>            
+                            <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.debtRatio.value}</div>            
+                        </div>                      
+                    }
+                    {
+                        !fundamentalByCompanyData.result.fundamentalScore.debtEquity.value
+                        ? <div></div>
+                        :
+                        <div 
+                            title={fundamentalByCompanyData.result.fundamentalScore.debtEquity.description} 
+                            className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                            style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.debtEquity.colorFill}}>
+                            <div>Debt Equity</div>            
+                            <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{fundamentalByCompanyData.result.fundamentalScore.debtEquity.value}</div>            
+                        </div>                      
+                    }                                        
                 </div>
                 <div className='horizontal-container'>                   
                     <div 
