@@ -60,6 +60,8 @@ export const FundamentalParameterList = () => {
                                 <div className='roe-header-cell fundamental-parameter-border-style'>ROE, %</div>
                                 <div className='ev-ebitda-header-cell fundamental-parameter-border-style'>EV / EBITDA</div>
                                 <div className='netdebt-ebitda-header-cell fundamental-parameter-border-style'>ND / EBITDA</div>
+                                <div className='debt-ratio-header-cell fundamental-parameter-border-style'>Debt Ratio</div>
+                                <div className='debt-equity-header-cell fundamental-parameter-border-style'>Debt Equity</div>
                                 <div className='ebitda-revenue-header-cell fundamental-parameter-border-style'>EBITDA / Выруч.</div>
                                 <div className='own-cap-num-header-cell fundamental-parameter-border-style'>Соб. кап. / Кол-во акций</div>
                                 <div className='marketcap-header-cell fundamental-parameter-border-style'>Капит-ция, млрд. руб.</div>
@@ -221,6 +223,24 @@ export const FundamentalParameterList = () => {
                                         ))                                        
                                     }
                                 </div>
+                                <div>
+                                    {
+                                        fundamentalParameter.debtRatio.map((item, index) => (
+                                            <div title={item.description} className='fundamental-parameter-border-style debt-ratio-cell' 
+                                                style={{backgroundColor: item.colorFill}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item.value}</b></div> : <div>{item.value}</div>}</div>
+                                        ))                                        
+                                    }
+                                </div>     
+                                <div>
+                                    {
+                                        fundamentalParameter.debtEquity.map((item, index) => (
+                                            <div title={item.description} className='fundamental-parameter-border-style debt-equity-cell' 
+                                                style={{backgroundColor: item.colorFill}}
+                                                >{fundamentalParameter.inPortfolio ? <div><b>{item.value}</b></div> : <div>{item.value}</div>}</div>
+                                        ))                                        
+                                    }
+                                </div>                                                            
                                 <div>
                                     {
                                         fundamentalParameter.ebitdaRevenue.map((item, index) => (
