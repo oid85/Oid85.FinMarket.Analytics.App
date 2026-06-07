@@ -17,7 +17,8 @@ export const MacroParameterDiagramComponent = ({series}) => {
                 <Legend />
                 {series.map(s => (
                     <Area 
-                        dataKey="value" 
+                        dataKey="value"
+                        type="monotone" 
                         data={s.data} 
                         name={s.name} 
                         key={s.name} 
