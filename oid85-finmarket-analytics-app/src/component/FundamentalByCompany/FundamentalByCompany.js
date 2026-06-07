@@ -108,12 +108,23 @@ export const FundamentalByCompany = () => {
                         </div>                   
                     </div>
                     <div>
+                        <div>Прибыль:</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.netProfit.text}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.fcf.text}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.eps.text}</div>
                         <div>Стоимость:</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.pe.description}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.pbv.description}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.pe.text}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.pbv.text}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.evEbitda.text}</div>
+                        <div>Долговая нагрузка:</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.text}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.debtRatio.text}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.debtEquity.text}</div>
                         <div>Рентабельность:</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.roa.description}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.roe.description}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.roa.text}</div>
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.roe.text}</div>
+                        <div>Дивиденды:</div>      
+                        <div>{fundamentalByCompanyData.result.fundamentalScore.dividendAristocrat.text}</div>                        
                     </div>
                     <h6>Динамика показателей компании</h6>
                     <div className='horizontal-container'>
