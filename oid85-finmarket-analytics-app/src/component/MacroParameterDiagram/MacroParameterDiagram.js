@@ -27,7 +27,9 @@ export const MacroParameterDiagram = () => {
             ? <Loader/>
             :
             <div className='macro-diagram-container border-style'>
-                <MacroParameterDiagramComponent series={macroParameterDiagramData.result.series}/>
+                <MacroParameterDiagramComponent series={macroParameterDiagramData.result.keyRateSeries}/>
+                <BarMacroParameterDiagramComponent series={macroParameterDiagramData.result.moneyAggregatesCpiSeries}/>
+                <MacroParameterDiagramComponent series={macroParameterDiagramData.result.moexSeries}/>
                 <BarMacroParameterDiagramComponent series={macroParameterDiagramData.result.vvpSeries}/>
             </div>        
         }
