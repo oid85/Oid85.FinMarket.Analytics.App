@@ -5,6 +5,9 @@ import {
     fetchCurrentPortfolioPosition, 
     showEditPortfolioPositionModal
 } from '../../redux/actions/portfolioActions'
+import { 
+    fetchOrderField
+} from '../../redux/actions/orderActions'
 import {EditPortfolioPositionModal} from './EditPortfolioPositionModal'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -78,9 +81,36 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-number-header-cell portfolio-position-border-style'>№</div>
                     <div className='portfolio-position-ticker-header-cell portfolio-position-border-style'>Тикер</div>
                     <div className='portfolio-position-name-header-cell portfolio-position-border-style'>Наименование</div>
-                    <div className='portfolio-position-current-dividend-yield-header-cell portfolio-position-border-style'>ДД, %</div>
-                    <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>Доля, %</div>
-                    <div className='portfolio-position-delta-size-header-cell portfolio-position-border-style'>Изм., %</div>                    
+                    <div className='portfolio-position-current-dividend-yield-header-cell portfolio-position-border-style'>
+                        <div>ДД, %</div>
+                        <div className='sort-button-container'>
+                            <button className='btn btn-outline-dark sort-button'
+                                onClick={() => {
+                                    dispatch(fetchOrderField('CurrentDividendYield'))
+                                    dispatch(sagaPortfolioPositionList())
+                                }}><div className='sort-button-text'>Сорт.</div></button>
+                        </div>
+                    </div>
+                    <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>
+                    <div>Доля, %</div>
+                        <div className='sort-button-container'>
+                            <button className='btn btn-outline-dark sort-button'
+                                onClick={() => {
+                                    dispatch(fetchOrderField('Percent'))
+                                    dispatch(sagaPortfolioPositionList())
+                                }}><div className='sort-button-text'>Сорт.</div></button>
+                        </div>
+                    </div>
+                    <div className='portfolio-position-delta-size-header-cell portfolio-position-border-style'>
+                    <div>Изм., %</div>
+                        <div className='sort-button-container'>
+                            <button className='btn btn-outline-dark sort-button'
+                                onClick={() => {
+                                    dispatch(fetchOrderField('DeltaPercent'))
+                                    dispatch(sagaPortfolioPositionList())
+                                }}><div className='sort-button-text'>Сорт.</div></button>
+                        </div>                    
+                    </div>                    
                     <div className='portfolio-position-sector-header-cell portfolio-position-border-style'>Сектор (доля, %)</div>
                     <div className='portfolio-position-dividend-coefficient-header-cell portfolio-position-border-style'>Див. коэф.</div>
                     <div className='portfolio-position-marketcap-coefficient-header-cell portfolio-position-border-style'>Кап. коэф.</div>

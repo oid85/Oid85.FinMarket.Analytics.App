@@ -6,8 +6,7 @@ import {
 import {
     SAGA_PORTFOLIO_POSITION_LIST,
     SAGA_PORTFOLIO_BACKTEST,
-    SAGA_EDIT_PORTFOLIO_POSITION,
-    SAGA_EDIT_PORTFOLIO_TOTAL_SUM
+    SAGA_EDIT_PORTFOLIO_POSITION
 } from '../types/portfolioTypes'
 import {
     getPortfolioPositionListFromApi,
@@ -16,6 +15,7 @@ import {
 } from '../api/portfolioApi'
 
 const currentPortfolioPosition = (state) => state.portfolio.currentPortfolioPosition
+const currentOrderField = (state) => state.order.orderField
 
 export function* sagaWatcherPortfolio() {
     yield takeEvery(SAGA_PORTFOLIO_POSITION_LIST, sagaWorkerPortfolioPositionList)
@@ -24,7 +24,8 @@ export function* sagaWatcherPortfolio() {
 }
 
 function* sagaWorkerPortfolioPositionList() {
-    let result = yield call(getPortfolioPositionListFromApi)    
+    let orderField = yield select(currentOrderField)
+    let result = yield call(getPortfolioPositionListFromApi, orderField)    
     yield put(fetchPortfolioPositionList(result))
 }
 
@@ -34,7 +35,7 @@ function* sagaWorkerPortfolioBacktest() {
 }
 
 function* sagaWorkerEditPortfolioPosition() {
-    let portfolioPosition = yield select(currentPortfolioPosition)    
+    let portfolioPosition = yield select(currentPortfolioPosition)
     yield call(editPortfolioPositionFromApi, portfolioPosition.ticker, portfolioPosition.manualCoefficient, portfolioPosition.lifeSize)  
     let result = yield call(getPortfolioPositionListFromApi)    
     yield put(fetchPortfolioPositionList(result))  

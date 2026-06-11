@@ -39,6 +39,10 @@ export const PortfolioBacktest = () => {
                         <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.maxDrawdown} %`}</div> 
                     </div>     
                     <div className='horizontal-container'>
+                        <div className='portfolio-backtest-container'>Текущ. просадка:</div> 
+                        <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.currentDrawdown} %`}</div> 
+                    </div>                       
+                    <div className='horizontal-container'>
                         <div className='portfolio-backtest-container'>Получено дивидендов:</div> 
                         <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.dividendSum)} руб.`}</div> 
                     </div> 

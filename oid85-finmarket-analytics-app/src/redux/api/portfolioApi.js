@@ -2,8 +2,8 @@
 
 const controller = 'portfolio'
 
-export const getPortfolioPositionListFromApi = async () => {
-    return sendPostRequest(`${controller}/position/list`, {})
+export const getPortfolioPositionListFromApi = async (orderField) => {
+    return sendPostRequest(`${controller}/position/list`, {orderField})
 }
 
 export const getPortfolioBacktestFromApi = async () => {

@@ -108,23 +108,32 @@ export const FundamentalByCompany = () => {
                         </div>                   
                     </div>
                     <div>
-                        <div>Прибыль:</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.netProfit.text}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.fcf.text}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.eps.text}</div>
-                        <div>Стоимость:</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.pe.text}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.pbv.text}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.evEbitda.text}</div>
-                        <div>Долговая нагрузка:</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.text}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.debtRatio.text}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.debtEquity.text}</div>
-                        <div>Рентабельность:</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.roa.text}</div>
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.roe.text}</div>
-                        <div>Дивиденды:</div>      
-                        <div>{fundamentalByCompanyData.result.fundamentalScore.dividendAristocrat.text}</div>                        
+                        <br/>
+                        <div>📌 <u>Прибыль</u></div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.netProfit.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.fcf.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.eps.text}</div>
+                        <br/>
+                        <div>📌 <u>Стоимость</u></div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.pe.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.pbv.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.evEbitda.text}</div>
+                        <br/>
+                        <div>📌 <u>Долговая нагрузка</u></div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.debtRatio.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.debtEquity.text}</div>
+                        <br/>
+                        <div>📌 <u>Рентабельность</u></div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.roa.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.roe.text}</div>
+                        <br/>
+                        <div>📌 <u>Дивиденды</u></div>      
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.dividendAristocrat.text}</div> 
+                        <br/>                       
+                        <div>📌 <u>Фундаментальный рейтинг</u></div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.score.text}</div>
+                        <br/>
                     </div>
                     <h6>Динамика показателей компании</h6>
                     <div className='horizontal-container'>
