@@ -199,6 +199,16 @@
     font-size: 14px; 
 }
 
+.fundamental-rating-ebitda-revenue-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-ebitda-revenue-cell {   
+    width: 30px; 
+    font-size: 14px; 
+}
+
 .fundamental-rating-falling-from-max-header-cell {
     width: 70px;  
     font-size: 14px; 

@@ -119,14 +119,14 @@ export const FundamentalMetric = () => {
                         <div>ROE</div>            
                         <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.fundamentalScore.roe.value} %`}</div>            
                     </div>
-                </div>                
+                </div>
                 <div className='horizontal-container'>
                     <div 
                         className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
                         style={{backgroundColor: colorTrendState(fundamentalByCompanyData.result.trendState)}}>
                         <div>Краткосрочно</div>
                         <div>{fundamentalByCompanyData.result.trendState}</div>
-                    </div>                                                                             
+                    </div>
                 </div>                               
             </div>            
         }

@@ -94,6 +94,7 @@ console.log(fundamentalRatingListData.result)
                 <div className='fundamental-rating-eps-header-cell fundamental-rating-border-style'>EPS</div>   
                 <div className='fundamental-rating-roa-header-cell fundamental-rating-border-style'>ROA</div>   
                 <div className='fundamental-rating-roe-header-cell fundamental-rating-border-style'>ROE</div>   
+                <div className='fundamental-rating-ebitda-revenue-header-cell fundamental-rating-border-style'>EM</div>   
                 <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от max, %</div>   
                 <div className='fundamental-rating-separator-cell'></div>
                 <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. T., %</div>
@@ -221,6 +222,14 @@ console.log(fundamentalRatingListData.result)
                                     ? <div><b>ROE</b></div> 
                                     : <div>ROE</div>}
                             </div>                                                      
+                            <div 
+                                title={fundamentalRatingItem.score.ebitdaRevenue.description}
+                                className='fundamental-rating-ebitda-revenue-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.ebitdaRevenue.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>EM</b></div> 
+                                    : <div>EM</div>}
+                            </div>                            
                             <div 
                                 title='Падение от годового максимума'
                                 className='fundamental-rating-falling-from-max-cell fundamental-rating-border-style' 
