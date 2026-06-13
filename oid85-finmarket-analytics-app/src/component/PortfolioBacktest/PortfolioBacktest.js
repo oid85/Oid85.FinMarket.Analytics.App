@@ -37,24 +37,31 @@ export const PortfolioBacktest = () => {
                     <div className='portfolio-backtest-name-button-container'>
                         <button className='btn btn-outline-dark portfolio-backtest-name-button'
                             onClick={() => {
-                                dispatch(fetchPortfolioName('TopMoex'))
+                                dispatch(fetchPortfolioName('Top5Moex'))
                                 dispatch(sagaPortfolioBacktest())
-                            }}><div className='portfolio-backtest-name-button-text'>ТОП MOEX</div></button>
-                    </div>        
+                            }}><div className='portfolio-backtest-name-button-text'>ТОП-5 IMOEX</div></button>
+                    </div>
                     <div className='portfolio-backtest-name-button-container'>
                         <button className='btn btn-outline-dark portfolio-backtest-name-button'
                             onClick={() => {
-                                dispatch(fetchPortfolioName('TopMarketCap'))
+                                dispatch(fetchPortfolioName('Top10Moex'))
                                 dispatch(sagaPortfolioBacktest())
-                            }}><div className='portfolio-backtest-name-button-text'>ТОП по капитализации</div></button>
-                    </div>                                    
+                            }}><div className='portfolio-backtest-name-button-text'>ТОП-10 IMOEX</div></button>
+                    </div>                                                                       
                     <div className='portfolio-backtest-name-button-container'>
                         <button className='btn btn-outline-dark portfolio-backtest-name-button'
                             onClick={() => {
-                                dispatch(fetchPortfolioName('TopFundamentalScore'))
+                                dispatch(fetchPortfolioName('Top5FundamentalScore'))
                                 dispatch(sagaPortfolioBacktest())
-                            }}><div className='portfolio-backtest-name-button-text'>ТОП фунд. рейтинга</div></button>
-                    </div>                      
+                            }}><div className='portfolio-backtest-name-button-text'>ТОП-5 фунд. рейтинга</div></button>
+                    </div>   
+                    <div className='portfolio-backtest-name-button-container'>
+                        <button className='btn btn-outline-dark portfolio-backtest-name-button'
+                            onClick={() => {
+                                dispatch(fetchPortfolioName('Top10FundamentalScore'))
+                                dispatch(sagaPortfolioBacktest())
+                            }}><div className='portfolio-backtest-name-button-text'>ТОП-10 фунд. рейтинга</div></button>
+                    </div>                                       
                     <div className='portfolio-backtest-name-button-container'>
                         <button className='btn btn-outline-dark portfolio-backtest-name-button'
                             onClick={() => {
@@ -65,10 +72,24 @@ export const PortfolioBacktest = () => {
                     <div className='portfolio-backtest-name-button-container'>
                         <button className='btn btn-outline-dark portfolio-backtest-name-button'
                             onClick={() => {
+                                dispatch(fetchPortfolioName('SberGold'))
+                                dispatch(sagaPortfolioBacktest())
+                            }}><div className='portfolio-backtest-name-button-text'>Сбер + Золото</div></button>
+                    </div>                     
+                    <div className='portfolio-backtest-name-button-container'>
+                        <button className='btn btn-outline-dark portfolio-backtest-name-button'
+                            onClick={() => {
                                 dispatch(fetchPortfolioName('GasOil'))
                                 dispatch(sagaPortfolioBacktest())
                             }}><div className='portfolio-backtest-name-button-text'>Нефтегаз</div></button>
-                    </div>                     
+                    </div>    
+                    <div className='portfolio-backtest-name-button-container'>
+                        <button className='btn btn-outline-dark portfolio-backtest-name-button'
+                            onClick={() => {
+                                dispatch(fetchPortfolioName('GasOilGold'))
+                                dispatch(sagaPortfolioBacktest())
+                            }}><div className='portfolio-backtest-name-button-text'>Нефтегаз + Золото</div></button>
+                    </div>                                       
                     <div className='portfolio-backtest-name-button-container'>
                         <button className='btn btn-outline-dark portfolio-backtest-name-button'
                             onClick={() => {
