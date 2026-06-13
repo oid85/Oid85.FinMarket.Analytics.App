@@ -15,6 +15,7 @@ import {
 } from '../api/portfolioApi'
 
 const currentPortfolioPosition = (state) => state.portfolio.currentPortfolioPosition
+const currentPortfolioName = (state) => state.portfolio.portfolioName
 const currentOrderField = (state) => state.order.orderField
 
 export function* sagaWatcherPortfolio() {
@@ -30,7 +31,8 @@ function* sagaWorkerPortfolioPositionList() {
 }
 
 function* sagaWorkerPortfolioBacktest() {
-    let result = yield call(getPortfolioBacktestFromApi)    
+    let portfolioName = yield select(currentPortfolioName)
+    let result = yield call(getPortfolioBacktestFromApi, portfolioName)    
     yield put(fetchPortfolioBacktest(result))
 }
 

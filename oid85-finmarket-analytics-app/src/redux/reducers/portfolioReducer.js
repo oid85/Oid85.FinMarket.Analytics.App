@@ -1,6 +1,7 @@
 import {
     FETCH_PORTFOLIO_POSITION_LIST,
     FETCH_PORTFOLIO_BACKTEST,
+    FETCH_PORTFOLIO_NAME,
     FETCH_CURRENT_PORTFOLIO_POSITION,
     SHOW_EDIT_PORTFOLIO_POSITION_MODAL,
     HIDE_EDIT_PORTFOLIO_POSITION_MODAL
@@ -9,6 +10,7 @@ import {
 const initialState = {
     portfolioPositionListData: {},
     portfolioBacktestData: {},
+    portfolioName: null,
     currentPortfolioPosition: {},
     editPortfolioPositionModalIsOpened: false
 }
@@ -21,6 +23,9 @@ export const portfolioReducer = (state = initialState, action) => {
 
         case FETCH_PORTFOLIO_BACKTEST:
             return {...state, portfolioBacktestData: {...action.payload}}
+
+        case FETCH_PORTFOLIO_NAME:
+            return {...state, portfolioName: action.payload}
 
         case FETCH_CURRENT_PORTFOLIO_POSITION:
             return {...state, currentPortfolioPosition: {...action.payload}}

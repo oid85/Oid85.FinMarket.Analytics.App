@@ -7,6 +7,14 @@ export const PriceDiagram = ({data}) => {
     return (
         <div>
             <ComposedChart className='fundamental-by-company-border-style' width={730} height={350} data={data}>  
+                <text 
+                    x="15%" 
+                    y="5%" 
+                    textAnchor="middle" 
+                    dominantBaseline="middle" 
+                    fill="#808080" 
+                    fontSize={18}
+                >oid85</text>                            
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />              
                 <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />                                

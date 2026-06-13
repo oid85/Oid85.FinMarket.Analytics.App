@@ -77,6 +77,7 @@ export const PortfolioPositionList = () => {
                 <div className='horizontal-container'>
                     <div className='portfolio-position-total-sum'>{`Сумма портфеля: ${formatNumber(portfolioPositionListData.result.totalSum)} руб.`}</div>
                 </div>
+                <text>oid85</text>
                 <div className='horizontal-container'>
                     <div className='portfolio-position-number-header-cell portfolio-position-border-style'>№</div>
                     <div className='portfolio-position-ticker-header-cell portfolio-position-border-style'>Тикер</div>

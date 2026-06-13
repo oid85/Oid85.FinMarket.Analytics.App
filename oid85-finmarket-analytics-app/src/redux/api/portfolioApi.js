@@ -6,8 +6,8 @@ export const getPortfolioPositionListFromApi = async (orderField) => {
     return sendPostRequest(`${controller}/position/list`, {orderField})
 }
 
-export const getPortfolioBacktestFromApi = async () => {
-    return sendPostRequest(`${controller}/backtest`, {})
+export const getPortfolioBacktestFromApi = async (portfolioName) => {
+    return sendPostRequest(`${controller}/backtest`, {portfolioName})
 }
 
 export const editPortfolioPositionFromApi = async (ticker, manualCoefficient, lifeSize) => {

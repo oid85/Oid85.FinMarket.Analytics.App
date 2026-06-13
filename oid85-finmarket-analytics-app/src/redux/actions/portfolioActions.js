@@ -4,6 +4,7 @@ import {
     SAGA_EDIT_PORTFOLIO_POSITION,
     FETCH_PORTFOLIO_POSITION_LIST,
     FETCH_PORTFOLIO_BACKTEST,
+    FETCH_PORTFOLIO_NAME,
     FETCH_CURRENT_PORTFOLIO_POSITION,
     SHOW_EDIT_PORTFOLIO_POSITION_MODAL,
     HIDE_EDIT_PORTFOLIO_POSITION_MODAL
@@ -38,6 +39,13 @@ export const fetchPortfolioPositionList = (data) => {
 export const fetchPortfolioBacktest = (data) => {
     return {
         type: FETCH_PORTFOLIO_BACKTEST,
+        payload: data
+    }
+}
+
+export const fetchPortfolioName = (data) => {
+    return {
+        type: FETCH_PORTFOLIO_NAME,
         payload: data
     }
 }

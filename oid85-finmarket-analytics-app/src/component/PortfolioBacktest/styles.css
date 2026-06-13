@@ -26,3 +26,16 @@
 .portfolio-backtest-diagram {     
     padding: 1px; 
 }
+
+.portfolio-backtest-name-button-container {  
+    padding: 1px;
+}
+
+.portfolio-backtest-name-button {    
+    width: 200px;
+    height: 30px;
+}
+
+.portfolio-backtest-name-button-text {        
+    font-size: 10px;
+}
