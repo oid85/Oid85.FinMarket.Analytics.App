@@ -60,6 +60,12 @@
     font-size: 14px;  
 }
 
+.portfolio-position-fundamental-score-coefficient-header-cell {
+    width: 60px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
 .portfolio-position-dividend-coefficient-header-cell {
     width: 60px;
     padding: 1px;
@@ -158,6 +164,12 @@
 
 .portfolio-position-trend-coefficient-cell {
     width: 70px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-position-fundamental-score-coefficient-cell {
+    width: 60px;
     padding: 1px;
     font-size: 14px;  
 }

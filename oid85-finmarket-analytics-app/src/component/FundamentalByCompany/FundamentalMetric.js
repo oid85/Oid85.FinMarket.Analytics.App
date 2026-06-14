@@ -12,6 +12,15 @@ const colorTrendState = (trendState) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const colorFallingFromMax = (fallingFromMax) => {
+    if (!fallingFromMax) { return CONSTANTS.COLOR_GREEN }
+    if (fallingFromMax < -10) { return CONSTANTS.COLOR_LIGHTRED }
+    if (fallingFromMax < -5) { return CONSTANTS.COLOR_YELLOW }
+    if (fallingFromMax < 0) { return CONSTANTS.COLOR_GREEN }
+
+    return CONSTANTS.COLOR_WHITE
+}
+
 export const FundamentalMetric = () => {
 
     const fundamentalByCompanyData = useSelector(state => state.fundamentalParameter.fundamentalByCompanyData)
@@ -127,6 +136,12 @@ export const FundamentalMetric = () => {
                         <div>Краткосрочно</div>
                         <div>{fundamentalByCompanyData.result.trendState}</div>
                     </div>
+                    <div 
+                        className='fundamental-by-sector-fundamental-metric-indicator fundamental-by-company-border-style' 
+                        style={{backgroundColor: colorFallingFromMax(fundamentalByCompanyData.result.fallingFromMax)}}>
+                        <div>От год. макс.</div>
+                        <div className='fundamental-by-sector-fundamental-metric-indicator-value'>{`${fundamentalByCompanyData.result.fallingFromMax} %`}</div>
+                    </div>                    
                 </div>                               
             </div>            
         }

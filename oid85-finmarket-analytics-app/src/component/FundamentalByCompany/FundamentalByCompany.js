@@ -132,6 +132,10 @@ export const FundamentalByCompany = () => {
                         <div>📌 <u>Дивиденды</u></div>      
                         <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.dividendYield.text}</div> 
                         <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.dividendAristocrat.text}</div> 
+                        <br/>
+                        <div>📌 <u>Динамика по цене</u></div>  
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{`Краткосрочно ${fundamentalByCompanyData.result.trendState}`}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{`Падение от годового максимума ${fundamentalByCompanyData.result.fallingFromMax} %`}</div>                        
                         <br/>                       
                         <div>📌 <u>Фундаментальный рейтинг</u></div>
                         <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.score.text}</div>
