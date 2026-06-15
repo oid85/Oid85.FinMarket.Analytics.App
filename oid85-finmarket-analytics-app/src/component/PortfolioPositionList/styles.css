@@ -37,7 +37,7 @@
 }
 
 .portfolio-position-name-header-cell {
-    width: 270px;  
+    width: 200px;  
     padding: 1px;
     font-size: 14px; 
 }
@@ -91,7 +91,13 @@
 }
 
 .portfolio-position-percentage-header-cell {
-    width: 100px;
+    width: 70px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-position-month-delta-price-percent-header-cell {
+    width: 90px;
     padding: 1px;
     font-size: 14px;  
 }
@@ -145,7 +151,7 @@
 }
 
 .portfolio-position-name-cell {
-    width: 270px;
+    width: 200px;
     padding: 1px;
     font-size: 14px; 
 }
@@ -199,7 +205,13 @@
 }
 
 .portfolio-position-percentage-cell {
-    width: 100px;
+    width: 70px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-position-month-delta-price-percent-cell {
+    width: 90px;
     padding: 1px;
     font-size: 14px;  
 }

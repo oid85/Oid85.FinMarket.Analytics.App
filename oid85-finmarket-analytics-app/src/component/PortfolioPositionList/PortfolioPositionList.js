@@ -102,6 +102,16 @@ export const PortfolioPositionList = () => {
                                 }}><div className='sort-button-text'>Сорт.</div></button>
                         </div>
                     </div>
+                    <div className='portfolio-position-month-delta-price-percent-header-cell portfolio-position-border-style'>
+                    <div>Рост мес., %</div>
+                        <div className='sort-button-container'>
+                            <button className='btn btn-outline-dark sort-button'
+                                onClick={() => {
+                                    dispatch(fetchOrderField('MonthDeltaPricePercent'))
+                                    dispatch(sagaPortfolioPositionList())
+                                }}><div className='sort-button-text'>Сорт.</div></button>
+                        </div>
+                    </div>                    
                     <div className='portfolio-position-delta-size-header-cell portfolio-position-border-style'>
                     <div>Изм., %</div>
                         <div className='sort-button-container'>
@@ -131,6 +141,7 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-name-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.name}</div>  
                             <div className='portfolio-position-current-dividend-yield-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.currentDividendYield ? `${portfolioPosition.currentDividendYield} %` : ''}</div>  
                             <div className='portfolio-position-percentage-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{`${portfolioPosition.percent} %`}</div>                            
+                            <div className='portfolio-position-month-delta-price-percent-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{`${portfolioPosition.monthDeltaPricePercent} %`}</div>                            
                             <div title={GetDeltaPercentTitle(portfolioPosition.deltaPercent)} className='portfolio-position-delta-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{GetDeltaPercentValue(portfolioPosition.deltaPercent)}</div>
                             <div className='portfolio-position-sector-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.sector}</div>                           
                             <div className='portfolio-position-fundamental-score-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.fundamentalScoreCoefficient}</div>   
