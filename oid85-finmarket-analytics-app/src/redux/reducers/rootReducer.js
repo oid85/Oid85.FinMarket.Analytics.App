@@ -9,6 +9,7 @@ import { weekTrendDeltaReducer } from './weekTrendDeltaReducer'
 import { portfolioReducer } from './portfolioReducer'
 import { bondAnalyseReducer } from './bondAnalyseReducer'
 import { closePriceDiagramReducer } from './closePriceDiagramReducer'
+import { trendAggregateDiagramReducer } from './trendAggregateDiagramReducer'
 import { orderReducer } from './orderReducer'
 
 export const rootReducer = combineReducers({
@@ -22,5 +23,6 @@ export const rootReducer = combineReducers({
     portfolio: portfolioReducer,
     bondAnalyse: bondAnalyseReducer,
     closePriceDiagram: closePriceDiagramReducer,
+    trendAggregateDiagram: trendAggregateDiagramReducer,
     order: orderReducer
 })
