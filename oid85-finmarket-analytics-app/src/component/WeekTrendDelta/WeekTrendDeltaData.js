@@ -47,7 +47,7 @@ export const WeekTrendDeltaData = ({data}) => {
             {
                 data.map((dataItem) => (
                     <div className='horizontal-container'>
-                        <div className='trend-dynamic-border-style'><Ticker value={dataItem.ticker} width={28} height={28} /></div>
+                        <div className='trend-dynamic-border-style'><Ticker value={dataItem.ticker} width={34} height={34} /></div>
                         <div className='vertical-container week-trend-border-style'>
                             <div className='week-trend-delta-instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>
                             <div className='week-trend-delta-instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>
