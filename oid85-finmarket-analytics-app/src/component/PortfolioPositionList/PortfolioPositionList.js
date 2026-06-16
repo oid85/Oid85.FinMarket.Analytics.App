@@ -122,6 +122,7 @@ export const PortfolioPositionList = () => {
                                 }}><div className='sort-button-text'>Сорт.</div></button>
                         </div>                    
                     </div>                    
+                    <div className='portfolio-position-recommendation-header-cell portfolio-position-border-style'>Рекоменд.</div>
                     <div className='portfolio-position-sector-header-cell portfolio-position-border-style'>Сектор (доля, %)</div>
                     <div className='portfolio-position-fundamental-score-coefficient-header-cell portfolio-position-border-style'>Рейт. коэф.</div>
                     <div className='portfolio-position-dividend-coefficient-header-cell portfolio-position-border-style'>Див. коэф.</div>
@@ -143,6 +144,7 @@ export const PortfolioPositionList = () => {
                             <div className='portfolio-position-percentage-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{`${portfolioPosition.percent} %`}</div>                            
                             <div className='portfolio-position-month-delta-price-percent-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{`${portfolioPosition.monthDeltaPricePercent} %`}</div>                            
                             <div title={GetDeltaPercentTitle(portfolioPosition.deltaPercent)} className='portfolio-position-delta-size-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{GetDeltaPercentValue(portfolioPosition.deltaPercent)}</div>
+                            <div className='portfolio-position-recommendation-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.recommendation}</div>                           
                             <div className='portfolio-position-sector-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.sector}</div>                           
                             <div className='portfolio-position-fundamental-score-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.fundamentalScoreCoefficient}</div>   
                             <div className='portfolio-position-dividend-coefficient-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.dividendCoefficient}</div>                            
