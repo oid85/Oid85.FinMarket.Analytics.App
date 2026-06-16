@@ -10,6 +10,7 @@ import {
 } from '../../redux/actions/orderActions'
 import {EditPortfolioPositionModal} from './EditPortfolioPositionModal'
 import Loader from '../Loader/Loader'
+import {Ticker} from '../Ticker/Ticker'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { CONSTANTS } from '../../constants'
@@ -80,6 +81,7 @@ export const PortfolioPositionList = () => {
                 <text>oid85</text>
                 <div className='horizontal-container'>
                     <div className='portfolio-position-number-header-cell portfolio-position-border-style'>№</div>
+                    <div className='portfolio-position-border-style' style={{width: 24}}></div>
                     <div className='portfolio-position-ticker-header-cell portfolio-position-border-style'>Тикер</div>
                     <div className='portfolio-position-name-header-cell portfolio-position-border-style'>Наименование</div>
                     <div className='portfolio-position-current-dividend-yield-header-cell portfolio-position-border-style'>
@@ -138,6 +140,7 @@ export const PortfolioPositionList = () => {
                     portfolioPositionListData.result.portfolioPositions.map((portfolioPosition) => (
                         <div className='horizontal-container'>
                             <div className='portfolio-position-number-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.number}</div>
+                            <div className='portfolio-position-border-style'><Ticker value={portfolioPosition.ticker} width={22} height={22} /></div>
                             <div className='portfolio-position-ticker-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.ticker}</div>
                             <div className='portfolio-position-name-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.name}</div>  
                             <div className='portfolio-position-current-dividend-yield-cell portfolio-position-border-style' style={{backgroundColor: sizeColor(portfolioPosition.size, portfolioPosition.lifeSize)}}>{portfolioPosition.currentDividendYield ? `${portfolioPosition.currentDividendYield} %` : ''}</div>  
