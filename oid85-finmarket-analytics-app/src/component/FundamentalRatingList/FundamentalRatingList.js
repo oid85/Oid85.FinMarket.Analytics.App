@@ -4,6 +4,7 @@ import {
     sagaFundamentalRatingList
 } from '../../redux/actions/fundamentalParameterActions'
 import Loader from '../Loader/Loader'
+import {Ticker} from '../Ticker/Ticker'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { CONSTANTS } from '../../constants'
@@ -78,6 +79,7 @@ console.log(fundamentalRatingListData.result)
                 <text>oid85</text>                               
                 <div className='horizontal-container'>
                 <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
+                <div className='fundamental-rating-border-style' style={{width: 24}}></div>
                 <div className='fundamental-rating-ticker-header-cell fundamental-rating-border-style'>Тикер</div>
                 <div className='fundamental-rating-name-header-cell fundamental-rating-border-style'>Наименование</div>
                 <div className='fundamental-rating-sector-header-cell fundamental-rating-border-style'>Сектор</div>
@@ -109,6 +111,7 @@ console.log(fundamentalRatingListData.result)
                     fundamentalRatingListData.result.items.map((fundamentalRatingItem) =>(
                         <div className='horizontal-container'>
                             <div className='fundamental-rating-number-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.number}</b></div> : <div>{fundamentalRatingItem.number}</div>}</div>
+                            <div className='trend-dynamic-border-style'><Ticker value={fundamentalRatingItem.ticker} width={22} height={22} /></div>
                             <div className='fundamental-rating-ticker-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.ticker}</b></div> : <div>{fundamentalRatingItem.ticker}</div>}</div>
                             <div className='fundamental-rating-name-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.name}</b></div> : <div>{fundamentalRatingItem.name}</div>}</div>
                             <div className='fundamental-rating-sector-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.sector}</b></div> : <div>{fundamentalRatingItem.sector}</div>}</div>

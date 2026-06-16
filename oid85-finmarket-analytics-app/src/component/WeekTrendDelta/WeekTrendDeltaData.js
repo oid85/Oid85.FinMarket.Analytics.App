@@ -1,5 +1,6 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import {Ticker} from '../Ticker/Ticker'
 import './styles.css'
 import {CONSTANTS} from '../../constants'
 
@@ -46,6 +47,7 @@ export const WeekTrendDeltaData = ({data}) => {
             {
                 data.map((dataItem) => (
                     <div className='horizontal-container'>
+                        <div className='trend-dynamic-border-style'><Ticker value={dataItem.ticker} width={28} height={28} /></div>
                         <div className='vertical-container week-trend-border-style'>
                             <div className='week-trend-delta-instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>
                             <div className='week-trend-delta-instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>

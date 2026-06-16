@@ -1,5 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
+import {Ticker} from '../Ticker/Ticker'
 import './styles.css'
 import {CONSTANTS} from '../../constants'
 
@@ -39,9 +40,10 @@ export const TrendDynamicData = ({data}) => {
             {
                 data.map((dataItem) => (
                     <div className='horizontal-container'>
+                        <div className='trend-dynamic-border-style'><Ticker value={dataItem.ticker} width={28} height={28} /></div>
                         <div title={`${dataItem.name}. ${dataItem.concept}`} className='vertical-container trend-dynamic-border-style'>
-                        <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>                            
-                        <div className='instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>                            
+                            <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>                            
+                            <div className='instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>                            
                         </div>                  
                         <div className='vertical-container'>
                             <div className='horizontal-container'>
