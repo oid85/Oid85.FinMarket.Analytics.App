@@ -1,6 +1,5 @@
 import {
     SAGA_INSTRUMENT_LIST,
-    SAGA_INSTRUMENT_SELECT,
     SAGA_INSTRUMENT_PORTFOLIO,
     SAGA_SECTOR_LIST,
     FETCH_INSTRUMENT_LIST,
@@ -18,12 +17,6 @@ export const sagaInstrumentList = () => {
 export const sagaSectorList = () => {
     return {
         type: SAGA_SECTOR_LIST
-    }
-}
-
-export const sagaInstrumentSelect = () => {
-    return {
-        type: SAGA_INSTRUMENT_SELECT
     }
 }
 

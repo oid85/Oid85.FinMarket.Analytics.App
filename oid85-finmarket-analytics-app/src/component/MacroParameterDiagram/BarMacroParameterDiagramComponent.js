@@ -8,7 +8,7 @@ export const BarMacroParameterDiagramComponent = ({series}) => {
             <div className='macro-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={425}                                                
+                height={300}                                                
                 width={900}
             >
                 <CartesianGrid />

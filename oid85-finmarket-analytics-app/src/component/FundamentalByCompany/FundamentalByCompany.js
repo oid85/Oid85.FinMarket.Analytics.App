@@ -39,7 +39,7 @@ export const FundamentalByCompany = () => {
             <div className='horizontal-container fundamental-by-company-container'>
                 <div>
                 {
-                    instrumentListData.result.instruments.filter(item => item.type == 'Share').filter(item => item.isSelected).map((instrument, index) => (
+                    instrumentListData.result.instruments.filter(item => item.type == 'Share').map((instrument, index) => (
                         <div className='company-button-container'>
                             <button className='btn btn-outline-dark company-button'
                                 onClick={() => {

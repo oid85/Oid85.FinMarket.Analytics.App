@@ -15,7 +15,7 @@ const initialState = {
     fundamentalBySectorData: {},
     fundamentalByCompanyData: {},
     currentFundamentalParameter: {},    
-    currentSector: { name: 'Металлургия' },
+    currentSector: { name: 'Банки' },
     editFundamentalParameterModalIsOpened: false
 }
 
