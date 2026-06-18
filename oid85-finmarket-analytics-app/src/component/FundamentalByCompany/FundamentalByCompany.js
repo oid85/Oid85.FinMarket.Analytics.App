@@ -11,7 +11,6 @@ import './styles.css'
 import { PriceDiagram } from './PriceDiagram'
 import { BarDiagram } from './BarDiagram'
 import { fetchCurrentInstrument, sagaInstrumentList } from '../../redux/actions/instrumentActions'
-import { Forecast } from './Forecast'
 import { Dividend } from './Dividend'
 import { FundamentalScore } from './FundamentalScore'
 import { FundamentalMetric } from './FundamentalMetric'
@@ -87,10 +86,6 @@ export const FundamentalByCompany = () => {
                         <h6>Риски</h6>
                         <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.riskInfo}</div>
                     </div> 
-                    <h6>Прогнозы</h6>
-                    <div className='horizontal-container'>
-                        <Forecast />
-                    </div>
                     <h6>Карточка компании</h6>
                     <div>
                         <div>

@@ -97,15 +97,8 @@ console.log(fundamentalRatingListData.result)
                 <div className='fundamental-rating-eps-header-cell fundamental-rating-border-style'>EPS</div>   
                 <div className='fundamental-rating-roa-header-cell fundamental-rating-border-style'>ROA</div>   
                 <div className='fundamental-rating-roe-header-cell fundamental-rating-border-style'>ROE</div>   
-                <div className='fundamental-rating-ebitda-revenue-header-cell fundamental-rating-border-style'>EM</div>   
-                <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от max, %</div>   
-                <div className='fundamental-rating-separator-cell'></div>
-                <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. T., %</div>
-                <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. NB., %</div>
-                <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. FM., %</div>
-                <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. VPD., %</div>
-                <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. PNP., %</div>
-                <div className='fundamental-rating-forecast-header-cell fundamental-rating-border-style'>Пр. M., %</div>
+                <div className='fundamental-rating-ebitda-revenue-header-cell fundamental-rating-border-style'>EM</div>
+                <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от max, %</div>
                 </div>
                 {
                     fundamentalRatingListData.result.items.map((fundamentalRatingItem) =>(
@@ -233,7 +226,7 @@ console.log(fundamentalRatingListData.result)
                                 >{fundamentalRatingItem.inPortfolio 
                                     ? <div><b>{fundamentalRatingItem.score.ebitdaRevenue.value ? 'EM' : ''}</b></div> 
                                     : <div>{fundamentalRatingItem.score.ebitdaRevenue.value ? 'EM' : ''}</div>}
-                            </div>                            
+                            </div>
                             <div 
                                 title='Падение от годового максимума'
                                 className='fundamental-rating-falling-from-max-cell fundamental-rating-border-style' 
@@ -241,56 +234,7 @@ console.log(fundamentalRatingListData.result)
                                 >{fundamentalRatingItem.inPortfolio 
                                     ? <div><b>{GetFallingFromMaxValue(fundamentalRatingItem.fallingFromMax)}</b></div> 
                                     : <div>{GetFallingFromMaxValue(fundamentalRatingItem.fallingFromMax)}</div>}
-                            </div>                            
-                            <div className='fundamental-rating-separator-cell'></div>                                                                                          
-                            <div    
-                                title='Консенсус прогноз Tinkoff'                         
-                                className='fundamental-rating-forecast-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetForecastColor(fundamentalRatingItem.forecast)}}                                 
-                                >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{GetForecastValue(fundamentalRatingItem.forecast, '')}</b></div> 
-                                    : <div>{GetForecastValue(fundamentalRatingItem.forecast, '')}</div>}
-                            </div>   
-                            <div    
-                                title='Прогноз NataliaBaffetovna'                         
-                                className='fundamental-rating-forecast-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetForecastColor(fundamentalRatingItem.nataliaBaffetovnaForecast)}}                                 
-                                >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{GetForecastValue(fundamentalRatingItem.nataliaBaffetovnaForecast, '')}</b></div> 
-                                    : <div>{GetForecastValue(fundamentalRatingItem.nataliaBaffetovnaForecast, '')}</div>}
-                            </div>   
-                            <div    
-                                title='Прогноз FinanceMarker'                         
-                                className='fundamental-rating-forecast-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetForecastColor(fundamentalRatingItem.financeMarkerForecast)}}                                 
-                                >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{GetForecastValue(fundamentalRatingItem.financeMarkerForecast, '')}</b></div> 
-                                    : <div>{GetForecastValue(fundamentalRatingItem.financeMarkerForecast, '')}</div>}
                             </div>
-                            <div    
-                                title='Прогноз VladProDengi'                         
-                                className='fundamental-rating-forecast-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetForecastColor(fundamentalRatingItem.vladProDengiForecast)}}                                 
-                                >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{GetForecastValue(fundamentalRatingItem.vladProDengiForecast, '')}</b></div> 
-                                    : <div>{GetForecastValue(fundamentalRatingItem.vladProDengiForecast, '')}</div>}
-                            </div>  
-                            <div    
-                                title='Прогноз PredictNetProfit'                         
-                                className='fundamental-rating-forecast-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetForecastColor(fundamentalRatingItem.predictNetProfitForecast)}}                                 
-                                >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{GetForecastValue(fundamentalRatingItem.predictNetProfitForecast, '')}</b></div> 
-                                    : <div>{GetForecastValue(fundamentalRatingItem.predictNetProfitForecast, '')}</div>}
-                            </div>                            
-                            <div    
-                                title='Прогноз Mozgovik'                         
-                                className='fundamental-rating-forecast-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetForecastColor(fundamentalRatingItem.mozgovikForecast)}}                                 
-                                >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{GetForecastValue(fundamentalRatingItem.mozgovikForecast, '')}</b></div> 
-                                    : <div>{GetForecastValue(fundamentalRatingItem.mozgovikForecast, '')}</div>}
-                            </div>                                                                                                                                                      
                         </div>
                     ))
                 }

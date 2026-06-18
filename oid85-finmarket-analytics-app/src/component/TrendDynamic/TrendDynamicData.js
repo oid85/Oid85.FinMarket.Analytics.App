@@ -15,24 +15,6 @@ const GetValueDelta = (delta) => {
     return `${delta} %`
 }
 
-const GetColorDividendYield = (dividendYield) => {
-    if (!dividendYield) { return CONSTANTS.COLOR_WHITE }
-    if (dividendYield > 10) { return CONSTANTS.COLOR_GREEN }
-    if (dividendYield > 0) { return CONSTANTS.COLOR_YELLOW }
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetDividendYieldValue = (dividendYield) => {
-    if (!dividendYield) { return '' }
-    return `ДД ${dividendYield} %`
-}
-
-const GetColorFillData = (value) => {
-    if (!value) { return CONSTANTS.COLOR_YELLOW }
-    if (value) { return CONSTANTS.COLOR_GREEN }
-    return CONSTANTS.COLOR_WHITE
-}
-
 export const TrendDynamicData = ({data}) => {
     return (
         <React.Fragment>          
@@ -41,7 +23,7 @@ export const TrendDynamicData = ({data}) => {
                 data.map((dataItem) => (
                     <div className='horizontal-container'>
                         <div className='trend-dynamic-border-style'><Ticker value={dataItem.ticker} width={34} height={34} /></div>
-                        <div title={`${dataItem.name}. ${dataItem.concept}`} className='vertical-container trend-dynamic-border-style'>
+                        <div title={`${dataItem.name}`} className='vertical-container trend-dynamic-border-style'>
                             <div className='instrument-ticker-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.ticker}</b></div> : <div>{dataItem.ticker}</div>}</div>                            
                             <div className='instrument-name-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.name}</b></div> : <div>{dataItem.name}</div>}</div>                            
                         </div>                  
@@ -56,60 +38,7 @@ export const TrendDynamicData = ({data}) => {
                                 ))
                             }     
                             </div>     
-                        </div>                                                 
-                        <div className='trend-dynamic-separator-cell'></div>
-                        <div title='Дивидендная доходность' className='trend-dynamic-border-style' style={{backgroundColor: GetColorDividendYield(dataItem.dividendYield)}}>
-                            <div className='trend-dynamic-dividend-yield-cell'>{dataItem.inPortfolio ? <div><b>{GetDividendYieldValue(dataItem.dividendYield)}</b></div> : <div>{GetDividendYieldValue(dataItem.dividendYield)}</div>}</div> 
-                        </div>
-                        <div title={dataItem.score.score.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.score.colorFill}}>
-                            <div className='trend-dynamic-score-value-cell'>{dataItem.inPortfolio ? <div><b>{`Рейт. ${dataItem.score.score.value}`}</b></div> : <div>{`Рейт. ${dataItem.score.score.value}`}</div>}</div> 
-                        </div>
-                        <div title={dataItem.score.pe.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.pe.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>PE</b></div> : <div>PE</div>}</div> 
-                        </div>
-                        <div title={dataItem.score.pbv.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.pbv.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>BV</b></div> : <div>BV</div>}</div> 
-                        </div>                         
-                        <div title={dataItem.score.evEbitda.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.evEbitda.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>EV</b></div> : <div>EV</div>}</div> 
-                        </div>  
-                        <div title={dataItem.score.netDebtEbitda.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.netDebtEbitda.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ND</b></div> : <div>ND</div>}</div> 
-                        </div>  
-                        <div title={dataItem.score.debtRatio.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.debtRatio.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>DR</b></div> : <div>DR</div>}</div> 
-                        </div> 
-                        <div title={dataItem.score.debtEquity.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.debtEquity.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>DE</b></div> : <div>DE</div>}</div> 
-                        </div>                                               
-                        <div title={dataItem.score.netProfit.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.netProfit.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>NP</b></div> : <div>NP</div>}</div> 
-                        </div>       
-                        <div title={dataItem.score.fcf.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.fcf.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>FCF</b></div> : <div>FCF</div>}</div> 
-                        </div> 
-                        <div title={dataItem.score.eps.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.eps.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>EPS</b></div> : <div>EPS</div>}</div> 
-                        </div>                    
-                        <div title={dataItem.score.roa.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.roa.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ROA</b></div> : <div>ROA</div>}</div> 
-                        </div>             
-                        <div title={dataItem.score.roe.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.roe.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>ROE</b></div> : <div>ROE</div>}</div> 
-                        </div>    
-                        <div title={dataItem.score.ebitdaRevenue.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.ebitdaRevenue.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>EM</b></div> : <div>EM</div>}</div> 
-                        </div>                                                                                                                                                                                      
-                        <div title={dataItem.score.dividendAristocrat.description} className='trend-dynamic-border-style' style={{backgroundColor: dataItem.score.dividendAristocrat.colorFill}}>
-                            <div className='trend-dynamic-score-indicator-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.score.dividendAristocrat.value ? 'DA' : ''}</b></div> : <div>{dataItem.score.dividendAristocrat.value ? 'DA' : ''}</div>}</div> 
-                        </div>                                                                                
-                        <div title={dataItem.inPortfolio ? 'Заполнены данные по фундаменталу' : 'Не заполнены данные по фундаменталу'} className='trend-dynamic-border-style' style={{backgroundColor: GetColorFillData(dataItem.fillData)}}>
-                            {
-                                dataItem.inPortfolio
-                                ? <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div><b>Запол.</b></div> : <div><del><b>Запол.</b></del></div>}</div>
-                                : <div className='trend-dynamic-fill-data-cell'>{dataItem.fillData ? <div>Запол.</div> : <div><del>Запол.</del></div>}</div>
-                            }
-                        </div>                    
+                        </div>                                                                    
                     </div>
                 ))
             }           
