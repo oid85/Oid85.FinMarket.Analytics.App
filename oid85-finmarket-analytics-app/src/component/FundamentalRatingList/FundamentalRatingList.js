@@ -191,8 +191,8 @@ console.log(fundamentalRatingListData.result)
                                 className='fundamental-rating-netprofit-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.netProfit.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>NP</b></div> 
-                                    : <div>NP</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.netProfit.value ? 'NP' : ''}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.netProfit.value ? 'NP' : ''}</div>}
                             </div>                               
                             <div 
                                 title={fundamentalRatingItem.score.fcf.description}
@@ -231,8 +231,8 @@ console.log(fundamentalRatingListData.result)
                                 className='fundamental-rating-ebitda-revenue-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.ebitdaRevenue.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>EM</b></div> 
-                                    : <div>EM</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.ebitdaRevenue.value ? 'EM' : ''}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.ebitdaRevenue.value ? 'EM' : ''}</div>}
                             </div>                            
                             <div 
                                 title='Падение от годового максимума'
