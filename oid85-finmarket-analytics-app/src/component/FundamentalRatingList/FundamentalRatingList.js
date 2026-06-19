@@ -43,33 +43,33 @@ console.log(fundamentalRatingListData.result)
             <div className='fundamental-rating-container'> 
                 <text>oid85</text>                               
                 <div className='horizontal-container'>
-                <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
-                <div className='fundamental-rating-border-style' style={{width: 62}}></div>
-                <div className='fundamental-rating-ticker-header-cell fundamental-rating-border-style'>Тикер</div>
-                <div className='fundamental-rating-name-header-cell fundamental-rating-border-style'>Наименование</div>
-                <div className='fundamental-rating-sector-header-cell fundamental-rating-border-style'>Сектор</div>
-                <div className='fundamental-rating-score-header-cell fundamental-rating-border-style'>Рейт.</div>
-                <div className='fundamental-rating-pe-header-cell fundamental-rating-border-style'>P / E</div>
-                <div className='fundamental-rating-pbv-header-cell fundamental-rating-border-style'>P / BV</div>
-                <div className='fundamental-rating-ev-ebitda-header-cell fundamental-rating-border-style'>EV / EBITDA</div>
-                <div className='fundamental-rating-netdebt-ebitda-header-cell fundamental-rating-border-style'>ND / EBITDA</div>
-                <div className='fundamental-rating-debt-ratio-header-cell fundamental-rating-border-style'>Debt Ratio</div>
-                <div className='fundamental-rating-debt-equity-header-cell fundamental-rating-border-style'>Debt Equity</div>
-                <div className='fundamental-rating-dividend-yield-header-cell fundamental-rating-border-style'>ДД, %</div>
-                <div className='fundamental-rating-dividend-aristocrat-header-cell fundamental-rating-border-style'>Стабильность дивидендов</div>
-                <div className='fundamental-rating-netprofit-header-cell fundamental-rating-border-style'>Чистая прибыль</div>
-                <div className='fundamental-rating-fcf-header-cell fundamental-rating-border-style'>FCF</div>
-                <div className='fundamental-rating-eps-header-cell fundamental-rating-border-style'>EPS</div>   
-                <div className='fundamental-rating-roa-header-cell fundamental-rating-border-style'>ROA, %</div>   
-                <div className='fundamental-rating-roe-header-cell fundamental-rating-border-style'>ROE, %</div>   
-                <div className='fundamental-rating-ebitda-revenue-header-cell fundamental-rating-border-style'>EBITDA Margin, %</div>
-                <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от год. max, %</div>
+                    <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
+                    <div className='fundamental-rating-border-style' style={{width: 62}}></div>
+                    <div className='fundamental-rating-ticker-header-cell fundamental-rating-border-style'>Тикер</div>
+                    <div className='fundamental-rating-name-header-cell fundamental-rating-border-style'>Наименование</div>
+                    <div className='fundamental-rating-sector-header-cell fundamental-rating-border-style'>Сектор</div>
+                    <div className='fundamental-rating-score-header-cell fundamental-rating-border-style'>Рейт.</div>
+                    <div className='fundamental-rating-pe-header-cell fundamental-rating-border-style'>P / E</div>
+                    <div className='fundamental-rating-pbv-header-cell fundamental-rating-border-style'>P / BV</div>
+                    <div className='fundamental-rating-ev-ebitda-header-cell fundamental-rating-border-style'>EV / EBITDA</div>
+                    <div className='fundamental-rating-netdebt-ebitda-header-cell fundamental-rating-border-style'>ND / EBITDA</div>
+                    <div className='fundamental-rating-debt-ratio-header-cell fundamental-rating-border-style'>Debt Ratio</div>
+                    <div className='fundamental-rating-debt-equity-header-cell fundamental-rating-border-style'>Debt Equity</div>
+                    <div className='fundamental-rating-dividend-yield-header-cell fundamental-rating-border-style'>ДД, %</div>
+                    <div className='fundamental-rating-dividend-aristocrat-header-cell fundamental-rating-border-style'>Стабильность дивидендов</div>
+                    <div className='fundamental-rating-netprofit-header-cell fundamental-rating-border-style'>Чистая прибыль</div>
+                    <div className='fundamental-rating-fcf-header-cell fundamental-rating-border-style'>FCF</div>
+                    <div className='fundamental-rating-eps-header-cell fundamental-rating-border-style'>EPS</div>   
+                    <div className='fundamental-rating-roa-header-cell fundamental-rating-border-style'>ROA, %</div>   
+                    <div className='fundamental-rating-roe-header-cell fundamental-rating-border-style'>ROE, %</div>   
+                    <div className='fundamental-rating-ebitda-revenue-header-cell fundamental-rating-border-style'>EBITDA Margin, %</div>
+                    <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от год. max, %</div>
                 </div>
                 {
                     fundamentalRatingListData.result.items.map((fundamentalRatingItem) =>(
                         <div className='horizontal-container'>
                             <div className='fundamental-rating-number-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.number}</b></div> : <div>{fundamentalRatingItem.number}</div>}</div>
-                            <div className='trend-dynamic-border-style'><Ticker value={fundamentalRatingItem.ticker} width={60} height={60} /></div>
+                            <div className='fundamental-rating-border-style'><Ticker value={fundamentalRatingItem.ticker} width={60} height={60} /></div>
                             <div className='fundamental-rating-ticker-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.ticker}</b></div> : <div>{fundamentalRatingItem.ticker}</div>}</div>
                             <div className='fundamental-rating-name-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.name}</b></div> : <div>{fundamentalRatingItem.name}</div>}</div>
                             <div className='fundamental-rating-sector-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.sector}</b></div> : <div>{fundamentalRatingItem.sector}</div>}</div>

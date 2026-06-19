@@ -53,3 +53,203 @@
 .sector-button-text {        
     font-size: 12px;
 }
+
+.fundamental-by-sector-number-header-cell {
+    width: 30px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-number-cell {    
+    width: 30px;
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-ticker-header-cell {
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-ticker-cell {  
+    width: 50px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-name-header-cell {
+    width: 120px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-name-cell {   
+    width: 120px; 
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-sector-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-sector-cell { 
+    width: 90px;   
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-score-header-cell {
+    width: 40px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-score-cell {   
+    width: 40px; 
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-pe-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-pe-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-pbv-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-pbv-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-ev-ebitda-header-cell {
+    width: 90px;  
+    font-size: 12px; 
+}
+
+.fundamental-by-sector-ev-ebitda-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-netdebt-ebitda-header-cell {
+    width: 90px;  
+    font-size: 12px; 
+}
+
+.fundamental-by-sector-netdebt-ebitda-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-debt-ratio-header-cell {
+    width: 90px;  
+    font-size: 12px; 
+}
+
+.fundamental-by-sector-debt-ratio-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-debt-equity-header-cell {
+    width: 90px;  
+    font-size: 12px; 
+}
+
+.fundamental-by-sector-debt-equity-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-dividend-yield-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-dividend-yield-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-dividend-aristocrat-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-dividend-aristocrat-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-netprofit-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-netprofit-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-fcf-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-fcf-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-eps-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-eps-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-roa-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-roa-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-roe-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-roe-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-ebitda-revenue-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-ebitda-revenue-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-falling-from-max-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-falling-from-max-cell {   
+    width: 90px; 
+    font-size: 14px; 
+}
