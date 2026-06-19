@@ -40,8 +40,7 @@ console.log(fundamentalRatingListData.result)
             !fundamentalRatingListData.result || loading
             ? <Loader/>
             :
-            <div className='fundamental-rating-container'> 
-                <text>oid85</text>                               
+            <div className='fundamental-rating-container'>                          
                 <div className='horizontal-container'>
                     <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
                     <div className='fundamental-rating-border-style' style={{width: 62}}></div>

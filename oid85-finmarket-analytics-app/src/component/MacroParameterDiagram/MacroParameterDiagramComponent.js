@@ -11,15 +11,7 @@ export const MacroParameterDiagramComponent = ({series}) => {
                 height={300}                                                
                 width={900}
             >
-                <CartesianGrid />
-                <text 
-                    x="12%" 
-                    y="10%" 
-                    textAnchor="middle" 
-                    dominantBaseline="middle" 
-                    fill="#808080" 
-                    fontSize={18}
-                >oid85</text>                
+                <CartesianGrid />            
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis domain={['auto', 'auto']}/>
                 <Legend />

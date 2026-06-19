@@ -11,6 +11,7 @@ import aptk from "./img/aptk.png"
 import aqua from "./img/aqua.png"
 import astr from "./img/astr.png"
 import bane from "./img/bane.png"
+import baza from "./img/baza.png"
 import belu from "./img/belu.png"
 import blng from "./img/blng.png"
 import bspb from "./img/bspb.png"
@@ -23,6 +24,7 @@ import cntl from "./img/cntl.png"
 import data from "./img/data.png"
 import deli from "./img/deli.png"
 import dias from "./img/dias.png"
+import domrf from "./img/domrf.png"
 import dvec from "./img/dvec.png"
 import elfv from "./img/elfv.png"
 import elmt from "./img/elmt.png"
@@ -128,6 +130,7 @@ import tatn from "./img/tatn.png"
 import tgka from "./img/tgka.png"
 import tgkb from "./img/tgkb.png"
 import tgkn from "./img/tgkn.png"
+import tgld from "./img/tgld.png"
 import trmk from "./img/trmk.png"
 import trnf from "./img/trnf.png"
 import ttlk from "./img/ttlk.png"
@@ -166,6 +169,7 @@ export const Ticker = ({value, height, width}) => {
         case 'astr': return <img src={astr} alt="" height={height} width={width}/>
         case 'banep':
         case 'bane': return <img src={bane} alt="" height={height} width={width}/>
+        case 'baza': return <img src={baza} alt="" height={height} width={width}/>
         case 'belu': return <img src={belu} alt="" height={height} width={width}/>
         case 'blng': return <img src={blng} alt="" height={height} width={width}/>
         case 'bspb': return <img src={bspb} alt="" height={height} width={width}/>
@@ -178,6 +182,7 @@ export const Ticker = ({value, height, width}) => {
         case 'cntl': return <img src={cntl} alt="" height={height} width={width}/>
         case 'data': return <img src={data} alt="" height={height} width={width}/>
         case 'deli': return <img src={deli} alt="" height={height} width={width}/>
+        case 'domrf': return <img src={domrf} alt="" height={height} width={width}/>
         case 'dias': return <img src={dias} alt="" height={height} width={width}/>
         case 'dvec': return <img src={dvec} alt="" height={height} width={width}/>
         case 'elfv': return <img src={elfv} alt="" height={height} width={width}/>
@@ -299,6 +304,7 @@ export const Ticker = ({value, height, width}) => {
         case 'tgkbp':
         case 'tgkb': return <img src={tgkb} alt="" height={height} width={width}/>
         case 'tgkn': return <img src={tgkn} alt="" height={height} width={width}/>
+        case 'tgld': return <img src={tgld} alt="" height={height} width={width}/>
         case 'trmk': return <img src={trmk} alt="" height={height} width={width}/>
         case 'trnfp': return <img src={trnf} alt="" height={height} width={width}/>
         case 'ttlk': return <img src={ttlk} alt="" height={height} width={width}/>

@@ -12,15 +12,7 @@ export const TrendAggregateDiagramComponent = ({series}) => {
                 height={850}                                                
                 width={1900}
             >
-                <CartesianGrid />
-                <text 
-                    x="7%" 
-                    y="5%" 
-                    textAnchor="middle" 
-                    dominantBaseline="middle" 
-                    fill="#808080" 
-                    fontSize={18}
-                >oid85</text>                
+                <CartesianGrid />            
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis domain={['auto', 'auto']}/>
                 <Legend />
