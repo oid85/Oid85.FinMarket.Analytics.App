@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { PriceDiagram } from './PriceDiagram'
 import { BarDiagram } from './BarDiagram'
+import { BarDiagramInvertColor } from './BarDiagramInvertColor'
 import { fetchCurrentInstrument, sagaInstrumentList } from '../../redux/actions/instrumentActions'
 import { Dividend } from './Dividend'
 import { FundamentalScoreIndicator } from './FundamentalScoreIndicator'
@@ -179,7 +180,7 @@ export const FundamentalByCompany = () => {
                             :
                             <div className='fundamental-by-company-bar-diagram'>
                                 <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
-                                <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaDiagramData} />
+                                <BarDiagramInvertColor data={fundamentalByCompanyData.result.netDebtEbitdaDiagramData} />
                             </div>                  
                         }
                     </div>                    
@@ -208,7 +209,7 @@ export const FundamentalByCompany = () => {
                             :
                             <div className='fundamental-by-company-bar-diagram'>
                                 <div className='fundamental-by-company-bar-diagram-title'>NetDebt/EBITDA</div>
-                                <BarDiagram data={fundamentalByCompanyData.result.netDebtEbitdaSectorDiagramData} />
+                                <BarDiagramInvertColor data={fundamentalByCompanyData.result.netDebtEbitdaSectorDiagramData} />
                             </div>
                         }                        
                     </div>

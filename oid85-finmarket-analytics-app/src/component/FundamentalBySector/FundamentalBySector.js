@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { LineDiagram } from './LineDiagram'
 import { BarDiagram } from './BarDiagram'
+import { BarDiagramInvertColor } from './BarDiagramInvertColor'
 import { BubbleDiagram } from './BubbleDiagram'
 import { sagaSectorList } from '../../redux/actions/instrumentActions'
 import { Ticker } from '../Ticker/Ticker'
@@ -254,7 +255,7 @@ console.log(fundamentalBySectorData.result)
                         <div className='horizontal-container'>
                         {
                             fundamentalBySectorData.result.netDebtDiagram.map((diagram, index) => (
-                                <BarDiagram key={index} data={diagram.data} />))
+                                <BarDiagramInvertColor key={index} data={diagram.data} />))
                         }                        
                         </div>                        
                     </div>

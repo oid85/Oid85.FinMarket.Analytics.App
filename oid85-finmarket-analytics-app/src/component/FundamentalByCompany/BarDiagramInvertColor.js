@@ -3,7 +3,7 @@ import { AreaChart, Area, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis
 import './styles.css'
 import {CONSTANTS} from '../../constants'
 
-export const BarDiagram = ({ data }) => {
+export const BarDiagramInvertColor = ({ data }) => {
     return (
         <div className='fundamental-by-company-border-style'>
             <BarChart width={400} height={200} data={data}>
@@ -19,8 +19,8 @@ export const BarDiagram = ({ data }) => {
                     data.map((entry, index) => (
                         <Cell 
                             key={`cell-${index}`} 
-                            fill={entry["y"] < 0 ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_GREEN} 
-                            stroke={entry["y"] < 0 ? CONSTANTS.COLOR_DARKRED : CONSTANTS.COLOR_DARKGREEN} 
+                            fill={entry["y"] < 0 ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_RED} 
+                            stroke={entry["y"] < 0 ? CONSTANTS.COLOR_DARKGREEN : CONSTANTS.COLOR_DARKRED} 
                             />
                         ))
                 }

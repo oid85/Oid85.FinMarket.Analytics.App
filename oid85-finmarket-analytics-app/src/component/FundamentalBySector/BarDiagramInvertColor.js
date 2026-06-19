@@ -3,7 +3,7 @@ import { AreaChart, Area, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis
 import './styles.css'
 import {CONSTANTS} from '../../constants'
 
-export const BarDiagram = ({ key, data }) => {
+export const BarDiagramInvertColor = ({ key, data }) => {
     return (
         <div className='fundamental-by-sector-border-style'>
             <BarChart key = {key} width={185} height={70} data={data}>
@@ -19,8 +19,8 @@ export const BarDiagram = ({ key, data }) => {
                     data.map((entry, index) => (
                         <Cell
                             key={`cell-${index}`} 
-                            fill={entry["value"] < 0 ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_GREEN} 
-                            stroke={entry["value"] < 0 ? CONSTANTS.COLOR_DARKRED : CONSTANTS.COLOR_DARKGREEN} 
+                            fill={entry["value"] < 0 ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_RED} 
+                            stroke={entry["value"] < 0 ? CONSTANTS.COLOR_DARKGREEN : CONSTANTS.COLOR_DARKRED} 
                             />
                         ))
                 }
