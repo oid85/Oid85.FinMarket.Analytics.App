@@ -8,9 +8,9 @@ export const LineDiagram = ({ key, ticker, name, inPortfolio, data }) => {
         <div className='fundamental-by-sector-border-style'>
             <div className='fundamental-by-sector-line-diagram-title'>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
             <div className='fundamental-by-sector-line-diagram-name'>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
-            <AreaChart key = {key} width={250} height={120} data={data}>
+            <AreaChart key = {key} width={185} height={120} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
+                <YAxis width={25} type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
                 <Area type="monotone" dataKey="value" strokeWidth={2} stroke={CONSTANTS.COLOR_STATEBLUE} fill={CONSTANTS.COLOR_LIGHTSKYBLUE} />
             </AreaChart>

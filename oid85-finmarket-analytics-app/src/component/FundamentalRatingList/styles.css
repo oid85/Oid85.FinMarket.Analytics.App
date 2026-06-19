@@ -40,195 +40,181 @@
 }
 
 .fundamental-rating-name-header-cell {
-    width: 210px;  
-    font-size: 14px; 
-}
-
-.fundamental-rating-name-cell {   
-    width: 210px; 
-    font-size: 14px; 
-}
-
-.fundamental-rating-sector-header-cell {
     width: 120px;  
     font-size: 14px; 
 }
 
+.fundamental-rating-name-cell {   
+    width: 120px; 
+    font-size: 14px; 
+}
+
+.fundamental-rating-sector-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
 .fundamental-rating-sector-cell { 
-    width: 120px;   
+    width: 90px;   
     font-size: 14px; 
 }
 
 .fundamental-rating-score-header-cell {
-    width: 50px;  
+    width: 40px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-score-cell {   
-    width: 50px; 
+    width: 40px; 
     font-size: 14px; 
 }
 
 .fundamental-rating-pe-header-cell {
-    width: 50px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-pe-cell {   
-    width: 50px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-pbv-header-cell {
-    width: 50px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-pbv-cell {   
-    width: 50px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-ev-ebitda-header-cell {
-    width: 50px;  
+    width: 90px;  
     font-size: 12px; 
 }
 
 .fundamental-rating-ev-ebitda-cell {   
-    width: 50px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-netdebt-ebitda-header-cell {
-    width: 50px;  
+    width: 90px;  
     font-size: 12px; 
 }
 
 .fundamental-rating-netdebt-ebitda-cell {   
-    width: 50px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-debt-ratio-header-cell {
-    width: 50px;  
+    width: 90px;  
     font-size: 12px; 
 }
 
 .fundamental-rating-debt-ratio-cell {   
-    width: 50px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-debt-equity-header-cell {
-    width: 50px;  
+    width: 90px;  
     font-size: 12px; 
 }
 
 .fundamental-rating-debt-equity-cell {   
-    width: 50px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-dividend-yield-header-cell {
-    width: 60px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-dividend-yield-cell {   
-    width: 60px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-dividend-aristocrat-header-cell {
-    width: 40px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-dividend-aristocrat-cell {   
-    width: 40px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-netprofit-header-cell {
-    width: 40px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-netprofit-cell {   
-    width: 40px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-fcf-header-cell {
-    width: 40px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-fcf-cell {   
-    width: 40px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-eps-header-cell {
-    width: 40px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-eps-cell {   
-    width: 40px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-roa-header-cell {
-    width: 40px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-roa-cell {   
-    width: 40px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-roe-header-cell {
-    width: 40px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-roe-cell {   
-    width: 40px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-ebitda-revenue-header-cell {
-    width: 40px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-ebitda-revenue-cell {   
-    width: 40px; 
-    font-size: 14px; 
+    width: 90px; 
+    font-size: 10px; 
 }
 
 .fundamental-rating-falling-from-max-header-cell {
-    width: 70px;  
+    width: 90px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-falling-from-max-cell {   
-    width: 70px; 
+    width: 90px; 
     font-size: 14px; 
-}
-
-.fundamental-rating-forecast-header-cell {
-    width: 65px;  
-    font-size: 14px; 
-}
-
-.fundamental-rating-forecast-cell {   
-    width: 65px; 
-    font-size: 14px; 
-}
-
-.fundamental-rating-separator-cell { 
-    width: 10px;  
 }

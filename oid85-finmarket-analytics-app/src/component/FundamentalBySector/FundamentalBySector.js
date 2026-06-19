@@ -46,7 +46,11 @@ export const FundamentalBySector = () => {
                 }                                                                                                                                                                                                                                                              
                 </div>
                 <div className='fundamental-by-sector-sector-title'>{currentSector.name}</div>
-                <div className='fundamental-by-sector-diagram-title'>График цены</div>
+                <div className='fundamental-by-sector-fundamental-score-title'>Фундаментальный рейтинг</div>
+                <div className='horizontal-container'>
+                 
+                </div>                 
+                <div className='fundamental-by-sector-diagram-title'>Графики цены (динамика за 5 лет)</div>
                 <div className='horizontal-container'>
                 {
                     fundamentalBySectorData.result.priceDiagram.map((diagram, index) => (
@@ -57,38 +61,47 @@ export const FundamentalBySector = () => {
                             inPortfolio={diagram.inPortfolio} 
                             data={diagram.data} />))
                 }                    
-                </div>       
-                <div className='fundamental-by-sector-diagram-title'>Выручка, млрд. руб</div>
-                <div className='horizontal-container'>
-                {
-                    fundamentalBySectorData.result.revenueDiagram.map((diagram, index) => (
-                        <BarDiagram
-                            key={index}
-                            data={diagram.data} />))
-                }                        
-                </div>     
+                </div>           
+                <div className='fundamental-by-sector-diagram-title'>Диаграммы фундаментальных параметров (динамика за пред. 5 лет + TTM)</div>
                 <div className='fundamental-by-sector-diagram-title'>Чистая прибыль, млрд. руб</div>
                 <div className='horizontal-container'>
                 {
                     fundamentalBySectorData.result.netProfitDiagram.map((diagram, index) => (
-                        <BarDiagram
-                            key={index}
-                            data={diagram.data} />))
+                        <BarDiagram key={index} data={diagram.data} />))
                 }                        
-                </div>                 
+                </div> 
+                {
+                    fundamentalBySectorData.result.sector != 'Банки'
+                    ?
+                    <div>
+                        <div className='fundamental-by-sector-diagram-title'>Чистый долг, млрд. руб</div>
+                        <div className='horizontal-container'>
+                        {
+                            fundamentalBySectorData.result.netDebtDiagram.map((diagram, index) => (
+                                <BarDiagram key={index} data={diagram.data} />))
+                        }                        
+                        </div>                        
+                    </div>
+                    : <div></div>
+                }      
                 <div className='fundamental-by-sector-diagram-title'>Дивиденды, руб</div>
                 <div className='horizontal-container'>
                 {
                     fundamentalBySectorData.result.dividendDiagram.map((diagram, index) => (
-                        <BarDiagram
-                            key={index}
-                            data={diagram.data} />))
-                }                        
+                        <BarDiagram key={index} data={diagram.data} />))
+                }
                 </div>
-                <div className='fundamental-by-sector-diagram-title'>EV/EBITDA, NetDebt/EBITDA, MarketCap</div>
-                <div className='horizontal-container'>
-                    <BubbleDiagram data={fundamentalBySectorData.result.bubbleDiagram} />
-                </div>                                                                                                          
+                {
+                    fundamentalBySectorData.result.sector != 'Банки'
+                    ?
+                    <div>
+                        <div className='fundamental-by-sector-diagram-title'>EV/EBITDA, NetDebt/EBITDA, MarketCap</div>
+                        <div className='horizontal-container'>
+                            <BubbleDiagram data={fundamentalBySectorData.result.bubbleDiagram} />
+                        </div>                           
+                    </div>
+                    : <div></div>
+                }
             </div>
         }
 

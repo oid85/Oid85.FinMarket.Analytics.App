@@ -2,7 +2,7 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { CONSTANTS } from '../../constants'
 
-export const FundamentalScore = () => {
+export const FundamentalScoreIndicator = () => {
 
     const fundamentalByCompanyData = useSelector(state => state.fundamentalParameter.fundamentalByCompanyData)
 

@@ -9,41 +9,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { CONSTANTS } from '../../constants'
 
-const GetScoreColor = (score) => {
-    if (!score) { return CONSTANTS.COLOR_WHITE }
-    if (score >= 6) { return CONSTANTS.COLOR_GREEN }
-    if (score >= 3) { return CONSTANTS.COLOR_YELLOW }
-    if (score >= 0) { return CONSTANTS.COLOR_RED }
-
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetDividendYieldColor = (dividendYield) => {
-    if (!dividendYield) { return CONSTANTS.COLOR_WHITE }
-    if (dividendYield > 10) { return CONSTANTS.COLOR_GREEN }
-    if (dividendYield > 0) { return CONSTANTS.COLOR_YELLOW }
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetDividendYieldValue = (dividendYield) => {
-    if (!dividendYield) { return '' }
-    return `${dividendYield} %`
-}
-
-const GetForecastColor = (forecast) => {
-    if (!forecast) { return CONSTANTS.COLOR_WHITE }
-    if (forecast.upsidePrc > 10) { return CONSTANTS.COLOR_GREEN }
-    if (forecast.upsidePrc > 0) { return CONSTANTS.COLOR_YELLOW }
-    if (forecast.upsidePrc <= 0) { return CONSTANTS.COLOR_LIGHTRED }
-
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetForecastValue = (forecast, suffix) => {
-    if (!forecast) { return '' }
-    return `${suffix} ${forecast.upsidePrc} %`
-}
-
 const GetFallingFromMaxColor = (fallingFromMax, inPortfolio) => {
     if (!fallingFromMax) { return CONSTANTS.COLOR_WHITE }
     if (fallingFromMax < -10) { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
@@ -79,7 +44,7 @@ console.log(fundamentalRatingListData.result)
                 <text>oid85</text>                               
                 <div className='horizontal-container'>
                 <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
-                <div className='fundamental-rating-border-style' style={{width: 24}}></div>
+                <div className='fundamental-rating-border-style' style={{width: 62}}></div>
                 <div className='fundamental-rating-ticker-header-cell fundamental-rating-border-style'>Тикер</div>
                 <div className='fundamental-rating-name-header-cell fundamental-rating-border-style'>Наименование</div>
                 <div className='fundamental-rating-sector-header-cell fundamental-rating-border-style'>Сектор</div>
@@ -91,141 +56,142 @@ console.log(fundamentalRatingListData.result)
                 <div className='fundamental-rating-debt-ratio-header-cell fundamental-rating-border-style'>Debt Ratio</div>
                 <div className='fundamental-rating-debt-equity-header-cell fundamental-rating-border-style'>Debt Equity</div>
                 <div className='fundamental-rating-dividend-yield-header-cell fundamental-rating-border-style'>ДД, %</div>
-                <div className='fundamental-rating-dividend-aristocrat-header-cell fundamental-rating-border-style'>ДА</div>
-                <div className='fundamental-rating-netprofit-header-cell fundamental-rating-border-style'>NP</div>
+                <div className='fundamental-rating-dividend-aristocrat-header-cell fundamental-rating-border-style'>Стабильность дивидендов</div>
+                <div className='fundamental-rating-netprofit-header-cell fundamental-rating-border-style'>Чистая прибыль</div>
                 <div className='fundamental-rating-fcf-header-cell fundamental-rating-border-style'>FCF</div>
                 <div className='fundamental-rating-eps-header-cell fundamental-rating-border-style'>EPS</div>   
-                <div className='fundamental-rating-roa-header-cell fundamental-rating-border-style'>ROA</div>   
-                <div className='fundamental-rating-roe-header-cell fundamental-rating-border-style'>ROE</div>   
-                <div className='fundamental-rating-ebitda-revenue-header-cell fundamental-rating-border-style'>EM</div>
-                <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от max, %</div>
+                <div className='fundamental-rating-roa-header-cell fundamental-rating-border-style'>ROA, %</div>   
+                <div className='fundamental-rating-roe-header-cell fundamental-rating-border-style'>ROE, %</div>   
+                <div className='fundamental-rating-ebitda-revenue-header-cell fundamental-rating-border-style'>EBITDA Margin, %</div>
+                <div className='fundamental-rating-falling-from-max-header-cell fundamental-rating-border-style'>Пад. от год. max, %</div>
                 </div>
                 {
                     fundamentalRatingListData.result.items.map((fundamentalRatingItem) =>(
                         <div className='horizontal-container'>
                             <div className='fundamental-rating-number-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.number}</b></div> : <div>{fundamentalRatingItem.number}</div>}</div>
-                            <div className='trend-dynamic-border-style'><Ticker value={fundamentalRatingItem.ticker} width={22} height={22} /></div>
+                            <div className='trend-dynamic-border-style'><Ticker value={fundamentalRatingItem.ticker} width={60} height={60} /></div>
                             <div className='fundamental-rating-ticker-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.ticker}</b></div> : <div>{fundamentalRatingItem.ticker}</div>}</div>
                             <div className='fundamental-rating-name-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.name}</b></div> : <div>{fundamentalRatingItem.name}</div>}</div>
                             <div className='fundamental-rating-sector-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.sector}</b></div> : <div>{fundamentalRatingItem.sector}</div>}</div>
                             <div 
                                 title='Рейтинг по фундаментальным данным'
                                 className='fundamental-rating-score-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetScoreColor(fundamentalRatingItem.score.score.value)}}
+                                style={{backgroundColor: fundamentalRatingItem.score.score.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
                                     ? <div><b>{fundamentalRatingItem.score.score.value}</b></div> 
                                     : <div>{fundamentalRatingItem.score.score.value}</div>}
                             </div>
                             <div 
-                                title={fundamentalRatingItem.score.pe.description}
+                                title={fundamentalRatingItem.score.pe.text}
                                 className='fundamental-rating-pe-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.pe.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.pe.value}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.pe.value}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.pe.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.pe.description}</div>}
                             </div>
                             <div 
-                                title={fundamentalRatingItem.score.pbv.description}
+                                title={fundamentalRatingItem.score.pbv.text}
                                 className='fundamental-rating-pbv-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.pbv.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.pbv.value}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.pbv.value}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.pbv.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.pbv.description}</div>}
                             </div>                                
                             <div 
-                                title={fundamentalRatingItem.score.evEbitda.description}
+                                title={fundamentalRatingItem.score.evEbitda.text}
                                 className='fundamental-rating-ev-ebitda-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.evEbitda.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.evEbitda.value}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.evEbitda.value}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.evEbitda.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.evEbitda.description}</div>}
                             </div> 
                             <div 
-                                title={fundamentalRatingItem.score.netDebtEbitda.description}
+                                title={fundamentalRatingItem.score.netDebtEbitda.text}
                                 className='fundamental-rating-netdebt-ebitda-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.netDebtEbitda.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.netDebtEbitda.value}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.netDebtEbitda.value}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.netDebtEbitda.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.netDebtEbitda.description}</div>}
                             </div>
                             <div 
-                                title={fundamentalRatingItem.score.debtRatio.description}
+                                title={fundamentalRatingItem.score.debtRatio.text}
                                 className='fundamental-rating-debt-ratio-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.debtRatio.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.debtRatio.value}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.debtRatio.value}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.debtRatio.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.debtRatio.description}</div>}
                             </div> 
                             <div 
-                                title={fundamentalRatingItem.score.debtEquity.description}
+                                title={fundamentalRatingItem.score.debtEquity.text}
                                 className='fundamental-rating-debt-equity-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.debtEquity.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.debtEquity.value}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.debtEquity.value}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.debtEquity.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.debtEquity.description}</div>}
                             </div>                                                       
-                            <div                             
+                            <div                
+                                title={fundamentalRatingItem.score.dividendYield.text}             
                                 className='fundamental-rating-dividend-yield-cell fundamental-rating-border-style'
-                                style={{backgroundColor: GetDividendYieldColor(fundamentalRatingItem.metric.dividendYield)}}                                 
+                                style={{backgroundColor: fundamentalRatingItem.score.dividendYield.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{GetDividendYieldValue(fundamentalRatingItem.metric.dividendYield)}</b></div> 
-                                    : <div>{GetDividendYieldValue(fundamentalRatingItem.metric.dividendYield)}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.dividendYield.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.dividendYield.description}</div>}
                             </div>   
                             <div 
-                                title={fundamentalRatingItem.score.dividendAristocrat.description}
+                                title={fundamentalRatingItem.score.dividendAristocrat.text}
                                 className='fundamental-rating-dividend-aristocrat-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.dividendAristocrat.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.dividendAristocrat.value ? 'DA' : ''}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.dividendAristocrat.value ? 'DA' : ''}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.dividendAristocrat.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.dividendAristocrat.description}</div>}
                             </div>                                                     
                             <div 
-                                title={fundamentalRatingItem.score.netProfit.description}
+                                title={fundamentalRatingItem.score.netProfit.text}
                                 className='fundamental-rating-netprofit-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.netProfit.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.netProfit.value ? 'NP' : ''}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.netProfit.value ? 'NP' : ''}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.netProfit.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.netProfit.description}</div>}
                             </div>                               
                             <div 
-                                title={fundamentalRatingItem.score.fcf.description}
+                                title={fundamentalRatingItem.score.fcf.text}
                                 className='fundamental-rating-fcf-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.fcf.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>FCF</b></div> 
-                                    : <div>FCF</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.fcf.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.fcf.description}</div>}
                             </div>    
                             <div 
-                                title={fundamentalRatingItem.score.eps.description}
+                                title={fundamentalRatingItem.score.eps.text}
                                 className='fundamental-rating-eps-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.eps.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>EPS</b></div> 
-                                    : <div>EPS</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.eps.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.eps.description}</div>}
                             </div>
                             <div 
-                                title={fundamentalRatingItem.score.roa.description}
+                                title={fundamentalRatingItem.score.roa.text}
                                 className='fundamental-rating-roa-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.roa.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>ROA</b></div> 
-                                    : <div>ROA</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.roa.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.roa.description}</div>}
                             </div>
                             <div 
-                                title={fundamentalRatingItem.score.roe.description}
+                                title={fundamentalRatingItem.score.roe.text}
                                 className='fundamental-rating-roe-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.roe.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>ROE</b></div> 
-                                    : <div>ROE</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.roe.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.roe.description}</div>}
                             </div>                                                      
                             <div 
-                                title={fundamentalRatingItem.score.ebitdaRevenue.description}
+                                title={fundamentalRatingItem.score.ebitdaRevenue.text}
                                 className='fundamental-rating-ebitda-revenue-cell fundamental-rating-border-style' 
                                 style={{backgroundColor: fundamentalRatingItem.score.ebitdaRevenue.colorFill}}
                                 >{fundamentalRatingItem.inPortfolio 
-                                    ? <div><b>{fundamentalRatingItem.score.ebitdaRevenue.value ? 'EM' : ''}</b></div> 
-                                    : <div>{fundamentalRatingItem.score.ebitdaRevenue.value ? 'EM' : ''}</div>}
+                                    ? <div><b>{fundamentalRatingItem.score.ebitdaRevenue.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.ebitdaRevenue.description}</div>}
                             </div>
                             <div 
                                 title='Падение от годового максимума'

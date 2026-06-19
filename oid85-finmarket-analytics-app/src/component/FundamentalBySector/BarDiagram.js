@@ -6,9 +6,9 @@ import {CONSTANTS} from '../../constants'
 export const BarDiagram = ({ key, data }) => {
     return (
         <div className='fundamental-by-sector-border-style'>
-            <BarChart key = {key} width={250} height={70} data={data}>
+            <BarChart key = {key} width={185} height={70} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
+                <YAxis width={25} type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
                 <Bar 
                     type="monotone" 

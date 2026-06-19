@@ -12,7 +12,7 @@ import { PriceDiagram } from './PriceDiagram'
 import { BarDiagram } from './BarDiagram'
 import { fetchCurrentInstrument, sagaInstrumentList } from '../../redux/actions/instrumentActions'
 import { Dividend } from './Dividend'
-import { FundamentalScore } from './FundamentalScore'
+import { FundamentalScoreIndicator } from './FundamentalScoreIndicator'
 import { FundamentalMetric } from './FundamentalMetric'
 import { DividendAristocrat } from './DividendAristocrat'
 import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
@@ -93,7 +93,7 @@ export const FundamentalByCompany = () => {
                         </div>
                         <div>   
                             <div className='horizontal-container'>
-                                <FundamentalScore />                                
+                                <FundamentalScoreIndicator />                                
                                 <Dividend />
                                 <DividendAristocrat />                                
                             </div>                              
