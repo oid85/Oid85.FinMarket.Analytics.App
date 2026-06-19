@@ -146,7 +146,9 @@ export const FundamentalByCompany = () => {
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>Дивиденды, руб.</div>
                             <BarDiagram data={fundamentalByCompanyData.result.dividendDiagramData} />
-                        </div>
+                        </div>                   
+                    </div>
+                    <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>FCF, млрд. руб.</div>
                             <BarDiagram data={fundamentalByCompanyData.result.fcfDiagramData} />
@@ -155,7 +157,7 @@ export const FundamentalByCompany = () => {
                             <div className='fundamental-by-company-bar-diagram-title'>EPS, руб.</div>
                             <BarDiagram data={fundamentalByCompanyData.result.epsDiagramData} />
                         </div>                        
-                    </div>
+                    </div>                    
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>P/E</div>
