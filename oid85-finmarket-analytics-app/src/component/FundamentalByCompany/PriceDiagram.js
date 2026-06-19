@@ -8,7 +8,7 @@ export const PriceDiagram = ({data}) => {
         <div>
             <ComposedChart className='fundamental-by-company-border-style' width={730} height={350} data={data}>                            
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />              
-                <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
+                <YAxis width={30} type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />                                
                 <Area type="monotone" dataKey="priceValue" strokeWidth={1} stroke={CONSTANTS.COLOR_STATEBLUE} fill={CONSTANTS.COLOR_LIGHTSKYBLUE} />
                 <Line type="monotone" dataKey="ultimateSmootherValue" strokeWidth={2} dot={false} stroke={CONSTANTS.COLOR_DARKSLATEGRAY} />

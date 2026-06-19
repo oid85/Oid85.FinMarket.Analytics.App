@@ -86,9 +86,9 @@ export const FundamentalByCompany = () => {
                         <h6>Риски</h6>
                         <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.riskInfo}</div>
                     </div> 
-                    <h6>Карточка компании</h6>
                     <div>
                         <div>
+                            <h6>Графики цены (динамика за 5 лет)</h6>
                             <PriceDiagram data={fundamentalByCompanyData.result.priceDiagramData} />
                         </div>
                         <div>   
