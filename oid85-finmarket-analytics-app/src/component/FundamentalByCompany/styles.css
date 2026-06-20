@@ -76,15 +76,17 @@
     width: 120px;
 }
 
-.fundamental-by-sector-fundamental-metric-indicator {
-    padding: 5px;
-    height: 80px;
-    width: 120px;
+.fundamental-by-sector-fundamental-score-title {
+    font-size: 16px;    
 }
 
-.fundamental-by-sector-fundamental-metric-indicator-value {
+.fundamental-by-sector-fundamental-score-value {
     font-size: 28px;
     font-weight: 500;
+}
+
+.fundamental-by-sector-fundamental-dividend-aristocrat-description {
+    font-size: 14px;    
 }
 
 .company-button-container {  

@@ -12,10 +12,6 @@ import { PriceDiagram } from './PriceDiagram'
 import { BarDiagram } from './BarDiagram'
 import { BarDiagramInvertColor } from './BarDiagramInvertColor'
 import { fetchCurrentInstrument, sagaInstrumentList } from '../../redux/actions/instrumentActions'
-import { Dividend } from './Dividend'
-import { FundamentalScoreIndicator } from './FundamentalScoreIndicator'
-import { FundamentalMetric } from './FundamentalMetric'
-import { DividendAristocrat } from './DividendAristocrat'
 import { EditFundamentalParameterModal } from './EditFundamentalParameterModal'
 
 export const FundamentalByCompany = () => {
@@ -92,16 +88,170 @@ export const FundamentalByCompany = () => {
                             <h6>Графики цены (динамика за 5 лет)</h6>
                             <PriceDiagram data={fundamentalByCompanyData.result.priceDiagramData} />
                         </div>
-                        <div>   
+                        <div>
+                            <div className='horizontal-container'>                                
+                                <div 
+                                    title='Рейтинг по фундаментальным данным'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.score.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>Фунд. рейт.</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.score.value}
+                                    </div>
+                                </div>                      
+                            </div>
                             <div className='horizontal-container'>
-                                <FundamentalScoreIndicator />                                
-                                <Dividend />
-                                <DividendAristocrat />                                
-                            </div>                              
+                                <div 
+                                    title='P/E'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.pe.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>P/E</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.pe.value}
+                                    </div>
+                                </div>     
+                                <div 
+                                    title='P/BV'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.pbv.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>P/BV</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.pbv.value}
+                                    </div>
+                                </div>     
+                                {
+                                    fundamentalByCompanyData.result.sector != 'Банки'
+                                    ?
+                                    <div 
+                                        title='EV/EBITDA'
+                                        className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.evEbitda.colorFill}}>
+                                        <div className='fundamental-by-sector-fundamental-score-title'>EV/EBITDA</div>
+                                        <div className='fundamental-by-sector-fundamental-score-value'>
+                                            {fundamentalByCompanyData.result.fundamentalScore.evEbitda.value}
+                                        </div>
+                                    </div>
+                                    : <div></div>
+                                }                                                             
+                            </div>
                             <div className='horizontal-container'>
-                                <FundamentalMetric />
-                            </div>                                                 
-                        </div>                   
+                                <div 
+                                    title='Чистая прибыль'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netProfit.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>Чист. приб.</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.netProfit.value}
+                                    </div>
+                                </div>    
+                                <div 
+                                    title='FCF'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.fcf.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>FCF</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.fcf.value}
+                                    </div>
+                                </div>   
+                                <div 
+                                    title='EPS'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.eps.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>EPS</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.eps.value}
+                                    </div>
+                                </div>                                                                                   
+                            </div>
+                            <div className='horizontal-container'>
+                                <div 
+                                    title='Debt Ratio'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.debtRatio.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>Debt Ratio</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.debtRatio.value}
+                                    </div>
+                                </div>       
+                                <div 
+                                    title='Debt Equity'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.debtEquity.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>Debt Equity</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.debtEquity.value}
+                                    </div>
+                                </div>                                                           
+                                {
+                                    fundamentalByCompanyData.result.sector != 'Банки'
+                                    ?
+                                    <div 
+                                        title='NetDebt/EBITDA'
+                                        className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.colorFill}}>
+                                        <div className='fundamental-by-sector-fundamental-score-title'>ND/EBITDA</div>
+                                        <div className='fundamental-by-sector-fundamental-score-value'>
+                                            {fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.value}
+                                        </div>
+                                    </div>
+                                    : <div></div>
+                                }    
+                            </div>  
+                            <div className='horizontal-container'>
+                                <div 
+                                    title='ROA'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.roa.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>ROA, %</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.roa.value}
+                                    </div>
+                                </div>     
+                                <div 
+                                    title='ROE'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.roe.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>ROE, %</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.roe.value}
+                                    </div>
+                                </div>   
+                                {
+                                    fundamentalByCompanyData.result.sector != 'Банки'
+                                    ?
+                                    <div 
+                                        title='EBITDA Margin'
+                                        className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.ebitdaRevenue.colorFill}}>
+                                        <div className='fundamental-by-sector-fundamental-score-title'>EBITDA Margin</div>
+                                        <div className='fundamental-by-sector-fundamental-score-value'>
+                                            {fundamentalByCompanyData.result.fundamentalScore.ebitdaRevenue.value}
+                                        </div>
+                                    </div>
+                                    : <div></div>
+                                }                                                                
+                            </div> 
+                            <div className='horizontal-container'>
+                                <div 
+                                    title='Дивидендная доходность'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.dividendYield.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>ДД, %</div>
+                                    <div className='fundamental-by-sector-fundamental-score-value'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.dividendYield.value}
+                                    </div>
+                                </div>    
+                                <div 
+                                    title='Стабильность дивидендов'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.dividendAristocrat.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'></div>
+                                    <div className='fundamental-by-sector-fundamental-dividend-aristocrat-description'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.dividendAristocrat.description}
+                                    </div>
+                                </div>                                
+                            </div>                                                                                   
+                        </div>
                     </div>
                     <div>
                         <br/>
@@ -144,19 +294,19 @@ export const FundamentalByCompany = () => {
                             <BarDiagram data={fundamentalByCompanyData.result.netProfitDiagramData} />
                         </div>
                         <div className='fundamental-by-company-bar-diagram'>
-                            <div className='fundamental-by-company-bar-diagram-title'>Дивиденды, руб.</div>
-                            <BarDiagram data={fundamentalByCompanyData.result.dividendDiagramData} />
-                        </div>                   
-                    </div>
-                    <div className='horizontal-container'>
-                        <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>FCF, млрд. руб.</div>
                             <BarDiagram data={fundamentalByCompanyData.result.fcfDiagramData} />
                         </div>
                         <div className='fundamental-by-company-bar-diagram'>
                             <div className='fundamental-by-company-bar-diagram-title'>EPS, руб.</div>
                             <BarDiagram data={fundamentalByCompanyData.result.epsDiagramData} />
-                        </div>                        
+                        </div>                                        
+                    </div>
+                    <div className='horizontal-container'>
+                    <div className='fundamental-by-company-bar-diagram'>
+                            <div className='fundamental-by-company-bar-diagram-title'>Дивиденды, руб.</div>
+                            <BarDiagram data={fundamentalByCompanyData.result.dividendDiagramData} />
+                        </div>                           
                     </div>                    
                     <div className='horizontal-container'>
                         <div className='fundamental-by-company-bar-diagram'>
