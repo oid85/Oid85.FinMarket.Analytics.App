@@ -75,23 +75,23 @@
 }
 
 .fundamental-by-sector-name-header-cell {
-    width: 110px;  
+    width: 120px;  
     font-size: 14px; 
 }
 
 .fundamental-by-sector-name-cell {   
-    width: 110px; 
+    width: 120px; 
     font-size: 12px; 
 }
 
 .fundamental-by-sector-sector-header-cell {
-    width: 90px;  
+    width: 70px;  
     font-size: 14px; 
 }
 
 .fundamental-by-sector-sector-cell { 
-    width: 90px;   
-    font-size: 14px; 
+    width: 70px;   
+    font-size: 12px; 
 }
 
 .fundamental-by-sector-score-header-cell {
