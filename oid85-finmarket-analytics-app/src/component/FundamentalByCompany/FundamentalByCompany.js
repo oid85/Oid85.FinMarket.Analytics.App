@@ -98,7 +98,16 @@ export const FundamentalByCompany = () => {
                                     <div className='fundamental-by-sector-fundamental-score-value'>
                                         {fundamentalByCompanyData.result.fundamentalScore.score.value}
                                     </div>
-                                </div>                      
+                                </div>     
+                                <div 
+                                    title='Капитализация'
+                                    className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                    style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.marketCap.colorFill}}>
+                                    <div className='fundamental-by-sector-fundamental-score-title'>Market Cap</div>
+                                    <div className='fundamental-by-sector-fundamental-market-cap-description'>
+                                        {fundamentalByCompanyData.result.fundamentalScore.marketCap.description}
+                                    </div>
+                                </div>                                                   
                             </div>
                             <div className='horizontal-container'>
                                 <div 

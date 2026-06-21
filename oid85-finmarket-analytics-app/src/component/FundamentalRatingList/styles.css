@@ -69,6 +69,16 @@
     font-size: 14px; 
 }
 
+.fundamental-rating-market-cap-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-rating-market-cap-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
 .fundamental-rating-pe-header-cell {
     width: 90px;  
     font-size: 14px; 

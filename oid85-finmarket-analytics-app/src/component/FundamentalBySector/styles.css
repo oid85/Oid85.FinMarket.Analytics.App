@@ -104,6 +104,16 @@
     font-size: 14px; 
 }
 
+.fundamental-by-sector-market-cap-header-cell {
+    width: 90px;  
+    font-size: 14px; 
+}
+
+.fundamental-by-sector-market-cap-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
 .fundamental-by-sector-pe-header-cell {
     width: 90px;  
     font-size: 14px; 

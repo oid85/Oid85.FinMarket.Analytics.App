@@ -73,6 +73,7 @@ console.log(fundamentalBySectorData.result)
                     <div className='fundamental-by-sector-sector-header-cell fundamental-by-sector-border-style'>Сектор</div>
                     <div className='fundamental-by-sector-score-header-cell fundamental-by-sector-border-style'>Рейт.</div>
                     <div className='fundamental-by-sector-pe-header-cell fundamental-by-sector-border-style'>P / E</div>
+                    <div className='fundamental-by-sector-market-cap-header-cell fundamental-by-sector-border-style'>Market Cap</div>
                     <div className='fundamental-by-sector-pbv-header-cell fundamental-by-sector-border-style'>P / BV</div>
                     {
                         currentSector.name != 'Банки'
@@ -119,6 +120,14 @@ console.log(fundamentalBySectorData.result)
                                     ? <div><b>{fundamentalRatingItem.score.score.value}</b></div> 
                                     : <div>{fundamentalRatingItem.score.score.value}</div>}
                             </div>
+                            <div 
+                                title={fundamentalRatingItem.score.marketCap.text}
+                                className='fundamental-by-sector-market-cap-cell fundamental-by-sector-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.marketCap.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>{fundamentalRatingItem.score.marketCap.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.marketCap.description}</div>}
+                            </div>                            
                             <div 
                                 title={fundamentalRatingItem.score.pe.text}
                                 className='fundamental-by-sector-pe-cell fundamental-by-sector-border-style' 

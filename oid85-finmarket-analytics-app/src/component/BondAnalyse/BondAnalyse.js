@@ -30,7 +30,6 @@ export const BondAnalyse = () => {
             :
             <div>             
                 <div className='horizontal-container'>
-                    <div className='bond-analyse-in-portfolio-button-header-cell bond-analyse-border-style'></div> 
                     <div className='bond-analyse-ticker-header-cell bond-analyse-border-style'>Тикер</div> 
                     <div className='bond-analyse-name-header-cell bond-analyse-border-style'>Наименование</div>
                     <div className='bond-analyse-nkd-header-cell bond-analyse-border-style'>НКД</div>
@@ -48,14 +47,6 @@ export const BondAnalyse = () => {
                 {
                     bondAnalyseData.result.items.map((item, index) => (
                         <div className='horizontal-container'>
-                            <div className='bond-analyse-in-portfolio-button-cell bond-analyse-border-style'>
-                                <button className='btn btn-outline-dark bond-analyse-in-portfolio-button'
-                                    onClick={() => {
-                                        dispatch(fetchCurrentInstrument({ticker: item.ticker}))
-                                        dispatch(sagaInstrumentPortfolio()) 
-                                        dispatch(sagaBondAnalyse())
-                                    }}><div className='bond-analyse-in-portfolio-button-text'>{item.inPortfolio ? <div><b>Портфель</b></div> : <div><del>Портфель</del></div>}</div></button>                            
-                            </div> 
                             <div className='bond-analyse-ticker-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.ticker}</b></div> : <div>{item.ticker}</div>}</div> 
                             <div className='bond-analyse-name-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.name}</b></div> : <div>{item.name}</div>}</div>
                             <div className='bond-analyse-nkd-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.nkd}</b></div> : <div>{item.nkd}</div>}</div>

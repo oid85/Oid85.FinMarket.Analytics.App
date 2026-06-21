@@ -85,7 +85,7 @@
 .year-cell {
     width: 40px;  
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .score-header-cell {
@@ -119,7 +119,7 @@
 .number-shares-cell {
     width: 60px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .pe-header-cell {
@@ -130,7 +130,7 @@
 .pe-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .pbv-header-cell {
@@ -141,7 +141,7 @@
 .pbv-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .roa-header-cell {
@@ -152,7 +152,7 @@
 .roa-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .roe-header-cell {
@@ -163,7 +163,7 @@
 .roe-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .revenue-header-cell {
@@ -174,7 +174,7 @@
 .revenue-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .netprofit-header-cell {
@@ -185,7 +185,7 @@
 .netprofit-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .fcf-header-cell {
@@ -196,7 +196,7 @@
 .fcf-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .eps-header-cell {
@@ -207,7 +207,7 @@
 .eps-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .price-header-cell {
@@ -218,7 +218,7 @@
 .price-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .netdebt-header-cell {
@@ -229,7 +229,7 @@
 .netdebt-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .assets-header-cell {
@@ -240,7 +240,7 @@
 .assets-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .liabilities-header-cell {
@@ -251,7 +251,7 @@
 .liabilities-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .ebitda-header-cell {
@@ -262,7 +262,7 @@
 .ebitda-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .own-capital-header-cell {
@@ -273,7 +273,7 @@
 .own-capital-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .ev-header-cell {
@@ -284,7 +284,7 @@
 .ev-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .dividend-yield-header-cell {
@@ -295,7 +295,7 @@
 .dividend-yield-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .dividend-header-cell {
@@ -306,7 +306,7 @@
 .dividend-cell {
     width: 50px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .marketcap-header-cell {
@@ -317,7 +317,7 @@
 .marketcap-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .ev-ebitda-header-cell {
@@ -328,7 +328,7 @@
 .ev-ebitda-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .own-cap-num-header-cell {
@@ -339,7 +339,7 @@
 .own-cap-num-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .netdebt-ebitda-header-cell {
@@ -350,7 +350,7 @@
 .netdebt-ebitda-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .debt-ratio-header-cell {
@@ -361,7 +361,7 @@
 .debt-ratio-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .debt-equity-header-cell {
@@ -372,7 +372,7 @@
 .debt-equity-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .ebitda-revenue-header-cell {
@@ -383,7 +383,7 @@
 .ebitda-revenue-cell {
     width: 40px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .delta-min-max-header-cell {
@@ -394,7 +394,7 @@
 .delta-min-max-cell {
     width: 70px;
     height: 23px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /*Edit modal*/

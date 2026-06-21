@@ -48,6 +48,7 @@ console.log(fundamentalRatingListData.result)
                     <div className='fundamental-rating-name-header-cell fundamental-rating-border-style'>Наименование</div>
                     <div className='fundamental-rating-sector-header-cell fundamental-rating-border-style'>Сектор</div>
                     <div className='fundamental-rating-score-header-cell fundamental-rating-border-style'>Рейт.</div>
+                    <div className='fundamental-rating-market-cap-header-cell fundamental-rating-border-style'>Market Cap</div>
                     <div className='fundamental-rating-pe-header-cell fundamental-rating-border-style'>P / E</div>
                     <div className='fundamental-rating-pbv-header-cell fundamental-rating-border-style'>P / BV</div>
                     <div className='fundamental-rating-ev-ebitda-header-cell fundamental-rating-border-style'>EV / EBITDA</div>
@@ -80,6 +81,14 @@ console.log(fundamentalRatingListData.result)
                                     ? <div><b>{fundamentalRatingItem.score.score.value}</b></div> 
                                     : <div>{fundamentalRatingItem.score.score.value}</div>}
                             </div>
+                            <div 
+                                title={fundamentalRatingItem.score.marketCap.text}
+                                className='fundamental-rating-market-cap-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.marketCap.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>{fundamentalRatingItem.score.marketCap.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.marketCap.description}</div>}
+                            </div>                            
                             <div 
                                 title={fundamentalRatingItem.score.pe.text}
                                 className='fundamental-rating-pe-cell fundamental-rating-border-style' 
