@@ -86,7 +86,13 @@ console.log(fundamentalBySectorData.result)
                         ?
                         <div className='fundamental-by-sector-netdebt-ebitda-header-cell fundamental-by-sector-border-style'>ND / EBITDA</div>  
                         : <div></div>
-                    }                                        
+                    }     
+                    {
+                        currentSector.name != 'Банки'
+                        ?
+                        <div className='fundamental-by-sector-netdebt-header-cell fundamental-by-sector-border-style'>Net Debt</div>  
+                        : <div></div>
+                    }                                                        
                     <div className='fundamental-by-sector-debt-ratio-header-cell fundamental-by-sector-border-style'>Debt Ratio</div>
                     <div className='fundamental-by-sector-debt-equity-header-cell fundamental-by-sector-border-style'>Debt Equity</div>
                     <div className='fundamental-by-sector-dividend-yield-header-cell fundamental-by-sector-border-style'>ДД, %</div>
@@ -170,6 +176,19 @@ console.log(fundamentalBySectorData.result)
                                 </div> 
                                 : <div></div>
                             }
+                            {
+                                currentSector.name != 'Банки'
+                                ?
+                                <div 
+                                    title={fundamentalRatingItem.score.netDebt.text}
+                                    className='fundamental-by-sector-netdebt-cell fundamental-by-sector-border-style' 
+                                    style={{backgroundColor: fundamentalRatingItem.score.netDebt.colorFill}}
+                                    >{fundamentalRatingItem.inPortfolio 
+                                        ? <div><b>{fundamentalRatingItem.score.netDebt.description}</b></div> 
+                                        : <div>{fundamentalRatingItem.score.netDebt.description}</div>}
+                                </div> 
+                                : <div></div>
+                            }                            
                             <div 
                                 title={fundamentalRatingItem.score.debtRatio.text}
                                 className='fundamental-by-sector-debt-ratio-cell fundamental-by-sector-border-style' 

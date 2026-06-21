@@ -205,6 +205,20 @@ export const FundamentalByCompany = () => {
                                     </div>
                                     : <div></div>
                                 }    
+                                {
+                                    fundamentalByCompanyData.result.sector != 'Банки'
+                                    ?
+                                    <div 
+                                        title='Net Debt'
+                                        className='fundamental-by-sector-fundamental-score fundamental-by-company-border-style'
+                                        style={{backgroundColor: fundamentalByCompanyData.result.fundamentalScore.netDebt.colorFill}}>
+                                        <div className='fundamental-by-sector-fundamental-score-title'>Net Debt</div>
+                                        <div className='fundamental-by-sector-fundamental-netdebt-description'>
+                                            {fundamentalByCompanyData.result.fundamentalScore.netDebt.description}
+                                        </div>
+                                    </div>
+                                    : <div></div>
+                                }                                
                             </div>  
                             <div className='horizontal-container'>
                                 <div 
@@ -276,6 +290,7 @@ export const FundamentalByCompany = () => {
                         <br/>
                         <div>📌 <u>Долговая нагрузка</u></div>
                         <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.netDebtEbitda.text}</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.netDebt.text}</div>
                         <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.debtRatio.text}</div>
                         <div>&nbsp;&nbsp;&nbsp;&nbsp;{fundamentalByCompanyData.result.fundamentalScore.debtEquity.text}</div>
                         <br/>

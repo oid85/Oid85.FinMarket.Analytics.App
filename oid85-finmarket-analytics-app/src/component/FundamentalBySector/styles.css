@@ -75,12 +75,12 @@
 }
 
 .fundamental-by-sector-name-header-cell {
-    width: 130px;  
+    width: 110px;  
     font-size: 14px; 
 }
 
 .fundamental-by-sector-name-cell {   
-    width: 130px; 
+    width: 110px; 
     font-size: 12px; 
 }
 
@@ -150,6 +150,16 @@
 }
 
 .fundamental-by-sector-netdebt-ebitda-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
+.fundamental-by-sector-netdebt-header-cell {
+    width: 90px;  
+    font-size: 12px; 
+}
+
+.fundamental-by-sector-netdebt-cell {   
     width: 90px; 
     font-size: 10px; 
 }

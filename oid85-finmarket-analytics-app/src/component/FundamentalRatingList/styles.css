@@ -119,6 +119,16 @@
     font-size: 10px; 
 }
 
+.fundamental-rating-netdebt-header-cell {
+    width: 90px;  
+    font-size: 12px; 
+}
+
+.fundamental-rating-netdebt-cell {   
+    width: 90px; 
+    font-size: 10px; 
+}
+
 .fundamental-rating-debt-ratio-header-cell {
     width: 90px;  
     font-size: 12px; 

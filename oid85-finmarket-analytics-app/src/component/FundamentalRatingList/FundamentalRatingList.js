@@ -53,6 +53,7 @@ console.log(fundamentalRatingListData.result)
                     <div className='fundamental-rating-pbv-header-cell fundamental-rating-border-style'>P / BV</div>
                     <div className='fundamental-rating-ev-ebitda-header-cell fundamental-rating-border-style'>EV / EBITDA</div>
                     <div className='fundamental-rating-netdebt-ebitda-header-cell fundamental-rating-border-style'>ND / EBITDA</div>
+                    <div className='fundamental-rating-netdebt-header-cell fundamental-rating-border-style'>Net Debt</div>
                     <div className='fundamental-rating-debt-ratio-header-cell fundamental-rating-border-style'>Debt Ratio</div>
                     <div className='fundamental-rating-debt-equity-header-cell fundamental-rating-border-style'>Debt Equity</div>
                     <div className='fundamental-rating-dividend-yield-header-cell fundamental-rating-border-style'>ДД, %</div>
@@ -121,6 +122,14 @@ console.log(fundamentalRatingListData.result)
                                     ? <div><b>{fundamentalRatingItem.score.netDebtEbitda.description}</b></div> 
                                     : <div>{fundamentalRatingItem.score.netDebtEbitda.description}</div>}
                             </div>
+                            <div 
+                                title={fundamentalRatingItem.score.netDebt.text}
+                                className='fundamental-rating-netdebt-cell fundamental-rating-border-style' 
+                                style={{backgroundColor: fundamentalRatingItem.score.netDebt.colorFill}}
+                                >{fundamentalRatingItem.inPortfolio 
+                                    ? <div><b>{fundamentalRatingItem.score.netDebt.description}</b></div> 
+                                    : <div>{fundamentalRatingItem.score.netDebt.description}</div>}
+                            </div>                            
                             <div 
                                 title={fundamentalRatingItem.score.debtRatio.text}
                                 className='fundamental-rating-debt-ratio-cell fundamental-rating-border-style' 
