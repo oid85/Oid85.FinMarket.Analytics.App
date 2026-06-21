@@ -20,43 +20,43 @@
 }
 
 .fundamental-rating-number-header-cell {
-    width: 30px;  
+    width: 20px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-number-cell {    
-    width: 30px;
+    width: 20px;
     font-size: 14px; 
 }
 
 .fundamental-rating-ticker-header-cell {
-    width: 50px;  
+    width: 40px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-ticker-cell {  
-    width: 50px;  
-    font-size: 14px; 
+    width: 40px;  
+    font-size: 12px; 
 }
 
 .fundamental-rating-name-header-cell {
-    width: 150px;  
+    width: 130px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-name-cell {   
-    width: 150px; 
-    font-size: 14px; 
+    width: 130px; 
+    font-size: 12px;
 }
 
 .fundamental-rating-sector-header-cell {
-    width: 90px;  
+    width: 70px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-sector-cell { 
-    width: 90px;   
-    font-size: 14px; 
+    width: 70px;   
+    font-size: 12px; 
 }
 
 .fundamental-rating-score-header-cell {
@@ -210,11 +210,11 @@
 }
 
 .fundamental-rating-falling-from-max-header-cell {
-    width: 90px;  
+    width: 70px;  
     font-size: 14px; 
 }
 
 .fundamental-rating-falling-from-max-cell {   
-    width: 90px; 
+    width: 70px; 
     font-size: 14px; 
 }

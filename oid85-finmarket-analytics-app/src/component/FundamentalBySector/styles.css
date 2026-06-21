@@ -12,7 +12,7 @@
 
 .fundamental-by-sector-border-style {
     border: 1px solid #000;     
-    margin: 1px;
+    margin: .5px;
 }
 
 .fundamental-by-sector-container {     
@@ -55,33 +55,33 @@
 }
 
 .fundamental-by-sector-number-header-cell {
-    width: 30px;  
+    width: 20px;  
     font-size: 14px; 
 }
 
 .fundamental-by-sector-number-cell {    
-    width: 30px;
+    width: 20px;
     font-size: 14px; 
 }
 
 .fundamental-by-sector-ticker-header-cell {
-    width: 50px;  
+    width: 45px;  
     font-size: 14px; 
 }
 
 .fundamental-by-sector-ticker-cell {  
-    width: 50px;  
-    font-size: 14px; 
+    width: 45px;  
+    font-size: 12px; 
 }
 
 .fundamental-by-sector-name-header-cell {
-    width: 150px;  
+    width: 130px;  
     font-size: 14px; 
 }
 
 .fundamental-by-sector-name-cell {   
-    width: 150px; 
-    font-size: 14px; 
+    width: 130px; 
+    font-size: 12px; 
 }
 
 .fundamental-by-sector-sector-header-cell {
@@ -245,11 +245,11 @@
 }
 
 .fundamental-by-sector-falling-from-max-header-cell {
-    width: 90px;  
+    width: 70px;  
     font-size: 14px; 
 }
 
 .fundamental-by-sector-falling-from-max-cell {   
-    width: 90px; 
+    width: 70px; 
     font-size: 14px; 
 }
