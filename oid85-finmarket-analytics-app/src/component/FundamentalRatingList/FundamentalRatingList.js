@@ -53,7 +53,7 @@ console.log(fundamentalRatingListData.result)
                     <div className='fundamental-rating-pbv-header-cell fundamental-rating-border-style'>P / BV</div>
                     <div className='fundamental-rating-ev-ebitda-header-cell fundamental-rating-border-style'>EV / EBITDA</div>
                     <div className='fundamental-rating-netdebt-ebitda-header-cell fundamental-rating-border-style'>ND / EBITDA</div>
-                    <div className='fundamental-rating-netdebt-header-cell fundamental-rating-border-style'>Net Debt</div>
+                    <div className='fundamental-rating-netdebt-header-cell fundamental-rating-border-style'>Чистый долг</div>
                     <div className='fundamental-rating-debt-ratio-header-cell fundamental-rating-border-style'>Debt Ratio</div>
                     <div className='fundamental-rating-debt-equity-header-cell fundamental-rating-border-style'>Debt Equity</div>
                     <div className='fundamental-rating-dividend-yield-header-cell fundamental-rating-border-style'>ДД, %</div>
