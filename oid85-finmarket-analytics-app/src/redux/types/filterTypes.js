@@ -1,0 +1,1 @@
+export const FETCH_FILTER_TYPE = 'FETCH_FILTER_TYPE'

@@ -238,3 +238,16 @@
     width: 70px; 
     font-size: 14px; 
 }
+
+.filter-button-container {  
+    padding: 1px;
+}
+
+.filter-button {    
+    width: 200px;
+    height: 40px;
+}
+
+.filter-button-text {        
+    font-size: 14px;
+}

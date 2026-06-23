@@ -11,6 +11,7 @@ import { bondAnalyseReducer } from './bondAnalyseReducer'
 import { closePriceDiagramReducer } from './closePriceDiagramReducer'
 import { trendAggregateDiagramReducer } from './trendAggregateDiagramReducer'
 import { orderReducer } from './orderReducer'
+import { filterReducer } from './filterReducer'
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -24,5 +25,6 @@ export const rootReducer = combineReducers({
     bondAnalyse: bondAnalyseReducer,
     closePriceDiagram: closePriceDiagramReducer,
     trendAggregateDiagram: trendAggregateDiagramReducer,
-    order: orderReducer
+    order: orderReducer,
+    filter: filterReducer
 })

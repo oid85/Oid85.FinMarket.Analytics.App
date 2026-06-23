@@ -3,6 +3,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import { 
     sagaFundamentalRatingList
 } from '../../redux/actions/fundamentalParameterActions'
+import { 
+    fetchFilterType
+} from '../../redux/actions/filterActions'
 import Loader from '../Loader/Loader'
 import {Ticker} from '../Ticker/Ticker'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -40,7 +43,30 @@ console.log(fundamentalRatingListData.result)
             !fundamentalRatingListData.result || loading
             ? <Loader/>
             :
-            <div className='fundamental-rating-container'>                          
+            <div className='fundamental-rating-container'> 
+                <div className='horizontal-container'>
+                    <div className='filter-button-container'>
+                        <button className='btn btn-outline-dark filter-button'
+                            onClick={() => {
+                                dispatch(fetchFilterType(''))
+                                dispatch(sagaFundamentalRatingList())
+                            }}><div className='filter-button-text'>Все</div></button>
+                    </div>                      
+                    <div className='filter-button-container'>
+                        <button className='btn btn-outline-dark filter-button'
+                            onClick={() => {
+                                dispatch(fetchFilterType('HighDividend'))
+                                dispatch(sagaFundamentalRatingList())
+                            }}><div className='filter-button-text'>Высокие дивиденды</div></button>
+                    </div>    
+                    <div className='filter-button-container'>
+                        <button className='btn btn-outline-dark filter-button'
+                            onClick={() => {
+                                dispatch(fetchFilterType('LowDebt'))
+                                dispatch(sagaFundamentalRatingList())
+                            }}><div className='filter-button-text'>Низкий долг</div></button>
+                    </div>                                     
+                </div>                         
                 <div className='horizontal-container'>
                     <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
                     <div className='fundamental-rating-border-style' style={{width: 62}}></div>

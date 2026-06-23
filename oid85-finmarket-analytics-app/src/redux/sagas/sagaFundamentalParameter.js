@@ -25,6 +25,7 @@ import {
 const currentFundamentalParameter = (state) => state.fundamentalParameter.currentFundamentalParameter
 const currentSector = (state) => state.fundamentalParameter.currentSector
 const currentInstrument = (state) => state.instrument.currentInstrument
+const currentFilterType = (state) => state.filter.filterType
 
 export function* sagaWatcherFundamentalParameter() {
     yield takeEvery(SAGA_FUNDAMENTAL_PARAMETER_LIST, sagaWorkerFundamentalParameterList)
@@ -41,7 +42,8 @@ function* sagaWorkerFundamentalParameterList() {
 }
 
 function* sagaWorkerFundamentalRatingList() {
-    let result = yield call(getFundamentalRatingListFromApi)    
+    let filterType = yield select(currentFilterType)
+    let result = yield call(getFundamentalRatingListFromApi, filterType)    
     yield put(fetchFundamentalRatingList(result))
 }
 
