@@ -44,7 +44,9 @@ console.log(fundamentalRatingListData.result)
             ? <Loader/>
             :
             <div className='fundamental-rating-container'> 
-                <div className='horizontal-container'>
+                <div
+                    // hidden 
+                    className='horizontal-container'>
                     <div className='filter-button-container'>
                         <button className='btn btn-outline-dark filter-button'
                             onClick={() => {
