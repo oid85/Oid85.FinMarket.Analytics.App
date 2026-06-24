@@ -131,6 +131,15 @@ import tgka from "./img/tgka.png"
 import tgkb from "./img/tgkb.png"
 import tgkn from "./img/tgkn.png"
 import tgld from "./img/tgld.png"
+import tmon from "./img/tmon.png"
+import tpay from "./img/tpay.png"
+import tofz from "./img/tofz.png"
+import trnd from "./img/trnd.png"
+import tmos from "./img/tmos.png"
+import tdiv from "./img/tdiv.png"
+import trur from "./img/trur.png"
+import titr from "./img/titr.png"
+import tbru from "./img/tbru.png"
 import trmk from "./img/trmk.png"
 import trnf from "./img/trnf.png"
 import ttlk from "./img/ttlk.png"
@@ -305,6 +314,15 @@ export const Ticker = ({value, height, width}) => {
         case 'tgkb': return <img src={tgkb} alt="" height={height} width={width}/>
         case 'tgkn': return <img src={tgkn} alt="" height={height} width={width}/>
         case 'tgld': return <img src={tgld} alt="" height={height} width={width}/>
+        case 'tmon': return <img src={tmon} alt="" height={height} width={width}/>
+        case 'tpay': return <img src={tpay} alt="" height={height} width={width}/>
+        case 'tofz': return <img src={tofz} alt="" height={height} width={width}/>
+        case 'trnd': return <img src={trnd} alt="" height={height} width={width}/>
+        case 'tmos': return <img src={tmos} alt="" height={height} width={width}/>
+        case 'tdiv': return <img src={tdiv} alt="" height={height} width={width}/>
+        case 'trur': return <img src={trur} alt="" height={height} width={width}/>
+        case 'titr': return <img src={titr} alt="" height={height} width={width}/>
+        case 'tbru': return <img src={tbru} alt="" height={height} width={width}/>
         case 'trmk': return <img src={trmk} alt="" height={height} width={width}/>
         case 'trnfp': return <img src={trnf} alt="" height={height} width={width}/>
         case 'ttlk': return <img src={ttlk} alt="" height={height} width={width}/>

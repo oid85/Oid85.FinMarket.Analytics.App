@@ -69,7 +69,7 @@ console.log(fundamentalRatingListData.result)
                 </div>                         
                 <div className='horizontal-container'>
                     <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
-                    <div className='fundamental-rating-border-style' style={{width: 62}}></div>
+                    <div className='fundamental-rating-border-style' style={{width: 52}}></div>
                     <div className='fundamental-rating-ticker-header-cell fundamental-rating-border-style'>Тикер</div>
                     <div className='fundamental-rating-name-header-cell fundamental-rating-border-style'>Наименование</div>
                     <div className='fundamental-rating-sector-header-cell fundamental-rating-border-style'>Сектор</div>
@@ -96,7 +96,7 @@ console.log(fundamentalRatingListData.result)
                     fundamentalRatingListData.result.items.map((fundamentalRatingItem) =>(
                         <div className='horizontal-container'>
                             <div className='fundamental-rating-number-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.number}</b></div> : <div>{fundamentalRatingItem.number}</div>}</div>
-                            <div className='fundamental-rating-border-style'><Ticker value={fundamentalRatingItem.ticker} width={60} height={60} /></div>
+                            <div className='fundamental-rating-border-style'><Ticker value={fundamentalRatingItem.ticker} width={50} height={50} /></div>
                             <div className='fundamental-rating-ticker-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.ticker}</b></div> : <div>{fundamentalRatingItem.ticker}</div>}</div>
                             <div className='fundamental-rating-name-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.name}</b></div> : <div>{fundamentalRatingItem.name}</div>}</div>
                             <div className='fundamental-rating-sector-cell fundamental-rating-border-style'>{fundamentalRatingItem.inPortfolio ? <div><b>{fundamentalRatingItem.sector}</b></div> : <div>{fundamentalRatingItem.sector}</div>}</div>
