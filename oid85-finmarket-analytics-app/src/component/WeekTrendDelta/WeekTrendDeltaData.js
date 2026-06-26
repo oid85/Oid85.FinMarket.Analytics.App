@@ -7,26 +7,8 @@ import {CONSTANTS} from '../../constants'
 const GetColorDelta = (delta, inPortfolio) => {
     if (!delta) { return CONSTANTS.COLOR_WHITE }
     if (delta > 0) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
-    if (delta > -2 && delta <= 0) { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
-    if (delta <= -2) { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetColorTrendState = (trendState, inPortfolio) => {
-    if (!trendState) { return CONSTANTS.COLOR_WHITE }
-    if (trendState == 'ТРЕНД ВВЕРХ') { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
-    if (trendState == 'ТРЕНД ВНИЗ') { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
-    if (trendState == 'НЕТ ТРЕНДА') { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
-
-    return CONSTANTS.COLOR_WHITE
-}
-
-const GetColorFallingFromMax = (fallingFromMax, inPortfolio) => {
-    if (!fallingFromMax) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
-    if (fallingFromMax < -10) { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
-    if (fallingFromMax < -5) { return inPortfolio ? CONSTANTS.COLOR_YELLOW : CONSTANTS.COLOR_LIGHTYELLOW }
-    if (fallingFromMax < 0) { return inPortfolio ? CONSTANTS.COLOR_GREEN : CONSTANTS.COLOR_LIGHTGREEN }
-
+    if (delta <= 0) { return inPortfolio ? CONSTANTS.COLOR_RED : CONSTANTS.COLOR_LIGHTRED }
+    
     return CONSTANTS.COLOR_WHITE
 }
 
@@ -61,14 +43,7 @@ export const WeekTrendDeltaData = ({data}) => {
                                     </div>
                                 ))
                             }
-                        </div>
-                        <div className='week-trend-separator-cell'></div>
-                        <div title='Направление тренда' className='week-trend-border-style' style={{backgroundColor: GetColorTrendState(dataItem.trendState, dataItem.inPortfolio)}}>
-                            <div className='week-trend-delta-trend-state-cell'>{dataItem.inPortfolio ? <div><b>{dataItem.trendState}</b></div> : <div>{dataItem.trendState}</div>}</div>
-                        </div> 
-                        <div title='Падение от максимума' className='week-trend-border-style' style={{backgroundColor: GetColorFallingFromMax(dataItem.fallingFromMax, dataItem.inPortfolio)}}>
-                            <div className='week-trend-delta-falling-from-max-cell'>{dataItem.inPortfolio ? <div><b>{`${dataItem.fallingFromMax} % от max`}</b></div> : <div>{`${dataItem.fallingFromMax} % от max`}</div>}</div>
-                        </div>                                                                    
+                        </div>                                                                 
                     </div>
                 ))
             }
