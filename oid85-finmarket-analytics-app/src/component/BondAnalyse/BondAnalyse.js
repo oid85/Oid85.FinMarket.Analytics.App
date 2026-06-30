@@ -33,6 +33,7 @@ export const BondAnalyse = () => {
                     <div className='bond-analyse-ticker-header-cell bond-analyse-border-style'>Тикер</div> 
                     <div className='bond-analyse-name-header-cell bond-analyse-border-style'>Наименование</div>
                     <div className='bond-analyse-nkd-header-cell bond-analyse-border-style'>НКД</div>
+                    <div className='bond-analyse-rating-header-cell bond-analyse-border-style'>Кр. рейт.</div>
                     <div className='bond-analyse-price-header-cell bond-analyse-border-style'>Цена</div>
                     <div className='bond-analyse-yield-header-cell bond-analyse-border-style'>Дох-ть</div>
                     <div className='bond-analyse-days-to-maturity-header-cell bond-analyse-border-style'>Лет до погаш.</div>
@@ -50,6 +51,7 @@ export const BondAnalyse = () => {
                             <div className='bond-analyse-ticker-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.ticker}</b></div> : <div>{item.ticker}</div>}</div> 
                             <div className='bond-analyse-name-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.name}</b></div> : <div>{item.name}</div>}</div>
                             <div className='bond-analyse-nkd-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.nkd}</b></div> : <div>{item.nkd}</div>}</div>
+                            <div className='bond-analyse-rating-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.rating}</b></div> : <div>{item.rating}</div>}</div>
                             <div className='bond-analyse-price-cell bond-analyse-border-style' style={{backgroundColor: priceColor(item.price)}}>{item.inPortfolio ? <div><b>{item.price}</b></div> : <div>{item.price}</div>}</div>
                             <div className='bond-analyse-yield-cell bond-analyse-border-style' style={{backgroundColor: yieldColor(item.yield)}}>{item.inPortfolio ? <div><b>{`${item.yield} %`}</b></div> : <div>{`${item.yield} %`}</div>}</div>                            
                             <div className='bond-analyse-days-to-maturity-cell bond-analyse-border-style' style={{backgroundColor: daysToMaturityColor(item.daysToMaturity)}}>{item.inPortfolio ? <div><b>{`${(item.daysToMaturity / 365.0).toFixed(1)} г.`}</b></div> : <div>{`${(item.daysToMaturity / 365.0).toFixed(1)} г.`}</div>}</div> 

@@ -43,6 +43,13 @@
     padding: 1px;
 }
 
+.bond-analyse-rating-header-cell {    
+    width: 55px;
+    height: 50px;
+    font-size: 16px;
+    padding: 1px;
+}
+
 .bond-analyse-price-header-cell {    
     width: 55px;
     height: 50px;
@@ -90,6 +97,12 @@
 }
 
 .bond-analyse-nkd-cell {    
+    width: 55px;
+    font-size: 16px;
+    padding: 1px;
+}
+
+.bond-analyse-rating-cell {    
     width: 55px;
     font-size: 16px;
     padding: 1px;
