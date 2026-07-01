@@ -50,6 +50,13 @@
     padding: 1px;
 }
 
+.bond-analyse-is-floating-coupon-header-cell {    
+    width: 55px;
+    height: 50px;
+    font-size: 16px;
+    padding: 1px;
+}
+
 .bond-analyse-price-header-cell {    
     width: 55px;
     height: 50px;
@@ -103,6 +110,12 @@
 }
 
 .bond-analyse-rating-cell {    
+    width: 55px;
+    font-size: 16px;
+    padding: 1px;
+}
+
+.bond-analyse-is-floating-coupon-cell {    
     width: 55px;
     font-size: 16px;
     padding: 1px;
