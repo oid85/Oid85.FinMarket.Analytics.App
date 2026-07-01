@@ -25,10 +25,9 @@ export const ClosePriceDiagramComponent = ({ key, ticker, name, inPortfolio, dat
     return (
         <div className='close-price-diagram-border-style'>
                 <div className='close-price-diagram-ticker'>{inPortfolio ? <div><b>{ticker}</b></div> : <div>{ticker}</div>}</div>
-                <div className='close-price-diagram-name'>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>
-                <div className='close-price-diagram-dividend-yield'>{!dividendYield? <div></div> : <div>{inPortfolio ? <div><b>{`ДД ${dividendYield} %`}</b></div> : <div>{`ДД ${dividendYield} %`}</div>}</div>} </div>          
+                <div className='close-price-diagram-name'>{inPortfolio ? <div><b>{name}</b></div> : <div>{name}</div>}</div>                
             <ComposedChart key = {key} width={width} height={height} data={data}>
-                <YAxis type="number" domain={['auto', 'auto']} fontSize={10} />
+                <YAxis width={30} type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
                 <Area type="monotone" dataKey="value" strokeWidth={3} stroke={strokeColor(trendState)} fill={fillColor(trendState)} />
             </ComposedChart>
