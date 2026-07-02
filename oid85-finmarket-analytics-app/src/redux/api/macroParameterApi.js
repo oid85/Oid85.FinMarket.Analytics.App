@@ -1,13 +1,13 @@
-﻿import {sendPostRequest} from './api'
+﻿import {sendAnalyticPostRequest} from './api'
 
 const controller = 'macro-parameters'
 
 export const getMacroParameterListFromApi = async () => {
-    return sendPostRequest(`${controller}/list`, {})
+    return sendAnalyticPostRequest(`${controller}/list`, {})
 }
 
 export const getMacroParameterDiagramFromApi = async () => {
-    return sendPostRequest(`${controller}/diagram`, {})
+    return sendAnalyticPostRequest(`${controller}/diagram`, {})
 }
 
 export const editMacroParameterFromApi = async (
@@ -19,7 +19,7 @@ export const editMacroParameterFromApi = async (
     consumerPriceIndexChange, 
     keyRate
 ) => {
-    return sendPostRequest(`${controller}/create-or-update`, {
+    return sendAnalyticPostRequest(`${controller}/create-or-update`, {
         date, 
         m0, 
         m1, 

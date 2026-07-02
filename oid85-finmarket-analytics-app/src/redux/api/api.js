@@ -1,8 +1,16 @@
 import {CONSTANTS} from "../../constants"
 
-export const sendPostRequest = async (url, body) => {
+export const sendAnalyticPostRequest = async (url, body) => {
+    return sendPostRequest(CONSTANTS.FINMARKET_ANALYTICS_API, url, body)
+}
+
+export const sendAlgoPostRequest = async (url, body) => {
+    return sendPostRequest(CONSTANTS.FINMARKET_ALGO_API, url, body)
+}
+
+export const sendPostRequest = async (host, url, body) => {
     const response = await fetch(
-        `${CONSTANTS.FINMARKET_API}/api/${url}`, {
+        `${host}/api/${url}`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

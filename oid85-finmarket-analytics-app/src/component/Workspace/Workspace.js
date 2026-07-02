@@ -18,6 +18,7 @@ import { ClosePriceDiagramIndexesScreen } from '../Screens/ClosePriceDiagramInde
 import { FundamentalRatingScreen } from '../Screens/FundamentalRatingScreen'
 import { PortfolioBacktestScreen } from '../Screens/PortfolioBacktestScreen'
 import { TrendAggregateScreen } from '../Screens/TrendAggregateScreen'
+import { AlgoScreen } from '../Screens/AlgoScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -42,6 +43,7 @@ export const Workspace = () => {
                     <Tab title='Аналитика по облигациям'>Облигации</Tab>
                     <Tab title='Портфель акций'>Портфель</Tab>
                     <Tab title='Бектест портфеля'>Бэктест</Tab>
+                    <Tab title='Алго'>Алго</Tab>
                 </TabList>
                 <TabPanel>
                     <TrendDynamicScreen />                    
@@ -87,7 +89,10 @@ export const Workspace = () => {
                 </TabPanel>                            
                 <TabPanel>
                     <PortfolioBacktestScreen />
-                </TabPanel>                                                                                             
+                </TabPanel>          
+                <TabPanel>
+                    <AlgoScreen />
+                </TabPanel>                                                                                                     
             </Tabs>
         </React.Fragment>
     )    

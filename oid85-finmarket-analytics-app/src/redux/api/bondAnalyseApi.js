@@ -1,8 +1,8 @@
-﻿import {sendPostRequest} from './api'
+﻿import {sendAnalyticPostRequest} from './api'
 
 const controller = 'bond'
 
 export const getBondAnalyseFromApi = async () => {
-    return sendPostRequest(`${controller}/analyse`, {})
+    return sendAnalyticPostRequest(`${controller}/analyse`, {})
 }
 

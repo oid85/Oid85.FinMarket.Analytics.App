@@ -1,8 +1,8 @@
-﻿import {sendPostRequest} from './api'
+﻿import {sendAnalyticPostRequest} from './api'
 
 const controller = 'diagrams'
 
 export const getTrendAggregateDiagramFromApi = async () => {
-    return sendPostRequest(`${controller}/trend-aggregate`, {})
+    return sendAnalyticPostRequest(`${controller}/trend-aggregate`, {})
 }
 

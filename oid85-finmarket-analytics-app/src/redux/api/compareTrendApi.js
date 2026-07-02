@@ -1,7 +1,7 @@
-﻿import {sendPostRequest} from './api'
+﻿import {sendAnalyticPostRequest} from './api'
 
 const controller = 'trends'
 
 export const getCompareTrendFromApi = async () => {
-    return sendPostRequest(`${controller}/compare`, {lastDaysCount: 90})
+    return sendAnalyticPostRequest(`${controller}/compare`, {lastDaysCount: 90})
 }

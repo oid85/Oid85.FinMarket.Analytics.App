@@ -1,8 +1,8 @@
-﻿import {sendPostRequest} from './api'
+﻿import {sendAnalyticPostRequest} from './api'
 
 const controller = 'trends'
 
 export const getTrendDynamicFromApi = async () => {
-    return sendPostRequest(`${controller}/dynamic`, {lastDaysCount: 15})
+    return sendAnalyticPostRequest(`${controller}/dynamic`, {lastDaysCount: 15})
 }
 

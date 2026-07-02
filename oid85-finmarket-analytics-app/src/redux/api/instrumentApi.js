@@ -1,15 +1,15 @@
-﻿import {sendPostRequest} from './api'
+﻿import {sendAnalyticPostRequest} from './api'
 
 const controller = 'instruments'
 
 export const getInstrumentListFromApi = async () => {
-    return sendPostRequest(`${controller}/list`, {lastDaysCount: 90})
+    return sendAnalyticPostRequest(`${controller}/list`, {lastDaysCount: 90})
 }
 
 export const getSectorListFromApi = async () => {
-    return sendPostRequest(`${controller}/sectors/list`, {})
+    return sendAnalyticPostRequest(`${controller}/sectors/list`, {})
 }
 
 export const portfolioInstrumentFromApi = async (ticker) => {
-    return sendPostRequest(`${controller}/portfolio`, {ticker})
+    return sendAnalyticPostRequest(`${controller}/portfolio`, {ticker})
 }

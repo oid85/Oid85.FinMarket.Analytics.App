@@ -1,8 +1,8 @@
-﻿import {sendPostRequest} from './api'
+﻿import {sendAnalyticPostRequest} from './api'
 
 const controller = 'week-trends'
 
 export const getWeekTrendDeltaFromApi = async () => {
-    return sendPostRequest(`${controller}/delta`, {lastWeeksCount: 3})
+    return sendAnalyticPostRequest(`${controller}/delta`, {lastWeeksCount: 3})
 }
 
