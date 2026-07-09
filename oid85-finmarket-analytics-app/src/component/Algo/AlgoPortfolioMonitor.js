@@ -47,14 +47,24 @@ export const AlgoPortfolioMonitor = () => {
                 <div className='algo-portfolio-description'>{currentPortfolio.description}</div>
                 <div className='horizontal-container'>
                 <div className='algo-corner-cell'></div>
-                {
-                    portfolioMonitorData.result.dates.map((date, index) => (
-                        <div className='algo-calendar-cell algo-border-style'>
-                            <Calendar key = {index} date = {date} />
-                        </div>
-                    ))
-                }
-            </div>                
+                    {
+                        portfolioMonitorData.result.dates.map((date, index) => (
+                            <div className='algo-calendar-cell algo-border-style'>
+                                <Calendar key = {index} date = {date} />
+                            </div>
+                        ))
+                    }
+                </div>   
+                <div>
+                    {
+                        portfolioMonitorData.result.positionLists.map((positionList) => (
+                            <div className='horizontal-container'>
+                                <div className='algo-border-style'><Ticker value={positionList.ticker} width={34} height={34} /></div>
+                                <div className='algo-ticker algo-border-style'>{positionList.ticker}</div>                                       
+                            </div>
+                        ))
+                    }
+                </div>             
             </div>
         }
         </React.Fragment>                
