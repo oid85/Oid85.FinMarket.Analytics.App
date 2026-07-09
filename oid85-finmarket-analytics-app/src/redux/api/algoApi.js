@@ -7,13 +7,13 @@ export const getPortfolioListFromApi = async () => {
 }
 
 export const getPortfolioMonitorFromApi = async (name) => {
-    return sendAlgoPostRequest(`${controller}/portfolio/monitor`, {name})
+    return sendAlgoPostRequest(`${controller}/portfolio/monitor`, {portfolioName: name})
 }
 
 export const getPortfolioBacktestFromApi = async (name) => {
-    return sendAlgoPostRequest(`${controller}/portfolio/backtest`, {name})
+    return sendAlgoPostRequest(`${controller}/portfolio/backtest`, {portfolioName: name})
 }
 
 export const getPortfolioOptimizationFromApi = async (name) => {
-    return sendAlgoPostRequest(`${controller}/portfolio/optimization`, {name})
+    return sendAlgoPostRequest(`${controller}/portfolio/optimization`, {portfolioName: name})
 }
