@@ -3,8 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { useSelector } from 'react-redux'
 import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
-import { AlgoScreen1 } from '../Screens/AlgoScreen1'
-import { AlgoScreen2 } from '../Screens/AlgoScreen2'
+import { AlgoPortfolioMonitorScreen } from '../Screens/AlgoPortfolioMonitorScreen'
+import { AlgoPortfolioBacktestScreen } from '../Screens/AlgoPortfolioBacktestScreen'
+import { AlgoPortfolioOptimizationScreen } from '../Screens/AlgoPortfolioOptimizationScreen'
 import './styles.css'
 
 export const AlgoScreen = () => {
@@ -15,15 +16,19 @@ export const AlgoScreen = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                <Tab title='AlgoScreen1'>AlgoScreen1</Tab>
-                <Tab title='AlgoScreen2'>AlgoScreen2</Tab>
+                <Tab title='Мониторинг портфеля'>Мониторинг</Tab>
+                <Tab title='Бэктест портфеля'>Бэктест</Tab>
+                <Tab title='Оптимизация портфеля'>Оптимизация</Tab>
                 </TabList>
                 <TabPanel>
-                    <AlgoScreen1 />                    
+                    <AlgoPortfolioMonitorScreen />                    
                 </TabPanel>     
                 <TabPanel>
-                    <AlgoScreen2 />                    
-                </TabPanel>                                                                                                   
+                    <AlgoPortfolioBacktestScreen />                    
+                </TabPanel>       
+                <TabPanel>
+                    <AlgoPortfolioOptimizationScreen />                    
+                </TabPanel>                                                                                                             
             </Tabs>
         </React.Fragment>
     )     

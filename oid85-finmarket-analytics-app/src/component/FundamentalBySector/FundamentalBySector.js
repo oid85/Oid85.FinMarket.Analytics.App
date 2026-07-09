@@ -72,8 +72,8 @@ console.log(fundamentalBySectorData.result)
                     <div className='fundamental-by-sector-name-header-cell fundamental-by-sector-border-style'>Наименование</div>
                     <div className='fundamental-by-sector-sector-header-cell fundamental-by-sector-border-style'>Сектор</div>
                     <div className='fundamental-by-sector-score-header-cell fundamental-by-sector-border-style'>Рейт.</div>
-                    <div className='fundamental-by-sector-pe-header-cell fundamental-by-sector-border-style'>P / E</div>
                     <div className='fundamental-by-sector-market-cap-header-cell fundamental-by-sector-border-style'>Market Cap</div>
+                    <div className='fundamental-by-sector-pe-header-cell fundamental-by-sector-border-style'>P / E</div>                    
                     <div className='fundamental-by-sector-pbv-header-cell fundamental-by-sector-border-style'>P / BV</div>
                     {
                         currentSector.name != 'Банки'

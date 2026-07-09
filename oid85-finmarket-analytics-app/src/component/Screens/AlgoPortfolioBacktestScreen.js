@@ -4,7 +4,7 @@ import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
 import './styles.css'
 
-export const AlgoScreen1 = () => {
+export const AlgoPortfolioBacktestScreen = () => {
     const alert = useSelector(state => state.app.alert)
 
     return (
@@ -12,7 +12,7 @@ export const AlgoScreen1 = () => {
             {alert && <Alert text={alert} />}
             <div>
                 <div className='horizontal-container'>
-                    AlgoScreen1
+                    AlgoPortfolioBacktestScreen
                 </div>
             </div>            
         </React.Fragment>
