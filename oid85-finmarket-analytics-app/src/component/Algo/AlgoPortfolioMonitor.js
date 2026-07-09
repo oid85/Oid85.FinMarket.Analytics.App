@@ -8,6 +8,7 @@ import {
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
+import {Calendar} from '../Calendar/Calendar'
 import { Ticker } from '../Ticker/Ticker'
 import { CONSTANTS } from '../../constants'
 
@@ -44,6 +45,16 @@ export const AlgoPortfolioMonitor = () => {
                 }                                                                                                                                                                                                                                                              
                 </div>
                 <div className='algo-portfolio-description'>{currentPortfolio.description}</div>
+                <div className='horizontal-container'>
+                <div className='algo-corner-cell'></div>
+                {
+                    portfolioMonitorData.result.dates.map((date, index) => (
+                        <div className='algo-calendar-cell algo-border-style'>
+                            <Calendar key = {index} date = {date} />
+                        </div>
+                    ))
+                }
+            </div>                
             </div>
         }
         </React.Fragment>                
