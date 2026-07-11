@@ -8,7 +8,7 @@ import {
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
-import {Calendar} from '../Calendar/Calendar'
+import {CalendarMin} from '../Calendar/CalendarMin'
 import { Ticker } from '../Ticker/Ticker'
 import { CONSTANTS } from '../../constants'
 
@@ -50,18 +50,26 @@ export const AlgoPortfolioMonitor = () => {
                     {
                         portfolioMonitorData.result.dates.map((date, index) => (
                             <div className='algo-calendar-cell algo-border-style'>
-                                <Calendar key = {index} date = {date} />
+                                <CalendarMin key = {index} date = {date} />
                             </div>
                         ))
                     }
-                </div>   
+                </div>                 
                 <div>
                     {
                         portfolioMonitorData.result.positionLists.map((positionList) => (
                             <div className='horizontal-container'>                   
                                 <div className='algo-ticker algo-border-style'>{positionList.ticker}</div>
-                                <div className='algo-strategy-name algo-border-style'>{positionList.strategyName}</div>
-                                <div className='algo-strategy-params algo-border-style'>{positionList.strategyParams}</div>
+                                <div className='horizontal-container'>
+                                {
+                                    positionList.positionListItems.map((position, index) => (
+                                        <div 
+                                            title={position.date}
+                                            className='algo-cell algo-border-style' 
+                                            style={{backgroundColor: position.colorFill}}></div>
+                                    ))
+                                }                      
+                                </div>
                             </div>
                         ))
                     }

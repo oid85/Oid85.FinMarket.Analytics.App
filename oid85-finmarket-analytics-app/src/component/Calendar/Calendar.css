@@ -6,8 +6,23 @@
     border-radius: .25rem;
 }
 
+.calendar-min {
+    width: 15px;
+    line-height: 1;
+    text-align: center;
+    background-color: #fff;
+    border-radius: .25rem;
+}
+
 .calendar-header {
     padding: .25rem .25rem;
+    color: #fff;
+    font-weight: normal;
+    font-size: .5rem;
+    background-color: #f57c00;
+}
+
+.calendar-header-min {
     color: #fff;
     font-weight: normal;
     font-size: .5rem;
@@ -25,6 +40,11 @@
     text-transform: capitalize;
 }
 
+.calendar-month-min {  
+    font-size: 0.6rem;
+    text-transform: capitalize;
+}
+
 .calendar-weekday {
     color: #9e9e9e;
     font-size: .75rem;
@@ -33,6 +53,10 @@
 
 .calendar-day {
     font-size: 1.0rem;
+}
+
+.calendar-day-min {
+    font-size: .75rem;
 }
 
 .calendar-year {
