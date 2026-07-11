@@ -5,7 +5,7 @@ export const CalendarMin = ({date}) => {
     
     let dt = new Date(Date.parse(date))
     let month = dt.toLocaleString('default', { month: 'long' })
-        .toUpperCase().substring(0, 2);
+        .toUpperCase().substring(0, 3);
     let day = dt.toLocaleString('default', { day: '2-digit' });       
     
     return (

@@ -66,7 +66,7 @@ export const AlgoPortfolioMonitor = () => {
                                         <div 
                                             title={position.date}
                                             className='algo-cell algo-border-style' 
-                                            style={{backgroundColor: position.colorFill}}></div>
+                                            style={{backgroundColor: position.colorFill}}>{position.units}</div>
                                     ))
                                 }                      
                                 </div>
