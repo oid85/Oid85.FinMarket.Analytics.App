@@ -40,6 +40,16 @@
     width: 50px;
 }
 
+.algo-strategy-name {        
+    font-size: 12px;
+    width: 200px;
+}
+
+.algo-strategy-params {        
+    font-size: 12px;
+    width: 200px;
+}
+
 .algo-portfolio-name-button-container {    
     padding: 1px;
 }

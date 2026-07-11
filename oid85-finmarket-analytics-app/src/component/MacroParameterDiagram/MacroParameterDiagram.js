@@ -4,6 +4,7 @@ import { sagaMacroParameterDiagram } from '../../redux/actions/macroParameterAct
 import Loader from '../Loader/Loader'
 import { MacroParameterDiagramComponent } from './MacroParameterDiagramComponent'
 import { BarMacroParameterDiagramComponent } from './BarMacroParameterDiagramComponent'
+import { BarTarifElMacroParameterDiagramComponent } from './BarTarifElMacroParameterDiagramComponent'
 import './styles.css'
 
 const formatNumber = (num) => {
@@ -31,6 +32,7 @@ export const MacroParameterDiagram = () => {
                 <BarMacroParameterDiagramComponent series={macroParameterDiagramData.result.moneyAggregatesCpiSeries}/>
                 <MacroParameterDiagramComponent series={macroParameterDiagramData.result.moexSeries}/>
                 <BarMacroParameterDiagramComponent series={macroParameterDiagramData.result.vvpSeries}/>
+                <BarTarifElMacroParameterDiagramComponent />
             </div>        
         }
         </React.Fragment>                
