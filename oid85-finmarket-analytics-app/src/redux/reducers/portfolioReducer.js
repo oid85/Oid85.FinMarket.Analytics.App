@@ -10,7 +10,7 @@ import {
 const initialState = {
     portfolioPositionListData: {},
     portfolioBacktestData: {},
-    portfolioName: null,
+    portfolioName: '',
     currentPortfolioPosition: {},
     editPortfolioPositionModalIsOpened: false
 }

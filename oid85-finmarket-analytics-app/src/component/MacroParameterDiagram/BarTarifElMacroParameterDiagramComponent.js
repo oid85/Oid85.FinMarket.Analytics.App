@@ -15,7 +15,7 @@ let series = [
             { "date": "2020", "value": 3.50 },
             { "date": "2021", "value": 3.66 },
             { "date": "2022", "value": 3.85 },
-            { "date": "2023", "value": 4.39 },
+            { "date": "2023", "value": 4.16 },
             { "date": "2024", "value": 4.39 },
             { "date": "2025", "value": 4.78 },
             { "date": "2026", "value": 5.46 }

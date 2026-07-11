@@ -62,11 +62,11 @@ export const AlgoPortfolioMonitor = () => {
                                 <div className='algo-ticker algo-border-style'>{positionList.ticker}</div>
                                 <div className='horizontal-container'>
                                 {
-                                    positionList.positionListItems.map((position, index) => (
+                                    positionList.positionItems.map((positionItem, index) => (
                                         <div 
-                                            title={position.date}
+                                            title={positionItem.date}
                                             className='algo-cell algo-border-style' 
-                                            style={{backgroundColor: position.colorFill}}>{position.units}</div>
+                                            style={{backgroundColor: positionItem.colorFill}}>{positionItem.units}</div>
                                     ))
                                 }                      
                                 </div>

@@ -19,6 +19,8 @@ export const PortfolioBacktest = () => {
         dispatch(sagaPortfolioBacktest())
     }, [])
 
+console.log(portfolioBacktestData.result)
+
     return (
         <React.Fragment>
         {
@@ -47,7 +49,14 @@ export const PortfolioBacktest = () => {
                                 dispatch(fetchPortfolioName('LowDebt'))
                                 dispatch(sagaPortfolioBacktest())
                             }}><div className='portfolio-backtest-name-button-text'>ТОП с низким долгом фунд. рейт.</div></button>
-                    </div>                                                                                                                                                                                                       
+                    </div>            
+                    <div className='portfolio-backtest-name-button-container'>
+                        <button className='btn btn-outline-dark portfolio-backtest-name-button'
+                            onClick={() => {
+                                dispatch(fetchPortfolioName('GrowingNetProfit'))
+                                dispatch(sagaPortfolioBacktest())
+                            }}><div className='portfolio-backtest-name-button-text'>ТОП с растущей ЧП фунд. рейт.</div></button>
+                    </div>                                                                                                                                                                                                                 
                 </div>                 
                 <div className='portfolio-backtest-container border-style'>
                     <PortfolioBacktestDiagram series={portfolioBacktestData.result.series}/>
