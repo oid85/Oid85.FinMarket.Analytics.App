@@ -30,6 +30,7 @@ export const BondAnalyse = () => {
             :
             <div>             
                 <div className='horizontal-container'>
+                    <div className='bond-analyse-number-header-cell bond-analyse-border-style'>№</div> 
                     <div className='bond-analyse-ticker-header-cell bond-analyse-border-style'>Тикер</div> 
                     <div className='bond-analyse-name-header-cell bond-analyse-border-style'>Наименование</div>
                     <div className='bond-analyse-rating-header-cell bond-analyse-border-style'>Кр. рейт.</div>
@@ -49,6 +50,7 @@ export const BondAnalyse = () => {
                 {
                     bondAnalyseData.result.items.map((item, index) => (
                         <div className='horizontal-container'>
+                            <div className='bond-analyse-number-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.number}</b></div> : <div>{item.number}</div>}</div> 
                             <div className='bond-analyse-ticker-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.ticker}</b></div> : <div>{item.ticker}</div>}</div> 
                             <div className='bond-analyse-name-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.name}</b></div> : <div>{item.name}</div>}</div>
                             <div className='bond-analyse-rating-cell bond-analyse-border-style'>{item.inPortfolio ? <div><b>{item.rating}</b></div> : <div>{item.rating}</div>}</div>
