@@ -67,7 +67,14 @@ console.log(fundamentalRatingListData.result)
                                 dispatch(fetchFilterType('LowDebt'))
                                 dispatch(sagaFundamentalRatingList())
                             }}><div className='filter-button-text'>Низкий долг</div></button>
-                    </div>                                     
+                    </div>      
+                    <div className='filter-button-container'>
+                        <button className='btn btn-outline-dark filter-button'
+                            onClick={() => {
+                                dispatch(fetchFilterType('GrowingNetProfit'))
+                                dispatch(sagaFundamentalRatingList())
+                            }}><div className='filter-button-text'>Растущая ЧП</div></button>
+                    </div>                                                   
                 </div>                         
                 <div className='horizontal-container'>
                     <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
