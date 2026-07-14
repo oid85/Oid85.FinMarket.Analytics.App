@@ -11,6 +11,7 @@ import './styles.css'
 import {CalendarMin} from '../Calendar/CalendarMin'
 import { Ticker } from '../Ticker/Ticker'
 import { CONSTANTS } from '../../constants'
+import { AlgoBacktestDiagram } from './AlgoBacktestDiagram'
 
 export const AlgoPortfolioMonitor = () => {
     
@@ -73,7 +74,10 @@ export const AlgoPortfolioMonitor = () => {
                             </div>
                         ))
                     }
-                </div>             
+                </div> 
+                <div className='algo-backtest-container border-style'>
+                    <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
+                </div>                             
             </div>
         }
         </React.Fragment>                

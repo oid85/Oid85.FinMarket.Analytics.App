@@ -75,7 +75,8 @@ console.log(fundamentalRatingListData.result)
                                 dispatch(sagaFundamentalRatingList())
                             }}><div className='filter-button-text'>Растущая ЧП</div></button>
                     </div>                                                   
-                </div>                         
+                </div>    
+                <div>{fundamentalRatingListData.result.tickerList}</div>                     
                 <div className='horizontal-container'>
                     <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
                     <div className='fundamental-rating-border-style' style={{width: 52}}></div>
