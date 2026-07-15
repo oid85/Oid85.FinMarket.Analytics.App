@@ -39,22 +39,16 @@ export const AlgoPortfolioMonitor = () => {
                         <div className='algo-portfolio-name-button-container'>
                             <button className='btn btn-outline-dark algo-portfolio-name-button'
                                 onClick={() => {
-                                    dispatch(fetchCurrentPortfolio({name: portfolioName.name, description: portfolioName.description}))                                
+                                    dispatch(fetchCurrentPortfolio({name: portfolioName.name, description: portfolioName.description})) 
+                                    dispatch(sagaPortfolioMonitor())                               
                                 }}><div className='algo-portfolio-name-button-text'>{portfolioName.name}</div></button>
                         </div>                        
                     ))
                 }                                                                                                                                                                                                                                                              
                 </div>
                 <div className='algo-portfolio-description'>{currentPortfolio.description}</div>
-                <div className='horizontal-container'>
-                <div className='algo-corner-cell'></div>
-                    {
-                        portfolioMonitorData.result.dates.map((date, index) => (
-                            <div className='algo-calendar-cell algo-border-style'>
-                                <CalendarMin key = {index} date = {date} />
-                            </div>
-                        ))
-                    }
+                <div className='algo-backtest-container'>
+                    <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
                 </div>                 
                 <div>
                     {
@@ -67,16 +61,13 @@ export const AlgoPortfolioMonitor = () => {
                                         <div 
                                             title={positionItem.date}
                                             className='algo-cell algo-border-style' 
-                                            style={{backgroundColor: positionItem.colorFill}}>{positionItem.units}</div>
+                                            style={{backgroundColor: positionItem.colorFill}}></div>
                                     ))
                                 }                      
                                 </div>
                             </div>
                         ))
                     }
-                </div> 
-                <div className='algo-backtest-container border-style'>
-                    <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
                 </div>                             
             </div>
         }

@@ -42,7 +42,7 @@
 
 .algo-cell {        
     font-size: 12px;
-    width: 25px;
+    width: 4px;
 }
 
 .algo-strategy-name {        
@@ -60,7 +60,7 @@
 }
 
 .algo-portfolio-name-button {    
-    width: 170px;
+    width: 120px;
     height: 30px;
 }
 

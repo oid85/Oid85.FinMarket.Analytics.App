@@ -5,15 +5,15 @@ import './styles.css'
 export const AlgoBacktestDiagram = ({series}) => {
     return (
         <React.Fragment>          
-            <div className='algo-backtest-diagram'>
+            <div>
             <ComposedChart                                    
                 data={series}
                 height={500}                                                
-                width={1000}
+                width={1885}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
-                <YAxis domain={['auto', 'auto']}/>
+                <YAxis width={45} domain={['auto', 'auto']}/>
                 <Legend />
                 {series.map(s => (
                     <Area 
