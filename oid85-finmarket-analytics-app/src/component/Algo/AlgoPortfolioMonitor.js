@@ -49,25 +49,40 @@ export const AlgoPortfolioMonitor = () => {
                 <div className='algo-portfolio-description'>{currentPortfolio.description}</div>
                 <div className='algo-backtest-container'>
                     <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
-                </div>                 
-                <div>
-                    {
-                        portfolioMonitorData.result.positionLists.map((positionList) => (
-                            <div className='horizontal-container'>                   
-                                <div className='algo-ticker algo-cell-border-style'>{positionList.ticker}</div>
-                                <div className='horizontal-container'>
-                                {
-                                    positionList.positionItems.map((positionItem, index) => (
-                                        <div 
-                                            title={positionItem.date}
-                                            className='algo-cell algo-cell-border-style' 
-                                            style={{backgroundColor: positionItem.colorFill}}></div>
-                                    ))
-                                }                      
+                </div>
+                <div className='horizontal-container'>
+                    <div>
+                        {
+                            portfolioMonitorData.result.positionWeightData.map((positionWeightDataItem) => (
+                                <div className='horizontal-container'>                   
+                                    <div className='algo-ticker algo-cell-border-style'>{positionWeightDataItem.ticker}</div>
+                                    <div className='horizontal-container'>
+                                    {
+                                        positionWeightDataItem.positionWeightItems.map((positionWeightItem) => (
+                                            <div 
+                                                title={`${positionWeightItem.date} ${positionWeightDataItem.ticker} ${positionWeightItem.weight}`}
+                                                className='algo-cell algo-cell-border-style' 
+                                                style={{backgroundColor: positionWeightItem.colorFill}}></div>
+                                        ))
+                                    }                      
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
+                    <div className='algo-separator'></div>
+                    <div>
+                        {
+                            portfolioMonitorData.result.currentPositions.map((currentPosition) => (
+                                <div className='horizontal-container'>                   
+                                    <div className='algo-ticker algo-cell-border-style'>{currentPosition.ticker}</div>
+                                    <div className='algo-weight algo-cell-border-style'>{currentPosition.weight}</div>
+                                    <div className='algo-size algo-cell-border-style'>{currentPosition.size}</div>
+                                    <div className='algo-cost algo-cell-border-style'>{currentPosition.cost}</div>
+                                </div>
+                            ))
+                        }
+                    </div>                    
                 </div>                             
             </div>
         }

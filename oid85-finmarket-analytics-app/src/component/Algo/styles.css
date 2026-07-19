@@ -23,6 +23,10 @@
     padding: 1px; 
 }
 
+.algo-separator {        
+    width: 10px;
+}
+
 .algo-backtest-diagram {     
     padding: 1px; 
 }
@@ -40,6 +44,21 @@
 }
 
 .algo-ticker {        
+    font-size: 12px;
+    width: 50px;
+}
+
+.algo-weight {        
+    font-size: 12px;
+    width: 50px;
+}
+
+.algo-size {        
+    font-size: 12px;
+    width: 50px;
+}
+
+.algo-cost {        
     font-size: 12px;
     width: 50px;
 }
