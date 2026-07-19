@@ -6,6 +6,7 @@ import { MacroParameterDiagramComponent } from './MacroParameterDiagramComponent
 import { BarMacroParameterDiagramComponent } from './BarMacroParameterDiagramComponent'
 import { BarTarifElMacroParameterDiagramComponent } from './BarTarifElMacroParameterDiagramComponent'
 import './styles.css'
+import { BarSteelPriceMacroParameterDiagramComponent } from './BarSteelPriceMacroParameterDiagramComponent'
 
 const formatNumber = (num) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -33,6 +34,7 @@ export const MacroParameterDiagram = () => {
                 <MacroParameterDiagramComponent series={macroParameterDiagramData.result.moexSeries}/>
                 <BarMacroParameterDiagramComponent series={macroParameterDiagramData.result.vvpSeries}/>
                 <BarTarifElMacroParameterDiagramComponent />
+                <BarSteelPriceMacroParameterDiagramComponent />
             </div>        
         }
         </React.Fragment>                
