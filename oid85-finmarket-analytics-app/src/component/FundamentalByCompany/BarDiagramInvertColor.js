@@ -7,13 +7,10 @@ export const BarDiagramInvertColor = ({ data }) => {
     return (
         <div className='fundamental-by-company-border-style'>
             <BarChart width={300} height={150} data={data}>
+                <XAxis height={20} dataKey="x" type="category" fontSize={10} />
                 <YAxis width={30} type="number" domain={['auto', 'auto']} fontSize={10} />
                 <Tooltip />
-                <Bar 
-                    type="monotone" 
-                    dataKey="y"
-                    strokeWidth={2}                     
-                >
+                <Bar type="monotone" dataKey="y" strokeWidth={2}>
                 {
                     data.map((entry, index) => (
                         <Cell 

@@ -51,7 +51,8 @@ export const FundamentalByCompany = () => {
                         <div className='fundamental-by-company-name'>{fundamentalByCompanyData.result.name}</div>
                         <div className='fundamental-by-company-sector'>{fundamentalByCompanyData.result.sector}</div>
                     </div>
-                    <div 
+                    <div
+                        hidden 
                         onDoubleClick={() => {
                             dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'DividendPolyticInfo', period: '', extData: fundamentalByCompanyData.result.dividendPolyticInfo }))
                             dispatch(showEditFundamentalParameterModal())
@@ -60,6 +61,7 @@ export const FundamentalByCompany = () => {
                         <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.dividendPolyticInfo}</div>
                     </div>
                     <div 
+                        hidden
                         onDoubleClick={() => {
                             dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'Concept', period: '', extData: fundamentalByCompanyData.result.concept }))
                             dispatch(showEditFundamentalParameterModal())
@@ -68,6 +70,7 @@ export const FundamentalByCompany = () => {
                         <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.concept}</div>
                     </div>       
                     <div 
+                        hidden
                         onDoubleClick={() => {
                             dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'GrowthDriverInfo', period: '', extData: fundamentalByCompanyData.result.growthDriverInfo }))
                             dispatch(showEditFundamentalParameterModal())
@@ -76,6 +79,7 @@ export const FundamentalByCompany = () => {
                         <div className='fundamental-by-company-text'>{fundamentalByCompanyData.result.growthDriverInfo}</div>
                     </div>
                     <div 
+                        hidden
                         onDoubleClick={() => {
                             dispatch(fetchCurrentFundamentalParameter({ ticker: fundamentalByCompanyData.result.ticker, type: 'RiskInfo', period: '', extData: fundamentalByCompanyData.result.riskInfo }))
                             dispatch(showEditFundamentalParameterModal())

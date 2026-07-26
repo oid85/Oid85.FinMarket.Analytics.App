@@ -43,7 +43,7 @@ console.log(fundamentalRatingListData.result)
             !fundamentalRatingListData.result || loading
             ? <Loader/>
             :
-            <div className='fundamental-rating-container'> 
+            <div className='fundamental-rating-container'>
                 <div
                     // hidden 
                     className='horizontal-container'>
@@ -76,7 +76,9 @@ console.log(fundamentalRatingListData.result)
                             }}><div className='filter-button-text'>Растущая ЧП</div></button>
                     </div>                                                   
                 </div>    
-                <div>{fundamentalRatingListData.result.tickerList}</div>                     
+                <div 
+                    // hidden
+                >{fundamentalRatingListData.result.tickerList}</div>                     
                 <div className='horizontal-container'>
                     <div className='fundamental-rating-number-header-cell fundamental-rating-border-style'>№</div>
                     <div className='fundamental-rating-border-style' style={{width: 52}}></div>

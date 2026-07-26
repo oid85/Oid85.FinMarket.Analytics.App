@@ -44,23 +44,23 @@
 }
 
 .algo-ticker {        
-    font-size: 12px;
+    font-size: 14px;
     width: 50px;
 }
 
 .algo-weight {        
-    font-size: 12px;
+    font-size: 14px;
     width: 50px;
 }
 
 .algo-size {        
-    font-size: 12px;
-    width: 50px;
+    font-size: 14px;
+    width: 100px;
 }
 
 .algo-cost {        
-    font-size: 12px;
-    width: 50px;
+    font-size: 14px;
+    width: 120px;
 }
 
 .algo-cell {        

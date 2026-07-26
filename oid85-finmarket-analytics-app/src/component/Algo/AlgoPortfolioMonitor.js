@@ -13,6 +13,10 @@ import { Ticker } from '../Ticker/Ticker'
 import { CONSTANTS } from '../../constants'
 import { AlgoBacktestDiagram } from './AlgoBacktestDiagram'
 
+const formatNumber = (num) => {
+    return new Intl.NumberFormat('ru-RU').format(num);
+  };
+
 export const AlgoPortfolioMonitor = () => {
     
     const dispatch = useDispatch()
@@ -48,7 +52,16 @@ export const AlgoPortfolioMonitor = () => {
                 </div>
                 <div className='algo-portfolio-description'>{currentPortfolio.description}</div>
                 <div className='algo-backtest-container'>
-                    <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
+                    <div className='horizontal-container'>
+                        <div>
+                            <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
+                        </div>
+                        <div>
+                            <div className='algo-backtest-container'>{`Доходность годовых средн.: ${portfolioMonitorData.result.yield} %`}</div>
+                            <div className='algo-backtest-container'>{`Макс. просадка: ${portfolioMonitorData.result.maxDrawdown} %`}</div>
+                            <div className='algo-backtest-container'>{`Текущ. просадка: ${portfolioMonitorData.result.currentDrawdown} %`}</div>
+                        </div>
+                    </div>
                 </div>
                 <div className='horizontal-container'>
                     <div>
@@ -77,8 +90,8 @@ export const AlgoPortfolioMonitor = () => {
                                 <div className='horizontal-container'>                   
                                     <div title='Тикер' className='algo-ticker algo-cell-border-style'>{currentPosition.ticker}</div>
                                     <div title='Вес, юнит' className='algo-weight algo-cell-border-style'>{currentPosition.weight}</div>
-                                    <div title='Размер позиции, шт.' className='algo-size algo-cell-border-style'>{currentPosition.size}</div>
-                                    <div title='Стоимость позиции, руб.' className='algo-cost algo-cell-border-style'>{currentPosition.cost}</div>
+                                    <div title='Размер позиции, шт.' className='algo-size algo-cell-border-style'>{`${formatNumber(currentPosition.size)} шт.`}</div>
+                                    <div title='Стоимость позиции, руб.' className='algo-cost algo-cell-border-style'>{`${formatNumber(currentPosition.cost)} руб.`}</div>
                                 </div>
                             ))
                         }
