@@ -57,7 +57,7 @@ export const AlgoPortfolioMonitor = () => {
                             <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
                         </div>
                         <div>
-                            <div className='algo-backtest-container'>{`Доходность годовых средн.: ${portfolioMonitorData.result.yield} %`}</div>
+                            <div className='algo-backtest-container'>{`Доходность годовых: ${portfolioMonitorData.result.yield} %`}</div>
                             <div className='algo-backtest-container'>{`Макс. просадка: ${portfolioMonitorData.result.maxDrawdown} %`}</div>
                             <div className='algo-backtest-container'>{`Текущ. просадка: ${portfolioMonitorData.result.currentDrawdown} %`}</div>
                         </div>
