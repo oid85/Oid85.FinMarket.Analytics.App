@@ -11,7 +11,7 @@ const initialState = {
     portfolioMonitorData: {},
     portfolioBacktestData: {},
     portfolioOptimizationData: {},
-    currentPortfolio: { name: '', description: '' }    
+    currentPortfolio: { name: 'Trend', description: 'Портфель Trend (Tinkoff Женя)' }    
 }
 
 export const algoReducer = (state = initialState, action) => {
