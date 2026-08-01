@@ -56,7 +56,14 @@ console.log(portfolioBacktestData.result)
                                 dispatch(fetchPortfolioName('GrowingNetProfit'))
                                 dispatch(sagaPortfolioBacktest())
                             }}><div className='portfolio-backtest-name-button-text'>ТОП с растущей ЧП фунд. рейт.</div></button>
-                    </div>                                                                                                                                                                                                                 
+                    </div>   
+                    <div className='portfolio-backtest-name-button-container'>
+                        <button className='btn btn-outline-dark portfolio-backtest-name-button'
+                            onClick={() => {
+                                dispatch(fetchPortfolioName('Bond'))
+                                dispatch(sagaPortfolioBacktest())
+                            }}><div className='portfolio-backtest-name-button-text'>Форвард тест облигаций</div></button>
+                    </div>                                                                                                                                                                                                                                   
                 </div>                 
                 <div className='portfolio-backtest-container border-style'>
                     <PortfolioBacktestDiagram series={portfolioBacktestData.result.series}/>
@@ -65,19 +72,43 @@ console.log(portfolioBacktestData.result)
                     <div className='horizontal-container'>
                         <div className='portfolio-backtest-container'>Доходность годовых средн.:</div> 
                         <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.yield} %`}</div> 
-                    </div> 
-                    <div className='horizontal-container'>
-                        <div className='portfolio-backtest-container'>Макс. просадка:</div> 
-                        <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.maxDrawdown} %`}</div> 
                     </div>     
-                    <div className='horizontal-container'>
-                        <div className='portfolio-backtest-container'>Текущ. просадка:</div> 
-                        <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.currentDrawdown} %`}</div> 
-                    </div>                       
-                    <div className='horizontal-container'>
-                        <div className='portfolio-backtest-container'>Получено дивидендов:</div> 
-                        <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.dividendSum)} руб.`}</div> 
-                    </div> 
+                    {
+                        portfolioBacktestData.result.maxDrawdown
+                        ?
+                        <div className='horizontal-container'>
+                            <div className='portfolio-backtest-container'>Макс. просадка:</div> 
+                            <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.maxDrawdown} %`}</div> 
+                        </div> 
+                        : <div></div>
+                    }   
+                    {
+                        portfolioBacktestData.result.currentDrawdown
+                        ?
+                        <div className='horizontal-container'>
+                            <div className='portfolio-backtest-container'>Текущ. просадка:</div> 
+                            <div className='portfolio-backtest-container'>{`${portfolioBacktestData.result.currentDrawdown} %`}</div> 
+                        </div>
+                        : <div></div>
+                    }                    
+                    {
+                        portfolioBacktestData.result.dividendSum
+                        ?
+                        <div className='horizontal-container'>
+                            <div className='portfolio-backtest-container'>Получено дивидендов:</div> 
+                            <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.dividendSum)} руб.`}</div> 
+                        </div> 
+                        : <div></div>
+                    }
+                    {
+                        portfolioBacktestData.result.couponSum
+                        ?
+                        <div className='horizontal-container'>
+                            <div className='portfolio-backtest-container'>Получено купонов:</div> 
+                            <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.couponSum)} руб.`}</div> 
+                        </div> 
+                        : <div></div>
+                    }                   
                     <div className='horizontal-container'>
                         <div className='portfolio-backtest-container'>Внесено:</div> 
                         <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.moneySum)} руб.`}</div> 
