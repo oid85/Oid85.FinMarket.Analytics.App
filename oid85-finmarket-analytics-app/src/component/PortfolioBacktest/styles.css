@@ -43,3 +43,99 @@
 .portfolio-backtest-result {        
     font-size: 20px;
 }
+
+.portfolio-backtest-number-header-cell {
+    width: 30px;  
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-number-cell {
+    width: 30px;
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-ticker-header-cell {
+    width: 120px;  
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-ticker-cell {
+    width: 120px;  
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-name-header-cell {
+    width: 250px;  
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-name-cell {
+    width: 250px;
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-sector-header-cell {
+    width: 150px;  
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-sector-cell {
+    width: 150px;
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-current-dividend-yield-header-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-current-dividend-yield-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px; 
+}
+
+.portfolio-backtest-percentage-header-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-backtest-percentage-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-backtest-month-delta-price-percent-header-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-backtest-month-delta-price-percent-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-backtest-cost-header-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px;  
+}
+
+.portfolio-backtest-cost-cell {
+    width: 120px;
+    padding: 1px;
+    font-size: 14px;  
+}

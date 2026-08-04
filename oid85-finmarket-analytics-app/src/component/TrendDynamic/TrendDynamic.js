@@ -25,8 +25,7 @@ export const TrendDynamic = () => {
             <div className='horizontal-container'>             
                 <div className='trend-dynamic-container'>
                     <TrendDynamicHeaders dates = {trendDynamicData.result.dates} />
-                    <TrendDynamicData data = {trendDynamicData.result.shares} />
-                    <TrendDynamicData data = {trendDynamicData.result.etfs} />                    
+                    <TrendDynamicData data = {trendDynamicData.result.shares} />                  
                 </div> 
             </div>         
         }

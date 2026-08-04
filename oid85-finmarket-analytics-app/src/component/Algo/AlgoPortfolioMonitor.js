@@ -89,7 +89,7 @@ export const AlgoPortfolioMonitor = () => {
                             portfolioMonitorData.result.currentPositions.map((currentPosition) => (
                                 <div className='horizontal-container'>                   
                                     <div title='Тикер' className='algo-ticker algo-cell-border-style'>{currentPosition.ticker}</div>
-                                    <div title='Вес, юнит' className='algo-weight algo-cell-border-style'>{currentPosition.weight}</div>
+                                    <div title='Вес, юнит' className='algo-weight algo-cell-border-style'>{`${currentPosition.weight} юнит.`}</div>
                                     <div title='Размер позиции, шт.' className='algo-size algo-cell-border-style'>{`${formatNumber(currentPosition.size)} шт.`}</div>
                                     <div title='Стоимость позиции, руб.' className='algo-cost algo-cell-border-style'>{`${formatNumber(currentPosition.cost)} руб.`}</div>
                                 </div>
