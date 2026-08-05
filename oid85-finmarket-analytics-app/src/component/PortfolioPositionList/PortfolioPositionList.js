@@ -95,7 +95,7 @@ export const PortfolioPositionList = () => {
                         </div>
                     </div>
                     <div className='portfolio-position-percentage-header-cell portfolio-position-border-style'>
-                    <div>Доля, %</div>
+                    <div>Доля (расч.), %</div>
                         <div className='sort-button-container'>
                             <button className='btn btn-outline-dark sort-button'
                                 onClick={() => {
@@ -130,10 +130,10 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-marketcap-coefficient-header-cell portfolio-position-border-style'>Кап. коэф.</div>
                     <div className='portfolio-position-manual-coefficient-header-cell portfolio-position-border-style'>Ручн. коэф.</div>
                     <div className='portfolio-position-result-coefficient-header-cell portfolio-position-border-style'>Рез. коэф.</div>                    
-                    <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во, шт</div>
+                    <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во (расч.), шт</div>
                     <div className='portfolio-position-size-header-cell portfolio-position-border-style'>Кол-во (реал.), шт</div>
                     <div className='portfolio-position-delta-size-header-cell portfolio-position-border-style'>Изм., шт</div>                    
-                    <div className='portfolio-position-cost-header-cell portfolio-position-border-style'>Стоимость, руб</div>                                        
+                    <div className='portfolio-position-cost-header-cell portfolio-position-border-style'>Стоимость (расч.), руб</div>                                        
                 </div>
                 {
                     portfolioPositionListData.result.portfolioPositions.map((portfolioPosition) => (
