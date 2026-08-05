@@ -85,7 +85,7 @@ export const PortfolioPositionList = () => {
                     <div className='portfolio-position-name-header-cell portfolio-position-border-style'>Наименование</div>
                     <div className='portfolio-position-sector-header-cell portfolio-position-border-style'>Сектор (доля, %)</div>
                     <div className='portfolio-position-current-dividend-yield-header-cell portfolio-position-border-style'>
-                        <div>ДД, %</div>
+                        <div>Див. доход., %</div>
                         <div className='sort-button-container'>
                             <button className='btn btn-outline-dark sort-button'
                                 onClick={() => {
@@ -105,7 +105,7 @@ export const PortfolioPositionList = () => {
                         </div>
                     </div>
                     <div className='portfolio-position-month-delta-price-percent-header-cell portfolio-position-border-style'>
-                    <div>Рост мес., %</div>
+                    <div>Рост за месяц, %</div>
                         <div className='sort-button-container'>
                             <button className='btn btn-outline-dark sort-button'
                                 onClick={() => {
