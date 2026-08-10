@@ -8,9 +8,6 @@ import {
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
-import {CalendarMin} from '../Calendar/CalendarMin'
-import { Ticker } from '../Ticker/Ticker'
-import { CONSTANTS } from '../../constants'
 import { AlgoBacktestDiagram } from './AlgoBacktestDiagram'
 
 const formatNumber = (num) => {

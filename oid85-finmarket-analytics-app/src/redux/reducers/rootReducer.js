@@ -13,6 +13,7 @@ import { trendAggregateDiagramReducer } from './trendAggregateDiagramReducer'
 import { orderReducer } from './orderReducer'
 import { filterReducer } from './filterReducer'
 import { algoReducer } from './algoReducer'
+import { statArbitrageReducer } from './statArbitrageReducer'
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -28,5 +29,6 @@ export const rootReducer = combineReducers({
     trendAggregateDiagram: trendAggregateDiagramReducer,
     order: orderReducer,
     filter: filterReducer,
-    algo: algoReducer
+    algo: algoReducer,
+    statArbitrage: statArbitrageReducer
 })

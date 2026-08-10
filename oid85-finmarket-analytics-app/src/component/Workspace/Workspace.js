@@ -19,6 +19,7 @@ import { FundamentalRatingScreen } from '../Screens/FundamentalRatingScreen'
 import { PortfolioBacktestScreen } from '../Screens/PortfolioBacktestScreen'
 import { TrendAggregateScreen } from '../Screens/TrendAggregateScreen'
 import { AlgoScreen } from '../Screens/AlgoScreen'
+import { StatArbitrageScreen } from '../Screens/StatArbitrageScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -44,6 +45,7 @@ export const Workspace = () => {
                     <Tab title='Портфель акций'>Портфель</Tab>
                     <Tab title='Бектест портфеля'>Бэктест</Tab>
                     <Tab title='Алго'>Алго</Tab>
+                    <Tab title='Статистический арбитраж'>Стат. арбитраж</Tab>
                 </TabList>
                 <TabPanel>
                     <TrendDynamicScreen />                    
@@ -92,7 +94,10 @@ export const Workspace = () => {
                 </TabPanel>          
                 <TabPanel>
                     <AlgoScreen />
-                </TabPanel>                                                                                                     
+                </TabPanel>       
+                <TabPanel>
+                    <StatArbitrageScreen />
+                </TabPanel>                                                                                                                
             </Tabs>
         </React.Fragment>
     )    

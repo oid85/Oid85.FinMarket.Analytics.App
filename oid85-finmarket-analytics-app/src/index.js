@@ -18,6 +18,7 @@ import { sagaWatcherBondAnalyse } from './redux/sagas/sagaBondAnalyse'
 import { sagaWatcherClosePriceDiagram } from './redux/sagas/sagaClosePriceDiagram'
 import { sagaWatcherTrendAggregateDiagram } from './redux/sagas/sagaTrendAggregateDiagram'
 import { sagaWatcherAlgo } from './redux/sagas/sagaAlgo'
+import { sagaWatcherStatArbitrage } from './redux/sagas/sagaStatArbitrage'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const saga = createSagaMiddleware()
@@ -38,6 +39,7 @@ saga.run(sagaWatcherBondAnalyse)
 saga.run(sagaWatcherClosePriceDiagram)
 saga.run(sagaWatcherTrendAggregateDiagram)
 saga.run(sagaWatcherAlgo)
+saga.run(sagaWatcherStatArbitrage)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
