@@ -19,6 +19,18 @@
     padding: 1px; 
 }
 
+.stat-arbitrage-corner-cell {        
+    width: 162px;
+}
+
+.stat-arbitrage-ticker-cell {        
+    width: 80px;
+}
+
+.stat-arbitrage-tail-cell {        
+    width: 47px;
+}
+
 .stat-arbitrage-separator {        
     width: 10px;
 }

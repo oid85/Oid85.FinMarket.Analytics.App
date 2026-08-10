@@ -8,6 +8,7 @@ import {
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
+import { Calendar } from '../Calendar/Calendar'
 
 const formatNumber = (num) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -25,6 +26,8 @@ export const StatArbitragePortfolioRegressionTail = () => {
         dispatch(sagaPortfolioList())
         dispatch(sagaPortfolioRegressionTail())
     }, [])
+
+console.log(portfolioRegressionTailData.result)
 
     return (
         <React.Fragment>
@@ -46,7 +49,34 @@ export const StatArbitragePortfolioRegressionTail = () => {
                     ))
                 }                                                                                                                                                                                                                                                              
                 </div>
-                <div className='stat-arbitrage-portfolio-description'>{currentPortfolio.description}</div>                             
+                <div className='stat-arbitrage-portfolio-description'>{currentPortfolio.description}</div> 
+                <div>
+                <div className='horizontal-container'>
+                    <div className='stat-arbitrage-corner-cell'></div>
+                    {
+                        portfolioRegressionTailData.result.dates.map((date, index) => (
+                            <div className='calendar-cell stat-arbitrage-border-style'>
+                                <Calendar key = {index} date = {date} />
+                            </div>
+                        ))
+                    }                   
+                </div>   
+                {
+                    portfolioRegressionTailData.result.items.map((item, index) => (
+                        <div className='horizontal-container'>
+                            <div className='stat-arbitrage-ticker-cell stat-arbitrage-border-style'>{item.tickerFirst}</div>
+                            <div className='stat-arbitrage-ticker-cell stat-arbitrage-border-style'>{item.tickerSecond}</div>
+                            {
+                                item.tails.map((tail, index) => (
+                                    <div 
+                                        className='stat-arbitrage-tail-cell stat-arbitrage-border-style'
+                                        style={{backgroundColor: tail.colorFill}}>{tail.value}</div>
+                                ))
+                            }                              
+                        </div>
+                    ))
+                }                  
+                </div>                            
             </div>
         }
         </React.Fragment>                
