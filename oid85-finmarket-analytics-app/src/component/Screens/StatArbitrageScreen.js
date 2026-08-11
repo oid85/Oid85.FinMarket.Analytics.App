@@ -17,17 +17,17 @@ export const StatArbitrageScreen = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                <Tab title='Остатки регрессии'>Остатки регрессии</Tab>
                 <Tab title='Мониторинг портфеля'>Мониторинг</Tab>
+                <Tab title='Остатки регрессии'>Остатки регрессии</Tab>                
                 <Tab title='Бэктест портфеля'>Бэктест</Tab>
                 <Tab title='Оптимизация портфеля'>Оптимизация</Tab>
                 </TabList>
                 <TabPanel>
-                    <StatArbitragePortfolioRegressionTailScreen />                    
-                </TabPanel>                  
-                <TabPanel>
                     <StatArbitragePortfolioMonitorScreen />                    
-                </TabPanel>     
+                </TabPanel>
+                <TabPanel>
+                    <StatArbitragePortfolioRegressionTailScreen />                    
+                </TabPanel>                     
                 <TabPanel>
                     <StatArbitragePortfolioBacktestScreen />                    
                 </TabPanel>       
