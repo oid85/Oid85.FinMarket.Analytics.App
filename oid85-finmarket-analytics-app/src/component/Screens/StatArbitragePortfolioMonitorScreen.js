@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
+import { StatArbitragePortfolioMonitor } from '../StatArbitrage/StatArbitragePortfolioMonitor'
 import './styles.css'
 
 export const StatArbitragePortfolioMonitorScreen = () => {
@@ -12,7 +13,7 @@ export const StatArbitragePortfolioMonitorScreen = () => {
             {alert && <Alert text={alert} />}
             <div>
                 <div className='horizontal-container'>
-                    StatArbitragePortfolioMonitorScreen
+                    <StatArbitragePortfolioMonitor />
                 </div>
             </div>            
         </React.Fragment>

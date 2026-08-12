@@ -15,24 +15,71 @@
     margin: .5px;
 }
 
+.stat-arbitrage-cell-border-style {
+    border: 1px solid #808080;     
+}
+
 .stat-arbitrage-container {     
     padding: 1px; 
 }
 
-.stat-arbitrage-corner-cell {        
-    width: 162px;
+.stat-arbitrage-separator {        
+    width: 10px;
 }
 
-.stat-arbitrage-ticker-cell {        
-    width: 80px;
+.stat-arbitrage-backtest-diagram {     
+    padding: 1px; 
+}
+
+.stat-arbitrage-portfolio-description {        
+    font-size: 16px;
+}
+
+.stat-arbitrage-corner-cell {        
+    width: 51px;
 }
 
 .stat-arbitrage-tail-cell {        
-    width: 47px;
+    width: 51px;
 }
 
-.stat-arbitrage-separator {        
-    width: 10px;
+.stat-arbitrage-calendar-cell {        
+    width: 25px;
+}
+
+.stat-arbitrage-ticker {        
+    font-size: 12px;
+    width: 60px;
+}
+
+.stat-arbitrage-weight {        
+    font-size: 12px;
+    width: 80px;
+}
+
+.stat-arbitrage-size {        
+    font-size: 12px;
+    width: 100px;
+}
+
+.stat-arbitrage-cost {        
+    font-size: 12px;
+    width: 120px;
+}
+
+.stat-arbitrage-cell {        
+    font-size: 12px;
+    width: 4px;
+}
+
+.stat-arbitrage-strategy-name {        
+    font-size: 12px;
+    width: 200px;
+}
+
+.stat-arbitrage-strategy-params {        
+    font-size: 12px;
+    width: 200px;
 }
 
 .stat-arbitrage-portfolio-name-button-container {    
