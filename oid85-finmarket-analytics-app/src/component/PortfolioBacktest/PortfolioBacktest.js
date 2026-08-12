@@ -64,7 +64,7 @@ console.log(portfolioBacktestData.result)
                                 onClick={() => {
                                     dispatch(fetchPortfolioName('Bond'))
                                     dispatch(sagaPortfolioBacktest())
-                                }}><div className='portfolio-backtest-name-button-text'>Форвард тест облигаций</div></button>
+                                }}><div className='portfolio-backtest-name-button-text'>Форвардтест облигаций</div></button>
                         </div>                                                                                                                                                                                                                                   
                     </div>                 
                     <div className='portfolio-backtest-container border-style'>
