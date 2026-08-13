@@ -36,11 +36,12 @@
 }
 
 .stat-arbitrage-corner-cell {        
-    width: 51px;
+    width: 122px;
 }
 
 .stat-arbitrage-tail-cell {        
-    width: 51px;
+    width: 47px;
+    font-size: 12px;
 }
 
 .stat-arbitrage-calendar-cell {        

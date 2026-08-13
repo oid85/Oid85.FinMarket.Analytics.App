@@ -64,8 +64,8 @@ console.log(portfolioRegressionTailData.result)
                 {
                     portfolioRegressionTailData.result.items.map((item, index) => (
                         <div className='horizontal-container'>
-                            <div className='stat-arbitrage-ticker-cell stat-arbitrage-border-style'>{item.tickerFirst}</div>
-                            <div className='stat-arbitrage-ticker-cell stat-arbitrage-border-style'>{item.tickerSecond}</div>
+                            <div className='stat-arbitrage-ticker stat-arbitrage-border-style'>{item.tickerFirst}</div>
+                            <div className='stat-arbitrage-ticker stat-arbitrage-border-style'>{item.tickerSecond}</div>
                             {
                                 item.tails.map((tail, index) => (
                                     <div 
