@@ -1,10 +1,13 @@
 import {
     SAGA_PORTFOLIO_LIST,
+    SAGA_PORTFOLIO_STRATEGY_LIST,
     SAGA_PORTFOLIO_MONITOR,
     SAGA_PORTFOLIO_BACKTEST,
     SAGA_PORTFOLIO_OPTIMIZATION,
     FETCH_PORTFOLIO_LIST,
+    FETCH_PORTFOLIO_STRATEGY_LIST,
     FETCH_CURRENT_PORTFOLIO,
+    FETCH_CURRENT_PORTFOLIO_STRATEGY,
     FETCH_PORTFOLIO_MONITOR,
     FETCH_PORTFOLIO_BACKTEST,
     FETCH_PORTFOLIO_OPTIMIZATION
@@ -27,6 +30,26 @@ export const fetchPortfolioList = (data) => {
 export const fetchCurrentPortfolio = (data) => {
     return {
         type: FETCH_CURRENT_PORTFOLIO,
+        payload: data
+    }
+}
+
+export const sagaPortfolioStrategyList = () => {
+    return {
+        type: SAGA_PORTFOLIO_STRATEGY_LIST
+    }
+}
+
+export const fetchPortfolioStrategyList = (data) => {
+    return {
+        type: FETCH_PORTFOLIO_STRATEGY_LIST,
+        payload: data
+    }
+}
+
+export const fetchCurrentPortfolioStrategy = (data) => {
+    return {
+        type: FETCH_CURRENT_PORTFOLIO_STRATEGY,
         payload: data
     }
 }

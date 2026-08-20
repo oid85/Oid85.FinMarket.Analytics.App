@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
+import { AlgoPortfolioBacktest } from '../Algo/AlgoPortfolioBacktest'
 import './styles.css'
 
 export const AlgoPortfolioBacktestScreen = () => {
@@ -12,7 +13,7 @@ export const AlgoPortfolioBacktestScreen = () => {
             {alert && <Alert text={alert} />}
             <div>
                 <div className='horizontal-container'>
-                    AlgoPortfolioBacktestScreen
+                    <AlgoPortfolioBacktest />
                 </div>
             </div>            
         </React.Fragment>

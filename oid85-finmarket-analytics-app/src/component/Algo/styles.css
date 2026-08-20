@@ -90,3 +90,15 @@
 .algo-portfolio-name-button-text {        
     font-size: 12px;
 }
+
+.algo-strategy-name-button-container {    
+    padding: 1px;
+}
+
+.algo-strategy-name-button {    
+    height: 30px;
+}
+
+.algo-strategy-name-button-text {        
+    font-size: 12px;
+}

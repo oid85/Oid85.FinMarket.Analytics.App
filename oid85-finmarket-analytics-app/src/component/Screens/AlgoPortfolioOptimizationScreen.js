@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
+import { AlgoPortfolioOptimization } from '../Algo/AlgoPortfolioOptimization'
 import './styles.css'
 
 export const AlgoPortfolioOptimizationScreen = () => {
@@ -12,7 +13,7 @@ export const AlgoPortfolioOptimizationScreen = () => {
             {alert && <Alert text={alert} />}
             <div>
                 <div className='horizontal-container'>
-                    AlgoPortfolioOptimizationScreen
+                    <AlgoPortfolioOptimization />
                 </div>
             </div>            
         </React.Fragment>
