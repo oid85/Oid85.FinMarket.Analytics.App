@@ -41,13 +41,14 @@ export const AlgoPortfolioBacktest = () => {
                         <div className='algo-portfolio-name-button-container'>
                             <button className='btn btn-outline-dark algo-portfolio-name-button'
                                 onClick={() => {
-                                    dispatch(fetchCurrentPortfolio({name: portfolioName.name, description: portfolioName.description}))                           
+                                    dispatch(fetchCurrentPortfolio({name: portfolioName.name, description: portfolioName.description})) 
+                                    dispatch(sagaPortfolioStrategyList())     
+                                    dispatch(fetchCurrentPortfolioStrategy({name: portfolioStrategyListData.result.items[0].name}))                     
                                 }}><div className='algo-portfolio-name-button-text'>{portfolioName.name}</div></button>
                         </div>                        
                     ))
                 }                                                                                                                                                                                                                                                              
-                </div>
-                <div className='algo-portfolio-description'>{currentPortfolio.description}</div> 
+                </div>                
                 <div className='horizontal-container'>
                 {
                     portfolioStrategyListData.result.items.map((portfolioStrategyName) => (
@@ -59,7 +60,9 @@ export const AlgoPortfolioBacktest = () => {
                         </div>                        
                     ))
                 }                                                                                                                                                                                                                                                              
-                </div>                                           
+                </div> 
+                <div className='algo-portfolio-description'>{currentPortfolio.description}</div> 
+                <div className='algo-strategy-description'>{currentPortfolioStrategy.name}</div>                                           
             </div>
         }
         </React.Fragment>                

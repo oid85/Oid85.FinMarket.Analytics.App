@@ -35,6 +35,10 @@
     font-size: 16px;
 }
 
+.algo-strategy-description {        
+    font-size: 14px;
+}
+
 .algo-corner-cell {        
     width: 51px;
 }
