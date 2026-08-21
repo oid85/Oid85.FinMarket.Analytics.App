@@ -81,7 +81,11 @@ export const AlgoPortfolioBacktest = () => {
                         {
                             portfolioBacktestResultListData.result.items.map((backtestResult) => (
                                 <div className='horizontal-container'>
-                                    <div className='algo-border-style algo-backtest-result-ticker'>{backtestResult.ticker}</div>
+                                    <div 
+                                        className='algo-border-style algo-backtest-result-ticker'
+                                        onClick={() => {
+
+                                        }}>{backtestResult.ticker}</div>
                                     <div className='algo-border-style algo-backtest-result-strategy-params'>{backtestResult.strategyParams}</div>
                                     <div className='algo-border-style algo-backtest-result-profit-factor' style={{backgroundColor: backtestResult.profitFactor.color}}>{backtestResult.profitFactor.value}</div>
                                     <div className='algo-border-style algo-backtest-result-recovery-factor' style={{backgroundColor: backtestResult.recoveryFactor.color}}>{backtestResult.recoveryFactor.value}</div>
