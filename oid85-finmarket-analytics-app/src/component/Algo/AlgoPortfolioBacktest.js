@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { 
     sagaPortfolioList,
     sagaPortfolioStrategyList,
+    sagaPortfolioBacktestResultList,
     fetchCurrentPortfolio,
     fetchCurrentPortfolioStrategy
 } from '../../redux/actions/algoActions'
@@ -21,17 +22,22 @@ export const AlgoPortfolioBacktest = () => {
     const portfolioListData = useSelector(state => state.algo.portfolioListData) 
     const portfolioStrategyListData = useSelector(state => state.algo.portfolioStrategyListData) 
     const currentPortfolio = useSelector(state => state.algo.currentPortfolio)    
-    const currentPortfolioStrategy = useSelector(state => state.algo.currentPortfolioStrategy)    
+    const currentPortfolioStrategy = useSelector(state => state.algo.currentPortfolioStrategy) 
+    const portfolioBacktestResultListData = useSelector(state => state.algo.portfolioBacktestResultListData)    
 
     useEffect(() => {
         dispatch(sagaPortfolioList())
         dispatch(sagaPortfolioStrategyList())
+        dispatch(sagaPortfolioBacktestResultList())
     }, [])
 
     return (
         <React.Fragment>
         {
-            !portfolioListData.result || !portfolioStrategyListData.result || loading
+            !portfolioListData.result || 
+            !portfolioStrategyListData.result || 
+            !portfolioBacktestResultListData.result || 
+            loading
             ? <Loader/>
             :
             <div className='algo-container'>
@@ -55,7 +61,8 @@ export const AlgoPortfolioBacktest = () => {
                         <div className='algo-strategy-name-button-container'>
                             <button className='btn btn-outline-link algo-strategy-name-button'
                                 onClick={() => {
-                                    dispatch(fetchCurrentPortfolioStrategy({name: portfolioStrategyName.name}))                           
+                                    dispatch(fetchCurrentPortfolioStrategy({name: portfolioStrategyName.name}))  
+                                    dispatch(sagaPortfolioBacktestResultList())                         
                                 }}><div className='algo-strategy-name-button-text'>{portfolioStrategyName.name}</div></button>
                         </div>                        
                     ))
@@ -65,7 +72,22 @@ export const AlgoPortfolioBacktest = () => {
                 <div className='algo-strategy-description'>{currentPortfolioStrategy.name}</div>         
                 <div className='horizontal-container'>
                     <div className='algo-backtest-result-table-container'>
-                                                                                                                                                                                                                                                                
+                        <div className='horizontal-container'>
+                            <div className='algo-border-style algo-backtest-result-ticker'>Тикер</div>
+                            <div className='algo-border-style algo-backtest-result-strategy-params'>Параметры</div>
+                            <div className='algo-border-style algo-backtest-result-profit-factor'>PF</div>
+                            <div className='algo-border-style algo-backtest-result-recovery-factor'>RF</div>
+                        </div>                        
+                        {
+                            portfolioBacktestResultListData.result.items.map((backtestResult) => (
+                                <div className='horizontal-container'>
+                                    <div className='algo-border-style algo-backtest-result-ticker'>{backtestResult.ticker}</div>
+                                    <div className='algo-border-style algo-backtest-result-strategy-params'>{backtestResult.strategyParams}</div>
+                                    <div className='algo-border-style algo-backtest-result-profit-factor' style={{backgroundColor: backtestResult.profitFactor.color}}>{backtestResult.profitFactor.value}</div>
+                                    <div className='algo-border-style algo-backtest-result-recovery-factor' style={{backgroundColor: backtestResult.recoveryFactor.color}}>{backtestResult.recoveryFactor.value}</div>
+                                </div>                        
+                            ))                            
+                        }
                     </div>     
                     <div className='algo-backtest-result-diagram-container'>
                         <div className='algo-backtest-result-diagram-price-container'>

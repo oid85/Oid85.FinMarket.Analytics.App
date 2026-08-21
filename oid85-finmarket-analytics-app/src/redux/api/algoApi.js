@@ -12,8 +12,8 @@ export const getPortfolioMonitorFromApi = async (name) => {
     return sendAlgoPostRequest('algo/portfolio/monitor', {portfolioName: name})
 }
 
-export const getPortfolioBacktestFromApi = async (name) => {
-    return sendAlgoPostRequest('backtest/portfolio/get', {portfolioName: name})
+export const getPortfolioBacktestResultListFromApi = async (portfolioName, portfolioStrategyName) => {
+    return sendAlgoPostRequest('backtest/portfolio/result/list', {portfolioName: portfolioName, strategyName: portfolioStrategyName})
 }
 
 export const getPortfolioOptimizationFromApi = async (name) => {

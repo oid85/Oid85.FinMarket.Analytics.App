@@ -115,6 +115,26 @@
     width: 200px;
 }
 
+.algo-backtest-result-ticker {        
+    font-size: 12px;
+    width: 50px;
+}
+
+.algo-backtest-result-strategy-params {        
+    font-size: 12px;
+    width: 170px;
+}
+
+.algo-backtest-result-recovery-factor {        
+    font-size: 12px;
+    width: 50px;
+}
+
+.algo-backtest-result-profit-factor {        
+    font-size: 12px;
+    width: 50px;
+}
+
 .algo-portfolio-name-button-container {    
     padding: 1px;
 }

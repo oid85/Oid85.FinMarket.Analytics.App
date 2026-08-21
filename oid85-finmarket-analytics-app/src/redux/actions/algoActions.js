@@ -2,14 +2,14 @@ import {
     SAGA_PORTFOLIO_LIST,
     SAGA_PORTFOLIO_STRATEGY_LIST,
     SAGA_PORTFOLIO_MONITOR,
-    SAGA_PORTFOLIO_BACKTEST,
+    SAGA_PORTFOLIO_BACKTEST_RESULT_LIST,
     SAGA_PORTFOLIO_OPTIMIZATION,
     FETCH_PORTFOLIO_LIST,
     FETCH_PORTFOLIO_STRATEGY_LIST,
     FETCH_CURRENT_PORTFOLIO,
     FETCH_CURRENT_PORTFOLIO_STRATEGY,
     FETCH_PORTFOLIO_MONITOR,
-    FETCH_PORTFOLIO_BACKTEST,
+    FETCH_PORTFOLIO_BACKTEST_RESULT_LIST,
     FETCH_PORTFOLIO_OPTIMIZATION
 } from '../types/algoTypes'
 
@@ -67,15 +67,15 @@ export const fetchPortfolioMonitor = (data) => {
     }
 }
 
-export const sagaPortfolioBacktest = () => {
+export const sagaPortfolioBacktestResultList = () => {
     return {
-        type: SAGA_PORTFOLIO_BACKTEST
+        type: SAGA_PORTFOLIO_BACKTEST_RESULT_LIST
     }
 }
 
-export const fetchPortfolioBacktest = (data) => {
+export const fetchPortfolioBacktestResultList = (data) => {
     return {
-        type: FETCH_PORTFOLIO_BACKTEST,
+        type: FETCH_PORTFOLIO_BACKTEST_RESULT_LIST,
         payload: data
     }
 }
