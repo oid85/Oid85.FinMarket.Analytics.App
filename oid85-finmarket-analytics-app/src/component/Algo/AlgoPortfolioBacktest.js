@@ -60,9 +60,25 @@ export const AlgoPortfolioBacktest = () => {
                         </div>                        
                     ))
                 }                                                                                                                                                                                                                                                              
-                </div> 
+                </div>
                 <div className='algo-portfolio-description'>{currentPortfolio.description}</div> 
-                <div className='algo-strategy-description'>{currentPortfolioStrategy.name}</div>                                           
+                <div className='algo-strategy-description'>{currentPortfolioStrategy.name}</div>         
+                <div className='horizontal-container'>
+                    <div className='algo-backtest-result-table-container'>
+                                                                                                                                                                                                                                                                
+                    </div>     
+                    <div className='algo-backtest-result-diagram-container'>
+                        <div className='algo-backtest-result-diagram-price-container'>
+
+                        </div>            
+                        <div className='algo-backtest-result-diagram-equity-container'>
+
+                        </div>       
+                        <div className='algo-backtest-result-diagram-drawdown-container'>
+
+                        </div>                                                                                                                                                                                                                                                                                                               
+                    </div>                                                                                                                                                                                                                                                                                   
+                </div>                                                  
             </div>
         }
         </React.Fragment>                

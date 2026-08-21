@@ -23,6 +23,38 @@
     padding: 1px; 
 }
 
+.algo-backtest-result-table-container {     
+    border: 1px solid #000;  
+    margin: 1px;     
+    width: 1000px;
+}
+
+.algo-backtest-result-diagram-container {     
+    border: 1px solid #000;    
+    margin: 1px; 
+}
+
+.algo-backtest-result-diagram-price-container {     
+    border: 1px solid #000;    
+    margin: 1px; 
+    width: 850px;
+    height: 300px;
+}
+
+.algo-backtest-result-diagram-equity-container {     
+    border: 1px solid #000;     
+    margin: 1px; 
+    width: 850px;
+    height: 300px;
+}
+
+.algo-backtest-result-diagram-drawdown-container {     
+    border: 1px solid #000;
+    margin: 1px;      
+    width: 850px;
+    height: 100px;
+}
+
 .algo-separator {        
     width: 10px;
 }
