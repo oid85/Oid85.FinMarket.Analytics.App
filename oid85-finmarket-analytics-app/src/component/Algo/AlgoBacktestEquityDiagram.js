@@ -6,10 +6,10 @@ export const AlgoBacktestEquityDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div>
-            <ComposedChart                                    
+            <ComposedChart
                 data={series}
-                height={250}                                                
-                width={500}
+                height={330}
+                width={850}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                

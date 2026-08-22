@@ -13,6 +13,7 @@ import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
 import { AlgoBacktestEquityDiagram } from './AlgoBacktestEquityDiagram'
+import { AlgoBacktestPricePanelDiagram } from './AlgoBacktestPricePanelDiagram'
 
 const formatNumber = (num) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -109,14 +110,11 @@ export const AlgoPortfolioBacktest = () => {
                     <div className='algo-backtest-result-diagram-container'>
                         <div className='algo-diagram-description'>{`${currentPortfolioBacktestResult.ticker} ${currentPortfolioBacktestResult.strategyParams}`}</div>
                         <div className='algo-backtest-result-diagram-price-container'>
-
+                            <AlgoBacktestPricePanelDiagram series={portfolioBacktestResultDiagramData.result.pricePanel}/>
                         </div>            
                         <div className='algo-backtest-result-diagram-equity-container'>
-                            
-                        </div>       
-                        <div className='algo-backtest-result-diagram-drawdown-container'>
-
-                        </div>                                                                                                                                                                                                                                                                                                               
+                            <AlgoBacktestEquityDiagram series={portfolioBacktestResultDiagramData.result.equity}/>
+                        </div>                                                                                                                                                                                                                                                                                                                     
                     </div>                                                                                                                                                                                                                                                                                   
                 </div>                                                  
             </div>

@@ -37,22 +37,16 @@
 .algo-backtest-result-diagram-price-container {     
     border: 1px solid #000;    
     margin: 1px; 
-    width: 850px;
-    height: 300px;
 }
 
 .algo-backtest-result-diagram-equity-container {     
     border: 1px solid #000;     
     margin: 1px; 
-    width: 850px;
-    height: 300px;
 }
 
 .algo-backtest-result-diagram-drawdown-container {     
     border: 1px solid #000;
     margin: 1px;      
-    width: 850px;
-    height: 100px;
 }
 
 .algo-separator {        

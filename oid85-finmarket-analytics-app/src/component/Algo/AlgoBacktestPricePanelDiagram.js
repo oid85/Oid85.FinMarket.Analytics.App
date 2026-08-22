@@ -6,17 +6,17 @@ export const AlgoBacktestPricePanelDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div>
-            <ComposedChart                                    
+            <ComposedChart
                 data={series}
-                height={250}                                                
-                width={500}
+                height={330}
+                width={850}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis width={45} domain={['auto', 'auto']}/>
                 <Legend />
                 {series.map(s => (
-                    <Bar 
+                    <Line 
                         dataKey="value" 
                         data={s.data} 
                         name={s.name} 
