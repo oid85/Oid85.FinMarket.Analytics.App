@@ -6,7 +6,8 @@ import {
     sagaPortfolioBacktestResultList,
     fetchCurrentPortfolio,
     fetchCurrentPortfolioStrategy,
-    fetchCurrentPortfolioBacktestResult
+    fetchCurrentPortfolioBacktestResult,
+    sagaPortfolioBacktestResultDiagram
 } from '../../redux/actions/algoActions'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -24,6 +25,7 @@ export const AlgoPortfolioBacktest = () => {
     const portfolioListData = useSelector(state => state.algo.portfolioListData) 
     const portfolioStrategyListData = useSelector(state => state.algo.portfolioStrategyListData) 
     const portfolioBacktestResultListData = useSelector(state => state.algo.portfolioBacktestResultListData)    
+    const portfolioBacktestResultDiagramData = useSelector(state => state.algo.portfolioBacktestResultDiagramData)    
 
     const currentPortfolio = useSelector(state => state.algo.currentPortfolio)    
     const currentPortfolioStrategy = useSelector(state => state.algo.currentPortfolioStrategy) 
@@ -33,6 +35,7 @@ export const AlgoPortfolioBacktest = () => {
         dispatch(sagaPortfolioList())
         dispatch(sagaPortfolioStrategyList())
         dispatch(sagaPortfolioBacktestResultList())
+        dispatch(sagaPortfolioBacktestResultDiagram())
     }, [])
 
     return (
@@ -41,6 +44,7 @@ export const AlgoPortfolioBacktest = () => {
             !portfolioListData.result || 
             !portfolioStrategyListData.result || 
             !portfolioBacktestResultListData.result || 
+            !portfolioBacktestResultDiagramData.result || 
             loading
             ? <Loader/>
             :
@@ -90,7 +94,8 @@ export const AlgoPortfolioBacktest = () => {
                                     <div 
                                         className='algo-border-style algo-backtest-result-ticker'
                                         onClick={() => {
-                                            dispatch(fetchCurrentPortfolioBacktestResult({ticker: backtestResult.ticker, strategyParamsHash: backtestResult.strategyParamsHash})) 
+                                            dispatch(fetchCurrentPortfolioBacktestResult({ticker: backtestResult.ticker, strategyParamsHash: backtestResult.strategyParamsHash, strategyParams: backtestResult.strategyParams})) 
+                                            dispatch(sagaPortfolioBacktestResultDiagram())
                                         }}>{backtestResult.ticker}</div>
                                     <div className='algo-border-style algo-backtest-result-strategy-params'>{backtestResult.strategyParams}</div>
                                     <div className='algo-border-style algo-backtest-result-profit-factor' style={{backgroundColor: backtestResult.profitFactor.color}}>{backtestResult.profitFactor.value}</div>
@@ -102,6 +107,7 @@ export const AlgoPortfolioBacktest = () => {
                         }
                     </div>     
                     <div className='algo-backtest-result-diagram-container'>
+                        <div className='algo-diagram-description'>{`${currentPortfolioBacktestResult.ticker} ${currentPortfolioBacktestResult.strategyParams}`}</div>
                         <div className='algo-backtest-result-diagram-price-container'>
 
                         </div>            
