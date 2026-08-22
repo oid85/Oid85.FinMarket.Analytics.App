@@ -10,6 +10,7 @@ import {
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
+import { AlgoBacktestEquityDiagram } from './AlgoBacktestEquityDiagram'
 
 const formatNumber = (num) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -77,6 +78,8 @@ export const AlgoPortfolioBacktest = () => {
                             <div className='algo-border-style algo-backtest-result-strategy-params'>Параметры</div>
                             <div className='algo-border-style algo-backtest-result-profit-factor'>PF</div>
                             <div className='algo-border-style algo-backtest-result-recovery-factor'>RF</div>
+                            <div className='algo-border-style algo-backtest-result-average-net-profit-percent'>Avg. NP, %</div>
+                            <div className='algo-border-style algo-backtest-result-annual-yield-return'>Дох. год., %</div>
                         </div>                        
                         {
                             portfolioBacktestResultListData.result.items.map((backtestResult) => (
@@ -89,6 +92,8 @@ export const AlgoPortfolioBacktest = () => {
                                     <div className='algo-border-style algo-backtest-result-strategy-params'>{backtestResult.strategyParams}</div>
                                     <div className='algo-border-style algo-backtest-result-profit-factor' style={{backgroundColor: backtestResult.profitFactor.color}}>{backtestResult.profitFactor.value}</div>
                                     <div className='algo-border-style algo-backtest-result-recovery-factor' style={{backgroundColor: backtestResult.recoveryFactor.color}}>{backtestResult.recoveryFactor.value}</div>
+                                    <div className='algo-border-style algo-backtest-result-average-net-profit-percent' style={{backgroundColor: backtestResult.averageNetProfitPercent.color}}>{backtestResult.averageNetProfitPercent.value}</div>
+                                    <div className='algo-border-style algo-backtest-result-annual-yield-return' style={{backgroundColor: backtestResult.annualYieldReturn.color}}>{backtestResult.annualYieldReturn.value}</div>
                                 </div>                        
                             ))                            
                         }
@@ -98,7 +103,7 @@ export const AlgoPortfolioBacktest = () => {
 
                         </div>            
                         <div className='algo-backtest-result-diagram-equity-container'>
-
+                            
                         </div>       
                         <div className='algo-backtest-result-diagram-drawdown-container'>
 

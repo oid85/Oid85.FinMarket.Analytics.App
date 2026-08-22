@@ -27,7 +27,6 @@
     border: 1px solid #000;  
     margin: 1px;     
     width: 1000px;
-    overflow-y: scroll;
 }
 
 .algo-backtest-result-diagram-container {     
@@ -131,6 +130,16 @@
 }
 
 .algo-backtest-result-profit-factor {        
+    font-size: 12px;
+    width: 50px;
+}
+
+.algo-backtest-result-average-net-profit-percent {        
+    font-size: 12px;
+    width: 50px;
+}
+
+.algo-backtest-result-annual-yield-return {        
     font-size: 12px;
     width: 50px;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
-export const AlgoBacktestDiagram = ({series}) => {
+export const AlgoMonitorDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div>

@@ -8,7 +8,7 @@ import {
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
-import { AlgoBacktestDiagram } from './AlgoBacktestDiagram'
+import { AlgoMonitorDiagram } from './AlgoMonitorDiagram'
 
 const formatNumber = (num) => {
     return new Intl.NumberFormat('ru-RU').format(num);
@@ -51,7 +51,7 @@ export const AlgoPortfolioMonitor = () => {
                 <div className='algo-backtest-container'>
                     <div className='horizontal-container'>
                         <div>
-                            <AlgoBacktestDiagram series={portfolioMonitorData.result.series}/>
+                            <AlgoMonitorDiagram series={portfolioMonitorData.result.series}/>
                         </div>
                         <div>
                             <div className='algo-backtest-container'>{`Доходность годовых: ${portfolioMonitorData.result.yield} %`}</div>
