@@ -5,6 +5,7 @@ import {
     FETCH_CURRENT_PORTFOLIO_STRATEGY,
     FETCH_PORTFOLIO_MONITOR,
     FETCH_PORTFOLIO_BACKTEST_RESULT_LIST,
+    FETCH_CURRENT_PORTFOLIO_BACKTEST_RESULT,
     FETCH_PORTFOLIO_OPTIMIZATION    
 } from '../types/algoTypes'
 
@@ -15,7 +16,8 @@ const initialState = {
     portfolioBacktestResultListData: {},
     portfolioOptimizationData: {},
     currentPortfolio: { name: 'Trend_Life', description: 'Портфель Trend (Tinkoff Женя)' },
-    currentPortfolioStrategy: { name: '' }
+    currentPortfolioStrategy: { name: '' },
+    currentPortfolioBacktestResult: { ticker: '', strategyParamsHash: '' }
 }
 
 export const algoReducer = (state = initialState, action) => {
@@ -32,7 +34,10 @@ export const algoReducer = (state = initialState, action) => {
                 
         case FETCH_PORTFOLIO_BACKTEST_RESULT_LIST:
             return {...state, portfolioBacktestResultListData: {...action.payload}}
-                    
+           
+        case FETCH_CURRENT_PORTFOLIO_BACKTEST_RESULT:
+            return {...state, currentPortfolioBacktestResult: {...action.payload}}            
+
         case FETCH_PORTFOLIO_OPTIMIZATION:
             return {...state, portfolioOptimizationData: {...action.payload}}                    
 

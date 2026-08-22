@@ -5,7 +5,8 @@ import {
     sagaPortfolioStrategyList,
     sagaPortfolioBacktestResultList,
     fetchCurrentPortfolio,
-    fetchCurrentPortfolioStrategy
+    fetchCurrentPortfolioStrategy,
+    fetchCurrentPortfolioBacktestResult
 } from '../../redux/actions/algoActions'
 import Loader from '../Loader/Loader'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -22,9 +23,11 @@ export const AlgoPortfolioBacktest = () => {
     const loading = useSelector(state => state.app.loading) 
     const portfolioListData = useSelector(state => state.algo.portfolioListData) 
     const portfolioStrategyListData = useSelector(state => state.algo.portfolioStrategyListData) 
+    const portfolioBacktestResultListData = useSelector(state => state.algo.portfolioBacktestResultListData)    
+
     const currentPortfolio = useSelector(state => state.algo.currentPortfolio)    
     const currentPortfolioStrategy = useSelector(state => state.algo.currentPortfolioStrategy) 
-    const portfolioBacktestResultListData = useSelector(state => state.algo.portfolioBacktestResultListData)    
+    const currentPortfolioBacktestResult = useSelector(state => state.algo.currentPortfolioBacktestResult)    
 
     useEffect(() => {
         dispatch(sagaPortfolioList())
@@ -87,7 +90,7 @@ export const AlgoPortfolioBacktest = () => {
                                     <div 
                                         className='algo-border-style algo-backtest-result-ticker'
                                         onClick={() => {
-
+                                            dispatch(fetchCurrentPortfolioBacktestResult({ticker: backtestResult.ticker, strategyParamsHash: backtestResult.strategyParamsHash})) 
                                         }}>{backtestResult.ticker}</div>
                                     <div className='algo-border-style algo-backtest-result-strategy-params'>{backtestResult.strategyParams}</div>
                                     <div className='algo-border-style algo-backtest-result-profit-factor' style={{backgroundColor: backtestResult.profitFactor.color}}>{backtestResult.profitFactor.value}</div>

@@ -10,6 +10,7 @@ import {
     FETCH_CURRENT_PORTFOLIO_STRATEGY,
     FETCH_PORTFOLIO_MONITOR,
     FETCH_PORTFOLIO_BACKTEST_RESULT_LIST,
+    FETCH_CURRENT_PORTFOLIO_BACKTEST_RESULT,
     FETCH_PORTFOLIO_OPTIMIZATION
 } from '../types/algoTypes'
 
@@ -76,6 +77,13 @@ export const sagaPortfolioBacktestResultList = () => {
 export const fetchPortfolioBacktestResultList = (data) => {
     return {
         type: FETCH_PORTFOLIO_BACKTEST_RESULT_LIST,
+        payload: data
+    }
+}
+
+export const fetchCurrentPortfolioBacktestResult = (data) => {
+    return {
+        type: FETCH_CURRENT_PORTFOLIO_BACKTEST_RESULT,
         payload: data
     }
 }
