@@ -15,18 +15,22 @@ export const AlgoBacktestPricePanelDiagram = ({series}) => {
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis width={45} domain={['auto', 'auto']}/>
                 <Legend />
-                {series.map(s => (
+                {
+                    series[0]
+                    ? 
                     <Line 
                         dataKey="value" 
-                        data={s.data} 
-                        name={s.name} 
-                        key={s.name} 
-                        stroke={s.color}
-                        fill={s.colorFill}
+                        data={series[0].data} 
+                        name={series[0].name} 
+                        key={series[0].name} 
+                        stroke={series[0].color}
+                        fill={series[0].colorFill}
                         strokeWidth={3}
-                        dot={false}                        
-                        />
-                ))}
+                        dot={false}
+                    />
+                    :
+                    <div></div>
+                }
                 <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>
             </ComposedChart>
             </div>
