@@ -5,7 +5,7 @@ import { Alert } from '../Alert/Alert'
 import { FundamentalParameterList } from '../FundamentalParameterList/FundamentalParameterList'
 import './styles.css'
 
-export const FundamentalParameterScreen = () => {
+export const FundamentalParameterListScreen = () => {
     const alert = useSelector(state => state.app.alert)
 
     return (
