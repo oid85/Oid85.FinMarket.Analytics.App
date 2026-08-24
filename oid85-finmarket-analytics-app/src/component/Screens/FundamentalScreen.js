@@ -5,7 +5,7 @@ import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
 import { FundamentalParameterListScreen } from './FundamentalParameterListScreen'
 import { FundamentalParameterCompanyScreen } from './FundamentalParameterCompanyScreen'
-import { FundamentalRatingScreen } from './FundamentalRatingScreen'
+import { FundamentalRatingListScreen } from './FundamentalRatingListScreen'
 import { FundamentalParameterSectorScreen } from './FundamentalParameterSectorScreen'
 import './styles.css'
 
@@ -29,7 +29,7 @@ export const FundamentalScreen = () => {
                     <FundamentalParameterCompanyScreen />                    
                 </TabPanel>       
                 <TabPanel>
-                    <FundamentalRatingScreen />                    
+                    <FundamentalRatingListScreen />                    
                 </TabPanel>   
                 <TabPanel>
                     <FundamentalParameterSectorScreen />                    

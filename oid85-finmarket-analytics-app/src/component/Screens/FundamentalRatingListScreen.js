@@ -5,7 +5,7 @@ import { Alert } from '../Alert/Alert'
 import { FundamentalRatingList } from '../FundamentalRatingList/FundamentalRatingList'
 import './styles.css'
 
-export const FundamentalRatingScreen = () => {
+export const FundamentalRatingListScreen = () => {
     const alert = useSelector(state => state.app.alert)
 
     return (
