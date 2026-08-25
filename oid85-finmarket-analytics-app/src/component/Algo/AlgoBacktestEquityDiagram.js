@@ -9,7 +9,7 @@ export const AlgoBacktestEquityDiagram = ({series}) => {
             <ComposedChart
                 data={series}
                 height={330}
-                width={850}
+                width={1250}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
