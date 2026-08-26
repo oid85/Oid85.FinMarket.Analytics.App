@@ -48,6 +48,7 @@ export const AlgoPortfolioMonitor = () => {
                 }                                                                                                                                                                                                                                                              
                 </div>
                 <div className='algo-portfolio-description'>{currentPortfolio.description}</div>
+                <div className='algo-portfolio-description'>{`Торговых систем: ${portfolioMonitorData.result.count} шт.`}</div>
                 <div className='algo-backtest-container'>
                     <div className='horizontal-container'>
                         <div>
