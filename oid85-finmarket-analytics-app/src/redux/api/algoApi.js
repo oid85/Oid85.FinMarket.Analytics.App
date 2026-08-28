@@ -17,7 +17,7 @@ export const getPortfolioBacktestResultListFromApi = async (portfolioName, strat
 }
 
 export const getPortfolioBacktestResultDiagramFromApi = async (portfolioName, strategyName, ticker, strategyParamsHash) => {
-    return sendAlgoPostRequest('backtest/portfolio/result/diargam', {portfolioName: portfolioName, strategyName: strategyName, ticker: ticker, strategyParamsHash: strategyParamsHash})
+    return sendAlgoPostRequest('backtest/portfolio/result/diagram', {portfolioName: portfolioName, strategyName: strategyName, ticker: ticker, strategyParamsHash: strategyParamsHash})
 }
 
 export const getPortfolioOptimizationFromApi = async (portfolioName) => {
