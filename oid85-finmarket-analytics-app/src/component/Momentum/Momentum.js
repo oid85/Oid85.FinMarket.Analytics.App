@@ -20,8 +20,6 @@ export const Momentum = () => {
         dispatch(sagaMomentumMonitor())
     }, [])
 
-console.log(momentumMonitorData.result)
-
     return (
         <React.Fragment>
         {
@@ -29,7 +27,9 @@ console.log(momentumMonitorData.result)
             ? <Loader/>
             :
             <div>
-
+                <div className='momentum-container border-style'>
+                    <MomentumDiagram series={momentumMonitorData.result.series}/>
+                </div> 
             </div>
         }
         </React.Fragment>                
