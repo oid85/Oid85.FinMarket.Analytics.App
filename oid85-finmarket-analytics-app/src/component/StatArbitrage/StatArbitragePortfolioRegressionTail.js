@@ -27,8 +27,6 @@ export const StatArbitragePortfolioRegressionTail = () => {
         dispatch(sagaPortfolioRegressionTail())
     }, [])
 
-console.log(portfolioRegressionTailData.result)
-
     return (
         <React.Fragment>
         {

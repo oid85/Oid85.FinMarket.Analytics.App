@@ -35,8 +35,6 @@ export const FundamentalRatingList = () => {
         dispatch(sagaFundamentalRatingList())
     }, [])
 
-console.log(fundamentalRatingListData.result)
-
     return (
         <React.Fragment>
         {

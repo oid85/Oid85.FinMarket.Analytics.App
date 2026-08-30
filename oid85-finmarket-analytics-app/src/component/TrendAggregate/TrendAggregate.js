@@ -15,8 +15,6 @@ export const TrendAggregate = () => {
         dispatch(sagaTrendAggregateDiagram())
     }, [])
 
-console.log(trendAggregateDiagramData)
-
     return (
         <React.Fragment>
         {

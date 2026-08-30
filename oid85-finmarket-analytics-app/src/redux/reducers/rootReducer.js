@@ -14,6 +14,7 @@ import { orderReducer } from './orderReducer'
 import { filterReducer } from './filterReducer'
 import { algoReducer } from './algoReducer'
 import { statArbitrageReducer } from './statArbitrageReducer'
+import { momentumReducer } from './momentumReducer'
 
 export const rootReducer = combineReducers({
     app: appReducer,
@@ -30,5 +31,6 @@ export const rootReducer = combineReducers({
     order: orderReducer,
     filter: filterReducer,
     algo: algoReducer,
-    statArbitrage: statArbitrageReducer
+    statArbitrage: statArbitrageReducer,
+    momentum: momentumReducer
 })

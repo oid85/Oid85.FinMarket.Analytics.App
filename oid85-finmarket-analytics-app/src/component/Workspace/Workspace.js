@@ -16,6 +16,7 @@ import { FundamentalScreen } from '../Screens/FundamentalScreen'
 import { PortfolioBacktestScreen } from '../Screens/PortfolioBacktestScreen'
 import { TrendAggregateScreen } from '../Screens/TrendAggregateScreen'
 import { AlgoScreen } from '../Screens/AlgoScreen'
+import { MomentumScreen } from '../Screens/MomentumScreen'
 import { StatArbitrageScreen } from '../Screens/StatArbitrageScreen'
 
 export const Workspace = () => {
@@ -39,6 +40,7 @@ export const Workspace = () => {
                     <Tab title='Портфель акций'>Портфель</Tab>
                     <Tab title='Бектест портфеля'>Бэктест</Tab>
                     <Tab title='Алго'>Алго</Tab>
+                    <Tab title='Моментум'>Моментум</Tab>
                     <Tab title='Статистический арбитраж'>Стат. арбитраж</Tab>
                 </TabList>
                 <TabPanel>
@@ -79,7 +81,10 @@ export const Workspace = () => {
                 </TabPanel>          
                 <TabPanel>
                     <AlgoScreen />
-                </TabPanel>       
+                </TabPanel>   
+                <TabPanel>
+                    <MomentumScreen />
+                </TabPanel>                     
                 <TabPanel>
                     <StatArbitrageScreen />
                 </TabPanel>                                                                                                                

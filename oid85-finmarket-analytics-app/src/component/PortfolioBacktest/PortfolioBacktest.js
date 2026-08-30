@@ -20,8 +20,6 @@ export const PortfolioBacktest = () => {
         dispatch(sagaPortfolioBacktest())
     }, [])
 
-console.log(portfolioBacktestData.result)
-
     return (
         <React.Fragment>
         {
