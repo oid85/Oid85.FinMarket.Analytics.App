@@ -27,8 +27,24 @@ export const Momentum = () => {
             ? <Loader/>
             :
             <div>
-                <div className='momentum-container border-style'>
-                    <MomentumDiagram series={momentumMonitorData.result.series}/>
+                <div className='horizontal-container'>
+                    <div className='momentum-container border-style'>
+                        <MomentumDiagram series={momentumMonitorData.result.series}/>
+                    </div> 
+                    <div>
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Доходность годовых средн.:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.yield} %`}</div> 
+                        </div>
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Макс. просадка:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.maxDrawdown} %`}</div> 
+                        </div>
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Текущ. просадка:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.currentDrawdown} %`}</div> 
+                        </div>                                                
+                    </div>                     
                 </div> 
                 <div className='horizontal-container'>
                     {
