@@ -30,6 +30,21 @@ export const Momentum = () => {
                 <div className='momentum-container border-style'>
                     <MomentumDiagram series={momentumMonitorData.result.series}/>
                 </div> 
+                <div className='horizontal-container'>
+                    {
+                        momentumMonitorData.result.currentPositions.map((position) => (
+                            <div className='momentum-current-position border-style'>
+                                <div className='momentum-container horizontal-container'>
+                                    <div className='border-style'><Ticker value={position.ticker} width={32} height={32} /></div>
+                                    <div>{position.ticker}</div>                                
+                                </div>                               
+                                <div>{`${formatNumber(position.size)} шт.`}</div>
+                                <div>{`${formatNumber(position.cost)} руб.`}</div>
+                                <div>{`SL ${formatNumber(position.stopPrice)} руб.`}</div>
+                            </div>     
+                        ))                        
+                    }
+                </div>                 
             </div>
         }
         </React.Fragment>                

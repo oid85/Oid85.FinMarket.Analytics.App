@@ -1,5 +1,5 @@
 import React from 'react'
-import { Area, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
 export const MomentumDiagram = ({series}) => {
@@ -8,15 +8,15 @@ export const MomentumDiagram = ({series}) => {
             <div className='momentum-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={800}                                                
-                width={1300}
+                height={700}                                                
+                width={1500}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis domain={['auto', 'auto']}/>
                 <Legend />
                 {series.map(s => (
-                    <Area 
+                    <Bar 
                         dataKey="value" 
                         data={s.data} 
                         name={s.name} 

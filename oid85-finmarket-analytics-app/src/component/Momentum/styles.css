@@ -22,3 +22,8 @@
 .momentum-diagram {     
     padding: 1px; 
 }
+
+.momentum-current-position {     
+    width: 120px;
+    height: 120px;
+}
