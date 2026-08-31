@@ -37,6 +37,30 @@ export const Momentum = () => {
                             <div className='momentum-container'>{`${momentumMonitorData.result.yield} %`}</div> 
                         </div>
                         <div className='horizontal-container'>
+                            <div className='momentum-container'>Доходность годовых (2021 г.).:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2021} %`}</div> 
+                        </div>    
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Доходность годовых (2022 г.).:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2022} %`}</div> 
+                        </div>
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Доходность годовых (2023 г.).:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2023} %`}</div> 
+                        </div>
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Доходность годовых (2024 г.).:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2024} %`}</div> 
+                        </div>
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Доходность годовых (2025 г.).:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2025} %`}</div> 
+                        </div>
+                        <div className='horizontal-container'>
+                            <div className='momentum-container'>Доходность годовых (2026 г.).:</div> 
+                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2026} %`}</div> 
+                        </div>                                                                                                                                            
+                        <div className='horizontal-container'>
                             <div className='momentum-container'>Макс. просадка:</div> 
                             <div className='momentum-container'>{`${momentumMonitorData.result.maxDrawdown} %`}</div> 
                         </div>
