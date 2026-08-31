@@ -68,6 +68,7 @@ import mgkl from "./img/mgkl.png"
 import mgnt from "./img/mgnt.png"
 import mgtsp from "./img/mgtsp.png"
 import moex from "./img/moex.png"
+import mon from "./img/mon.png"
 import mrkc from "./img/mrkc.png"
 import mrkp from "./img/mrkp.png"
 import mrks from "./img/mrks.png"
@@ -241,6 +242,7 @@ export const Ticker = ({value, height, width}) => {
         case 'mgnt': return <img src={mgnt} alt="" height={height} width={width}/>
         case 'mgtsp': return <img src={mgtsp} alt="" height={height} width={width}/>
         case 'moex': return <img src={moex} alt="" height={height} width={width}/>
+        case 'mon': return <img src={mon} alt="" height={height} width={width}/>
         case 'mrkc': return <img src={mrkc} alt="" height={height} width={width}/>
         case 'mrkp': return <img src={mrkp} alt="" height={height} width={width}/>
         case 'mrks': return <img src={mrks} alt="" height={height} width={width}/>

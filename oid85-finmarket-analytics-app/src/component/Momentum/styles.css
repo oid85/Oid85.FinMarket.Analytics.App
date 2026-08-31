@@ -12,11 +12,12 @@
 
 .border-style {
     border: 1px solid #000;     
-    margin: .5px;  
+    margin: .5px;
 }
 
 .momentum-container {     
     padding: 1px; 
+    margin: .5px;
 }
 
 .momentum-diagram {     
@@ -26,4 +27,8 @@
 .momentum-current-position {     
     width: 140px;
     height: 140px;
+}
+
+.momentum-ticker {     
+    font-size: 18px; 
 }

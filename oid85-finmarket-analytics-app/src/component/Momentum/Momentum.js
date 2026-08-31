@@ -28,7 +28,7 @@ export const Momentum = () => {
             :
             <div>
                 <div className='horizontal-container'>
-                    <div className='momentum-container border-style'>
+                    <div className='momentum-container'>
                         <MomentumDiagram series={momentumMonitorData.result.series}/>
                     </div> 
                     <div>
@@ -73,14 +73,18 @@ export const Momentum = () => {
                 <div className='horizontal-container'>
                     {
                         momentumMonitorData.result.currentPositions.map((position) => (
-                            <div className='momentum-current-position border-style'>
+                            <div className='momentum-current-position'>
                                 <div className='momentum-container horizontal-container'>
                                     <div className='border-style'><Ticker value={position.ticker} width={50} height={50} /></div>
-                                    <div>{position.ticker}</div>                                
+                                    <div className='momentum-container momentum-ticker'>{position.ticker}</div>                                
                                 </div>                               
-                                <div>{`${formatNumber(position.size)} шт.`}</div>
-                                <div>{`${formatNumber(position.cost)} руб.`}</div>
-                                <div>{`SL ${formatNumber(position.stopPrice)} руб.`}</div>
+                                <div className='momentum-container'>{`${formatNumber(position.size)} шт.`}</div>
+                                <div className='momentum-container'>{`${formatNumber(position.cost)} руб.`}</div>
+                                {
+                                    position.stopPrice
+                                    ? <div className='momentum-container'>{`SL ${formatNumber(position.stopPrice)} руб.`}</div>
+                                    : <div></div>
+                                }                                
                             </div>     
                         ))                        
                     }
