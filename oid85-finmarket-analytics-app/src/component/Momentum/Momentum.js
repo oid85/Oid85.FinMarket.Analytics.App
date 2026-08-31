@@ -35,7 +35,7 @@ export const Momentum = () => {
                         momentumMonitorData.result.currentPositions.map((position) => (
                             <div className='momentum-current-position border-style'>
                                 <div className='momentum-container horizontal-container'>
-                                    <div className='border-style'><Ticker value={position.ticker} width={32} height={32} /></div>
+                                    <div className='border-style'><Ticker value={position.ticker} width={40} height={40} /></div>
                                     <div>{position.ticker}</div>                                
                                 </div>                               
                                 <div>{`${formatNumber(position.size)} шт.`}</div>
