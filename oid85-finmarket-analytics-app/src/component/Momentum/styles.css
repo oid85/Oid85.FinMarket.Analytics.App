@@ -32,3 +32,17 @@
 .momentum-ticker {     
     font-size: 18px; 
 }
+
+.momentum-metric {     
+    width: 90px;
+    height: 70px;
+}
+
+
+.momentum-metric-description {     
+    font-size: 14px; 
+}
+
+.momentum-metric-value {     
+    font-size: 18px; 
+}

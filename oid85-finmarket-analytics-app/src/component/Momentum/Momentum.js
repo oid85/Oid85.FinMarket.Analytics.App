@@ -4,6 +4,7 @@ import { sagaMomentumMonitor } from '../../redux/actions/momentumActions'
 import Loader from '../Loader/Loader'
 import { Ticker } from '../Ticker/Ticker'
 import { MomentumDiagram } from './MomentumDiagram'
+import { MomentumMetric } from './MomentumMetric'
 import './styles.css'
 
 const formatNumber = (num) => {
@@ -30,46 +31,23 @@ export const Momentum = () => {
                 <div className='horizontal-container'>
                     <div className='momentum-container'>
                         <MomentumDiagram series={momentumMonitorData.result.series}/>
-                    </div> 
-                    <div>
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Доходность годовых средн.:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.yield} %`}</div> 
-                        </div>
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Доходность годовых (2021 г.).:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2021} %`}</div> 
-                        </div>    
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Доходность годовых (2022 г.).:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2022} %`}</div> 
-                        </div>
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Доходность годовых (2023 г.).:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2023} %`}</div> 
-                        </div>
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Доходность годовых (2024 г.).:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2024} %`}</div> 
-                        </div>
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Доходность годовых (2025 г.).:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2025} %`}</div> 
-                        </div>
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Доходность годовых (2026 г.).:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.yield2026} %`}</div> 
-                        </div>                                                                                                                                            
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Макс. просадка:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.maxDrawdown} %`}</div> 
-                        </div>
-                        <div className='horizontal-container'>
-                            <div className='momentum-container'>Текущ. просадка:</div> 
-                            <div className='momentum-container'>{`${momentumMonitorData.result.currentDrawdown} %`}</div> 
-                        </div>                                                
-                    </div>                     
+                    </div>                                        
                 </div> 
+                <div>
+                    <div className='horizontal-container'>
+                        <MomentumMetric description={"Дох-ть год. средн."} value={momentumMonitorData.result.yield} eunit={"%"}/>
+                        <MomentumMetric description={"Дох-ть год. 2021"} value={momentumMonitorData.result.yield2021} eunit={"%"}/>
+                        <MomentumMetric description={"Дох-ть год. 2022"} value={momentumMonitorData.result.yield2022} eunit={"%"}/>
+                        <MomentumMetric description={"Дох-ть год. 2023"} value={momentumMonitorData.result.yield2023} eunit={"%"}/>
+                        <MomentumMetric description={"Дох-ть год. 2024"} value={momentumMonitorData.result.yield2024} eunit={"%"}/>
+                        <MomentumMetric description={"Дох-ть год. 2025"} value={momentumMonitorData.result.yield2025} eunit={"%"}/>
+                        <MomentumMetric description={"Дох-ть год. 2026"} value={momentumMonitorData.result.yield2026} eunit={"%"}/>
+                    </div>    
+                    <div className='horizontal-container'>
+                        <MomentumMetric description={"DDmax"} value={momentumMonitorData.result.maxDrawdown} eunit={"%"}/>
+                        <MomentumMetric description={"DDcur"} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
+                    </div>                              
+                </div>                                
                 <div className='horizontal-container'>
                     {
                         momentumMonitorData.result.currentPositions.map((position) => (

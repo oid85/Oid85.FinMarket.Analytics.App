@@ -2,14 +2,18 @@ import React from 'react'
 import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
+const formatNumber = (num) => {
+    return new Intl.NumberFormat('ru-RU').format(num);
+  };
+
 export const MomentumDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div className='momentum-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={700}                                                
-                width={1500}
+                height={500}                                                
+                width={900}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
