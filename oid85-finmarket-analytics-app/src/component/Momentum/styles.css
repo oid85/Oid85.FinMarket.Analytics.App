@@ -17,7 +17,6 @@
 
 .momentum-container {     
     padding: 1px; 
-    margin: .5px;
 }
 
 .momentum-diagram {     
@@ -25,8 +24,8 @@
 }
 
 .momentum-current-position {     
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
 }
 
 .momentum-ticker {     
@@ -34,15 +33,14 @@
 }
 
 .momentum-metric {     
-    width: 90px;
+    width: 100px;
     height: 70px;
 }
-
 
 .momentum-metric-description {     
     font-size: 14px; 
 }
 
 .momentum-metric-value {     
-    font-size: 18px; 
+    font-size: 24px; 
 }
