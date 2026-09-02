@@ -31,9 +31,10 @@ export const Momentum = () => {
             <div>
                 <div className='horizontal-container'>
                     <div className='momentum-container'>
-                        <MomentumDiagram series={momentumMonitorData.result.series}/>
+                        <MomentumDiagram series={momentumMonitorData.result.backtestSeries}/>
                     </div>                                        
-                </div> 
+                </div>
+                <div>Статистика</div> 
                 <div>
                     <div className='horizontal-container'>
                         <MomentumMetric title={"Годовая процентная доходность средняя (Annual Percentage Yield)"} text={"APY ср."} value={momentumMonitorData.result.yield} eunit={"%"}/>
@@ -48,7 +49,8 @@ export const Momentum = () => {
                         <MomentumMetric title={"Максимальная просадка (Drawdown Max)"} text={"DD max"} value={momentumMonitorData.result.maxDrawdown} eunit={"%"}/>
                         <MomentumMetric title={"Текущая просадка (Drawdown Current)"} text={"DD cur"} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
                     </div>                              
-                </div>                                
+                </div>
+                <div>Позиции</div> 
                 <div className='horizontal-container'>
                     {
                         momentumMonitorData.result.currentPositions.map((position) => (
