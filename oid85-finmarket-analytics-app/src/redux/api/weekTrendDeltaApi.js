@@ -3,6 +3,6 @@
 const controller = 'week-trends'
 
 export const getWeekTrendDeltaFromApi = async () => {
-    return sendAnalyticPostRequest(`${controller}/delta`, {lastWeeksCount: 3})
+    return sendAnalyticPostRequest(`${controller}/delta`, {lastWeeksCount: 8})
 }
 
