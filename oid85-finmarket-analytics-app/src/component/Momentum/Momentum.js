@@ -6,6 +6,7 @@ import { Ticker } from '../Ticker/Ticker'
 import { MomentumDiagram } from './MomentumDiagram'
 import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
+import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
 import './styles.css'
 
 const formatNumber = (num) => {
@@ -32,7 +33,10 @@ export const Momentum = () => {
                 <div className='horizontal-container'>
                     <div className='momentum-container'>
                         <MomentumDiagram series={momentumMonitorData.result.backtestSeries}/>
-                    </div>                                        
+                    </div>   
+                    <div className='momentum-container'>
+                        <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
+                    </div>                                                          
                 </div>
                 <div>Статистика</div> 
                 <div>

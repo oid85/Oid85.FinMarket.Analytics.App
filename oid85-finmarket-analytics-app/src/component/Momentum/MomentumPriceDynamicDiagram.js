@@ -2,7 +2,7 @@ import React from 'react'
 import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
-export const MomentumDiagram = ({series}) => {
+export const MomentumPriceDynamicDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div className='momentum-diagram'>
@@ -16,14 +16,14 @@ export const MomentumDiagram = ({series}) => {
                 <YAxis domain={['auto', 'auto']}/>
                 <Legend />
                 {series.map(s => (
-                    <Bar 
+                    <Line 
                         dataKey="value" 
                         data={s.data} 
                         name={s.name} 
                         key={s.name} 
                         stroke={s.color}
                         fill={s.colorFill}
-                        strokeWidth={5}
+                        strokeWidth={2}
                         dot={false}                        
                         />
                 ))}
