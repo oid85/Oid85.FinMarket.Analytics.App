@@ -24,7 +24,7 @@
 }
 
 .momentum-current-position {     
-    width: 150px;
+    padding: 1px; 
 }
 
 .momentum-ticker {     
@@ -32,7 +32,7 @@
 }
 
 .momentum-metric {     
-    width: 100px;
+    padding: 1px; 
 }
 
 .momentum-metric-description {     
