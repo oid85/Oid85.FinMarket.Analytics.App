@@ -8,8 +8,8 @@ export const MomentumBacktestDiagram = ({series}) => {
             <div className='momentum-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={600}                                                
-                width={1050}
+                height={500}                                                
+                width={1000}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
