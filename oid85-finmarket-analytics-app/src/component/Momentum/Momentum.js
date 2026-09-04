@@ -9,10 +9,6 @@ import { MomentumPosition } from './MomentumPosition'
 import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
 import './styles.css'
 
-const formatNumber = (num) => {
-    return new Intl.NumberFormat('ru-RU').format(num);
-  };
-
 export const Momentum = () => {
     
     const dispatch = useDispatch()
