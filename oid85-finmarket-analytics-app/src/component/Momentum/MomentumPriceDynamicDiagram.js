@@ -8,7 +8,7 @@ export const MomentumPriceDynamicDiagram = ({series}) => {
             <div className='momentum-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={500}                                                
+                height={600}                                                
                 width={900}
             >
                 <CartesianGrid />       

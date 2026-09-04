@@ -2,13 +2,13 @@ import React from 'react'
 import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
-export const MomentumDiagram = ({series}) => {
+export const MomentumBacktestDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div className='momentum-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={500}                                                
+                height={600}                                                
                 width={900}
             >
                 <CartesianGrid />       

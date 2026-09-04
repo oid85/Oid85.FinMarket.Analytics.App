@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { sagaMomentumMonitor } from '../../redux/actions/momentumActions'
 import Loader from '../Loader/Loader'
 import { Ticker } from '../Ticker/Ticker'
-import { MomentumDiagram } from './MomentumDiagram'
+import { MomentumBacktestDiagram } from './MomentumBacktestDiagram'
 import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
 import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
@@ -32,7 +32,7 @@ export const Momentum = () => {
             <div>
                 <div className='horizontal-container'>
                     <div className='momentum-container'>
-                        <MomentumDiagram series={momentumMonitorData.result.backtestSeries}/>
+                        <MomentumBacktestDiagram series={momentumMonitorData.result.backtestSeries}/>
                     </div>   
                     <div className='momentum-container'>
                         <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
@@ -48,8 +48,6 @@ export const Momentum = () => {
                         <MomentumMetric title={"Годовая процентная доходность за 2024 год (Annual Percentage Yield)"} text={"APY 2024"} value={momentumMonitorData.result.yield2024} eunit={"%"}/>
                         <MomentumMetric title={"Годовая процентная доходность за 2025 год (Annual Percentage Yield)"} text={"APY 2025"} value={momentumMonitorData.result.yield2025} eunit={"%"}/>
                         <MomentumMetric title={"Годовая процентная доходность за 2026 год (Annual Percentage Yield)"} text={"APY 2026"} value={momentumMonitorData.result.yield2026} eunit={"%"}/>
-                    </div>    
-                    <div className='horizontal-container'>
                         <MomentumMetric title={"Максимальная просадка (Drawdown Max)"} text={"DD max"} value={momentumMonitorData.result.maxDrawdown} eunit={"%"}/>
                         <MomentumMetric title={"Текущая просадка (Drawdown Current)"} text={"DD cur"} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
                     </div>                              
