@@ -17,6 +17,7 @@ export const MomentumPriceDynamicDiagram = ({series}) => {
                 <Legend />
                 {series.map(s => (
                     <Line 
+                        type="monotone"
                         dataKey="value" 
                         data={s.data} 
                         name={s.name} 
