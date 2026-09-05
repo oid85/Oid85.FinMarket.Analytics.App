@@ -3,10 +3,12 @@ import {useDispatch, useSelector} from 'react-redux'
 import { sagaMomentumMonitor } from '../../redux/actions/momentumActions'
 import Loader from '../Loader/Loader'
 import { Ticker } from '../Ticker/Ticker'
+import { EditMomentumPortfolioTotalSumModal } from './EditMomentumPortfolioTotalSumModal'
 import { MomentumBacktestDiagram } from './MomentumBacktestDiagram'
 import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
 import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
+import { MomentumTotalSum } from './MomentumTotalSum'
 import './styles.css'
 
 export const Momentum = () => {
@@ -33,10 +35,11 @@ export const Momentum = () => {
                     <div className='momentum-container'>
                         <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
                     </div>                                                          
-                </div>
+                </div>                                
                 <div>Статистика</div> 
                 <div>
                     <div className='horizontal-container'>
+                        <MomentumTotalSum title={"Сумма портфеля"} text={"Сумма портфеля"} value={momentumMonitorData.result.totalSumLife} eunit={"руб."}/>
                         <MomentumMetric title={"Годовая процентная доходность средняя (Annual Percentage Yield)"} text={"APY ср."} value={momentumMonitorData.result.yield} eunit={"%"}/>
                         <MomentumMetric title={"Годовая процентная доходность за 2021 год (Annual Percentage Yield)"} text={"APY 2021"} value={momentumMonitorData.result.yield2021} eunit={"%"}/>
                         <MomentumMetric title={"Годовая процентная доходность за 2022 год (Annual Percentage Yield)"} text={"APY 2022"} value={momentumMonitorData.result.yield2022} eunit={"%"}/>
@@ -58,6 +61,7 @@ export const Momentum = () => {
                 </div>                 
             </div>
         }
+        <EditMomentumPortfolioTotalSumModal />
         </React.Fragment>                
     )
 }

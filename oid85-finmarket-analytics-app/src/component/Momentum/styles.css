@@ -25,6 +25,7 @@
 
 .momentum-current-position {     
     padding: 1px; 
+    width: 170px;
 }
 
 .momentum-ticker {     
@@ -33,6 +34,7 @@
 
 .momentum-metric {     
     padding: 1px; 
+    width: 100px;
 }
 
 .momentum-metric-description {     
@@ -40,5 +42,41 @@
 }
 
 .momentum-metric-value {     
-    font-size: 24px; 
+    font-size: 28px; 
+}
+
+.momentum-total-sum {     
+    padding: 1px; 
+}
+
+.momentum-total-summ-description {     
+    font-size: 14px; 
+}
+
+.momentum-total-summ-value {     
+    font-size: 28px; 
+}
+
+/*Edit modal*/
+.edit-modal-save-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-delete-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-cancel-button {
+    width: 100px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+.edit-modal-input {
+    margin: 5px;
+    font-size: 10px;
 }
