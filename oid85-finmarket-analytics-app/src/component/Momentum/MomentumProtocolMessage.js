@@ -1,12 +1,7 @@
 import React from 'react'
-import { CONSTANTS } from '../../constants'
 import { Calendar } from '../Calendar/Calendar';
 import { Ticker } from '../Ticker/Ticker';
 import './styles.css'
-
-const formatNumber = (num) => {
-    return new Intl.NumberFormat('ru-RU').format(num);
-  };
 
 export const MomentumProtocolMessage = ({protocolMessage}) => {
     return (
