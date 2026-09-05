@@ -60,11 +60,13 @@
 .momentum-protocol-message-ticker {     
     font-size: 18px; 
     width: 100px;
+    padding: 1px; 
 }
 
 .momentum-protocol-message-text {     
     font-size: 18px; 
-    width: 700px;
+    width: 500px;
+    padding: 1px; 
 }
 
 /*Edit modal*/
