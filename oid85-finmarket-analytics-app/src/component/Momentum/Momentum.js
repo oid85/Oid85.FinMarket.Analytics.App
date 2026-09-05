@@ -29,14 +29,6 @@ export const Momentum = () => {
             ? <Loader/>
             :
             <div>
-                <div className='horizontal-container'>
-                    <div className='momentum-container'>
-                        <MomentumBacktestDiagram series={momentumMonitorData.result.backtestSeries}/>
-                    </div>   
-                    <div className='momentum-container'>
-                        <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
-                    </div>                                                          
-                </div>                                
                 <div>Статистика</div> 
                 <div>
                     <div className='horizontal-container'>
@@ -59,7 +51,19 @@ export const Momentum = () => {
                             <MomentumPosition position={position}/>     
                         ))                        
                     }
+                </div>
+                <div>Бэктест</div>
+                <div className='horizontal-container'>
+                    <div className='momentum-container'>
+                        <MomentumBacktestDiagram series={momentumMonitorData.result.backtestSeries}/>
+                    </div>                                                          
                 </div>   
+                <div>Динамика (зеленый - в портфеле)</div>                             
+                <div className='horizontal-container'>  
+                    <div className='momentum-container'>
+                        <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
+                    </div>                                                          
+                </div>  
                 <div>Сообщения</div>
                 <div>
                     {

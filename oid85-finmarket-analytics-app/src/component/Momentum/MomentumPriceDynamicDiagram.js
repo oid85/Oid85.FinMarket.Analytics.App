@@ -8,8 +8,8 @@ export const MomentumPriceDynamicDiagram = ({series}) => {
             <div className='momentum-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={550}                                                
-                width={900}
+                height={600}                                                
+                width={1800}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
