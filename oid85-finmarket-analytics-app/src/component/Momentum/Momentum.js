@@ -8,6 +8,7 @@ import { MomentumBacktestDiagram } from './MomentumBacktestDiagram'
 import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
 import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
+import { MomentumProtocolMessage } from './MomentumProtocolMessage'
 import { MomentumTotalSum } from './MomentumTotalSum'
 import './styles.css'
 
@@ -51,14 +52,22 @@ export const Momentum = () => {
                         <MomentumMetric title={"Текущая просадка (Drawdown Current)"} text={"DD cur"} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
                     </div>                              
                 </div>
-                <div>Позиции</div> 
+                <div>Позиции</div>
                 <div className='horizontal-container'>
                     {
                         momentumMonitorData.result.currentPositions.map((position) => (
                             <MomentumPosition position={position}/>     
                         ))                        
                     }
-                </div>                 
+                </div>   
+                <div>Сообщения</div>
+                <div>
+                    {
+                        momentumMonitorData.result.protocolMessages.map((protocolMessage) => (
+                            <MomentumProtocolMessage protocolMessage={protocolMessage}/>     
+                        ))                        
+                    }
+                </div>                               
             </div>
         }
         <EditMomentumPortfolioTotalSumModal />

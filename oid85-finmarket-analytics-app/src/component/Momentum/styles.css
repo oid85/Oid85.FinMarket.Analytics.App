@@ -57,6 +57,16 @@
     font-size: 28px; 
 }
 
+.momentum-protocol-message-ticker {     
+    font-size: 18px; 
+    width: 100px;
+}
+
+.momentum-protocol-message-text {     
+    font-size: 18px; 
+    width: 700px;
+}
+
 /*Edit modal*/
 .edit-modal-save-button {
     width: 100px;

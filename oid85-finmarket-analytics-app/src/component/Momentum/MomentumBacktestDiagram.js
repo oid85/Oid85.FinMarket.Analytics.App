@@ -9,7 +9,7 @@ export const MomentumBacktestDiagram = ({series}) => {
             <ComposedChart                                    
                 data={series}
                 height={550}                                                
-                width={1000}
+                width={950}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
