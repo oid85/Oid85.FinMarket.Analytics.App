@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { sagaMomentumMonitor } from '../../redux/actions/momentumActions'
 import Loader from '../Loader/Loader'
-import { Ticker } from '../Ticker/Ticker'
 import { EditMomentumPortfolioTotalSumModal } from './EditMomentumPortfolioTotalSumModal'
 import { MomentumBacktestDiagram } from './MomentumBacktestDiagram'
 import { MomentumMetric } from './MomentumMetric'
@@ -12,7 +11,7 @@ import { MomentumProtocolMessage } from './MomentumProtocolMessage'
 import { MomentumTotalSum } from './MomentumTotalSum'
 import './styles.css'
 
-export const Momentum = () => {
+export const MomentumMonitor = () => {
     
     const dispatch = useDispatch()
     const loading = useSelector(state => state.app.loading)
