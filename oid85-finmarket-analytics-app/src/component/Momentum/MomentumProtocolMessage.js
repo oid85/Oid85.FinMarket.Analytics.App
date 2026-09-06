@@ -9,8 +9,8 @@ export const MomentumProtocolMessage = ({protocolMessage}) => {
             <div className='horizontal-container'>
                 <div className='border-style'><Calendar date = {protocolMessage.date} /></div>
                 <div className='border-style'><Ticker value={protocolMessage.ticker} width={50} height={50} /></div>
-                <div className='momentum-protocol-message-ticker border-style'>{`${protocolMessage.ticker}`}</div>                
-                <div className='momentum-protocol-message-text border-style'>{`${protocolMessage.message}`}</div>                
+                <div className='momentum-protocol-message-ticker border-style' style={{backgroundColor: protocolMessage.colorFill}}>{`${protocolMessage.ticker}`}</div>                
+                <div className='momentum-protocol-message-text border-style' style={{backgroundColor: protocolMessage.colorFill}}>{`${protocolMessage.message}`}</div>                
             </div>
         </React.Fragment>
     )
