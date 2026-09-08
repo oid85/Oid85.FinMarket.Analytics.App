@@ -14,7 +14,7 @@ export const MomentumScreen = () => {
             {alert && <Alert text={alert} />}
             <Tabs>
                 <TabList>
-                <Tab title='Мониторинг моментума'>Мониторинг</Tab>
+                <Tab title='Мониторинг моментума (версия 1)'>Мониторинг (вер. 1)</Tab>
                 </TabList>
                 <TabPanel>
                     <MomentumMonitorScreen />                    
