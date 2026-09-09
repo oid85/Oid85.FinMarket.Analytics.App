@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { sagaMomentumMonitor } from '../../redux/actions/momentumActions'
+import { fetchMomentumVersion, sagaMomentumMonitor } from '../../redux/actions/momentumActions'
 import Loader from '../Loader/Loader'
 import { EditMomentumPortfolioTotalSumModal } from './EditMomentumPortfolioTotalSumModal'
 import { MomentumBacktestDiagram } from './MomentumBacktestDiagram'
@@ -16,6 +16,7 @@ export const MomentumMonitor = () => {
     const dispatch = useDispatch()
     const loading = useSelector(state => state.app.loading)
     const momentumMonitorData = useSelector(state => state.momentum.momentumMonitorData)
+    const momentumVersion = useSelector(state => state.momentum.momentumVersion)
 
     useEffect(() => {
         dispatch(sagaMomentumMonitor())
@@ -28,7 +29,20 @@ export const MomentumMonitor = () => {
             ? <Loader/>
             :
             <div>
-                <div>Статистика</div> 
+                <div className='horizontal-container'>
+                {
+                    [1, 2, 3].map((version) => (
+                        <div className='momentum-version-button-container'>
+                            <button className='btn btn-outline-dark momentum-version-button'
+                                onClick={() => {
+                                    dispatch(fetchMomentumVersion(version)) 
+                                }}><div className='momentum-version-button-text'>{version}</div></button>
+                        </div>                        
+                    ))
+                }                                                                                                                                                                                                                                                              
+                </div>                
+                <div>{`Версия ${momentumVersion}`}</div> 
+                <div>Статистика</div>                 
                 <div>
                     <div className='horizontal-container'>
                         <MomentumTotalSum title={"Сумма портфеля"} text={"Сумма портфеля"} value={momentumMonitorData.result.totalSumLife} eunit={"руб."}/>

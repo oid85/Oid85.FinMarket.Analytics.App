@@ -69,6 +69,19 @@
     padding: 1px; 
 }
 
+.momentum-version-button-container {    
+    padding: 1px;
+}
+
+.momentum-version-button {    
+    width: 30px;
+    height: 30px;
+}
+
+.momentum-version-button-text {        
+    font-size: 12px;
+}
+
 /*Edit modal*/
 .edit-modal-save-button {
     width: 100px;

@@ -3,6 +3,7 @@ import {
     SAGA_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM,
     FETCH_MOMENTUM_MONITOR,
     FETCH_MOMENTUM_PORTFOLIO_TOTAL_SUM,
+    FETCH_MOMENTUM_VERSION,
     SHOW_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM_MODAL,
     HIDE_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM_MODAL
 } from '../types/momentumTypes'
@@ -29,6 +30,13 @@ export const fetchMomentumMonitor = (data) => {
 export const fetchMomentumPortfolioTotalSum = (data) => {
     return {
         type: FETCH_MOMENTUM_PORTFOLIO_TOTAL_SUM,
+        payload: data
+    }
+}
+
+export const fetchMomentumVersion = (data) => {
+    return {
+        type: FETCH_MOMENTUM_VERSION,
         payload: data
     }
 }
