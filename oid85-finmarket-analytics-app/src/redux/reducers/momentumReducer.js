@@ -9,7 +9,7 @@ import {
 const initialState = {
     momentumMonitorData: {},
     momentumPortfolioTotalSum: 0,
-    momentumVersion: 1,
+    momentumVersion: '1',
     editMomentumPortfolioTotalSumModalIsOpened: false
 }
 
