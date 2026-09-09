@@ -17,15 +17,18 @@ export function* sagaWatcherMomentum() {
 }
 
 const momentumPortfolioTotalSum = (state) => state.momentum.momentumPortfolioTotalSum
+const momentumVersion = (state) => state.momentum.momentumVersion
 
 function* sagaWorkerMomentumMonitor() {
-    let result = yield call(getMomentumMonitorFromApi)
+    let version = yield select(momentumVersion)
+    let result = yield call(getMomentumMonitorFromApi, version)
     yield put(fetchMomentumMonitor(result))
 }
 
 function* sagaWorkerEditMomentumPortfolioTotalSum() {
-    let totalSum = yield select(momentumPortfolioTotalSum)    
+    let totalSum = yield select(momentumPortfolioTotalSum)
+    let version = yield select(momentumVersion)
     yield call(editMomentumPortfolioTotalSumFromApi, totalSum)
-    let result = yield call(getMomentumMonitorFromApi)
+    let result = yield call(getMomentumMonitorFromApi, version)
     yield put(fetchMomentumMonitor(result)) 
 }
