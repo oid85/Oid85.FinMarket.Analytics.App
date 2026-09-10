@@ -8,6 +8,7 @@ import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
 import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
 import { MomentumProtocolMessage } from './MomentumProtocolMessage'
+import { MomentumTickerStatistic } from './MomentumTickerStatistic'
 import { MomentumTotalSum } from './MomentumTotalSum'
 import './styles.css'
 
@@ -42,7 +43,7 @@ export const MomentumMonitor = () => {
                 }                                                                                                                                                                                                                                                              
                 </div>                
                 <div>{`Версия ${momentumVersion}`}</div> 
-                <div>Статистика</div>                 
+                <div>Статистика по доходности</div>
                 <div>
                     <div className='horizontal-container'>
                         <MomentumTotalSum title={"Сумма портфеля"} text={"Сумма портфеля"} value={momentumMonitorData.result.totalSumLife} eunit={"руб."}/>
@@ -84,7 +85,15 @@ export const MomentumMonitor = () => {
                             <MomentumProtocolMessage protocolMessage={protocolMessage}/>     
                         ))                        
                     }
-                </div>                               
+                </div>
+                <div>Статистика по сигналам и выбитым стоп-лоссам</div>   
+                <div>
+                    {
+                        momentumMonitorData.result.tickerStatistic.map((tickerStatisticItem) => (
+                            <MomentumTickerStatistic tickerStatisticItem={tickerStatisticItem}/>     
+                        ))                        
+                    }
+                </div>                                            
             </div>
         }
         <EditMomentumPortfolioTotalSumModal />
