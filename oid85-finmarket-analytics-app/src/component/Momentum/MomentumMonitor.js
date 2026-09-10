@@ -67,7 +67,7 @@ export const MomentumMonitor = () => {
                         ))                        
                     }
                 </div>
-                <div>График цены за месяц</div>
+                <div>График цены за квартал</div>
                 <div className='horizontal-container'>
                     {
                         momentumMonitorData.result.priceSeries.map((series) => (
@@ -84,7 +84,7 @@ export const MomentumMonitor = () => {
                         <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
                     </div>                                                                               
                 </div>
-                <div>За последний месяц</div>
+                <div>За последний квартал</div>
                 <div className='horizontal-container'>
                     <div className='momentum-container'>
                         <MomentumBacktestDiagram series={momentumMonitorData.result.shortBacktestSeries}/>

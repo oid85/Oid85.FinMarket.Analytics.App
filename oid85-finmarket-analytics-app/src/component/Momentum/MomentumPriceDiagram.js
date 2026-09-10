@@ -10,8 +10,7 @@ export const MomentumPriceDiagram = ({series}) => {
                 data={series}
                 height={170}
                 width={180}
-            >
-                <CartesianGrid />                    
+            >                 
                 <YAxis hide={true} domain={['auto', 'auto']}/>
                 <Legend />
                 {series.map(s => (
