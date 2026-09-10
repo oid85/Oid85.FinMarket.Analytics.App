@@ -32,10 +32,16 @@
     font-size: 18px; 
 }
 
-.momentum-ticker-statistic {     
+.momentum-ticker-statistic-value {     
     font-size: 18px; 
     padding: 1px; 
-    width: 200px;
+    width: 170px;
+}
+
+.momentum-ticker-statistic-ticker {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 80px;
 }
 
 .momentum-metric {     
