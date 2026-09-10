@@ -32,6 +32,11 @@
     font-size: 18px; 
 }
 
+.momentum-description {     
+    font-size: 12px; 
+    padding: 1px; 
+}
+
 .momentum-ticker-statistic-value {     
     font-size: 18px; 
     padding: 1px; 

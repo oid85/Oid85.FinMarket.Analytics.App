@@ -42,8 +42,14 @@ export const MomentumMonitor = () => {
                         </div>                        
                     ))
                 }                                                                                                                                                                                                                                                              
-                </div>                
-                <div>{`Версия ${momentumVersion}`}</div> 
+                </div>
+                <div>
+                    {
+                        momentumMonitorData.result.description.map((text) => (
+                            <div className='momentum-description'>{text}</div> 
+                        ))                        
+                    }
+                </div>
                 <div>Статистика по доходности</div>
                 <div>
                     <div className='horizontal-container'>
