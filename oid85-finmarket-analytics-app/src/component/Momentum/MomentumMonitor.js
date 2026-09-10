@@ -73,7 +73,12 @@ export const MomentumMonitor = () => {
                     <div className='momentum-container'>
                         <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
                     </div>                                                                               
-                </div>                                
+                </div>
+                <div className='horizontal-container'>
+                    <div className='momentum-container'>
+                        <MomentumBacktestDiagram series={momentumMonitorData.result.shortBacktestSeries}/>
+                    </div>               
+                </div>                
                 <div>Сообщения</div>
                 <div>
                     {

@@ -23,7 +23,7 @@ export const MomentumBacktestDiagram = ({series}) => {
                         key={s.name} 
                         stroke={s.color}
                         fill={s.colorFill}
-                        strokeWidth={5}
+                        strokeWidth={3}
                         dot={false}                        
                         />
                 ))}
