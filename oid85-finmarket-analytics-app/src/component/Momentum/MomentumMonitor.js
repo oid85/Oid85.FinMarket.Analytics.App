@@ -58,7 +58,7 @@ export const MomentumMonitor = () => {
                         <MomentumMetric title={"Текущая просадка (Drawdown Current)"} text={"DD cur"} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
                     </div>                              
                 </div>
-                <div>Позиции</div>
+                <div>Открытые позиции</div>
                 <div className='horizontal-container'>
                     {
                         momentumMonitorData.result.currentPositions.map((position) => (
@@ -66,6 +66,7 @@ export const MomentumMonitor = () => {
                         ))                        
                     }
                 </div>
+                <div>За все время</div>
                 <div className='horizontal-container'>
                     <div className='momentum-container'>
                         <MomentumBacktestDiagram series={momentumMonitorData.result.backtestSeries}/>
@@ -74,7 +75,7 @@ export const MomentumMonitor = () => {
                         <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
                     </div>                                                                               
                 </div>
-                <div>Показатели за последний месяц</div>
+                <div>За последний месяц</div>
                 <div className='horizontal-container'>
                     <div className='momentum-container'>
                         <MomentumBacktestDiagram series={momentumMonitorData.result.shortBacktestSeries}/>
