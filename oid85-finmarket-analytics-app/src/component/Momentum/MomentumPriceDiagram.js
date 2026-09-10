@@ -1,0 +1,34 @@
+import React from 'react'
+import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import './styles.css'
+
+export const MomentumPriceDiagram = ({series}) => {
+    return (
+        <React.Fragment>          
+            <div className='momentum-diagram'>
+            <ComposedChart                                    
+                data={series}
+                height={170}
+                width={180}
+            >
+                <CartesianGrid />                    
+                <YAxis hide={true} domain={['auto', 'auto']}/>
+                <Legend />
+                {series.map(s => (
+                    <Area 
+                        dataKey="value" 
+                        data={s.data} 
+                        name={s.name} 
+                        key={s.name} 
+                        stroke={s.color}
+                        fill={s.colorFill}
+                        strokeWidth={1}
+                        dot={false}                        
+                        />
+                ))}
+                <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>
+            </ComposedChart>
+            </div>
+        </React.Fragment>                
+    )
+}
