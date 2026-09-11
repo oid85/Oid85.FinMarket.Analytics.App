@@ -9,12 +9,17 @@ const GetColor = (value) => {
     return CONSTANTS.COLOR_WHITE
 }
 
+const GetValue = (value, eunit) => {
+    if (!value) { return '' }
+    return `${value} ${eunit}`
+}
+
 export const MomentumMetric = ({title, text, value, eunit}) => {
     return (
         <React.Fragment>          
             <div title={title} className='momentum-metric border-style' style={{backgroundColor: GetColor(value)}}>
                 <div className='momentum-container momentum-metric-description'>{text}</div> 
-                <div className='momentum-container momentum-metric-value'>{`${value} ${eunit}`}</div>                 
+                <div className='momentum-container momentum-metric-value'>{GetValue(value, eunit)}</div>                 
             </div> 
         </React.Fragment>                
     )

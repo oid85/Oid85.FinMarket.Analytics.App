@@ -5,7 +5,7 @@ import './styles.css'
 
 const formatNumber = (num) => {
     return new Intl.NumberFormat('ru-RU').format(num);
-  };
+};
 
 export const MomentumPosition = ({position}) => {
     return (
@@ -25,7 +25,12 @@ export const MomentumPosition = ({position}) => {
                     position.stopPrice
                     ? <div className='momentum-container'>{`SL ${formatNumber(position.stopPrice)} руб.`}</div>
                     : <div></div>
-                }                                
+                }
+                {
+                    position.stopPercent
+                    ? <div className='momentum-container'>{`SL ${formatNumber(position.stopPercent)} %`}</div>
+                    : <div></div>
+                }                
             </div>
         </React.Fragment>
     )
