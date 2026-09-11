@@ -9,7 +9,7 @@ export const MomentumPriceDiagram = ({series}) => {
             <ComposedChart                                    
                 data={series}
                 height={170}
-                width={180}
+                width={187}
             >                 
                 <YAxis hide={true} domain={['auto', 'auto']}/>
                 <Legend />
