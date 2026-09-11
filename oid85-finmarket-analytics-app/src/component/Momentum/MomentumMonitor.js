@@ -55,18 +55,19 @@ export const MomentumMonitor = () => {
                 <div>
                     <div className='horizontal-container'>
                         <MomentumTotalSum title={"Сумма портфеля"} text={"Сумма портфеля"} value={momentumMonitorData.result.totalSumLife} eunit={"руб."}/>
-                        <MomentumMetric title={"Годовая процентная доходность средняя"} text={"Дох-ть ср."} value={momentumMonitorData.result.yield} eunit={"%"}/>
-                        <MomentumMetric title={"Годовая процентная доходность за 2021 год"} text={"Дох-ть 2021"} value={momentumMonitorData.result.yield2021} eunit={"%"}/>
-                        <MomentumMetric title={"Годовая процентная доходность за 2022 год"} text={"Дох-ть 2022"} value={momentumMonitorData.result.yield2022} eunit={"%"}/>
-                        <MomentumMetric title={"Годовая процентная доходность за 2023 год"} text={"Дох-ть 2023"} value={momentumMonitorData.result.yield2023} eunit={"%"}/>
-                        <MomentumMetric title={"Годовая процентная доходность за 2024 год"} text={"Дох-ть 2024"} value={momentumMonitorData.result.yield2024} eunit={"%"}/>
-                        <MomentumMetric title={"Годовая процентная доходность за 2025 год"} text={"Дох-ть 2025"} value={momentumMonitorData.result.yield2025} eunit={"%"}/>
-                        <MomentumMetric title={"Годовая процентная доходность за 2026 год"} text={"Дох-ть 2026"} value={momentumMonitorData.result.yield2026} eunit={"%"}/>
-                        <MomentumMetric title={"Процентная доходность за последний квартал"} text={"Дох-ть квартал"} value={momentumMonitorData.result.yieldQuarter} eunit={"%"}/>
-                        <MomentumMetric title={"Процентная доходность за последний месяц"} text={"Дох-ть месяц"} value={momentumMonitorData.result.yieldMonth} eunit={"%"}/>
-                        <MomentumMetric title={"Процентная доходность за последний период"} text={"Дох-ть период"} value={momentumMonitorData.result.yieldPeriod} eunit={"%"}/>
-                        <MomentumMetric title={"Максимальная просадка, %"} text={"Просадка макс."} value={momentumMonitorData.result.maxDrawdown} eunit={"%"}/>
-                        <MomentumMetric title={"Текущая просадка, %"} text={"Просадка тек."} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность средняя"} text={"Дох. ср."} value={momentumMonitorData.result.yield} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность за 2021 год"} text={"Дох. 2021"} value={momentumMonitorData.result.yield2021} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность за 2022 год"} text={"Дох. 2022"} value={momentumMonitorData.result.yield2022} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность за 2023 год"} text={"Дох. 2023"} value={momentumMonitorData.result.yield2023} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность за 2024 год"} text={"Дох. 2024"} value={momentumMonitorData.result.yield2024} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность за 2025 год"} text={"Дох. 2025"} value={momentumMonitorData.result.yield2025} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность за 2026 год"} text={"Дох. 2026 YTD"} value={momentumMonitorData.result.yield2026} eunit={"%"}/>
+                        <MomentumMetric title={"Годовая процентная доходность за последний год"} text={"Дох. год"} value={momentumMonitorData.result.yieldYear} eunit={"%"}/>
+                        <MomentumMetric title={"Процентная доходность за последний квартал"} text={"Дох. квартал"} value={momentumMonitorData.result.yieldQuarter} eunit={"%"}/>
+                        <MomentumMetric title={"Процентная доходность за последний месяц"} text={"Дох. месяц"} value={momentumMonitorData.result.yieldMonth} eunit={"%"}/>
+                        <MomentumMetric title={"Процентная доходность за последний период"} text={"Дох. период"} value={momentumMonitorData.result.yieldPeriod} eunit={"%"}/>
+                        <MomentumMetric title={"Максимальная просадка, %"} text={"Просад. макс."} value={momentumMonitorData.result.maxDrawdown} eunit={"%"}/>
+                        <MomentumMetric title={"Текущая просадка, %"} text={"Просад. тек."} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
                     </div>                              
                 </div>
                 <div>Открытые позиции</div>
