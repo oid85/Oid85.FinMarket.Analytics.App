@@ -15,6 +15,7 @@ export const MomentumPriceDiagram = ({series}) => {
                 <Legend />
                 {series.map(s => (
                     <Area 
+                        type="monotone"
                         dataKey="value" 
                         data={s.data} 
                         name={s.name} 
@@ -22,7 +23,7 @@ export const MomentumPriceDiagram = ({series}) => {
                         stroke={s.color}
                         fill={s.colorFill}
                         strokeWidth={1}
-                        dot={false}                        
+                        dot={false}
                         />
                 ))}
                 <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>

@@ -8,6 +8,7 @@ import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
 import { MomentumPriceDiagram } from './MomentumPriceDiagram'
 import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
+import { MomentumPriceWithStopDiagram } from './MomentumPriceWithStopDiagram'
 import { MomentumProtocolMessage } from './MomentumProtocolMessage'
 import { MomentumTickerStatistic } from './MomentumTickerStatistic'
 import { MomentumTotalSum } from './MomentumTotalSum'
@@ -76,11 +77,11 @@ export const MomentumMonitor = () => {
                         ))                        
                     }
                 </div>
-                <div>График цены за квартал</div>
+                <div>График цены за месяц</div>
                 <div className='horizontal-container'>
                     {
-                        momentumMonitorData.result.priceSeries.map((series) => (
-                            <MomentumPriceDiagram series={[series]}/>
+                        momentumMonitorData.result.priceWithStopSeries.map((seriesList) => (
+                            <MomentumPriceWithStopDiagram series={seriesList}/>
                         ))                        
                     }
                 </div>                
