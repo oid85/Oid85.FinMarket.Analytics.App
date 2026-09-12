@@ -6,10 +6,9 @@ import { EditMomentumPortfolioTotalSumModal } from './EditMomentumPortfolioTotal
 import { MomentumBacktestDiagram } from './MomentumBacktestDiagram'
 import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
-import { MomentumPriceDiagram } from './MomentumPriceDiagram'
 import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
 import { MomentumPriceWithStopDiagram } from './MomentumPriceWithStopDiagram'
-import { MomentumProtocolMessage } from './MomentumProtocolMessage'
+import { MomentumMessage } from './MomentumMessage'
 import { MomentumTickerStatistic } from './MomentumTickerStatistic'
 import { MomentumTotalSum } from './MomentumTotalSum'
 import './styles.css'
@@ -19,8 +18,7 @@ export const MomentumMonitor = () => {
     const dispatch = useDispatch()
     const loading = useSelector(state => state.app.loading)
     const momentumMonitorData = useSelector(state => state.momentum.momentumMonitorData)
-    const momentumVersion = useSelector(state => state.momentum.momentumVersion)
-
+    
     useEffect(() => {
         dispatch(sagaMomentumMonitor())
     }, [])
@@ -66,8 +64,8 @@ export const MomentumMonitor = () => {
                         <MomentumMetric title={"Процентная доходность за последний квартал"} text={"Дох. квартал"} value={momentumMonitorData.result.yieldQuarter} eunit={"%"}/>
                         <MomentumMetric title={"Процентная доходность за последний месяц"} text={"Дох. месяц"} value={momentumMonitorData.result.yieldMonth} eunit={"%"}/>
                         <MomentumMetric title={"Процентная доходность за последний период"} text={"Дох. период"} value={momentumMonitorData.result.yieldPeriod} eunit={"%"}/>
-                        <MomentumMetric title={"Максимальная просадка, %"} text={"Просад. макс."} value={momentumMonitorData.result.maxDrawdown} eunit={"%"}/>
-                        <MomentumMetric title={"Текущая просадка, %"} text={"Просад. тек."} value={momentumMonitorData.result.currentDrawdown} eunit={"%"}/>
+                        <MomentumMetric title={"Максимальная просадка, %"} text={"Просад. макс."} value={momentumMonitorData.result.maxDrawdownPercent} eunit={"%"}/>
+                        <MomentumMetric title={"Текущая просадка, %"} text={"Просад. тек."} value={momentumMonitorData.result.currentDrawdownPercent} eunit={"%"}/>
                     </div>                              
                 </div>
                 <div>Открытые позиции</div>
@@ -78,7 +76,7 @@ export const MomentumMonitor = () => {
                         ))                        
                     }
                 </div>
-                <div>График цены за месяц</div>
+                <div>График цены за 15 дней</div>
                 <div className='horizontal-container'>
                     {
                         momentumMonitorData.result.priceWithStopSeries.map((seriesList) => (
@@ -104,13 +102,20 @@ export const MomentumMonitor = () => {
                 <div>Сообщения</div>
                 <div>
                     {
-                        momentumMonitorData.result.protocolMessages.map((protocolMessage) => (
-                            <MomentumProtocolMessage protocolMessage={protocolMessage}/>     
+                        momentumMonitorData.result.messages.map((message) => (
+                            <MomentumMessage message={message}/>     
                         ))                        
                     }
                 </div>
                 <div>Статистика по сигналам и выбитым стоп-лоссам</div>   
                 <div>
+                    <div className='horizontal-container'>                
+                        <div className='border-style' style={{width: 32}}></div>
+                        <div className='momentum-ticker-statistic-ticker border-style'>Тикер</div>
+                        <div className='momentum-ticker-statistic-value border-style'>Сигналов, шт.</div>
+                        <div className='momentum-ticker-statistic-value border-style'>Выбито СЛ, шт.</div>
+                        <div className='momentum-ticker-statistic-value border-style'>Выбито СЛ, %</div>
+                    </div>                    
                     {
                         momentumMonitorData.result.tickerStatistic.map((tickerStatisticItem) => (
                             <MomentumTickerStatistic tickerStatisticItem={tickerStatisticItem}/>     
