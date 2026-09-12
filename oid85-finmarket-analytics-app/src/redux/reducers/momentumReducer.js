@@ -1,5 +1,6 @@
 import {
     FETCH_MOMENTUM_MONITOR,
+    FETCH_MOMENTUM_BACKTEST_RESULT,
     FETCH_MOMENTUM_PORTFOLIO_TOTAL_SUM,
     FETCH_MOMENTUM_VERSION,
     SHOW_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM_MODAL,
@@ -8,6 +9,7 @@ import {
 
 const initialState = {
     momentumMonitorData: {},
+    momentumBacktestResultData: {},
     momentumPortfolioTotalSum: 0,
     momentumVersion: '1',
     editMomentumPortfolioTotalSumModalIsOpened: false
@@ -18,7 +20,10 @@ export const momentumReducer = (state = initialState, action) => {
 
         case FETCH_MOMENTUM_MONITOR:
             return {...state, momentumMonitorData: {...action.payload}}
-             
+          
+        case FETCH_MOMENTUM_BACKTEST_RESULT:
+            return {...state, momentumBacktestResultData: {...action.payload}}            
+
         case FETCH_MOMENTUM_PORTFOLIO_TOTAL_SUM:
             return {...state, momentumPortfolioTotalSum: action.payload}
 

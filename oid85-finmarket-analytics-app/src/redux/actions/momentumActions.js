@@ -1,7 +1,9 @@
 import {
     SAGA_MOMENTUM_MONITOR,
+    SAGA_MOMENTUM_BACKTEST_RESULT,
     SAGA_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM,
     FETCH_MOMENTUM_MONITOR,
+    FETCH_MOMENTUM_BACKTEST_RESULT,
     FETCH_MOMENTUM_PORTFOLIO_TOTAL_SUM,
     FETCH_MOMENTUM_VERSION,
     SHOW_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM_MODAL,
@@ -14,6 +16,12 @@ export const sagaMomentumMonitor = () => {
     }
 }
 
+export const sagaMomentumBacktestResult = () => {
+    return {
+        type: SAGA_MOMENTUM_BACKTEST_RESULT
+    }
+}
+
 export const sagaEditMomentumPortfolioTotalSum = () => {
     return {
         type: SAGA_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM
@@ -23,6 +31,13 @@ export const sagaEditMomentumPortfolioTotalSum = () => {
 export const fetchMomentumMonitor = (data) => {
     return {
         type: FETCH_MOMENTUM_MONITOR,
+        payload: data
+    }
+}
+
+export const fetchMomentumBacktestResult = (data) => {
+    return {
+        type: FETCH_MOMENTUM_BACKTEST_RESULT,
         payload: data
     }
 }

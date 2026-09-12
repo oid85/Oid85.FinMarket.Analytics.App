@@ -55,6 +55,24 @@
     width: 80px;
 }
 
+.momentum-backtest-result-strategy-name {     
+    font-size: 14px; 
+    padding: 1px; 
+    width: 200px;
+}
+
+.momentum-backtest-result-strategy-params {     
+    font-size: 14px; 
+    padding: 1px; 
+    width: 500px;
+}
+
+.momentum-backtest-result-value {     
+    font-size: 14px; 
+    padding: 1px; 
+    width: 90px;
+}
+
 .momentum-metric {     
     padding: 1px; 
     width: 110px;
