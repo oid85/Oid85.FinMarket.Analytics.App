@@ -6,7 +6,7 @@ import { EditMomentumPortfolioTotalSumModal } from './EditMomentumPortfolioTotal
 import { MomentumBacktestDiagram } from './MomentumBacktestDiagram'
 import { MomentumMetric } from './MomentumMetric'
 import { MomentumPosition } from './MomentumPosition'
-import { MomentumPriceDynamicDiagram } from './MomentumPriceDynamicDiagram'
+import { MomentumLineDiagram } from './MomentumLineDiagram'
 import { MomentumPriceWithStopDiagram } from './MomentumPriceWithStopDiagram'
 import { MomentumMessage } from './MomentumMessage'
 import { MomentumTickerStatistic } from './MomentumTickerStatistic'
@@ -90,7 +90,7 @@ export const MomentumMonitor = () => {
                         <MomentumBacktestDiagram series={momentumMonitorData.result.backtestSeries}/>
                     </div> 
                     <div className='momentum-container'>
-                        <MomentumPriceDynamicDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
+                        <MomentumLineDiagram series={momentumMonitorData.result.priceDynamicSeries}/>
                     </div>                                                                               
                 </div>
                 <div>За последний квартал</div>

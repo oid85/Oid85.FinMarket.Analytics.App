@@ -55,6 +55,12 @@
     width: 80px;
 }
 
+.momentum-backtest-result-number {     
+    font-size: 14px; 
+    padding: 1px; 
+    width: 40px;
+}
+
 .momentum-backtest-result-strategy-name {     
     font-size: 14px; 
     padding: 1px; 
@@ -64,13 +70,25 @@
 .momentum-backtest-result-strategy-params {     
     font-size: 14px; 
     padding: 1px; 
-    width: 500px;
+    width: 400px;
 }
 
-.momentum-backtest-result-value {     
+.momentum-backtest-result-rf {
+    font-size: 14px; 
+    padding: 1px; 
+    width: 40px;
+}
+
+.momentum-backtest-result-np {
     font-size: 14px; 
     padding: 1px; 
     width: 90px;
+}
+
+.momentum-backtest-result-ayr {
+    font-size: 14px; 
+    padding: 1px; 
+    width: 50px;
 }
 
 .momentum-metric {     

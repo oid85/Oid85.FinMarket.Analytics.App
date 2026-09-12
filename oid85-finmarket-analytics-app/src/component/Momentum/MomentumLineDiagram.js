@@ -2,7 +2,7 @@ import React from 'react'
 import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import './styles.css'
 
-export const MomentumPriceDynamicDiagram = ({series}) => {
+export const MomentumLineDiagram = ({series}) => {
     return (
         <React.Fragment>          
             <div className='momentum-diagram'>
