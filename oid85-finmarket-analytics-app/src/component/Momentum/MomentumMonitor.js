@@ -109,7 +109,8 @@ export const MomentumMonitor = () => {
                 </div>
                 <div>Статистика по сигналам и выбитым стоп-лоссам</div>   
                 <div>
-                    <div className='horizontal-container'>                
+                    <div className='horizontal-container'>  
+                        <div className='momentum-ticker-statistic-number border-style'>№</div>              
                         <div className='border-style' style={{width: 32}}></div>
                         <div className='momentum-ticker-statistic-ticker border-style'>Тикер</div>
                         <div className='momentum-ticker-statistic-value border-style'>Сигналов, шт.</div>
