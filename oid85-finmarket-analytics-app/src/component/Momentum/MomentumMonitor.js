@@ -32,7 +32,7 @@ export const MomentumMonitor = () => {
             <div>
                 <div className='horizontal-container'>
                 {
-                    ['1', '2'].map((version) => (
+                    ['1', '2', '3'].map((version) => (
                         <div className='momentum-version-button-container'>
                             <button className='btn btn-outline-dark momentum-version-button'
                                 onClick={() => {
