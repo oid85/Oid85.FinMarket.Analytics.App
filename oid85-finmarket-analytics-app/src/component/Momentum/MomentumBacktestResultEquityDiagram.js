@@ -8,8 +8,8 @@ export const MomentumBacktestResultEquityDiagram = ({series}) => {
             <div className='momentum-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={800}
-                width={1800}
+                height={700}
+                width={1000}
             >
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis domain={['auto', 'auto']}/>

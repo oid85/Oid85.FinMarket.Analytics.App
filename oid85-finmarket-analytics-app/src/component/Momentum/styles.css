@@ -56,37 +56,37 @@
 }
 
 .momentum-backtest-result-number {     
-    font-size: 14px; 
+    font-size: 12px; 
     padding: 1px; 
     width: 40px;
 }
 
 .momentum-backtest-result-strategy-name {     
-    font-size: 14px; 
+    font-size: 12px; 
     padding: 1px; 
     width: 200px;
 }
 
 .momentum-backtest-result-strategy-params {     
-    font-size: 14px; 
+    font-size: 12px; 
     padding: 1px; 
     width: 400px;
 }
 
 .momentum-backtest-result-rf {
-    font-size: 14px; 
+    font-size: 12px; 
     padding: 1px; 
     width: 40px;
 }
 
 .momentum-backtest-result-np {
-    font-size: 14px; 
+    font-size: 12px; 
     padding: 1px; 
     width: 90px;
 }
 
 .momentum-backtest-result-ayr {
-    font-size: 14px; 
+    font-size: 12px; 
     padding: 1px; 
     width: 50px;
 }
