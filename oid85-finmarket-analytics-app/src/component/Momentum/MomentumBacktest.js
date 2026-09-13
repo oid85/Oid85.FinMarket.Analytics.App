@@ -23,7 +23,10 @@ export const MomentumBacktest = () => {
             ? <Loader/>
             :
             <div>
-                <div className='horizontal-container'>  
+                <div>  
+                    <div className='momentum-container'>
+                        <MomentumBacktestResultEquityDiagram series={momentumBacktestResultData.result.equitySeries}/>
+                    </div>                       
                     <div>
                         <div>Результаты бектеста</div>
                         <div className='horizontal-container'>  
@@ -39,10 +42,7 @@ export const MomentumBacktest = () => {
                                 <MomentumBacktestResult backtestResult={backtestResult}/>     
                             ))                        
                         }                     
-                    </div>     
-                    <div className='momentum-container'>
-                        <MomentumBacktestResultEquityDiagram series={momentumBacktestResultData.result.equitySeries}/>
-                    </div>                    
+                    </div>                      
                 </div>                                                          
             </div>
         }

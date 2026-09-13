@@ -32,11 +32,12 @@ export const MomentumMonitor = () => {
             <div>
                 <div className='horizontal-container'>
                 {
-                    ['1'].map((version) => (
+                    ['1', '2'].map((version) => (
                         <div className='momentum-version-button-container'>
                             <button className='btn btn-outline-dark momentum-version-button'
                                 onClick={() => {
-                                    dispatch(fetchMomentumVersion(version)) 
+                                    dispatch(fetchMomentumVersion(version))
+                                    dispatch(sagaMomentumMonitor()) 
                                 }}><div className='momentum-version-button-text'>{version}</div></button>
                         </div>                        
                     ))

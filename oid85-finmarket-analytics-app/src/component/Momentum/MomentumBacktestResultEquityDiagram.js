@@ -9,7 +9,7 @@ export const MomentumBacktestResultEquityDiagram = ({series}) => {
             <ComposedChart                                    
                 data={series}
                 height={800}
-                width={1000}
+                width={1800}
             >
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
                 <YAxis domain={['auto', 'auto']}/>
