@@ -3,7 +3,7 @@ import { CONSTANTS } from '../../constants'
 import './styles.css'
 
 const GetColor = (value) => {
-    if (!value) { return CONSTANTS.COLOR_WHITE }
+    if (!value) { return CONSTANTS.COLOR_WHITE }    
     if (value < 0) { return CONSTANTS.COLOR_LIGHTRED }
     if (value > 0) { return CONSTANTS.COLOR_LIGHTGREEN }
     return CONSTANTS.COLOR_WHITE
