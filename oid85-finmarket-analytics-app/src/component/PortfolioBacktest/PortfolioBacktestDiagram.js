@@ -8,8 +8,8 @@ export const PortfolioBacktestDiagram = ({series}) => {
             <div className='portfolio-backtest-diagram'>
             <ComposedChart                                    
                 data={series}
-                height={800}                                                
-                width={1300}
+                height={600}                                                
+                width={850}
             >
                 <CartesianGrid />       
                 <XAxis dataKey="date" type="category" allowDuplicatedCategory={false} />                
