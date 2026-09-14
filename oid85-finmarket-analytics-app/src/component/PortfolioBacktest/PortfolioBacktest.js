@@ -66,9 +66,9 @@ export const PortfolioBacktest = () => {
                         </div>                                                                                                                                                                                                                                   
                     </div>                 
                     <div className='portfolio-backtest-container'>
-                        <PortfolioBacktestDiagram series={portfolioBacktestData.result.series}/>
-                    </div> 
-                    <div>
+                        <div>
+                            <PortfolioBacktestDiagram series={portfolioBacktestData.result.series}/>                            
+                        </div>
                         <div className='portfolio-backtest-container portfolio-backtest-result'>
                             <div className='horizontal-container'>
                                 <div className='portfolio-backtest-container'>Доходность годовых средн.:</div> 
@@ -114,7 +114,10 @@ export const PortfolioBacktest = () => {
                                 <div className='portfolio-backtest-container'>Внесено:</div> 
                                 <div className='portfolio-backtest-container'>{`${formatNumber(portfolioBacktestData.result.moneySum)} руб.`}</div> 
                             </div>                                                        
-                        </div>  
+                        </div>                        
+                    </div> 
+                    <div>
+  
                         <div>
                             <div className='horizontal-container'>
                                 <div className='portfolio-backtest-number-header-cell border-style'>№</div>
