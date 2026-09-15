@@ -11,7 +11,7 @@ const initialState = {
     momentumMonitorData: {},
     momentumBacktestResultData: {},
     momentumPortfolioTotalSum: 0,
-    momentumVersion: '1',
+    momentumVersion: 'Classic',
     editMomentumPortfolioTotalSumModalIsOpened: false
 }
 

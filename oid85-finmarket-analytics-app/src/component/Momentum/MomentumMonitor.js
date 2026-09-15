@@ -15,6 +15,7 @@ import './styles.css'
 
 export const MomentumMonitor = () => {
     
+    const strategyVersions = ['Classic', 'BreakEvenStop', 'TrailStop']
     const dispatch = useDispatch()
     const loading = useSelector(state => state.app.loading)
     const momentumMonitorData = useSelector(state => state.momentum.momentumMonitorData)
@@ -32,7 +33,7 @@ export const MomentumMonitor = () => {
             <div>
                 <div className='horizontal-container'>
                 {
-                    ['1', '2', '3'].map((version) => (
+                    strategyVersions.map((version) => (
                         <div className='momentum-version-button-container'>
                             <button className='btn btn-outline-dark momentum-version-button'
                                 onClick={() => {
