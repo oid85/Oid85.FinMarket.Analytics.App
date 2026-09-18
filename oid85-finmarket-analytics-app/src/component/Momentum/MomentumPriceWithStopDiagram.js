@@ -48,7 +48,6 @@ export const MomentumPriceWithStopDiagram = ({series}) => {
                     :
                     <div></div>
                 } 
-                <Tooltip itemSorter={(item) => { return (item.value) * -1 }}/>
             </ComposedChart>
             </div>
         </React.Fragment>                
