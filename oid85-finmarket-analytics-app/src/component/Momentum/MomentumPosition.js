@@ -26,8 +26,13 @@ export const MomentumPosition = ({position}) => {
                     position.ticker != 'MON'
                     ? <div className='momentum-container'>{`${formatNumber(position.size)} шт.`}</div>
                     : <div></div>
-                }                                   
+                }
                 <div className='momentum-container'>{`${formatNumber(position.cost)} руб.`}</div>
+                {
+                    position.entryPrice
+                    ? <div className='momentum-container'>{`PEn ${formatNumber(position.entryPrice)} руб.`}</div>
+                    : <div></div>
+                }                
                 {
                     position.stopPrice
                     ? <div className='momentum-container'>{`SL ${formatNumber(position.stopPrice)} руб.`}</div>
