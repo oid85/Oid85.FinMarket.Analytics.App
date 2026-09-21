@@ -35,7 +35,7 @@ export const PortfolioPositionList = () => {
         
         let delta = Math.abs(size - lifeSize)
         let deltaPercent = (delta / size * 100.0).toFixed(2)
-        let limit = 15.0;    
+        let limit = 10.0;    
 
         if (deltaPercent <= limit) { return CONSTANTS.COLOR_LIGHTGREEN }
         if (deltaPercent > limit) { return CONSTANTS.COLOR_LIGHTYELLOW }
