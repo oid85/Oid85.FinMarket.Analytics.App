@@ -5,8 +5,6 @@ import 'react-tabs/style/react-tabs.css'
 import { Alert } from '../Alert/Alert'
 import { TrendDynamicScreen } from '../Screens/TrendDynamicScreen'
 import { CompareTrendScreen } from '../Screens/CompareTrendScreen'
-import { MacroParameterScreen } from '../Screens/MacroParameterScreen'
-import { MacroDiagramScreen } from '../Screens/MacroDiagramScreen'
 import { WeekTrendDeltaScreen } from '../Screens/WeekTrendDeltaScreen'
 import { PortfolioScreen } from '../Screens/PortfolioScreen'
 import { BondAnalyseScreen } from '../Screens/BondAnalyseScreen'
@@ -18,6 +16,7 @@ import { TrendAggregateScreen } from '../Screens/TrendAggregateScreen'
 import { AlgoScreen } from '../Screens/AlgoScreen'
 import { MomentumScreen } from '../Screens/MomentumScreen'
 import { StatArbitrageScreen } from '../Screens/StatArbitrageScreen'
+import { MacroScreen } from '../Screens/MacroScreen'
 
 export const Workspace = () => {
     const alert = useSelector(state => state.app.alert)
@@ -34,8 +33,7 @@ export const Workspace = () => {
                     <Tab title='Графики акций'>Граф. (акц.)</Tab>
                     <Tab title='Графики индексов'>Граф. (инд.)</Tab>
                     <Tab title='Фундаментал'>Фунд.</Tab>                    
-                    <Tab title='Таблица по макропараметрам'>Макро. табл.</Tab>
-                    <Tab title='Диаграммы по макропараметрам'>Макро. диагр.</Tab>
+                    <Tab title='Макро'>Макро</Tab>
                     <Tab title='Аналитика по облигациям'>Облигации</Tab>
                     <Tab title='Портфель акций'>Портфель</Tab>
                     <Tab title='Бектест портфеля'>Бэктест</Tab>
@@ -65,11 +63,8 @@ export const Workspace = () => {
                     <FundamentalScreen />
                 </TabPanel>                                                                                                                    
                 <TabPanel>
-                    <MacroParameterScreen />
-                </TabPanel>
-                <TabPanel>
-                    <MacroDiagramScreen />
-                </TabPanel>                    
+                    <MacroScreen />
+                </TabPanel>                   
                 <TabPanel>
                     <BondAnalyseScreen />
                 </TabPanel> 
