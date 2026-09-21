@@ -24,10 +24,10 @@ export const MomentumPosition = ({position}) => {
                 </div>
                 {
                     position.ticker != 'MON'
-                    ? <div className='momentum-container'>{`${formatNumber(position.size)} шт.`}</div>
+                    ? <div className='momentum-container'>{`Size ${formatNumber(position.size)} шт.`}</div>
                     : <div></div>
                 }
-                <div className='momentum-container'>{`${formatNumber(position.cost)} руб.`}</div>
+                <div className='momentum-container'>{`Cost ${formatNumber(position.cost)} руб.`}</div>
                 {
                     position.entryPrice
                     ? <div className='momentum-container'>{`PEn ${formatNumber(position.entryPrice)} руб.`}</div>
