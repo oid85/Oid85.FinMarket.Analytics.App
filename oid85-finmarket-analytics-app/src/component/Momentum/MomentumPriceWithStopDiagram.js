@@ -13,7 +13,6 @@ export const MomentumPriceWithStopDiagram = ({series}) => {
             >        
                 <XAxis hide={true} dataKey="date" type="category" allowDuplicatedCategory={false} />         
                 <YAxis hide={true} domain={['auto', 'auto']}/>
-                <Legend />
                 {
                     series[0]
                     ? 
@@ -48,6 +47,23 @@ export const MomentumPriceWithStopDiagram = ({series}) => {
                     :
                     <div></div>
                 } 
+                {
+                    series[2]
+                    ? 
+                    <Line 
+                        type="monotone"
+                        dataKey="value" 
+                        data={series[2].data} 
+                        name={series[2].name} 
+                        key={series[2].name} 
+                        stroke={series[2].color}
+                        fill={series[2].colorFill}
+                        strokeWidth={1}
+                        dot={false}
+                        />
+                    :
+                    <div></div>
+                }                
             </ComposedChart>
             </div>
         </React.Fragment>                
