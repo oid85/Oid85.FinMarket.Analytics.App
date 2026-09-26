@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { fetchMomentumVersion, sagaMomentumTerminal } from '../../redux/actions/momentumActions'
 import Loader from '../Loader/Loader'
+import { MomentumTerminalMoney } from './MomentumTerminalMoney'
+import { MomentumTerminalTotalSum } from './MomentumTerminalTotalSum'
+import { MomentumTerminalTotalDailyPnl } from './MomentumTerminalTotalDailyPnl'
 import './styles.css'
 
 export const MomentumTerminal = () => {
@@ -36,6 +39,13 @@ export const MomentumTerminal = () => {
                 }                                                                                                                                                                                                                                                              
                 </div>
                 <div>Панель терминала</div>                                                       
+                <div>
+                    <div className='horizontal-container'>
+                        <MomentumTerminalTotalSum title={"Сумма портфеля"} text={"Сумма портфеля"} value={momentumTerminalData.result.totalSum} eunit={"руб."}/>
+                        <MomentumTerminalMoney title={"Деньги"} text={"Деньги"} value={momentumTerminalData.result.money} eunit={"руб."}/>
+                        <MomentumTerminalTotalDailyPnl title={"Дневной PnL"} text={"Дневной PnL"} value={momentumTerminalData.result.totalDailyPnl} eunit={"руб."}/>
+                    </div>                              
+                </div>                
             </div>
         }
         </React.Fragment>                

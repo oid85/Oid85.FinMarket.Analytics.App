@@ -106,6 +106,7 @@
 
 .momentum-total-sum {     
     padding: 1px; 
+    width: 250px;
 }
 
 .momentum-total-summ-description {     
@@ -113,6 +114,32 @@
 }
 
 .momentum-total-summ-value {     
+    font-size: 28px; 
+}
+
+.momentum-money {     
+    padding: 1px; 
+    width: 250px;
+}
+
+.momentum-money-description {     
+    font-size: 14px; 
+}
+
+.momentum-money-value {     
+    font-size: 28px; 
+}
+
+.momentum-total-daily-pnl {     
+    padding: 1px; 
+    width: 250px;
+}
+
+.momentum-total-daily-pnl-description {     
+    font-size: 14px; 
+}
+
+.momentum-total-daily-pnl-value {     
     font-size: 28px; 
 }
 
