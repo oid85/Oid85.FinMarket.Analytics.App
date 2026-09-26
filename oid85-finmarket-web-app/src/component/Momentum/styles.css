@@ -168,6 +168,66 @@
     font-size: 12px;
 }
 
+.momentum-terminal-row-number {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 40px;
+}
+
+.momentum-terminal-row-ticker {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 80px;
+}
+
+.momentum-terminal-row-target-position {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
+.momentum-terminal-row-life-position {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
+.momentum-terminal-row-sync-position {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
+.momentum-terminal-row-target-stop {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
+.momentum-terminal-row-life-stop {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
+.momentum-terminal-row-sync-stop {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
+.momentum-terminal-row-task-sync-position {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
+.momentum-terminal-row-task-sync-stop {     
+    font-size: 18px; 
+    padding: 1px; 
+    width: 100px;
+}
+
 /*Edit modal*/
 .edit-modal-save-button {
     width: 100px;
