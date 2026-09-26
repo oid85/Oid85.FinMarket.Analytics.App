@@ -1,8 +1,10 @@
 import {
     SAGA_MOMENTUM_MONITOR,
+    SAGA_MOMENTUM_TERMINAL,
     SAGA_MOMENTUM_BACKTEST_RESULT,
     SAGA_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM,
     FETCH_MOMENTUM_MONITOR,
+    FETCH_MOMENTUM_TERMINAL,
     FETCH_MOMENTUM_BACKTEST_RESULT,
     FETCH_MOMENTUM_PORTFOLIO_TOTAL_SUM,
     FETCH_MOMENTUM_VERSION,
@@ -13,6 +15,12 @@ import {
 export const sagaMomentumMonitor = () => {
     return {
         type: SAGA_MOMENTUM_MONITOR
+    }
+}
+
+export const sagaMomentumTerminal = () => {
+    return {
+        type: SAGA_MOMENTUM_TERMINAL
     }
 }
 
@@ -31,6 +39,13 @@ export const sagaEditMomentumPortfolioTotalSum = () => {
 export const fetchMomentumMonitor = (data) => {
     return {
         type: FETCH_MOMENTUM_MONITOR,
+        payload: data
+    }
+}
+
+export const fetchMomentumTerminal = (data) => {
+    return {
+        type: FETCH_MOMENTUM_TERMINAL,
         payload: data
     }
 }

@@ -1,5 +1,6 @@
 import {
     FETCH_MOMENTUM_MONITOR,
+    FETCH_MOMENTUM_TERMINAL,
     FETCH_MOMENTUM_BACKTEST_RESULT,
     FETCH_MOMENTUM_PORTFOLIO_TOTAL_SUM,
     FETCH_MOMENTUM_VERSION,
@@ -9,6 +10,7 @@ import {
 
 const initialState = {
     momentumMonitorData: {},
+    momentumTerminalData: {},
     momentumBacktestResultData: {},
     momentumPortfolioTotalSum: 0,
     momentumVersion: 'Classic',
@@ -21,6 +23,9 @@ export const momentumReducer = (state = initialState, action) => {
         case FETCH_MOMENTUM_MONITOR:
             return {...state, momentumMonitorData: {...action.payload}}
           
+        case FETCH_MOMENTUM_TERMINAL:
+            return {...state, momentumTerminalData: {...action.payload}}
+
         case FETCH_MOMENTUM_BACKTEST_RESULT:
             return {...state, momentumBacktestResultData: {...action.payload}}            
 

@@ -4,6 +4,10 @@ export const getMomentumMonitorFromApi = async (momentumVersion) => {
     return sendMomentumPostRequest('momentum/monitor/version', {momentumVersion})
 }
 
+export const getMomentumTerminalFromApi = async (momentumVersion) => {
+    return sendMomentumPostRequest('momentum/terminal/version', {momentumVersion})
+}
+
 export const getMomentumBacktestResultFromApi = async () => {
     return sendMomentumPostRequest('momentum/backtest/result', {})
 }

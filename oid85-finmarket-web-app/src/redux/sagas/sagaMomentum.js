@@ -1,21 +1,25 @@
 import {call, put, select, takeEvery} from 'redux-saga/effects'
 import {
     fetchMomentumMonitor,
+    fetchMomentumTerminal,
     fetchMomentumBacktestResult
 } from '../actions/momentumActions'
 import {
     SAGA_MOMENTUM_MONITOR,
+    SAGA_MOMENTUM_TERMINAL,
     SAGA_MOMENTUM_BACKTEST_RESULT,
     SAGA_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM
 } from '../types/momentumTypes'
 import {
     getMomentumMonitorFromApi,
+    getMomentumTerminalFromApi,
     getMomentumBacktestResultFromApi,
     editMomentumPortfolioTotalSumFromApi
 } from '../api/momentumApi'
 
 export function* sagaWatcherMomentum() {
     yield takeEvery(SAGA_MOMENTUM_MONITOR, sagaWorkerMomentumMonitor)
+    yield takeEvery(SAGA_MOMENTUM_TERMINAL, sagaWorkerMomentumTerminal)
     yield takeEvery(SAGA_MOMENTUM_BACKTEST_RESULT, sagaWorkerMomentumBacktestResult)
     yield takeEvery(SAGA_EDIT_MOMENTUM_PORTFOLIO_TOTAL_SUM, sagaWorkerEditMomentumPortfolioTotalSum)
 }
@@ -27,6 +31,12 @@ function* sagaWorkerMomentumMonitor() {
     let version = yield select(momentumVersion)
     let result = yield call(getMomentumMonitorFromApi, version)
     yield put(fetchMomentumMonitor(result))
+}
+
+function* sagaWorkerMomentumTerminal() {
+    let version = yield select(momentumVersion)
+    let result = yield call(getMomentumTerminalFromApi, version)
+    yield put(fetchMomentumTerminal(result))
 }
 
 function* sagaWorkerMomentumBacktestResult() {    
