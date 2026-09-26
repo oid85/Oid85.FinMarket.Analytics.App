@@ -9,6 +9,12 @@ import './styles.css'
 import { Ticker } from '../Ticker/Ticker'
 import { MomentumTerminalTargetPosition } from './MomentumTerminalTargetPosition'
 import { MomentumTerminalLifePosition } from './MomentumTerminalLifePosition'
+import { MomentumTerminalTargetStop } from './MomentumTerminalTargetStop'
+import { MomentumTerminalLifeStop } from './MomentumTerminalLifeStop'
+import { MomentumTerminalSyncPosition } from './MomentumTerminalSyncPosition'
+import { MomentumTerminalSyncStop } from './MomentumTerminalSyncStop'
+import { MomentumTerminalTaskSyncPosition } from './MomentumTerminalTaskSyncPosition'
+import { MomentumTerminalTaskSyncStop } from './MomentumTerminalTaskSyncStop'
 
 export const MomentumTerminal = () => {
     
@@ -72,6 +78,12 @@ export const MomentumTerminal = () => {
                                 <div className='momentum-terminal-row-ticker border-style'>{row.ticker}</div>
                                 <MomentumTerminalTargetPosition position={row.targetPosition}/>
                                 <MomentumTerminalLifePosition position={row.lifePosition}/>
+                                <MomentumTerminalSyncPosition button={row.syncSizeButton}/>
+                                <MomentumTerminalTaskSyncPosition task={row.syncTickerSizeTask}/>
+                                <MomentumTerminalTargetStop stop={row.targetStop}/>
+                                <MomentumTerminalLifeStop stop={row.lifeStop}/>
+                                <MomentumTerminalSyncStop button={row.syncStopButton}/>
+                                <MomentumTerminalTaskSyncStop task={row.syncTickerStopTask}/>
                             </div>
                         ))                        
                     }
